@@ -13,7 +13,7 @@ body, h1, h2, h3 {
 }
 
 #main {
-  width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   margin-top: 1em;
   border: 4px solid #331166;
