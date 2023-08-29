@@ -1,8 +1,0 @@
-format: jb-book
-root: intro
-parts:
-  - caption: Reactions
-    chapters:
-    - file: hotcno/hot-CNO-breakout-example
-
-
