@@ -3,6 +3,7 @@ root: intro
 parts:
   - caption: Reactions
     chapters:
+    - file: pp-vs-cno/pp-cno
     - file: hotcno/hot-CNO-breakout-example
 
 
