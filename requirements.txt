@@ -3,4 +3,5 @@ matplotlib
 numpy
 scipy
 sympy
-pynucastro
+pynucastro @ git+https://github.com/pynucastro/pynucastro
+
