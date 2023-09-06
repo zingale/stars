@@ -439,18 +439,12 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pp_rates</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;p(p,)d&quot;</span><span class="p">,</span>
             <span class="s2">&quot;d(p,g)he3&quot;</span><span class="p">,</span>
             <span class="s2">&quot;he3(he3,pp)he4&quot;</span><span class="p">]</span>
+<span class="n">rates</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="n">pp_rates</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rates</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="n">pp_rates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Note that ReacLib actually splits the p+p rate into two.  We will add them together.</p>
+<p>We can look at which rates it pulled in:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rates</span><span class="p">:</span>
@@ -467,6 +461,7 @@ He3 + He3 ⟶ p + p + He4
 </div>
 </div>
 </div>
+<p>Note that ReacLib actually splits the p+p rate into two.  We will add them together.</p>
 <p>We can look at the temperature dependence of one of these rates</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -525,22 +520,20 @@ He3 + He3 ⟶ p + p + He4
 <img alt="../_images/51c8d06bb2334237787084b871eb6a84fb4730ecc60c9c120831a05c4ff52be1.png" src="../_images/51c8d06bb2334237787084b871eb6a84fb4730ecc60c9c120831a05c4ff52be1.png" />
 </div>
 </div>
-<p>We can therefore approximate the p-p chain based on the slowest rate.</p>
+<p>We can therefore approximate the p-p chain based on the slowest rate.  If we express the rate as:</p>
+<div class="math notranslate nohighlight">
+\[r = r_0 \left (\frac{T}{T_0}\right )^\nu\]</div>
+<p>then we can find the exponent <span class="math notranslate nohighlight">\(\nu\)</span> about some temperature <span class="math notranslate nohighlight">\(T_0\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_pp</span> <span class="o">=</span> <span class="n">rc_pp</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="s2">&quot;p(p,)d&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_pp</span><span class="o">.</span><span class="n">get_rate_exponent</span><span class="p">(</span><span class="mf">1.5e7</span><span class="p">)</span>
+<span class="n">T0</span> <span class="o">=</span> <span class="mf">1.5e7</span>
+<span class="n">r_pp</span><span class="o">.</span><span class="n">get_rate_exponent</span><span class="p">(</span><span class="n">T0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.9735120801889896
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.9735120950414538
 </pre></div>
 </div>
 </div>
@@ -558,13 +551,7 @@ He3 + He3 ⟶ p + p + He4
              <span class="s2">&quot;n14(p,g)o15&quot;</span><span class="p">,</span>
              <span class="s2">&quot;n15(p,a)c12&quot;</span><span class="p">,</span>
              <span class="s2">&quot;o15(,)n15&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rates</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="n">cno_rates</span><span class="p">)</span>
+<span class="n">rates</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="n">cno_rates</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -602,6 +589,7 @@ O15 ⟶ N15 + e⁺ + 𝜈
 </div>
 </div>
 </div>
+<p>Again we can look evaluate each of the rates:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_cno</span><span class="o">.</span><span class="n">evaluate_rates</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">)</span>
@@ -610,10 +598,10 @@ O15 ⟶ N15 + e⁺ + 𝜈
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{C12 + p ⟶ N13 + 𝛾: 1.0467759242295147e-17,
- C13 + p ⟶ N14 + 𝛾: 3.1762115973399955e-17,
- N13 ⟶ C13 + e⁺ + 𝜈: 2.9720852738029577e-07,
+ C13 + p ⟶ N14 + 𝛾: 3.176211597339997e-17,
+ N13 ⟶ C13 + e⁺ + 𝜈: 2.9720852738029567e-07,
  N14 + p ⟶ O15 + 𝛾: 1.7295781984662848e-20,
- N15 + p ⟶ He4 + C12: 6.954822248932606e-16,
+ N15 + p ⟶ He4 + C12: 6.954822248932605e-16,
  O15 ⟶ N15 + e⁺ + 𝜈: 1.2625681768893483e-06}
 </pre></div>
 </div>
@@ -636,9 +624,9 @@ O15 ⟶ N15 + e⁺ + 𝜈
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 10000000.0, nu = 22.829615097171867
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 10000000.0, nu = 22.82961446376932
 T = 20000000.0, nu = 17.966372387768573
-T = 30000000.0, nu = 15.601859314950396
+T = 30000000.0, nu = 15.601859332769518
 T = 40000000.0, nu = 14.11534690114197
 </pre></div>
 </div>
@@ -688,12 +676,13 @@ T = 40000000.0, nu = 14.11534690114197
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f8f099dda20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f2f1cea9a50&gt;
 </pre></div>
 </div>
 <img alt="../_images/c826c6d607b66a1498b28d3566dc578261e413fac1085133138a6f0f65e7b277.png" src="../_images/c826c6d607b66a1498b28d3566dc578261e413fac1085133138a6f0f65e7b277.png" />
 </div>
 </div>
+<p>Notice that they cross over at a temperature just hotter than the Sun’s core.  This means that stars more massive than the Sun (actually, about <span class="math notranslate nohighlight">\(1.5~M_\odot\)</span>) are powered by CNO and less massive stars are powered by p-p.  The strong <span class="math notranslate nohighlight">\(T\)</span> dependence of CNO will play a role in determining the structure of those more massive stars.</p>
 </section>
 </section>
 
