@@ -1,6 +1,10 @@
 format: jb-book
 root: intro
 parts:
+  - caption: Equation of State
+    chapters:
+    - file: eos/degeneracy-parameter
+
   - caption: Reactions
     chapters:
     - file: pp-vs-cno/pp-cno

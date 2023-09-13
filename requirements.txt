@@ -4,4 +4,4 @@ numpy
 scipy
 sympy
 pynucastro @ git+https://github.com/pynucastro/pynucastro
-
+myst-nb
