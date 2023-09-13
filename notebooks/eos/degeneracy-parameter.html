@@ -408,6 +408,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-psi">Visualizing <span class="math notranslate nohighlight">\(\Psi\)</span></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-pressure">Computing Pressure</a></li>
 </ul>
             </nav>
         </div>
@@ -521,30 +522,24 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 <h3>Finding the trend of <span class="math notranslate nohighlight">\(\Psi\)</span> with <span class="math notranslate nohighlight">\(\rho, T\)</span><a class="headerlink" href="#finding-the-trend-of-psi-with-rho-t" title="Permalink to this heading">#</a></h3>
 <p>Let’s now implement an algorithm to find the <span class="math notranslate nohighlight">\(\Psi\)</span> that corresponds to an input <span class="math notranslate nohighlight">\(\rho\)</span> (or <span class="math notranslate nohighlight">\(n_e\)</span>) and <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <p>We first need a function to compute <span class="math notranslate nohighlight">\(n_e\)</span> given a <span class="math notranslate nohighlight">\(T\)</span> and a guess for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
+<p>The kinetic energy of a particle can be found from the relativisitic expression:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{E}(p) = m_e c^2 \left [ \sqrt{1 + \left ( \frac{p}{m_e c} \right )^2 } - 1 \right ]\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We’ll assume that we are non-relativistic, so</p>
+<p>This has the proper limit in the non-relativistic case, <span class="math notranslate nohighlight">\(|p| \ll m_e c\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{E}(p) = \frac{p^2}{2 m_e}\]</div>
+\[\mathcal{E} = \frac{p^2}{2m_e}\]</div>
 </div>
-<p>Our integral is then:</p>
+<p>Defining <span class="math notranslate nohighlight">\(x = p/(m_e c)\)</span> and <span class="math notranslate nohighlight">\(\alpha = m_e c^2 / (k_B T)\)</span>, our integral becomes:</p>
 <div class="math notranslate nohighlight">
-\[n_e = \frac{8\pi}{h^3} \int_0^\infty \frac{p^2 dp}{e^{p^2/(2m_e k_B T)-\Psi} + 1}\]</div>
-<p>We can make a change of variables:</p>
-<div class="math notranslate nohighlight">
-\[x = \frac{p}{\sqrt{2 m_e k_B T}}\]</div>
-<p>and then we have:</p>
-<div class="math notranslate nohighlight">
-\[n_e = \frac{8\pi}{h^3} (2 m_e k_B T)^{3/2} \int_0^\infty \frac{x^2 dx}{e^{x^2 - \Psi} + 1}\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For <span class="math notranslate nohighlight">\(\rho &gt; 10^6~\mathrm{g~cm^{-3}}\)</span> relativistic effects are important, and we would need to use a more general form for <span class="math notranslate nohighlight">\(\mathcal{E}(p)\)</span>.</p>
-</div>
+\[n_e = \frac{8\pi}{h^3} (m_e c)^3 \int_0^\infty \frac{x^2 dx}{e^{\alpha (\sqrt{1 + x^2} - 1) - \Psi} + 1}\]</div>
+<p>We need to do this numerically</p>
 <p>Let’s write a function that returns the integrand</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">integrand</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">psi</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">psi</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">integrand</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">psi</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -558,6 +553,7 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 <span class="n">k_B</span> <span class="o">=</span> <span class="mf">1.38e-16</span>
 <span class="n">m_e</span> <span class="o">=</span> <span class="mf">9.11e-28</span>
 <span class="n">m_u</span> <span class="o">=</span> <span class="mf">1.67e-24</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">2.99792e10</span>
 </pre></div>
 </div>
 </div>
@@ -576,9 +572,9 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;given a temperature and degeneracy parameter, psi,</span>
 <span class="sd">    compute the number density of electrons by integrating</span>
 <span class="sd">    the Fermi-Dirac distribution over all momenta&quot;&quot;&quot;</span>
-    
-    <span class="n">I</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">psi</span><span class="p">))</span>
-    <span class="n">ne</span> <span class="o">=</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">h_planck</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">m_e</span> <span class="o">*</span> <span class="n">k_B</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span><span class="o">**</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">I</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_B</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
+    <span class="n">I</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">))</span>
+    <span class="n">ne</span> <span class="o">=</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">h_planck</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">I</span>
     <span class="k">return</span> <span class="n">ne</span>
 </pre></div>
 </div>
@@ -591,7 +587,7 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
     
     <span class="n">ne_input</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">Ye</span> <span class="o">/</span> <span class="n">m_u</span>
     <span class="n">psi_low</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1000</span>
-    <span class="n">psi_high</span> <span class="o">=</span> <span class="mi">10000</span>
+    <span class="n">psi_high</span> <span class="o">=</span> <span class="mi">100000</span>
     
     <span class="n">psi</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">brentq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">psi</span><span class="p">:</span> <span class="n">ne_input</span> <span class="o">-</span> <span class="n">compute_ne</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">psi</span><span class="p">),</span> <span class="n">psi_low</span><span class="p">,</span> <span class="n">psi_high</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">psi</span>
@@ -620,7 +616,7 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
-<span class="n">rhos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">rhos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1.e6</span><span class="p">,</span> <span class="mf">1.e7</span><span class="p">,</span> <span class="mf">1.e8</span><span class="p">]:</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rhos</span><span class="p">,</span> <span class="n">get_psi_rho</span><span class="p">(</span><span class="n">rhos</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;T = </span><span class="si">{</span><span class="n">T</span><span class="si">:</span><span class="s2">5.2g</span><span class="si">}</span><span class="s2"> K&quot;</span><span class="p">)</span>
@@ -629,22 +625,90 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\Psi$&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1922/3209928939.py:2: RuntimeWarning: overflow encountered in exp
-  return x**2 / (np.exp(x**2 - psi) + 1.0)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1926/209851116.py:2: RuntimeWarning: overflow encountered in exp
+  return x**2 / (np.exp(alpha * (np.sqrt(1 + x**2) -1) - psi) + 1.0)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f5e6cd11c60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f758c53a890&gt;
 </pre></div>
 </div>
-<img alt="../_images/c0fd0ebc04e7cae7d470bafcbe581a2c0633acae8c5f0896005c96d1f365977c.png" src="../_images/c0fd0ebc04e7cae7d470bafcbe581a2c0633acae8c5f0896005c96d1f365977c.png" />
+<img alt="../_images/6d774464a02106de9ffec68e5dae01c702c27f0e85911a82a38f96ced52cfc7c.png" src="../_images/6d774464a02106de9ffec68e5dae01c702c27f0e85911a82a38f96ced52cfc7c.png" />
 </div>
 </div>
 </section>
+</section>
+<section id="computing-pressure">
+<h2>Computing Pressure<a class="headerlink" href="#computing-pressure" title="Permalink to this heading">#</a></h2>
+<p>Now, for the pressure, we need <span class="math notranslate nohighlight">\(v(p)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[v(p) = \frac{p}{m_e} \left [ 1 + \left (\frac{p}{m_e c} \right )^2 \right ]^{-1/2}\]</div>
+<p>our pressure integral becomes:</p>
+<div class="math notranslate nohighlight">
+\[P = \frac{8\pi}{3m_e h^3} (m_e c)^5 \int_0^\infty \frac{x^4}{\sqrt{1 + x^2}} \frac{dx}{e^{\alpha (\sqrt{1 + x^2} - 1) - \Psi} + 1}\]</div>
+<p>To do this integral, we first need to compute <span class="math notranslate nohighlight">\(\Psi\)</span>.  Here’s the overall pressure function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p_integrand</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">psi</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_B</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="n">find_psi</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="n">Ye</span><span class="p">)</span>
+    <span class="n">I</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">p_integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">))</span>
+    <span class="k">return</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">m_e</span> <span class="o">*</span> <span class="n">h_planck</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mi">5</span> <span class="o">*</span> <span class="n">I</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_p_rho</span><span class="p">(</span><span class="n">rhos</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">1.e7</span><span class="p">):</span>
+    <span class="n">ps</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">rho</span> <span class="ow">in</span> <span class="n">rhos</span><span class="p">:</span>
+        <span class="n">ps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">))</span>
+        
+    <span class="k">return</span> <span class="n">ps</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">rhos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1.e6</span><span class="p">,</span> <span class="mf">1.e7</span><span class="p">,</span> <span class="mf">1.e8</span><span class="p">]:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rhos</span><span class="p">,</span> <span class="n">get_p_rho</span><span class="p">(</span><span class="n">rhos</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;T = </span><span class="si">{</span><span class="n">T</span><span class="si">:</span><span class="s2">5.2g</span><span class="si">}</span><span class="s2"> K&quot;</span><span class="p">)</span>
+    
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\rho$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$P$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1926/209851116.py:2: RuntimeWarning: overflow encountered in exp
+  return x**2 / (np.exp(alpha * (np.sqrt(1 + x**2) -1) - psi) + 1.0)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f758c06f8b0&gt;
+</pre></div>
+</div>
+<img alt="../_images/11cff94ab6998fde90c07b41493df386da7a7f5b81e3cebd29f9d80ea739de22.png" src="../_images/11cff94ab6998fde90c07b41493df386da7a7f5b81e3cebd29f9d80ea739de22.png" />
+</div>
+</div>
+<p>Here you clearly see the hotter temperatures requiring higher densities before they transition from an ideal gas to degeneracy</p>
 </section>
 </section>
 
@@ -721,6 +785,7 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-psi">Visualizing <span class="math notranslate nohighlight">\(\Psi\)</span></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-pressure">Computing Pressure</a></li>
 </ul>
   </nav></div>
 
