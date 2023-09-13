@@ -535,10 +535,12 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[n_e = \frac{8\pi}{h^3} (m_e c)^3 \int_0^\infty \frac{x^2 dx}{e^{\alpha (\sqrt{1 + x^2} - 1) - \Psi} + 1}\]</div>
 <p>We need to do this numerically</p>
-<p>Let’s write a function that returns the integrand</p>
+<p>Let’s write a function that returns the integrand.  Note, we run a risk of the exponential in the denominator overflowing, especially when <span class="math notranslate nohighlight">\(\alpha\)</span> is large (<span class="math notranslate nohighlight">\(T\)</span> is small).  So we take <code class="docutils literal notranslate"><span class="pre">exp(500)</span></code> to be infinite and set the integrand to zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">integrand</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">psi</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">psi</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -573,7 +575,7 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 <span class="sd">    compute the number density of electrons by integrating</span>
 <span class="sd">    the Fermi-Dirac distribution over all momenta&quot;&quot;&quot;</span>
     <span class="n">alpha</span> <span class="o">=</span> <span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_B</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
-    <span class="n">I</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">))</span>
+    <span class="n">I</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">),</span> <span class="n">epsabs</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="n">epsrel</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">)</span>
     <span class="n">ne</span> <span class="o">=</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">h_planck</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">I</span>
     <span class="k">return</span> <span class="n">ne</span>
 </pre></div>
@@ -631,11 +633,7 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1901/209851116.py:2: RuntimeWarning: overflow encountered in exp
-  return x**2 / (np.exp(alpha * (np.sqrt(1 + x**2) -1) - psi) + 1.0)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fb890005960&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7eff17522860&gt;
 </pre></div>
 </div>
 <img alt="../_images/6d774464a02106de9ffec68e5dae01c702c27f0e85911a82a38f96ced52cfc7c.png" src="../_images/6d774464a02106de9ffec68e5dae01c702c27f0e85911a82a38f96ced52cfc7c.png" />
@@ -651,16 +649,18 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 <p>our pressure integral becomes:</p>
 <div class="math notranslate nohighlight">
 \[P = \frac{8\pi}{3m_e h^3} (m_e c)^5 \int_0^\infty \frac{x^4}{\sqrt{1 + x^2}} \frac{dx}{e^{\alpha (\sqrt{1 + x^2} - 1) - \Psi} + 1}\]</div>
-<p>To do this integral, we first need to compute <span class="math notranslate nohighlight">\(\Psi\)</span>.  Here’s the overall pressure function</p>
+<p>To do this integral, we first need to compute <span class="math notranslate nohighlight">\(\Psi\)</span>.  Here’s the overall pressure function.  At low temperatures / low densities, we need to ensure that the tolerance used by the integrator is tight to get a good solution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p_integrand</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">psi</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">psi</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
     <span class="n">alpha</span> <span class="o">=</span> <span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_B</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
     <span class="n">psi</span> <span class="o">=</span> <span class="n">find_psi</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="n">Ye</span><span class="p">)</span>
-    <span class="n">I</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">p_integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">))</span>
+    <span class="n">I</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">p_integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">),</span> <span class="n">epsabs</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="n">epsrel</span><span class="o">=</span><span class="mf">1.e-12</span><span class="p">)</span>
     <span class="k">return</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">m_e</span> <span class="o">*</span> <span class="n">h_planck</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mi">5</span> <span class="o">*</span> <span class="n">I</span>
 </pre></div>
 </div>
@@ -698,17 +698,48 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1901/209851116.py:2: RuntimeWarning: overflow encountered in exp
-  return x**2 / (np.exp(alpha * (np.sqrt(1 + x**2) -1) - psi) + 1.0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7eff170749d0&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fb863faa260&gt;
+<img alt="../_images/2413e7f62b03b01e6e6b37d4271fd90eb559c78bfb879f8e14b698bda5585dcf.png" src="../_images/2413e7f62b03b01e6e6b37d4271fd90eb559c78bfb879f8e14b698bda5585dcf.png" />
+</div>
+</div>
+<p>Here you clearly see that hotter temperatures require higher densities before they transition from an ideal gas to degeneracy.  For the coldest line, the <span class="math notranslate nohighlight">\(\alpha\)</span> factor is making the exponential overflow, making the solution a bit unstable.</p>
+<p>At zero temperature, the pressure integral can be done analytically, and we find:</p>
+<div class="math notranslate nohighlight">
+\[x_F = \left (\frac{3}{8\pi} \right )^{1/3} \frac{h}{m_e c} n_e^{1/3}\]</div>
+<p>and then</p>
+<div class="math notranslate nohighlight">
+\[P(x) = \frac{\pi}{3} \left (\frac{m_e c}{h} \right )^3 m_e c^2 \left [ x (2x^2 - 3) (1 + x^2)^{1/2} + 3 \sinh^{-1}x \right ]\]</div>
+<p>we can add this line to the pressure plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">p_zero_temp</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+    
+    <span class="c1"># find number density</span>
+    <span class="n">n_e</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">Ye</span> <span class="o">/</span> <span class="n">m_u</span>
+    
+    <span class="c1"># find Fermi momentum</span>
+    <span class="n">x_F</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">h_planck</span> <span class="o">/</span> <span class="p">(</span><span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="p">))</span> <span class="o">*</span> <span class="n">n_e</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+    
+    <span class="n">P</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span> <span class="o">/</span> <span class="n">h_planck</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x_F</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x_F</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x_F</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsinh</span><span class="p">(</span><span class="n">x_F</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">P</span>
 </pre></div>
 </div>
-<img alt="../_images/11cff94ab6998fde90c07b41493df386da7a7f5b81e3cebd29f9d80ea739de22.png" src="../_images/11cff94ab6998fde90c07b41493df386da7a7f5b81e3cebd29f9d80ea739de22.png" />
 </div>
 </div>
-<p>Here you clearly see the hotter temperatures requiring higher densities before they transition from an ideal gas to degeneracy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rhos</span><span class="p">,</span> <span class="n">p_zero_temp</span><span class="p">(</span><span class="n">rhos</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;0.5&quot;</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8ec9a43cb1ef7bfd3474abe83ccb88cc19a2cdbe3c83e8e09c83a721ab984de0.png" src="../_images/8ec9a43cb1ef7bfd3474abe83ccb88cc19a2cdbe3c83e8e09c83a721ab984de0.png" />
+</div>
+</div>
+<p>Here we see that this zero-temperature curve works really well at low temperatures and at high densities.</p>
 </section>
 </section>
 
