@@ -597,6 +597,18 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find_psi</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.e6</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.756677874196166
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="visualizing-psi">
 <h3>Visualizing <span class="math notranslate nohighlight">\(\Psi\)</span><a class="headerlink" href="#visualizing-psi" title="Permalink to this heading">#</a></h3>
@@ -626,19 +638,20 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\rho$&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\Psi$&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;symlog&quot;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mf">1.e-2</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7eff17522860&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9ca4ab2ce0&gt;
 </pre></div>
 </div>
-<img alt="../_images/6d774464a02106de9ffec68e5dae01c702c27f0e85911a82a38f96ced52cfc7c.png" src="../_images/6d774464a02106de9ffec68e5dae01c702c27f0e85911a82a38f96ced52cfc7c.png" />
+<img alt="../_images/a8060625aa0a62a35897774ce4ff2806b06b06c828390f09a39cc3da3b533e0d.png" src="../_images/a8060625aa0a62a35897774ce4ff2806b06b06c828390f09a39cc3da3b533e0d.png" />
 </div>
 </div>
+<p>Notice that at high <span class="math notranslate nohighlight">\(T\)</span> and low <span class="math notranslate nohighlight">\(\rho\)</span>, the degeneracy parameter becomes negative–this is when we are an ideal gas.</p>
 </section>
 </section>
 <section id="computing-pressure">
@@ -698,7 +711,7 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7eff170749d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9c8b8b1690&gt;
 </pre></div>
 </div>
 <img alt="../_images/2413e7f62b03b01e6e6b37d4271fd90eb559c78bfb879f8e14b698bda5585dcf.png" src="../_images/2413e7f62b03b01e6e6b37d4271fd90eb559c78bfb879f8e14b698bda5585dcf.png" />
