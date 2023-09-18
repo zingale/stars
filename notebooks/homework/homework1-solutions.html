@@ -1,0 +1,1187 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>PHY 521: Stars &#8212; PHY 521 Fall 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/homework1-solutions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="hot-CNO and breakout" href="../hotcno/hot-CNO-breakout-example.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">PHY 521 Fall 2023</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    PHY 521: Stars
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Equation of State</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../eos/degeneracy-parameter.html">Degenerate Electrons</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reactions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../pp-vs-cno/pp-cno.html">p-p chain vs. CNO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hotcno/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework solutions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">PHY 521: Stars</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/homework/homework1-solutions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/homework/homework1-solutions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/zingale/stars" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fhomework/homework1-solutions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/homework/homework1-solutions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PHY 521: Stars</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-1">homework 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stellar-model">1. stellar model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">c.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">d.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitational-potential-energy">gravitational potential energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-energy">internal energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e">e.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-pressure">2. Central pressure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-radiation">3. Blackbody Radiation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-wien-s-law">a. Wien’s law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">b.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="phy-521-stars">
+<h1>PHY 521: Stars<a class="headerlink" href="#phy-521-stars" title="Permalink to this heading">#</a></h1>
+<section id="homework-1">
+<h2>homework 1<a class="headerlink" href="#homework-1" title="Permalink to this heading">#</a></h2>
+<p>I’m using SymPy – the symbolic math library for python – to do the algebra here.  The next 2 cells load SymPy for interactive work and define the variables we are going to use (and treat as math symbols)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">init_session</span>
+<span class="n">init_session</span><span class="p">()</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IPython console for SymPy 1.12 (Python 3.10.13-64-bit) (ground types: python)
+
+These commands were executed:
+&gt;&gt;&gt; from sympy import *
+&gt;&gt;&gt; x, y, z, t = symbols(&#39;x y z t&#39;)
+&gt;&gt;&gt; k, m, n = symbols(&#39;k m n&#39;, integer=True)
+&gt;&gt;&gt; f, g, h = symbols(&#39;f g h&#39;, cls=Function)
+&gt;&gt;&gt; init_printing()
+
+Documentation can be found at https://docs.sympy.org/1.12/
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stellar-model">
+<h2>1. stellar model<a class="headerlink" href="#stellar-model" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;rho&#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">Function</span><span class="p">)</span>
+<span class="n">rhoc</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;rho_c&#39;</span><span class="p">)</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;q_c&#39;</span><span class="p">)</span>
+<span class="n">Pc</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;P_c&#39;</span><span class="p">)</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span>
+<span class="n">Mstar</span><span class="p">,</span> <span class="n">Rstar</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;M_\star R_\star&#39;</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">xi</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;xi&#39;</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;mu&#39;</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">m_u</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;m_u&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Imagine a star has a density profile of the form:
+$<span class="math notranslate nohighlight">\(\rho(r) = \rho_c \left [ 1 - \left (\frac{r}{R_\star} \right )^3 \right ]\)</span><span class="math notranslate nohighlight">\(
+  where \)</span>\rho_c$ is the central density.</p>
+<section id="a">
+<h3>a.<a class="headerlink" href="#a" title="Permalink to this heading">#</a></h3>
+<p>Find an expression for the central density in terms of
+<span class="math notranslate nohighlight">\(R_\star\)</span> and <span class="math notranslate nohighlight">\(M_\star\)</span> (you need to use the mass equation).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="n">rhoc</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">Rstar</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">rho</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9c65070e56382b3d88194af9e9b77656b065404f608d2dd4d483d32aeb5c2dac.png" src="../_images/9c65070e56382b3d88194af9e9b77656b065404f608d2dd4d483d32aeb5c2dac.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to plot it, we need to make it dimensionless</span>
+<span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">rho</span><span class="o">/</span><span class="n">rhoc</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">xi</span><span class="o">*</span><span class="n">Rstar</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$r/R_\star$&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\rho(r)$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1241ebe094e9ac4d53b9bdc6c04f4ba30b6d5ed5cde6a2244b2d757b76b62542.png" src="../_images/1241ebe094e9ac4d53b9bdc6c04f4ba30b6d5ed5cde6a2244b2d757b76b62542.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f3ee429ace0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we get the mass by integrating <span class="math notranslate nohighlight">\(dM/dr = 4\pi r^2 \rho(r)\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6f834453-c3d1-4ddb-9886-05ac79a99fb4">
+<span class="eqno">(1)<a class="headerlink" href="#equation-6f834453-c3d1-4ddb-9886-05ac79a99fb4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+M_\star = \int_0^{R_\star} 4\pi r^2 \rho(r) dr
+\end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">rho</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Rstar</span><span class="p">))</span>
+<span class="n">M</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f60898cc5bcf53f932685792920bdd7e809145985ebde3e45fadc20d51234a4b.png" src="../_images/f60898cc5bcf53f932685792920bdd7e809145985ebde3e45fadc20d51234a4b.png" />
+</div>
+</div>
+<p>This is <span class="math notranslate nohighlight">\(M_\star\)</span>, so we can solve for <span class="math notranslate nohighlight">\(\rho_c\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">Mstar</span><span class="p">),</span> <span class="n">rhoc</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">rc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/124cf050609d2ae17e07070d43599d9b9f6d29c9c1c3eedba3c8e3040da1e944.png" src="../_images/124cf050609d2ae17e07070d43599d9b9f6d29c9c1c3eedba3c8e3040da1e944.png" />
+</div>
+</div>
+<p>This shows us that</p>
+<div class="math notranslate nohighlight">
+\[\rho_c = \frac{3 M_\star}{2\pi R_\star^3}\]</div>
+<p>Now we will symbolically replace <span class="math notranslate nohighlight">\(\rho_c\)</span> in the density expression with this result for the future calculations</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="n">rho</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">rhoc</span><span class="p">,</span> <span class="n">rc</span><span class="p">)</span>
+<span class="n">rho</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/916fb870e23298f872d1851197606459f780eb4f109883e5bfb4c437ea737599.png" src="../_images/916fb870e23298f872d1851197606459f780eb4f109883e5bfb4c437ea737599.png" />
+</div>
+</div>
+</section>
+<section id="b">
+<h3>b.<a class="headerlink" href="#b" title="Permalink to this heading">#</a></h3>
+<p>Use HSE and the fact that the pressure vanishes at the surface
+to find the pressure as a function of
+radius.  Your answer will be in the form of <span class="math notranslate nohighlight">\(P(r) = P_c \times\)</span>
+(polynomial in <span class="math notranslate nohighlight">\(r/R_\star\)</span>).</p>
+<p>What is <span class="math notranslate nohighlight">\(P_c\)</span> in terms of <span class="math notranslate nohighlight">\(M_\star\)</span> and <span class="math notranslate nohighlight">\(R_\star\)</span>?</p>
+<p>Express <span class="math notranslate nohighlight">\(P_c\)</span> numerically with <span class="math notranslate nohighlight">\(M_\star\)</span> and <span class="math notranslate nohighlight">\(R_\star\)</span> in solar units.</p>
+<p>We need to integrate HSE, <span class="math notranslate nohighlight">\(dp/dr = -(GM(r)/r^2)\rho\)</span>, so we need a general expression for <span class="math notranslate nohighlight">\(M(r)\)</span></p>
+<p>First we define <span class="math notranslate nohighlight">\(M(r) = \int_0^r 4\pi r^2 \rho(r) dx\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">rho</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
+<span class="n">M</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/96d2a4a12a778b4dff0636343ffbeb3aa29a5a79310ff837cff760cb3373d709.png" src="../_images/96d2a4a12a778b4dff0636343ffbeb3aa29a5a79310ff837cff760cb3373d709.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">((</span><span class="n">M</span><span class="o">/</span><span class="n">Mstar</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">xi</span><span class="o">*</span><span class="n">Rstar</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$r/R_\star$&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$M(r)$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/678e425e6012f390baf5490b5df2bff7b7876f5febaac025ca8d9fc10be51e03.png" src="../_images/678e425e6012f390baf5490b5df2bff7b7876f5febaac025ca8d9fc10be51e03.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f3ee41e5570&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can integrate HSE.  We will do this as</p>
+<div class="math notranslate nohighlight">
+\[P = P_c + \int_0^{R_\star} \frac{-GM(r)}{r^2} \rho dr\]</div>
+<p>We’ll substitute in our expressions for <span class="math notranslate nohighlight">\(M(r)\)</span> and <span class="math notranslate nohighlight">\(\rho(r)\)</span> in the integrand.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/916fb870e23298f872d1851197606459f780eb4f109883e5bfb4c437ea737599.png" src="../_images/916fb870e23298f872d1851197606459f780eb4f109883e5bfb4c437ea737599.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expand</span><span class="p">(</span><span class="n">G</span><span class="o">*</span><span class="n">M</span><span class="o">/</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">rho</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/16a31b15712683338ed0a8085727dd8f6d93a5594ec73944b346d0335f444a57.png" src="../_images/16a31b15712683338ed0a8085727dd8f6d93a5594ec73944b346d0335f444a57.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">Pc</span> <span class="o">+</span> <span class="n">integrate</span><span class="p">(</span><span class="o">-</span><span class="n">G</span><span class="o">*</span><span class="n">M</span><span class="o">/</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">rho</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Rstar</span><span class="p">))</span>
+<span class="n">P</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8e872b77d7a1ab7e72555079ffcea8ff1954ed687f5c07af3d67a6d6b0db9072.png" src="../_images/8e872b77d7a1ab7e72555079ffcea8ff1954ed687f5c07af3d67a6d6b0db9072.png" />
+</div>
+</div>
+<p>This was the integral to the surface, so this result is the surface pressure, but we know that <span class="math notranslate nohighlight">\(P(R_\star) = 0\)</span>,
+so we can enforce that here to find <span class="math notranslate nohighlight">\(p_c\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Pc</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Pc</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">Pc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9d74ca83e9f846299203c732e5e6d45f3a41c26b448c156999903666410906ad.png" src="../_images/9d74ca83e9f846299203c732e5e6d45f3a41c26b448c156999903666410906ad.png" />
+</div>
+</div>
+<p>For our general pressure expression. we integrate to some shell <span class="math notranslate nohighlight">\(r\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">Pc</span> <span class="o">+</span> <span class="n">integrate</span><span class="p">(</span><span class="o">-</span><span class="n">G</span><span class="o">*</span><span class="n">M</span><span class="o">/</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">rho</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
+<span class="n">P</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/aa4179213caca6dfdd405376cecb2862e9869bd37e33c609387ae7c1422cea0f.png" src="../_images/aa4179213caca6dfdd405376cecb2862e9869bd37e33c609387ae7c1422cea0f.png" />
+</div>
+</div>
+<p>Or factoring <span class="math notranslate nohighlight">\(P_c\)</span> out (i.e. <span class="math notranslate nohighlight">\(P/P_c\)</span>), we have</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simplify</span><span class="p">(</span><span class="n">P</span><span class="o">/</span><span class="n">Pc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f0f22c06297f65e7117f1093d090175f9f48ff52388d0f9395bf45c152dc215b.png" src="../_images/f0f22c06297f65e7117f1093d090175f9f48ff52388d0f9395bf45c152dc215b.png" />
+</div>
+</div>
+<p>This shows that we can write:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9478cb72-4a6b-47b8-ae60-098dd855bbb4">
+<span class="eqno">(2)<a class="headerlink" href="#equation-9478cb72-4a6b-47b8-ae60-098dd855bbb4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
+                    + \frac{8}{7} \left (\frac{r}{R_\star}\right )^3 
+                    - \frac{5}{21} \left ( \frac{r}{R_\star}\right )^8 \right ]
+\end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">((</span><span class="n">P</span><span class="o">/</span><span class="n">Pc</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">xi</span><span class="o">*</span><span class="n">Rstar</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$r/R_\star$&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$P(r)$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ef05841070e75818ba2331e87648ebf13a772d3421f6683f12533bc6c180688e.png" src="../_images/ef05841070e75818ba2331e87648ebf13a772d3421f6683f12533bc6c180688e.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f3ee41e4850&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="c">
+<h3>c.<a class="headerlink" href="#c" title="Permalink to this heading">#</a></h3>
+<p>In this model, what is the central temperature, <span class="math notranslate nohighlight">\(T_\star\)</span>?
+(Assume an ideal gas).  Compare to the result from the
+constant-density model (we did this in class).  Why is the central
+pressure higher for the linear model whereas the central
+temperature is lower?</p>
+<p>The central temperature, assuming the ideal gas law, is:</p>
+<div class="math notranslate nohighlight">
+\[T_c = \frac{\mu m_u P}{\rho k}\]</div>
+<p>let’s start by evaluating the central pressure in the Sun for this model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">central_P</span> <span class="o">=</span> <span class="n">Pc</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mf">6.67e-8</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Mstar</span><span class="p">,</span> <span class="mf">2.e33</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Rstar</span><span class="p">,</span> <span class="mf">7.e10</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;central pressure = &quot;</span><span class="p">,</span> <span class="n">central_P</span><span class="p">)</span>
+
+<span class="n">central_rho</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Mstar</span><span class="p">,</span> <span class="mf">2.e33</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Rstar</span><span class="p">,</span> <span class="mf">7.e10</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;central density = &quot;</span><span class="p">,</span> <span class="n">central_rho</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>central pressure =  2.78544350839839e+15
+central density =  2.78405148265706
+</pre></div>
+</div>
+</div>
+</div>
+<p>We need to know the composition, so we’ll look at two choices here:</p>
+<p>i. pure H composition has <span class="math notranslate nohighlight">\(\mu = 1/2\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">m_u</span> <span class="o">=</span> <span class="mf">1.67e-24</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1.38e-16</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">mu</span><span class="o">*</span><span class="n">m_u</span><span class="o">*</span><span class="n">central_P</span><span class="o">/</span><span class="p">(</span><span class="n">central_rho</span><span class="o">*</span><span class="n">k</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6053750.00000000
+</pre></div>
+</div>
+</div>
+</div>
+<p>ii. pure He composition has <span class="math notranslate nohighlight">\(\mu = 4/3\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="mf">4.</span><span class="o">/</span><span class="mf">3.</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">mu</span><span class="o">*</span><span class="n">m_u</span><span class="o">*</span><span class="n">central_P</span><span class="o">/</span><span class="p">(</span><span class="n">central_rho</span><span class="o">*</span><span class="n">k</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16143333.3333333
+</pre></div>
+</div>
+</div>
+</div>
+<p>In class, we did a constant density model.  We found that the central pressure was</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a607d4f1-1f5d-462f-bb04-d8525444d102">
+<span class="eqno">(3)<a class="headerlink" href="#equation-a607d4f1-1f5d-462f-bb04-d8525444d102" title="Permalink to this equation">#</a></span>\[\begin{equation}
+P_c = \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}
+\end{equation}\]</div>
+<p>Here, with the cubic density profile, we find</p>
+<div class="amsmath math notranslate nohighlight" id="equation-59e038ab-ce3e-43fc-9754-aeebeb03e04c">
+<span class="eqno">(4)<a class="headerlink" href="#equation-59e038ab-ce3e-43fc-9754-aeebeb03e04c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+P_c = \frac{63}{80\pi} \frac{G M_\star^{2}}{R_\star^{4}}
+\end{equation}\]</div>
+<p>The pressure is greater in this model because more mass is concentrated toward the center of the star, increasing the force of gravity throughout, making the outer layers weigh more.</p>
+<p>The temperature is the <em>almost the same</em> in both models, since both the central pressure and central density increase by the here.</p>
+<p>Let’s evaluate <span class="math notranslate nohighlight">\(P_c/\rho_c\)</span> for our model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Pc</span><span class="o">/</span><span class="n">rc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/18a96b68c68e37996e82c0d9649dabbbdcc534b3d8767a4b0b41520781d5b62d.png" src="../_images/18a96b68c68e37996e82c0d9649dabbbdcc534b3d8767a4b0b41520781d5b62d.png" />
+</div>
+</div>
+<p>This shows us that the central temperature is:</p>
+<div class="math notranslate nohighlight">
+\[T_c = \frac{21}{40} \frac{G M_\star}{R_\star} \frac{\mu m_u}{k}\]</div>
+<p>while for the constant density model, the coefficient was 1/2</p>
+</section>
+<section id="d">
+<h3>d.<a class="headerlink" href="#d" title="Permalink to this heading">#</a></h3>
+<p>Verify that the virial theorem is satisfied and write down an
+explicit expression for <span class="math notranslate nohighlight">\(\Omega\)</span> (i.e. what is the `<span class="math notranslate nohighlight">\(\alpha\)</span>’
+coefficient)?</p>
+<p>We want to demonstrate that</p>
+<div class="math notranslate nohighlight">
+\[-3 \int_0^{M_\star} \frac{p}{\rho} dM = \Omega\]</div>
+</section>
+<section id="gravitational-potential-energy">
+<h3>gravitational potential energy<a class="headerlink" href="#gravitational-potential-energy" title="Permalink to this heading">#</a></h3>
+<p>We start by integrating</p>
+<div class="math notranslate nohighlight">
+\[\Omega = \int_0^{M_\star} \frac{GM(r)}{r} dm = \int_0^{R_\star} \frac{G M(r)}{r} 4\pi r^2 \rho dr\]</div>
+<p>To do this, we use our expression for <span class="math notranslate nohighlight">\(M(r)\)</span> and <span class="math notranslate nohighlight">\(\rho(r)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Omega</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;Omega&quot;</span><span class="p">)</span>
+<span class="n">Omega</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="o">-</span><span class="n">G</span><span class="o">*</span><span class="n">M</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">rho</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Rstar</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Omega</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3013b059c2b5715ddd6ee44bb6ec84609922b73078e6cac39f1f37832c9a8d0a.png" src="../_images/3013b059c2b5715ddd6ee44bb6ec84609922b73078e6cac39f1f37832c9a8d0a.png" />
+</div>
+</div>
+<p>So this shows that <span class="math notranslate nohighlight">\(\alpha = 153/220\)</span>.</p>
+</section>
+<section id="internal-energy">
+<h3>internal energy<a class="headerlink" href="#internal-energy" title="Permalink to this heading">#</a></h3>
+<p>We need to compute:</p>
+<p><span class="math notranslate nohighlight">\(-3 \int_0^{M_\star} \frac{p}{\rho} dM = -3 \int_0^{R_\star} 4 \pi r^2 P dr\)</span></p>
+<p>and we can use our expression for <span class="math notranslate nohighlight">\(P(r)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">integrate</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">P</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Rstar</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3013b059c2b5715ddd6ee44bb6ec84609922b73078e6cac39f1f37832c9a8d0a.png" src="../_images/3013b059c2b5715ddd6ee44bb6ec84609922b73078e6cac39f1f37832c9a8d0a.png" />
+</div>
+</div>
+<p>We see that these two integrals give the same result, verifying that the Virial theorem holds.</p>
+</section>
+<section id="e">
+<h3>e.<a class="headerlink" href="#e" title="Permalink to this heading">#</a></h3>
+<p>Assume that the nuclear energy production rate is given as:
+\begin{equation}
+q(r) = \begin{cases}
+q_0 \left ( 1 - \frac{r}{0.2 R_\star} \right ) &amp; r \le 0.2 R_\star \
+0 &amp; r &gt; 0.2 R_\star
+\end{cases}
+\end{equation}
+Calculate the luminosity of the star at its surface in terms of
+<span class="math notranslate nohighlight">\(R_\star\)</span>, <span class="math notranslate nohighlight">\(\rho_c\)</span>, and <span class="math notranslate nohighlight">\(q_0\)</span>.</p>
+<p>We just need to do the integral:
+$<span class="math notranslate nohighlight">\(L = \int_0^{M_\star} q dm = \int_0^{R_\star} q(r) 4 \pi r^2 \rho(r) dr\)</span>$
+(this is the result when we are in thermal equilibrium).</p>
+<p>Since <span class="math notranslate nohighlight">\(q(r)\)</span> is 0 beyond <span class="math notranslate nohighlight">\(R_\star/5\)</span>, we only need to integrate up to that point.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">qc</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">Rstar</span><span class="o">/</span><span class="mi">5</span><span class="p">)))</span>
+<span class="n">q</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/501160d42518e804184315c93860af1ff3eb52a802682cec95b5252312302209.png" src="../_images/501160d42518e804184315c93860af1ff3eb52a802682cec95b5252312302209.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">q</span><span class="o">*</span><span class="n">rho</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Rstar</span><span class="o">/</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/418ecd9a3a745ec899423fdacd4d287a77c7b8629a7beb21a9c639d048cd6276.png" src="../_images/418ecd9a3a745ec899423fdacd4d287a77c7b8629a7beb21a9c639d048cd6276.png" />
+</div>
+</div>
+<p>Notice that the result is <span class="math notranslate nohighlight">\(\propto M_\star q_c\)</span> and has units of luminosity</p>
+</section>
+</section>
+<section id="central-pressure">
+<h2>2. Central pressure<a class="headerlink" href="#central-pressure" title="Permalink to this heading">#</a></h2>
+<p>We want to integrate</p>
+<div class="math notranslate nohighlight">
+\[\frac{dP}{dM} = -\frac{GM}{4\pi r^4}\]</div>
+<p>from the center outward:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{M_\star} dP = - \int_0^{M_\star} \frac{GM}{4\pi r^4} dM\]</div>
+<p>integrating, we have:</p>
+<div class="math notranslate nohighlight">
+\[P(M_\star) - P(0) = - \int_0^{M_\star} \frac{GM}{4\pi r^4}dM\]</div>
+<p>now the surface pressure, <span class="math notranslate nohighlight">\(P(M_\star)\)</span> vanishes, leaving:</p>
+<div class="math notranslate nohighlight">
+\[P_c = \int_0^{M_\star} \frac{GM}{4\pi r^4}dM\]</div>
+<p>Next, we substitute <span class="math notranslate nohighlight">\(r = R_\star\)</span> into the integrand, giving:</p>
+<div class="math notranslate nohighlight">
+\[P_c &gt; \int_0^{M_\star} \frac{GM}{4\pi R_\star^4}dM = \frac{GM_\star^2}{4\pi R_\star^4}\]</div>
+<p>We note that this is a lower bound, since <span class="math notranslate nohighlight">\(r &lt; R_\star\)</span> everywhere in the integrand, and <span class="math notranslate nohighlight">\(r\)</span> appears in the denominator.</p>
+</section>
+<section id="blackbody-radiation">
+<h2>3. Blackbody Radiation<a class="headerlink" href="#blackbody-radiation" title="Permalink to this heading">#</a></h2>
+<section id="a-wien-s-law">
+<h3>a. Wien’s law<a class="headerlink" href="#a-wien-s-law" title="Permalink to this heading">#</a></h3>
+<p>We start with</p>
+<div class="math notranslate nohighlight">
+\[I = \frac{2 h c^2 / \lambda^5}{e^{hc/\lambda k T} - 1}\]</div>
+<p>and make the substitution <span class="math notranslate nohighlight">\(x = \lambda k T/ hc\)</span> (many of you pointed out that the inverse would be easier).</p>
+<p>This gives:</p>
+<div class="math notranslate nohighlight">
+\[I = 2 h c^2 \left (\frac{kT}{hc} \right )^5 \frac{x^{-5}}{e^{1/x} - 1}\]</div>
+<p>Let’s write a function to give the dimensionless part of this</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">I</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**-</span><span class="mi">5</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s plot it, to get a sense of that it looks like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">I</span><span class="p">(</span><span class="n">xs</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1924/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
+  return x**-5 / (np.exp(1/x) - 1)
+/tmp/ipykernel_1924/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
+  return x**-5 / (np.exp(1/x) - 1)
+/tmp/ipykernel_1924/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
+  return x**-5 / (np.exp(1/x) - 1)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f3ee1dc2020&gt;]
+</pre></div>
+</div>
+<img alt="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" src="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" />
+</div>
+</div>
+<p>Now we differentiate <span class="math notranslate nohighlight">\(I(x)\)</span> and set it equal to zero, giving:</p>
+<div class="math notranslate nohighlight">
+\[\frac{x^{-5}}{e^{1/x} - 1} \left ( -\frac{5}{x} + \frac{1}{e^{1/x} - 1} \frac{e^{1/x}}{x^2} \right )\]</div>
+<p>We can use any root finding method, like SciPy’s Brent’s method, to find the root.  From the plot above, we expect it to be between <span class="math notranslate nohighlight">\([0, 1]\)</span>, but also, <span class="math notranslate nohighlight">\(x=0\)</span> will do bad things, so we’ll start our root search a bit away from that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Iprime</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**-</span><span class="mi">5</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">brentq</span><span class="p">(</span><span class="n">Iprime</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1c1e82ab231102dd104cd375aec25e6e70330dcfcebd73b50c24e9c8e5984073.png" src="../_images/1c1e82ab231102dd104cd375aec25e6e70330dcfcebd73b50c24e9c8e5984073.png" />
+</div>
+</div>
+<p>So the root is <span class="math notranslate nohighlight">\(x = 0.201\)</span> or <span class="math notranslate nohighlight">\(1/x = 4.965\)</span>.</p>
+<p>Now we add back in the units:</p>
+<div class="math notranslate nohighlight">
+\[\lambda T = \frac{hc}{k} x\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mf">1.38e-16</span>  <span class="c1"># erg /K</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">3e10</span>  <span class="c1"># cm/s</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">6.63e-27</span>  <span class="c1"># erg s</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="n">k</span> <span class="o">*</span> <span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.29028624127339525
+</pre></div>
+</div>
+</div>
+</div>
+<p>This shows that</p>
+<div class="math notranslate nohighlight">
+\[\lambda T = 0.29 ~\mathrm{cm~K}\]</div>
+</section>
+<section id="id1">
+<h3>b.<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Now we want to estimate the Earth’s temperature.</p>
+<p>At the Earth, the solar flux is:</p>
+<div class="math notranslate nohighlight">
+\[f = \frac{L_\odot}{4 \pi d^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(d = 1~\mathrm{AU}\)</span> is the Earth-Sun distance.</p>
+<p>The Earth presents a circular cross section, so the power absorbed by the Earth is:</p>
+<div class="math notranslate nohighlight">
+\[P_\mathrm{abs} = \epsilon \pi R_\oplus^2 f\]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is the efficiency (so <span class="math notranslate nohighlight">\(1-\epsilon\)</span> is the albedo).</p>
+<p>Now, we assume that the Earth emits over its entire surface as a blackbody, so its emission is:</p>
+<div class="math notranslate nohighlight">
+\[P_\mathrm{emit} = 4 \pi R_\oplus \sigma T_\oplus^4\]</div>
+<p>As a blackbody, emission equals absorption, so:</p>
+<div class="math notranslate nohighlight">
+\[4\pi R_\oplus \sigma T_\oplus^4 = \epsilon \pi R_\oplus^2 f\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[T_\odot = \left ( \frac{\epsilon f}{4\sigma} \right )^{1/4}\]</div>
+<p>Let’s put in numbers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mf">1.5e13</span>  <span class="c1"># cm</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">5.67e-5</span>  <span class="c1"># erg / s / cm^2 / K^4</span>
+<span class="n">L_sun</span> <span class="o">=</span> <span class="mf">3.9e33</span>  <span class="c1"># erg / s</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="mf">0.6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">L_sun</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">d</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">T_earth</span> <span class="o">=</span> <span class="p">(</span><span class="n">eps</span> <span class="o">*</span> <span class="n">f</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">sigma</span><span class="p">))</span><span class="o">**</span><span class="mf">0.25</span>
+<span class="n">T_earth</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0f62e9018c186ce07a26012d31d822d6cb5ae0d19f0a1afd3a34a30c9ea4a345.png" src="../_images/0f62e9018c186ce07a26012d31d822d6cb5ae0d19f0a1afd3a34a30c9ea4a345.png" />
+</div>
+</div>
+<p>This is cold.  The blackbody temperature of Earth is below freezing.  But we neglected the atmosphere and the greenhouse effect that raises the Earth’s surface temperature to above the freezing point.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./homework"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../hotcno/hot-CNO-breakout-example.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">hot-CNO and breakout</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-1">homework 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stellar-model">1. stellar model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">c.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">d.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gravitational-potential-energy">gravitational potential energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-energy">internal energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e">e.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-pressure">2. Central pressure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-radiation">3. Blackbody Radiation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-wien-s-law">a. Wien’s law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">b.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://zingale.github.io">Michael Zingale</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+&copy; 2023; CC-BY-NC-SA 4.0
+<p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
