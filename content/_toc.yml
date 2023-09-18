@@ -10,4 +10,8 @@ parts:
     - file: pp-vs-cno/pp-cno
     - file: hotcno/hot-CNO-breakout-example
 
+  - caption: Homework solutions
+    chapters:
+    - file: homework/homework1-solutions
+
 
