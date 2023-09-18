@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>PHY 521: Stars &#8212; PHY 521 Fall 2023</title>
+    <title>Homework 1 solutions &#8212; PHY 521 Fall 2023</title>
   
   
   
@@ -172,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework solutions</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">PHY 521: Stars</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 1 solutions</a></li>
 </ul>
 
     </div>
@@ -405,7 +405,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>PHY 521: Stars</h1>
+    <h1>Homework 1 solutions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -415,7 +415,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-1">homework 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stellar-model">1. stellar model</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
@@ -443,10 +442,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="phy-521-stars">
-<h1>PHY 521: Stars<a class="headerlink" href="#phy-521-stars" title="Permalink to this heading">#</a></h1>
-<section id="homework-1">
-<h2>homework 1<a class="headerlink" href="#homework-1" title="Permalink to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="homework-1-solutions">
+<h1>Homework 1 solutions<a class="headerlink" href="#homework-1-solutions" title="Permalink to this heading">#</a></h1>
 <p>I’m using SymPy – the symbolic math library for python – to do the algebra here.  The next 2 cells load SymPy for interactive work and define the variables we are going to use (and treat as math symbols)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -471,7 +468,6 @@ Documentation can be found at https://docs.sympy.org/1.12/
 </div>
 </div>
 </div>
-</section>
 <section id="stellar-model">
 <h2>1. stellar model<a class="headerlink" href="#stellar-model" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -518,15 +514,15 @@ $<span class="math notranslate nohighlight">\(\rho(r) = \rho_c \left [ 1 - \left
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1241ebe094e9ac4d53b9bdc6c04f4ba30b6d5ed5cde6a2244b2d757b76b62542.png" src="../_images/1241ebe094e9ac4d53b9bdc6c04f4ba30b6d5ed5cde6a2244b2d757b76b62542.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f3ee429ace0&gt;
+<img alt="../_images/da6774ac33389955b5014273256a6e05d29f9e5f00a44b669ebb347f79c7bf1a.png" src="../_images/da6774ac33389955b5014273256a6e05d29f9e5f00a44b669ebb347f79c7bf1a.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f697d8e68f0&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now we get the mass by integrating <span class="math notranslate nohighlight">\(dM/dr = 4\pi r^2 \rho(r)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6f834453-c3d1-4ddb-9886-05ac79a99fb4">
-<span class="eqno">(1)<a class="headerlink" href="#equation-6f834453-c3d1-4ddb-9886-05ac79a99fb4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2ba7497d-6ac4-4844-95c0-781b894e3252">
+<span class="eqno">(1)<a class="headerlink" href="#equation-2ba7497d-6ac4-4844-95c0-781b894e3252" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_\star = \int_0^{R_\star} 4\pi r^2 \rho(r) dr
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -597,8 +593,8 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/678e425e6012f390baf5490b5df2bff7b7876f5febaac025ca8d9fc10be51e03.png" src="../_images/678e425e6012f390baf5490b5df2bff7b7876f5febaac025ca8d9fc10be51e03.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f3ee41e5570&gt;
+<img alt="../_images/a069dda74a20c838c52a7b2b4dc04297ee9d022a53386a3d9058cae2308feedf.png" src="../_images/a069dda74a20c838c52a7b2b4dc04297ee9d022a53386a3d9058cae2308feedf.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f697b631a80&gt;
 </pre></div>
 </div>
 </div>
@@ -675,8 +671,8 @@ so we can enforce that here to find <span class="math notranslate nohighlight">\
 </div>
 </div>
 <p>This shows that we can write:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9478cb72-4a6b-47b8-ae60-098dd855bbb4">
-<span class="eqno">(2)<a class="headerlink" href="#equation-9478cb72-4a6b-47b8-ae60-098dd855bbb4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-213dbd87-6803-4e7f-b7cf-b48d1ba24332">
+<span class="eqno">(2)<a class="headerlink" href="#equation-213dbd87-6803-4e7f-b7cf-b48d1ba24332" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
                     + \frac{8}{7} \left (\frac{r}{R_\star}\right )^3 
                     - \frac{5}{21} \left ( \frac{r}{R_\star}\right )^8 \right ]
@@ -689,8 +685,8 @@ P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ef05841070e75818ba2331e87648ebf13a772d3421f6683f12533bc6c180688e.png" src="../_images/ef05841070e75818ba2331e87648ebf13a772d3421f6683f12533bc6c180688e.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f3ee41e4850&gt;
+<img alt="../_images/0908e0fd2832a32b35114da89a2746cf22cfbdbf86723165e14f347f484b29f7.png" src="../_images/0908e0fd2832a32b35114da89a2746cf22cfbdbf86723165e14f347f484b29f7.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f697b630430&gt;
 </pre></div>
 </div>
 </div>
@@ -759,13 +755,13 @@ central density =  2.78405148265706
 </div>
 </div>
 <p>In class, we did a constant density model.  We found that the central pressure was</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a607d4f1-1f5d-462f-bb04-d8525444d102">
-<span class="eqno">(3)<a class="headerlink" href="#equation-a607d4f1-1f5d-462f-bb04-d8525444d102" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c6905eab-4a29-4e4f-9df4-2fb15bcc6f18">
+<span class="eqno">(3)<a class="headerlink" href="#equation-c6905eab-4a29-4e4f-9df4-2fb15bcc6f18" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}
 \end{equation}\]</div>
 <p>Here, with the cubic density profile, we find</p>
-<div class="amsmath math notranslate nohighlight" id="equation-59e038ab-ce3e-43fc-9754-aeebeb03e04c">
-<span class="eqno">(4)<a class="headerlink" href="#equation-59e038ab-ce3e-43fc-9754-aeebeb03e04c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-76a1542a-3c7d-44b1-a5a6-a8151bf551d4">
+<span class="eqno">(4)<a class="headerlink" href="#equation-76a1542a-3c7d-44b1-a5a6-a8151bf551d4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{63}{80\pi} \frac{G M_\star^{2}}{R_\star^{4}}
 \end{equation}\]</div>
 <p>The pressure is greater in this model because more mass is concentrated toward the center of the star, increasing the force of gravity throughout, making the outer layers weigh more.</p>
@@ -934,15 +930,15 @@ $<span class="math notranslate nohighlight">\(L = \int_0^{M_\star} q dm = \int_0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1924/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1943/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_1924/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
+/tmp/ipykernel_1943/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_1924/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_1943/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f3ee1dc2020&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f697b3fcfd0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" src="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" />
@@ -1115,7 +1111,6 @@ $<span class="math notranslate nohighlight">\(L = \int_0^{M_\star} q dm = \int_0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-1">homework 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stellar-model">1. stellar model</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
