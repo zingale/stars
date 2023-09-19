@@ -516,15 +516,15 @@ Documentation can be found at https://docs.sympy.org/1.12/
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2f9761ac61bd021639af57d85643bba2f9a9be72eda400d163f1ff8643bd108a.png" src="../_images/2f9761ac61bd021639af57d85643bba2f9a9be72eda400d163f1ff8643bd108a.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7ffb886ac790&gt;
+<img alt="../_images/08bab763636cdc1bfac448e5618c3df6007e55993e70d508d372d47701a8db60.png" src="../_images/08bab763636cdc1bfac448e5618c3df6007e55993e70d508d372d47701a8db60.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fe42c506f80&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now we get the mass by integrating <span class="math notranslate nohighlight">\(dM/dr = 4\pi r^2 \rho(r)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7ca02e7b-85f9-4294-83d2-4769008611cf">
-<span class="eqno">(1)<a class="headerlink" href="#equation-7ca02e7b-85f9-4294-83d2-4769008611cf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6f70792a-cae5-4ff3-96c1-521fac6d7a61">
+<span class="eqno">(1)<a class="headerlink" href="#equation-6f70792a-cae5-4ff3-96c1-521fac6d7a61" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_\star = \int_0^{R_\star} 4\pi r^2 \rho(r) dr
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -577,8 +577,13 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 (polynomial in <span class="math notranslate nohighlight">\(r/R_\star\)</span>).</p>
 <p>What is <span class="math notranslate nohighlight">\(P_c\)</span> in terms of <span class="math notranslate nohighlight">\(M_\star\)</span> and <span class="math notranslate nohighlight">\(R_\star\)</span>?</p>
 <p>Express <span class="math notranslate nohighlight">\(P_c\)</span> numerically with <span class="math notranslate nohighlight">\(M_\star\)</span> and <span class="math notranslate nohighlight">\(R_\star\)</span> in solar units.</p>
-<p>We need to integrate HSE, <span class="math notranslate nohighlight">\(dp/dr = -(GM(r)/r^2)\rho\)</span>, so we need a general expression for <span class="math notranslate nohighlight">\(M(r)\)</span></p>
-<p>First we define <span class="math notranslate nohighlight">\(M(r) = \int_0^r 4\pi r^2 \rho(r) dx\)</span></p>
+<p>We need to integrate HSE,</p>
+<div class="math notranslate nohighlight">
+\[dP/dr = -(GM(r)/r^2)\rho\]</div>
+<p>so we need a general expression for <span class="math notranslate nohighlight">\(M(r)\)</span></p>
+<p>First we define</p>
+<div class="math notranslate nohighlight">
+\[M(r) = \int_0^r 4\pi r^2 \rho(r) dx\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">rho</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
@@ -599,8 +604,8 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/056280ddbe62406099ae7ad5d11b0024c1835744bf694eb2519c601eb916872e.png" src="../_images/056280ddbe62406099ae7ad5d11b0024c1835744bf694eb2519c601eb916872e.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7ffb9db44280&gt;
+<img alt="../_images/4f390c0b2642ea12311d50c4d0ed54ff6e21867eaaa24982a81dcd23c3baecec.png" src="../_images/4f390c0b2642ea12311d50c4d0ed54ff6e21867eaaa24982a81dcd23c3baecec.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fe42c0966e0&gt;
 </pre></div>
 </div>
 </div>
@@ -683,8 +688,8 @@ so we can enforce that here to find <span class="math notranslate nohighlight">\
 </div>
 </div>
 <p>This shows that we can write:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d8cb4a0e-1136-47e7-9d86-5189b20ce3f5">
-<span class="eqno">(2)<a class="headerlink" href="#equation-d8cb4a0e-1136-47e7-9d86-5189b20ce3f5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1ccef909-5431-42fa-a749-d83262c0951a">
+<span class="eqno">(2)<a class="headerlink" href="#equation-1ccef909-5431-42fa-a749-d83262c0951a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
                     + \frac{8}{7} \left (\frac{r}{R_\star}\right )^3 
                     - \frac{5}{21} \left ( \frac{r}{R_\star}\right )^8 \right ]
@@ -697,8 +702,8 @@ P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/756aaac7313bcf4616a99af6c9ecc0141fa4eec3f2ac06f46637628cbba2bf27.png" src="../_images/756aaac7313bcf4616a99af6c9ecc0141fa4eec3f2ac06f46637628cbba2bf27.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7ffb706c1a20&gt;
+<img alt="../_images/3bf44859821be04c08b00dd8e1b41eaf1cfc0ad5bc23b439a5f4a41cea20c756.png" src="../_images/3bf44859821be04c08b00dd8e1b41eaf1cfc0ad5bc23b439a5f4a41cea20c756.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fe42c0d08b0&gt;
 </pre></div>
 </div>
 </div>
@@ -767,13 +772,13 @@ central density =  2.78405148265706
 </div>
 </div>
 <p>In class, we did a constant density model.  We found that the central pressure was</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b63f9447-f826-412e-acf8-b9eb6aec6caa">
-<span class="eqno">(3)<a class="headerlink" href="#equation-b63f9447-f826-412e-acf8-b9eb6aec6caa" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9a5aee02-320d-498a-aeb1-d395ba4392e0">
+<span class="eqno">(3)<a class="headerlink" href="#equation-9a5aee02-320d-498a-aeb1-d395ba4392e0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}
 \end{equation}\]</div>
 <p>Here, with the cubic density profile, we find</p>
-<div class="amsmath math notranslate nohighlight" id="equation-871b4e65-e6a7-4b8f-ac73-a2e4c170d966">
-<span class="eqno">(4)<a class="headerlink" href="#equation-871b4e65-e6a7-4b8f-ac73-a2e4c170d966" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-eb1a811e-bcfc-46ab-8307-bc6bb9f83133">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eb1a811e-bcfc-46ab-8307-bc6bb9f83133" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{63}{80\pi} \frac{G M_\star^{2}}{R_\star^{4}}
 \end{equation}\]</div>
 <p>The pressure is greater in this model because more mass is concentrated toward the center of the star, increasing the force of gravity throughout, making the outer layers weigh more.</p>
@@ -851,18 +856,20 @@ coefficient)?</p>
 </section>
 <section id="e">
 <h3>e.<a class="headerlink" href="#e" title="Permalink to this heading">#</a></h3>
-<p>Assume that the nuclear energy production rate is given as:
-\begin{equation}
+<p>Assume that the nuclear energy production rate is given as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 q(r) = \begin{cases}
-q_0 \left ( 1 - \frac{r}{0.2 R_\star} \right ) &amp; r \le 0.2 R_\star \
-0 &amp; r &gt; 0.2 R_\star
-\end{cases}
-\end{equation}
-Calculate the luminosity of the star at its surface in terms of
+        q_0 \left ( 1 - \frac{r}{0.2 R_\star} \right ) &amp; r \le 0.2 R_\star \\
+        0 &amp; r &gt; 0.2 R_\star
+      \end{cases}
+\end{split}\]</div>
+<p>Calculate the luminosity of the star at its surface in terms of
 <span class="math notranslate nohighlight">\(R_\star\)</span>, <span class="math notranslate nohighlight">\(\rho_c\)</span>, and <span class="math notranslate nohighlight">\(q_0\)</span>.</p>
-<p>We just need to do the integral:
-$<span class="math notranslate nohighlight">\(L = \int_0^{M_\star} q dm = \int_0^{R_\star} q(r) 4 \pi r^2 \rho(r) dr\)</span>$
-(this is the result when we are in thermal equilibrium).</p>
+<p>We just need to do the integral:</p>
+<div class="math notranslate nohighlight">
+\[L = \int_0^{M_\star} q dm = \int_0^{R_\star} q(r) 4 \pi r^2 \rho(r) dr\]</div>
+<p>(this is the result when we are in thermal equilibrium).</p>
 <p>Since <span class="math notranslate nohighlight">\(q(r)\)</span> is 0 beyond <span class="math notranslate nohighlight">\(R_\star/5\)</span>, we only need to integrate up to that point.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -947,15 +954,15 @@ $<span class="math notranslate nohighlight">\(L = \int_0^{M_\star} q dm = \int_0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2011/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2076/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_2011/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
+/tmp/ipykernel_2076/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_2011/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_2076/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ffb704dc850&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe423e99600&gt;]
 </pre></div>
 </div>
 <img alt="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" src="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" />
