@@ -448,7 +448,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">init_session</span>
-<span class="n">init_session</span><span class="p">()</span>
+<span class="n">init_session</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s2">&quot;mathjax&quot;</span><span class="p">)</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
@@ -487,9 +487,10 @@ Documentation can be found at https://docs.sympy.org/1.12/
 </div>
 </div>
 </div>
-<p>Imagine a star has a density profile of the form:
-$<span class="math notranslate nohighlight">\(\rho(r) = \rho_c \left [ 1 - \left (\frac{r}{R_\star} \right )^3 \right ]\)</span><span class="math notranslate nohighlight">\(
-  where \)</span>\rho_c$ is the central density.</p>
+<p>Imagine a star has a density profile of the form:</p>
+<div class="math notranslate nohighlight">
+\[\rho(r) = \rho_c \left [ 1 - \left (\frac{r}{R_\star} \right )^3 \right ]\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho_c\)</span> is the central density.</p>
 <section id="a">
 <h3>a.<a class="headerlink" href="#a" title="Permalink to this heading">#</a></h3>
 <p>Find an expression for the central density in terms of
@@ -502,7 +503,8 @@ $<span class="math notranslate nohighlight">\(\rho(r) = \rho_c \left [ 1 - \left
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9c65070e56382b3d88194af9e9b77656b065404f608d2dd4d483d32aeb5c2dac.png" src="../_images/9c65070e56382b3d88194af9e9b77656b065404f608d2dd4d483d32aeb5c2dac.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \rho_{c} \left(1 - \frac{r^{3}}{R_{\star}^{3}}\right)\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -514,15 +516,15 @@ $<span class="math notranslate nohighlight">\(\rho(r) = \rho_c \left [ 1 - \left
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/da6774ac33389955b5014273256a6e05d29f9e5f00a44b669ebb347f79c7bf1a.png" src="../_images/da6774ac33389955b5014273256a6e05d29f9e5f00a44b669ebb347f79c7bf1a.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f697d8e68f0&gt;
+<img alt="../_images/2f9761ac61bd021639af57d85643bba2f9a9be72eda400d163f1ff8643bd108a.png" src="../_images/2f9761ac61bd021639af57d85643bba2f9a9be72eda400d163f1ff8643bd108a.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7ffb886ac790&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now we get the mass by integrating <span class="math notranslate nohighlight">\(dM/dr = 4\pi r^2 \rho(r)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2ba7497d-6ac4-4844-95c0-781b894e3252">
-<span class="eqno">(1)<a class="headerlink" href="#equation-2ba7497d-6ac4-4844-95c0-781b894e3252" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7ca02e7b-85f9-4294-83d2-4769008611cf">
+<span class="eqno">(1)<a class="headerlink" href="#equation-7ca02e7b-85f9-4294-83d2-4769008611cf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_\star = \int_0^{R_\star} 4\pi r^2 \rho(r) dr
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -533,7 +535,8 @@ M_\star = \int_0^{R_\star} 4\pi r^2 \rho(r) dr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f60898cc5bcf53f932685792920bdd7e809145985ebde3e45fadc20d51234a4b.png" src="../_images/f60898cc5bcf53f932685792920bdd7e809145985ebde3e45fadc20d51234a4b.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{2 \pi R_{\star}^{3} \rho_{c}}{3}\]</div>
 </div>
 </div>
 <p>This is <span class="math notranslate nohighlight">\(M_\star\)</span>, so we can solve for <span class="math notranslate nohighlight">\(\rho_c\)</span></p>
@@ -545,7 +548,8 @@ M_\star = \int_0^{R_\star} 4\pi r^2 \rho(r) dr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/124cf050609d2ae17e07070d43599d9b9f6d29c9c1c3eedba3c8e3040da1e944.png" src="../_images/124cf050609d2ae17e07070d43599d9b9f6d29c9c1c3eedba3c8e3040da1e944.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{3 M_{\star}}{2 \pi R_{\star}^{3}}\]</div>
 </div>
 </div>
 <p>This shows us that</p>
@@ -560,7 +564,8 @@ M_\star = \int_0^{R_\star} 4\pi r^2 \rho(r) dr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/916fb870e23298f872d1851197606459f780eb4f109883e5bfb4c437ea737599.png" src="../_images/916fb870e23298f872d1851197606459f780eb4f109883e5bfb4c437ea737599.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{3 M_{\star} \left(1 - \frac{r^{3}}{R_{\star}^{3}}\right)}{2 \pi R_{\star}^{3}}\]</div>
 </div>
 </div>
 </section>
@@ -582,7 +587,8 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/96d2a4a12a778b4dff0636343ffbeb3aa29a5a79310ff837cff760cb3373d709.png" src="../_images/96d2a4a12a778b4dff0636343ffbeb3aa29a5a79310ff837cff760cb3373d709.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{2 M_{\star} r^{3}}{R_{\star}^{3}} - \frac{M_{\star} r^{6}}{R_{\star}^{6}}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -593,8 +599,8 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a069dda74a20c838c52a7b2b4dc04297ee9d022a53386a3d9058cae2308feedf.png" src="../_images/a069dda74a20c838c52a7b2b4dc04297ee9d022a53386a3d9058cae2308feedf.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f697b631a80&gt;
+<img alt="../_images/056280ddbe62406099ae7ad5d11b0024c1835744bf694eb2519c601eb916872e.png" src="../_images/056280ddbe62406099ae7ad5d11b0024c1835744bf694eb2519c601eb916872e.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7ffb9db44280&gt;
 </pre></div>
 </div>
 </div>
@@ -610,7 +616,8 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/916fb870e23298f872d1851197606459f780eb4f109883e5bfb4c437ea737599.png" src="../_images/916fb870e23298f872d1851197606459f780eb4f109883e5bfb4c437ea737599.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{3 M_{\star} \left(1 - \frac{r^{3}}{R_{\star}^{3}}\right)}{2 \pi R_{\star}^{3}}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -620,7 +627,8 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/16a31b15712683338ed0a8085727dd8f6d93a5594ec73944b346d0335f444a57.png" src="../_images/16a31b15712683338ed0a8085727dd8f6d93a5594ec73944b346d0335f444a57.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{3 G M_{\star}^{2} r}{\pi R_{\star}^{6}} - \frac{9 G M_{\star}^{2} r^{4}}{2 \pi R_{\star}^{9}} + \frac{3 G M_{\star}^{2} r^{7}}{2 \pi R_{\star}^{12}}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -631,7 +639,8 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8e872b77d7a1ab7e72555079ffcea8ff1954ed687f5c07af3d67a6d6b0db9072.png" src="../_images/8e872b77d7a1ab7e72555079ffcea8ff1954ed687f5c07af3d67a6d6b0db9072.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{63 G M_{\star}^{2}}{80 \pi R_{\star}^{4}} + P_{c}\]</div>
 </div>
 </div>
 <p>This was the integral to the surface, so this result is the surface pressure, but we know that <span class="math notranslate nohighlight">\(P(R_\star) = 0\)</span>,
@@ -644,7 +653,8 @@ so we can enforce that here to find <span class="math notranslate nohighlight">\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9d74ca83e9f846299203c732e5e6d45f3a41c26b448c156999903666410906ad.png" src="../_images/9d74ca83e9f846299203c732e5e6d45f3a41c26b448c156999903666410906ad.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{63 G M_{\star}^{2}}{80 \pi R_{\star}^{4}}\]</div>
 </div>
 </div>
 <p>For our general pressure expression. we integrate to some shell <span class="math notranslate nohighlight">\(r\)</span></p>
@@ -656,7 +666,8 @@ so we can enforce that here to find <span class="math notranslate nohighlight">\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aa4179213caca6dfdd405376cecb2862e9869bd37e33c609387ae7c1422cea0f.png" src="../_images/aa4179213caca6dfdd405376cecb2862e9869bd37e33c609387ae7c1422cea0f.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{63 G M_{\star}^{2}}{80 \pi R_{\star}^{4}} - \frac{3 G M_{\star}^{2} r^{2}}{2 \pi R_{\star}^{6}} + \frac{9 G M_{\star}^{2} r^{5}}{10 \pi R_{\star}^{9}} - \frac{3 G M_{\star}^{2} r^{8}}{16 \pi R_{\star}^{12}}\]</div>
 </div>
 </div>
 <p>Or factoring <span class="math notranslate nohighlight">\(P_c\)</span> out (i.e. <span class="math notranslate nohighlight">\(P/P_c\)</span>), we have</p>
@@ -667,12 +678,13 @@ so we can enforce that here to find <span class="math notranslate nohighlight">\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f0f22c06297f65e7117f1093d090175f9f48ff52388d0f9395bf45c152dc215b.png" src="../_images/f0f22c06297f65e7117f1093d090175f9f48ff52388d0f9395bf45c152dc215b.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{21 R_{\star}^{8} - 40 R_{\star}^{6} r^{2} + 24 R_{\star}^{3} r^{5} - 5 r^{8}}{21 R_{\star}^{8}}\]</div>
 </div>
 </div>
 <p>This shows that we can write:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-213dbd87-6803-4e7f-b7cf-b48d1ba24332">
-<span class="eqno">(2)<a class="headerlink" href="#equation-213dbd87-6803-4e7f-b7cf-b48d1ba24332" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d8cb4a0e-1136-47e7-9d86-5189b20ce3f5">
+<span class="eqno">(2)<a class="headerlink" href="#equation-d8cb4a0e-1136-47e7-9d86-5189b20ce3f5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
                     + \frac{8}{7} \left (\frac{r}{R_\star}\right )^3 
                     - \frac{5}{21} \left ( \frac{r}{R_\star}\right )^8 \right ]
@@ -685,8 +697,8 @@ P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0908e0fd2832a32b35114da89a2746cf22cfbdbf86723165e14f347f484b29f7.png" src="../_images/0908e0fd2832a32b35114da89a2746cf22cfbdbf86723165e14f347f484b29f7.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f697b630430&gt;
+<img alt="../_images/756aaac7313bcf4616a99af6c9ecc0141fa4eec3f2ac06f46637628cbba2bf27.png" src="../_images/756aaac7313bcf4616a99af6c9ecc0141fa4eec3f2ac06f46637628cbba2bf27.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7ffb706c1a20&gt;
 </pre></div>
 </div>
 </div>
@@ -755,13 +767,13 @@ central density =  2.78405148265706
 </div>
 </div>
 <p>In class, we did a constant density model.  We found that the central pressure was</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c6905eab-4a29-4e4f-9df4-2fb15bcc6f18">
-<span class="eqno">(3)<a class="headerlink" href="#equation-c6905eab-4a29-4e4f-9df4-2fb15bcc6f18" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b63f9447-f826-412e-acf8-b9eb6aec6caa">
+<span class="eqno">(3)<a class="headerlink" href="#equation-b63f9447-f826-412e-acf8-b9eb6aec6caa" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}
 \end{equation}\]</div>
 <p>Here, with the cubic density profile, we find</p>
-<div class="amsmath math notranslate nohighlight" id="equation-76a1542a-3c7d-44b1-a5a6-a8151bf551d4">
-<span class="eqno">(4)<a class="headerlink" href="#equation-76a1542a-3c7d-44b1-a5a6-a8151bf551d4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-871b4e65-e6a7-4b8f-ac73-a2e4c170d966">
+<span class="eqno">(4)<a class="headerlink" href="#equation-871b4e65-e6a7-4b8f-ac73-a2e4c170d966" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{63}{80\pi} \frac{G M_\star^{2}}{R_\star^{4}}
 \end{equation}\]</div>
 <p>The pressure is greater in this model because more mass is concentrated toward the center of the star, increasing the force of gravity throughout, making the outer layers weigh more.</p>
@@ -774,7 +786,8 @@ P_c = \frac{63}{80\pi} \frac{G M_\star^{2}}{R_\star^{4}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/18a96b68c68e37996e82c0d9649dabbbdcc534b3d8767a4b0b41520781d5b62d.png" src="../_images/18a96b68c68e37996e82c0d9649dabbbdcc534b3d8767a4b0b41520781d5b62d.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{21 G M_{\star}}{40 R_{\star}}\]</div>
 </div>
 </div>
 <p>This shows us that the central temperature is:</p>
@@ -812,7 +825,8 @@ coefficient)?</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3013b059c2b5715ddd6ee44bb6ec84609922b73078e6cac39f1f37832c9a8d0a.png" src="../_images/3013b059c2b5715ddd6ee44bb6ec84609922b73078e6cac39f1f37832c9a8d0a.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{153 G M_{\star}^{2}}{220 R_{\star}}\]</div>
 </div>
 </div>
 <p>So this shows that <span class="math notranslate nohighlight">\(\alpha = 153/220\)</span>.</p>
@@ -829,7 +843,8 @@ coefficient)?</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3013b059c2b5715ddd6ee44bb6ec84609922b73078e6cac39f1f37832c9a8d0a.png" src="../_images/3013b059c2b5715ddd6ee44bb6ec84609922b73078e6cac39f1f37832c9a8d0a.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{153 G M_{\star}^{2}}{220 R_{\star}}\]</div>
 </div>
 </div>
 <p>We see that these two integrals give the same result, verifying that the Virial theorem holds.</p>
@@ -857,7 +872,8 @@ $<span class="math notranslate nohighlight">\(L = \int_0^{M_\star} q dm = \int_0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/501160d42518e804184315c93860af1ff3eb52a802682cec95b5252312302209.png" src="../_images/501160d42518e804184315c93860af1ff3eb52a802682cec95b5252312302209.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{c} \left(1 - \frac{5 r}{R_{\star}}\right)\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -867,7 +883,8 @@ $<span class="math notranslate nohighlight">\(L = \int_0^{M_\star} q dm = \int_0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/418ecd9a3a745ec899423fdacd4d287a77c7b8629a7beb21a9c639d048cd6276.png" src="../_images/418ecd9a3a745ec899423fdacd4d287a77c7b8629a7beb21a9c639d048cd6276.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{873 M_{\star} q_{c}}{218750}\]</div>
 </div>
 </div>
 <p>Notice that the result is <span class="math notranslate nohighlight">\(\propto M_\star q_c\)</span> and has units of luminosity</p>
@@ -930,15 +947,15 @@ $<span class="math notranslate nohighlight">\(L = \int_0^{M_\star} q dm = \int_0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1943/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2011/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_1943/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
+/tmp/ipykernel_2011/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_1943/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_2011/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f697b3fcfd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ffb704dc850&gt;]
 </pre></div>
 </div>
 <img alt="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" src="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" />
@@ -977,7 +994,8 @@ $<span class="math notranslate nohighlight">\(L = \int_0^{M_\star} q dm = \int_0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1c1e82ab231102dd104cd375aec25e6e70330dcfcebd73b50c24e9c8e5984073.png" src="../_images/1c1e82ab231102dd104cd375aec25e6e70330dcfcebd73b50c24e9c8e5984073.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0.201405235272642\]</div>
 </div>
 </div>
 <p>So the root is <span class="math notranslate nohighlight">\(x = 0.201\)</span> or <span class="math notranslate nohighlight">\(1/x = 4.965\)</span>.</p>
@@ -1049,7 +1067,8 @@ $<span class="math notranslate nohighlight">\(L = \int_0^{M_\star} q dm = \int_0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0f62e9018c186ce07a26012d31d822d6cb5ae0d19f0a1afd3a34a30c9ea4a345.png" src="../_images/0f62e9018c186ce07a26012d31d822d6cb5ae0d19f0a1afd3a34a30c9ea4a345.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 245.77918867094\]</div>
 </div>
 </div>
 <p>This is cold.  The blackbody temperature of Earth is below freezing.  But we neglected the atmosphere and the greenhouse effect that raises the Earth’s surface temperature to above the freezing point.</p>
