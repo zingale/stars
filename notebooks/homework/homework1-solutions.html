@@ -164,6 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Equation of State</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../eos/degeneracy-parameter.html">Degenerate Electrons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eos/eos-regimes.html">EOS regimes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reactions</span></p>
 <ul class="nav bd-sidenav">
@@ -516,15 +517,15 @@ Documentation can be found at https://docs.sympy.org/1.12/
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/93437160bd60c3fd7ff18ce4e10f9e3b3106a12c9434d018cf5e549c05bd4542.png" src="../_images/93437160bd60c3fd7ff18ce4e10f9e3b3106a12c9434d018cf5e549c05bd4542.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f67046014e0&gt;
+<img alt="../_images/521ac6b5091de7c17e235e3cd09147f1d8b4ee4ffb554d0848a06459b2dc74bb.png" src="../_images/521ac6b5091de7c17e235e3cd09147f1d8b4ee4ffb554d0848a06459b2dc74bb.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f94785c8100&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now we get the mass by integrating <span class="math notranslate nohighlight">\(dM/dr = 4\pi r^2 \rho(r)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-02450ffe-462a-4810-a74e-e7388406f883">
-<span class="eqno">(1)<a class="headerlink" href="#equation-02450ffe-462a-4810-a74e-e7388406f883" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-56329955-dd66-4ba8-b085-e3fae7791d82">
+<span class="eqno">(1)<a class="headerlink" href="#equation-56329955-dd66-4ba8-b085-e3fae7791d82" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_\star = \int_0^{R_\star} 4\pi r^2 \rho(r) dr
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -604,8 +605,8 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f0854584e66ccda2f628c2349745bd0160ed654b8e5b5b77354f2195bff12fd7.png" src="../_images/f0854584e66ccda2f628c2349745bd0160ed654b8e5b5b77354f2195bff12fd7.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f66d919c9d0&gt;
+<img alt="../_images/3e9f3f73ef13391f57f19b79dd735835b03373b33dc92cad1b98073ecb181279.png" src="../_images/3e9f3f73ef13391f57f19b79dd735835b03373b33dc92cad1b98073ecb181279.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f94430a9ae0&gt;
 </pre></div>
 </div>
 </div>
@@ -688,8 +689,8 @@ so we can enforce that here to find <span class="math notranslate nohighlight">\
 </div>
 </div>
 <p>This shows that we can write:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-06ff9b94-1991-490a-b2b4-ab4dd3c07605">
-<span class="eqno">(2)<a class="headerlink" href="#equation-06ff9b94-1991-490a-b2b4-ab4dd3c07605" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8515ff14-ad53-4161-b26a-a7f77777d120">
+<span class="eqno">(2)<a class="headerlink" href="#equation-8515ff14-ad53-4161-b26a-a7f77777d120" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
                     + \frac{8}{7} \left (\frac{r}{R_\star}\right )^3 
                     - \frac{5}{21} \left ( \frac{r}{R_\star}\right )^8 \right ]
@@ -702,8 +703,8 @@ P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/56cab1356483d1b4691e5a99ef22e2122c0bc4d409b29c5fd5132d330b7284b9.png" src="../_images/56cab1356483d1b4691e5a99ef22e2122c0bc4d409b29c5fd5132d330b7284b9.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f66d919f310&gt;
+<img alt="../_images/6310a02f8fca1e7ae70f6b222a9a9720acc6b6f3a1db36b4f33f732509d2e7ff.png" src="../_images/6310a02f8fca1e7ae70f6b222a9a9720acc6b6f3a1db36b4f33f732509d2e7ff.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f9442f67910&gt;
 </pre></div>
 </div>
 </div>
@@ -772,13 +773,13 @@ central density =  2.78405148265706
 </div>
 </div>
 <p>In class, we did a constant density model.  We found that the central pressure was</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89178209-678d-49dc-a8da-4eb8c43b8773">
-<span class="eqno">(3)<a class="headerlink" href="#equation-89178209-678d-49dc-a8da-4eb8c43b8773" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-becda340-f62b-4cc6-91ec-6ae14885df2b">
+<span class="eqno">(3)<a class="headerlink" href="#equation-becda340-f62b-4cc6-91ec-6ae14885df2b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}
 \end{equation}\]</div>
 <p>Here, with the cubic density profile, we find</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc17f128-85d4-4ae4-ad45-81d045ace111">
-<span class="eqno">(4)<a class="headerlink" href="#equation-fc17f128-85d4-4ae4-ad45-81d045ace111" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2566b05a-2a9e-4346-9998-ae73d1dddbd5">
+<span class="eqno">(4)<a class="headerlink" href="#equation-2566b05a-2a9e-4346-9998-ae73d1dddbd5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{63}{80\pi} \frac{G M_\star^{2}}{R_\star^{4}}
 \end{equation}\]</div>
 <p>The pressure is greater in this model because more mass is concentrated toward the center of the star, increasing the force of gravity throughout, making the outer layers weigh more.</p>
@@ -954,15 +955,15 @@ q(r) = \begin{cases}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1968/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1973/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_1968/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
+/tmp/ipykernel_1973/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_1968/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_1973/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f66d8f95990&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9442ea8940&gt;]
 </pre></div>
 </div>
 <img alt="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" src="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" />
