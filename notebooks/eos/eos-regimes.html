@@ -475,7 +475,7 @@ dominate.</p>
 <h2>Degeneracy vs. Ideal gas<a class="headerlink" href="#degeneracy-vs-ideal-gas" title="Permalink to this heading">#</a></h2>
 <p>We find the (dimensionless) Fermi momentum (<span class="math notranslate nohighlight">\(x_F = p_F / (mc)\)</span>) via</p>
 <div class="math notranslate nohighlight">
-\[n_e = \frac{\rho}{\mu_e m_u} = \int_0^{x_F} p^2 dp\]</div>
+\[n_e = \frac{\rho}{\mu_e m_u} = \int_0^{x_F} x^2 dx\]</div>
 <p>where we assume complete degeneracy (so the distribution function is just a step-function).  This gives</p>
 <div class="math notranslate nohighlight">
 \[x_F = \left ( \frac{\rho}{\mu_e B} \right )^{1/3}\]</div>
@@ -509,12 +509,12 @@ dominate.</p>
 </section>
 <section id="ideal-gas-vs-radiation">
 <h2>Ideal gas vs. radiation<a class="headerlink" href="#ideal-gas-vs-radiation" title="Permalink to this heading">#</a></h2>
-<p>A simple way to determine whether an ideal case or radiation dominates is to set their pressures equal.
+<p>A simple way to determine whether an ideal case or radiation dominates is to set their energy densities equal.
 At the temperatures where we expect this to occur, we will assume that the electrons are not degenerate,
 so we will use the full <span class="math notranslate nohighlight">\(\mu\)</span> for the composition in the ideal gas instead of <span class="math notranslate nohighlight">\(\mu_I\)</span>.</p>
 <p>Our line is:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\rho k T}{\mu m_u} \sim \frac{1}{3} a T^4\]</div>
+\[\frac{3}{2}\frac{\rho k T}{\mu m_u} \sim a T^4\]</div>
 <p>Here’s a function that computes this</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
