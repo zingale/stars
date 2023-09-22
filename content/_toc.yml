@@ -4,6 +4,7 @@ parts:
   - caption: Equation of State
     chapters:
     - file: eos/degeneracy-parameter
+    - file: eos/eos-regimes
 
   - caption: Reactions
     chapters:
