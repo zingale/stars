@@ -374,7 +374,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">c.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schonberg-chandrasekhar-limit">3. Schönberg-Chandrasekhar limit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schonberg-chandrasekhar-limit">3. Schönberg-Chandrasekhar limit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">a.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">b.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">c.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">d.</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -474,6 +480,64 @@ main sequence.</p>
 </section>
 <section id="schonberg-chandrasekhar-limit">
 <h2>3. Schönberg-Chandrasekhar limit<a class="headerlink" href="#schonberg-chandrasekhar-limit" title="Permalink to this heading">#</a></h2>
+<p>We want to compute the maximum mass of an isothermal core.</p>
+<section id="id1">
+<h3>a.<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Let’s rederive the Virial theorem without going all the way to the surface.  Starting with HSE:</p>
+<div class="math notranslate nohighlight">
+\[dP = - \frac{GM}{4\pi r^4} dM\]</div>
+<p>we multiply by volume and integrate, giving:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{P(r)} V dP = \frac{\Omega}{3}\]</div>
+<p>We’ll integrate to the edge of the core, which we’ll denote as <span class="math notranslate nohighlight">\(R_c\)</span>
+and the pressure there as <span class="math notranslate nohighlight">\(P_c = P(R_c)\)</span> (this is not central pressure).  Then, integrating by parts, our integral is:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{P_c} V dP = \int_0^{P_c} d(VP) - \int_0^{V_c} P dV = V_c P_c - \int_0^{M_c} \frac{P}{\rho} dM\]</div>
+<p>where <span class="math notranslate nohighlight">\(M_c\)</span> is the mass of the core.  This is basically what we did
+originally when we derived the Virial theorem in class, except now we
+have the surface term, <span class="math notranslate nohighlight">\(V_c P_c\)</span>.</p>
+</section>
+<section id="id2">
+<h3>b.<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>Now we take the core to be isothermal and of uniform composition and well-described by an ideal gas:</p>
+<div class="math notranslate nohighlight">
+\[V_c P_c - \int_0^{M_c} \frac{k T_c}{\mu_c m_u} dM = \frac{\Omega_c}{3}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\frac{kT_c}{\mu_c m_u} M_c = V_c P_c + \frac{q}{3} \frac{G M_c^2}{R_c}\]</div>
+<p>where <span class="math notranslate nohighlight">\(q\)</span> is the <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> constant in the gravitational potential energy.</p>
+<p>Replacing the volume of the core, we have:</p>
+<div class="math notranslate nohighlight">
+\[P_c = \frac{3}{4\pi} \frac{k T_c}{\mu_c m_u} \frac{M_c}{R_c}^3 - \frac{q}{4\pi} \frac{GM_c^2}{R_c^4}\]</div>
+</section>
+<section id="id3">
+<h3>c.<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>To find the radius where the pressure is maximum, we differentiate with respect to <span class="math notranslate nohighlight">\(R_c\)</span> and set it to zero:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dP_c}{dR_c} = -\frac{9}{4\pi} \frac{k T_c}{\mu_c m_u} \frac{M_c}{R_c^4} + \frac{q}{\pi} \frac{G M_c^2}{R_c^5} = 0\]</div>
+<p>this gives</p>
+<div class="math notranslate nohighlight">
+\[R_{c,\mathrm{max}} = \frac{4q}{9} \frac{\mu_c m_u}{k T_c} G M_c\]</div>
+<p>and the corresponding pressure is</p>
+<div class="math notranslate nohighlight">
+\[P_{c,\mathrm{max}} = P_c(R_{c,\mathrm{max}}) = \frac{3}{16\pi} \left (\frac{9}{4} \right )^3 \frac{1}{q^3}
+   \left ( \frac{k T_c}{\mu_c m_u} \right )^4 \frac{1}{G^3 M_c^2}\]</div>
+</section>
+<section id="d">
+<h3>d.<a class="headerlink" href="#d" title="Permalink to this heading">#</a></h3>
+<p>Requiring that</p>
+<div class="math notranslate nohighlight">
+\[P_c &gt; \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}\]</div>
+<p>and dropping constants, we have:</p>
+<div class="math notranslate nohighlight">
+\[P_{c, \mathrm{max}}(M_c) \propto \left (\frac{kT_c}{\mu_c m_u} \right )^4 \frac{1}{G^3 M_c^2} \ge \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}\]</div>
+<p>and from the Virial theorem, we have</p>
+<div class="math notranslate nohighlight">
+\[T_c = \frac{1}{2} \frac{GM_\star}{R_\star} \frac{\mu_\mathrm{env} m_u}{k}\]</div>
+<p>giving:</p>
+<div class="math notranslate nohighlight">
+\[\frac{M_c}{M_\star} \le \left (\frac{\mu_\mathrm{env}}{\mu_c} \right )^2 \cdot \mathrm{constant}\]</div>
+</section>
 </section>
 </section>
 
@@ -537,7 +601,13 @@ main sequence.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">c.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schonberg-chandrasekhar-limit">3. Schönberg-Chandrasekhar limit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schonberg-chandrasekhar-limit">3. Schönberg-Chandrasekhar limit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">a.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">b.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">c.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">d.</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
