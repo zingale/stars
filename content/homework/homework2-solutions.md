@@ -97,4 +97,75 @@ main sequence.
 
 ## 3. Schönberg-Chandrasekhar limit
 
+We want to compute the maximum mass of an isothermal core.
+
+### a. 
+
+Let's rederive the Virial theorem without going all the way to the surface.  Starting with HSE:
+
+$$dP = - \frac{GM}{4\pi r^4} dM$$
+
+we multiply by volume and integrate, giving:
+
+$$\int_0^{P(r)} V dP = \frac{\Omega}{3}$$
+
+We'll integrate to the edge of the core, which we'll denote as $R_c$
+and the pressure there as $P_c = P(R_c)$ (this is not central pressure).  Then, integrating by parts, our integral is:
+
+$$\int_0^{P_c} V dP = \int_0^{P_c} d(VP) - \int_0^{V_c} P dV = V_c P_c - \int_0^{M_c} \frac{P}{\rho} dM$$
+
+where $M_c$ is the mass of the core.  This is basically what we did
+originally when we derived the Virial theorem in class, except now we
+have the surface term, $V_c P_c$.
+
+### b.
+
+Now we take the core to be isothermal and of uniform composition and well-described by an ideal gas:
+
+$$V_c P_c - \int_0^{M_c} \frac{k T_c}{\mu_c m_u} dM = \frac{\Omega_c}{3}$$
+
+or
+
+$$\frac{kT_c}{\mu_c m_u} M_c = V_c P_c + \frac{q}{3} \frac{G M_c^2}{R_c}$$
+
+where $q$ is the $\mathcal{O}(1)$ constant in the gravitational potential energy.
+
+Replacing the volume of the core, we have:
+
+$$P_c = \frac{3}{4\pi} \frac{k T_c}{\mu_c m_u} \frac{M_c}{R_c}^3 - \frac{q}{4\pi} \frac{GM_c^2}{R_c^4}$$
+
+### c.
+
+To find the radius where the pressure is maximum, we differentiate with respect to $R_c$ and set it to zero:
+
+$$\frac{dP_c}{dR_c} = -\frac{9}{4\pi} \frac{k T_c}{\mu_c m_u} \frac{M_c}{R_c^4} + \frac{q}{\pi} \frac{G M_c^2}{R_c^5} = 0$$
+
+this gives
+
+$$R_{c,\mathrm{max}} = \frac{4q}{9} \frac{\mu_c m_u}{k T_c} G M_c$$
+
+and the corresponding pressure is
+
+$$P_{c,\mathrm{max}} = P_c(R_{c,\mathrm{max}}) = \frac{3}{16\pi} \left (\frac{9}{4} \right )^3 \frac{1}{q^3}
+   \left ( \frac{k T_c}{\mu_c m_u} \right )^4 \frac{1}{G^3 M_c^2}$$
+   
+   
+### d.
+
+Requiring that 
+
+$$P_c > \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}$$
+
+and dropping constants, we have:
+
+$$P_{c, \mathrm{max}}(M_c) \propto \left (\frac{kT_c}{\mu_c m_u} \right )^4 \frac{1}{G^3 M_c^2} \ge \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}$$
+
+and from the Virial theorem, we have
+
+$$T_c = \frac{1}{2} \frac{GM_\star}{R_\star} \frac{\mu_\mathrm{env} m_u}{k}$$
+
+giving:
+
+$$\frac{M_c}{M_\star} \le \left (\frac{\mu_\mathrm{env}}{\mu_c} \right )^2 \cdot \mathrm{constant}$$
+
 
