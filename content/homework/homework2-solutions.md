@@ -1,5 +1,37 @@
 # Homework 2 solutions
 
+## 1. Solid or gas?
+
+We want to determine if the Earth is solid.  We start by writing the separation between atoms in the Earth as:
+
+$$d \sim n^{-1/3} = \left ( \frac{\mu m_u}{\rho} \right )^{-1/3}$$
+
+then the Coulomb energy is
+
+$$E_c = \frac{Z^2 e^2}{d} = Z^2 e^2 \left ( \frac{\rho}{\mu m_u} \right )^{1/3}$$
+
+Now the thermal energy is $k T$, and we can take our estimate of $T$ from the Virial
+theorem:
+
+$$kT = \frac{1}{5} \mu m_u \frac{GM}{R}$$
+
+the ratio is then
+
+$$\Gamma = \frac{E_c}{kT} = 4 Z^2 e^2 \left ( \frac{\rho}{\mu m_u} \right )^{1/3} \frac{1}{\mu m_u} \frac{R}{GM}$$
+
+and substituting in the average density, $\rho \sim M / R^3$, we have
+
+$$\Gamma \sim 5 Z^2 e^2 \frac{1}{(\mu m_u)^{4/3}} \frac{1}{GM^{2/3}}$$
+
+putting in numbers, taking the core to be iron, $Z = 26$, $\mu = 56$,
+and the mass of the Earth as $M_\oplus = 6\times 10^{27}~\mathrm{g}$,
+we have
+
+$$\Gamma \sim 800$$
+
+This is very large, so clearly the Earth is solid.
+
+
 ## 2. Dimensional analysis
 
 We want to use the equations of stellar structure + Kramers' opacity
@@ -11,11 +43,11 @@ We assume uniform composition and a fully-radiative star.  Our equations of stel
 * radiation:
 
   $$L = -(4\pi r^2)^2 \frac{ac}{3\kappa} \frac{dT^4}{dM} \rightarrow L \sim \frac{T^4 R^4}{\kappa M}$$
-  
+
 * energy:
 
   $$\frac{dL}{dM} = \epsilon \rightarrow L \sim M \epsilon$$
-  
+
 * HSE:
 
   $$\frac{dP}{dM} = -\frac{GM}{4\pi r^4} \rightarrow P \sim \frac{GM^2}{R^4}$$
@@ -23,7 +55,7 @@ We assume uniform composition and a fully-radiative star.  Our equations of stel
 * continuity:
 
   $$\frac{dr}{dM} = \frac{1}{4\pi r^2 \rho} \rightarrow \rho \sim \frac{M}{R^3}$$
-  
+
 we also have our equation of state:
 
 $$P = \frac{\rho k T}{\mu m_u} \sim \frac{\rho T}{\mu}$$
@@ -69,7 +101,7 @@ This is a much steeper mass dependence for luminosity than we found with the con
 opacity.
 ```
 
-### b. 
+### b.
 
 Now we want to find effective temperature.  We start with the blackbody relation:
 
@@ -99,7 +131,7 @@ main sequence.
 
 We want to compute the maximum mass of an isothermal core.
 
-### a. 
+### a.
 
 Let's rederive the Virial theorem without going all the way to the surface.  Starting with HSE:
 
@@ -148,11 +180,11 @@ and the corresponding pressure is
 
 $$P_{c,\mathrm{max}} = P_c(R_{c,\mathrm{max}}) = \frac{3}{16\pi} \left (\frac{9}{4} \right )^3 \frac{1}{q^3}
    \left ( \frac{k T_c}{\mu_c m_u} \right )^4 \frac{1}{G^3 M_c^2}$$
-   
-   
+
+
 ### d.
 
-Requiring that 
+Requiring that
 
 $$P_c > \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}$$
 
@@ -167,5 +199,3 @@ $$T_c = \frac{1}{2} \frac{GM_\star}{R_\star} \frac{\mu_\mathrm{env} m_u}{k}$$
 giving:
 
 $$\frac{M_c}{M_\star} \le \left (\frac{\mu_\mathrm{env}}{\mu_c} \right )^2 \cdot \mathrm{constant}$$
-
-
