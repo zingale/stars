@@ -368,6 +368,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solid-or-gas">1. Solid or gas?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-analysis">2. Dimensional analysis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
@@ -394,6 +395,31 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="homework-2-solutions">
 <h1>Homework 2 solutions<a class="headerlink" href="#homework-2-solutions" title="Permalink to this heading">#</a></h1>
+<section id="solid-or-gas">
+<h2>1. Solid or gas?<a class="headerlink" href="#solid-or-gas" title="Permalink to this heading">#</a></h2>
+<p>We want to determine if the Earth is solid.  We start by writing the separation between atoms in the Earth as:</p>
+<div class="math notranslate nohighlight">
+\[d \sim n^{-1/3} = \left ( \frac{\mu m_u}{\rho} \right )^{-1/3}\]</div>
+<p>then the Coulomb energy is</p>
+<div class="math notranslate nohighlight">
+\[E_c = \frac{Z^2 e^2}{d} = Z^2 e^2 \left ( \frac{\rho}{\mu m_u} \right )^{1/3}\]</div>
+<p>Now the thermal energy is <span class="math notranslate nohighlight">\(k T\)</span>, and we can take our estimate of <span class="math notranslate nohighlight">\(T\)</span> from the Virial
+theorem:</p>
+<div class="math notranslate nohighlight">
+\[kT = \frac{1}{5} \mu m_u \frac{GM}{R}\]</div>
+<p>the ratio is then</p>
+<div class="math notranslate nohighlight">
+\[\Gamma = \frac{E_c}{kT} = 4 Z^2 e^2 \left ( \frac{\rho}{\mu m_u} \right )^{1/3} \frac{1}{\mu m_u} \frac{R}{GM}\]</div>
+<p>and substituting in the average density, <span class="math notranslate nohighlight">\(\rho \sim M / R^3\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\Gamma \sim 5 Z^2 e^2 \frac{1}{(\mu m_u)^{4/3}} \frac{1}{GM^{2/3}}\]</div>
+<p>putting in numbers, taking the core to be iron, <span class="math notranslate nohighlight">\(Z = 26\)</span>, <span class="math notranslate nohighlight">\(\mu = 56\)</span>,
+and the mass of the Earth as <span class="math notranslate nohighlight">\(M_\oplus = 6\times 10^{27}~\mathrm{g}\)</span>,
+we have</p>
+<div class="math notranslate nohighlight">
+\[\Gamma \sim 800\]</div>
+<p>This is very large, so clearly the Earth is solid.</p>
+</section>
 <section id="dimensional-analysis">
 <h2>2. Dimensional analysis<a class="headerlink" href="#dimensional-analysis" title="Permalink to this heading">#</a></h2>
 <p>We want to use the equations of stellar structure + Kramers’ opacity
@@ -595,6 +621,7 @@ have the surface term, <span class="math notranslate nohighlight">\(V_c P_c\)</s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solid-or-gas">1. Solid or gas?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-analysis">2. Dimensional analysis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
