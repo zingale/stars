@@ -3,6 +3,91 @@
 
 ## 1. Degeneracy
 
+In class, we derived:
+
+\begin{align*}
+P_e &= A f(x) \\
+\rho e_e &= A g(x)
+\end{align*}
+
+with
+
+$$A = \frac{\pi}{3} \left ( \frac{m_e c}{h} \right )^3 m_e c^2$$
+
+and 
+
+\begin{align*}
+f(x) &= x (2x^2 - 3) (1 + x^2)^{1/2} + 3 \sinh^{-1}(x) \\
+g(x) &= 8x^3 \left [ (1+ x^2)^{1/2} - 1 \right ] - f(x)
+\end{align*}
+
+where $x = p/(m_e c)$ is the Fermi momentum.
+
+### a.
+
+We want to expand in the non-relativistic limit ($x \ll 1$).
+
+Let's look at the terms in $f(x)$ for $x \ll 1$:
+
+* $(1 + x^2)^{1/2} \sim 1 + \frac{x^2}{2} - \frac{x^4}{8} + \ldots$$
+
+* $\sinh^{-1}(x) \sim x - \frac{x^3}{6} + \frac{3x^5}{40} + \ldots$$
+
+then
+
+\begin{align*}
+f(x) &\sim (2x^3 - 3x) \left (1 + \frac{x^2}{2} - \frac{x^4}{8} \right ) + 3x - \frac{1}{2} x^3 + \frac{9}{40}x^5 + \ldots \\
+     &\sim \frac{8}{5}x^5
+\end{align*}
+
+```{note}
+You need to carry up to $x^5$ in your expansions because of all of the 
+cancellations that occur.  Otherwise you will miss some factors.
+```
+
+Now, $g(x)$ expands as:
+
+\begin{align*}
+g(x) &= 8x^3 \left [ (1+x^2)^{1/2} - 1 \right ] - f(x) \\
+     &\sim 8x^3 \left [1 + \frac{1}{2}x^2 - 1 \right ] - f(x) \\
+     &\sim \frac{12}{5} x^5
+\end{align*}
+
+This gives:
+
+\begin{align*}
+P_e &\sim A \frac{8}{5} x^5 \\
+\rho e_e &\sim A \frac{12}{5} x^5
+\end{align*}
+
+Now to put in numbers.  We know that
+
+$$\frac{\rho}{\mu_e} = \frac{8\pi}{3} m_u \left (\frac{m_e c}{h} \right )^3 x^3$$
+
+or
+
+$$x = \left ( \frac{3}{8\pi m_u} \right )^{1/3} \frac{h}{m_e c} \left ( \frac{\rho}{\mu_e} \right )^{1/3}$$
+
+then
+
+$$P_e = \frac{8\pi}{15} \left ( \frac{3}{8\pi} \right )^{5/3} \frac{h^2}{m_e} \left (\frac{\rho}{\mu_e m_u} \right )^{5/3}$$
+
+putting in numbers, we have:
+
+$$P_e \sim 9.6\times 10^{12} \left ( \frac{\rho / 1~\mathrm{g~cm^{-3}}}{\mu_e} \right )^{5/3} \mathrm{erg~cm^{-3}}$$
+
+and
+
+$$\rho e_e = \frac{3}{2} P_e$$
+
+### b.
+
+Now we want the relativistic limit, $x \gg 1$.
+
+
+
+
+
 
 
 ## 2. Non-zero temperature degeneracy
