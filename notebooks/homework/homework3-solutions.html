@@ -369,10 +369,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degeneracy">1. Degeneracy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-zero-temperature-degeneracy">2. Non-zero temperature degeneracy</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degeneracy">1. Degeneracy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-zero-temperature-degeneracy">2. Non-zero temperature degeneracy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">a.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">b.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">c.</a></li>
 </ul>
 </li>
@@ -392,6 +396,74 @@ document.write(`
 <h1>Homework 3 solutions<a class="headerlink" href="#homework-3-solutions" title="Permalink to this heading">#</a></h1>
 <section id="degeneracy">
 <h2>1. Degeneracy<a class="headerlink" href="#degeneracy" title="Permalink to this heading">#</a></h2>
+<p>In class, we derived:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+P_e &amp;= A f(x) \\
+\rho e_e &amp;= A g(x)
+\end{align*}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[A = \frac{\pi}{3} \left ( \frac{m_e c}{h} \right )^3 m_e c^2\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x) &amp;= x (2x^2 - 3) (1 + x^2)^{1/2} + 3 \sinh^{-1}(x) \\
+g(x) &amp;= 8x^3 \left [ (1+ x^2)^{1/2} - 1 \right ] - f(x)
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x = p/(m_e c)\)</span> is the Fermi momentum.</p>
+<section id="a">
+<h3>a.<a class="headerlink" href="#a" title="Permalink to this heading">#</a></h3>
+<p>We want to expand in the non-relativistic limit (<span class="math notranslate nohighlight">\(x \ll 1\)</span>).</p>
+<p>Let’s look at the terms in <span class="math notranslate nohighlight">\(f(x)\)</span> for <span class="math notranslate nohighlight">\(x \ll 1\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((1 + x^2)^{1/2} \sim 1 + \frac{x^2}{2} - \frac{x^4}{8} + \ldots\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sinh^{-1}(x) \sim x - \frac{x^3}{6} + \frac{3x^5}{40} + \ldots\)</span>$</p></li>
+</ul>
+<p>then</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f(x) &amp;\sim (2x^3 - 3x) \left (1 + \frac{x^2}{2} - \frac{x^4}{8} \right ) + 3x - \frac{1}{2} x^3 + \frac{9}{40}x^5 + \ldots \\
+     &amp;\sim \frac{8}{5}x^5
+\end{align*}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to carry up to <span class="math notranslate nohighlight">\(x^5\)</span> in your expansions because of all of the
+cancellations that occur.  Otherwise you will miss some factors.</p>
+</div>
+<p>Now, <span class="math notranslate nohighlight">\(g(x)\)</span> expands as:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+g(x) &amp;= 8x^3 \left [ (1+x^2)^{1/2} - 1 \right ] - f(x) \\
+     &amp;\sim 8x^3 \left [1 + \frac{1}{2}x^2 - 1 \right ] - f(x) \\
+     &amp;\sim \frac{12}{5} x^5
+\end{align*}\]</div>
+<p>This gives:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+P_e &amp;\sim A \frac{8}{5} x^5 \\
+\rho e_e &amp;\sim A \frac{12}{5} x^5
+\end{align*}\]</div>
+<p>Now to put in numbers.  We know that</p>
+<div class="math notranslate nohighlight">
+\[\frac{\rho}{\mu_e} = \frac{8\pi}{3} m_u \left (\frac{m_e c}{h} \right )^3 x^3\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[x = \left ( \frac{3}{8\pi m_u} \right )^{1/3} \frac{h}{m_e c} \left ( \frac{\rho}{\mu_e} \right )^{1/3}\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[P_e = \frac{8\pi}{15} \left ( \frac{3}{8\pi} \right )^{5/3} \frac{h^2}{m_e} \left (\frac{\rho}{\mu_e m_u} \right )^{5/3}\]</div>
+<p>putting in numbers, we have:</p>
+<div class="math notranslate nohighlight">
+\[P_e \sim 9.6\times 10^{12} \left ( \frac{\rho / 1~\mathrm{g~cm^{-3}}}{\mu_e} \right )^{5/3} \mathrm{erg~cm^{-3}}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\rho e_e = \frac{3}{2} P_e\]</div>
+</section>
+<section id="b">
+<h3>b.<a class="headerlink" href="#b" title="Permalink to this heading">#</a></h3>
+<p>Now we want the relativistic limit, <span class="math notranslate nohighlight">\(x \gg 1\)</span>.</p>
+</section>
 </section>
 <section id="non-zero-temperature-degeneracy">
 <h2>2. Non-zero temperature degeneracy<a class="headerlink" href="#non-zero-temperature-degeneracy" title="Permalink to this heading">#</a></h2>
@@ -401,8 +473,8 @@ We can do this analytically.</p>
 <div class="math notranslate nohighlight">
 \[\Psi = \frac{\mu - mc^2}{kT}\]</div>
 <p>is not infinite.</p>
-<section id="a">
-<h3>a.<a class="headerlink" href="#a" title="Permalink to this heading">#</a></h3>
+<section id="id1">
+<h3>a.<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>We start by writing our number density as the integral of the Fermi-Dirac distribution
 over all momentum:</p>
 <div class="math notranslate nohighlight">
@@ -429,8 +501,8 @@ over all momentum:</p>
 <div class="math notranslate nohighlight">
 \[\frac{P_e}{n_e} = \frac{2}{3} k T \frac{F_{3/2}(\Psi)}{F_{1/2}(\Psi)}\]</div>
 </section>
-<section id="b">
-<h3>b.<a class="headerlink" href="#b" title="Permalink to this heading">#</a></h3>
+<section id="id2">
+<h3>b.<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>We now want to use the expansion for <span class="math notranslate nohighlight">\(\Psi \rightarrow \infty\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[F_n(\Psi) = \frac{\Psi^{n+1}}{n+1} \left [ 1 + \frac{\pi^2}{6} (n+1) n \Psi^{-2} + \mathcal{O}(\Psi^{-4}) \right ]\]</div>
@@ -528,10 +600,14 @@ correction.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degeneracy">1. Degeneracy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-zero-temperature-degeneracy">2. Non-zero temperature degeneracy</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degeneracy">1. Degeneracy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-zero-temperature-degeneracy">2. Non-zero temperature degeneracy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">a.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">b.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">c.</a></li>
 </ul>
 </li>
