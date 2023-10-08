@@ -15,5 +15,6 @@ parts:
     chapters:
     - file: homework/homework1-solutions
     - file: homework/homework2-solutions
+    - file: homework/homework3-solutions
 
 
