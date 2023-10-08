@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Homework 2 solutions &#8212; PHY 521 Fall 2023</title>
+    <title>Homework 3 solutions &#8212; PHY 521 Fall 2023</title>
   
   
   
@@ -64,11 +64,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/homework2-solutions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/homework3-solutions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Homework 3 solutions" href="homework3-solutions.html" />
-    <link rel="prev" title="Homework 1 solutions" href="homework1-solutions.html" />
+    <link rel="prev" title="Homework 2 solutions" href="homework2-solutions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,8 +174,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework solutions</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="homework1-solutions.html">Homework 1 solutions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 2 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="homework3-solutions.html">Homework 3 solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework2-solutions.html">Homework 2 solutions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 3 solutions</a></li>
 </ul>
 
     </div>
@@ -248,7 +247,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fhomework/homework2-solutions.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fhomework/homework3-solutions.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,7 +277,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/homework/homework2-solutions.md" target="_blank"
+      <li><a href="../_sources/homework/homework3-solutions.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -360,7 +359,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Homework 2 solutions</h1>
+    <h1>Homework 3 solutions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -370,20 +369,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solid-or-gas">1. Solid or gas?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-analysis">2. Dimensional analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degeneracy">1. Degeneracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-zero-temperature-degeneracy">2. Non-zero temperature degeneracy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">c.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schonberg-chandrasekhar-limit">3. Schönberg-Chandrasekhar limit</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">a.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">b.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">c.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">d.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intensity-vs-flux">3. Intensity vs. flux</a></li>
 </ul>
             </nav>
         </div>
@@ -395,177 +388,89 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="homework-2-solutions">
-<h1>Homework 2 solutions<a class="headerlink" href="#homework-2-solutions" title="Permalink to this heading">#</a></h1>
-<section id="solid-or-gas">
-<h2>1. Solid or gas?<a class="headerlink" href="#solid-or-gas" title="Permalink to this heading">#</a></h2>
-<p>We want to determine if the Earth is solid.  We start by writing the separation between atoms in the Earth as:</p>
-<div class="math notranslate nohighlight">
-\[d \sim n^{-1/3} = \left ( \frac{\mu m_u}{\rho} \right )^{-1/3}\]</div>
-<p>then the Coulomb energy is</p>
-<div class="math notranslate nohighlight">
-\[E_c = \frac{Z^2 e^2}{d} = Z^2 e^2 \left ( \frac{\rho}{\mu m_u} \right )^{1/3}\]</div>
-<p>Now the thermal energy is <span class="math notranslate nohighlight">\(k T\)</span>, and we can take our estimate of <span class="math notranslate nohighlight">\(T\)</span> from the Virial
-theorem:</p>
-<div class="math notranslate nohighlight">
-\[kT = \frac{1}{5} \mu m_u \frac{GM}{R}\]</div>
-<p>the ratio is then</p>
-<div class="math notranslate nohighlight">
-\[\Gamma = \frac{E_c}{kT} = 4 Z^2 e^2 \left ( \frac{\rho}{\mu m_u} \right )^{1/3} \frac{1}{\mu m_u} \frac{R}{GM}\]</div>
-<p>and substituting in the average density, <span class="math notranslate nohighlight">\(\rho \sim M / R^3\)</span>, we have</p>
-<div class="math notranslate nohighlight">
-\[\Gamma \sim 5 Z^2 e^2 \frac{1}{(\mu m_u)^{4/3}} \frac{1}{GM^{2/3}}\]</div>
-<p>putting in numbers, taking the core to be iron, <span class="math notranslate nohighlight">\(Z = 26\)</span>, <span class="math notranslate nohighlight">\(\mu = 56\)</span>,
-and the mass of the Earth as <span class="math notranslate nohighlight">\(M_\oplus = 6\times 10^{27}~\mathrm{g}\)</span>,
-we have</p>
-<div class="math notranslate nohighlight">
-\[\Gamma \sim 800\]</div>
-<p>This is very large, so clearly the Earth is solid.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="homework-3-solutions">
+<h1>Homework 3 solutions<a class="headerlink" href="#homework-3-solutions" title="Permalink to this heading">#</a></h1>
+<section id="degeneracy">
+<h2>1. Degeneracy<a class="headerlink" href="#degeneracy" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="dimensional-analysis">
-<h2>2. Dimensional analysis<a class="headerlink" href="#dimensional-analysis" title="Permalink to this heading">#</a></h2>
-<p>We want to use the equations of stellar structure + Kramers’ opacity
-to predict main-sequence stellar properties.</p>
-<p>We assume uniform composition and a fully-radiative star.  Our equations of stellar structure are:</p>
-<ul>
-<li><p>radiation:</p>
+<section id="non-zero-temperature-degeneracy">
+<h2>2. Non-zero temperature degeneracy<a class="headerlink" href="#non-zero-temperature-degeneracy" title="Permalink to this heading">#</a></h2>
+<p>We want to consider finite-temperature, but non-relativistic degeneracy.
+We can do this analytically.</p>
+<p>Finite temperature means that the degeneracy parameter,</p>
 <div class="math notranslate nohighlight">
-\[L = -(4\pi r^2)^2 \frac{ac}{3\kappa} \frac{dT^4}{dM} \rightarrow L \sim \frac{T^4 R^4}{\kappa M}\]</div>
-</li>
-<li><p>energy:</p>
-<div class="math notranslate nohighlight">
-\[\frac{dL}{dM} = \epsilon \rightarrow L \sim M \epsilon\]</div>
-</li>
-<li><p>HSE:</p>
-<div class="math notranslate nohighlight">
-\[\frac{dP}{dM} = -\frac{GM}{4\pi r^4} \rightarrow P \sim \frac{GM^2}{R^4}\]</div>
-</li>
-<li><p>continuity:</p>
-<div class="math notranslate nohighlight">
-\[\frac{dr}{dM} = \frac{1}{4\pi r^2 \rho} \rightarrow \rho \sim \frac{M}{R^3}\]</div>
-</li>
-</ul>
-<p>we also have our equation of state:</p>
-<div class="math notranslate nohighlight">
-\[P = \frac{\rho k T}{\mu m_u} \sim \frac{\rho T}{\mu}\]</div>
+\[\Psi = \frac{\mu - mc^2}{kT}\]</div>
+<p>is not infinite.</p>
 <section id="a">
 <h3>a.<a class="headerlink" href="#a" title="Permalink to this heading">#</a></h3>
-<p>We want to find the luminosity-mass relationship.  We start by combining HSE + EOS:</p>
+<p>We start by writing our number density as the integral of the Fermi-Dirac distribution
+over all momentum:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\rho T}{\mu} \sim \frac{G M^2}{R^4} \rightarrow T \sim \frac{M\mu}{R}\]</div>
-<p>and we use radiation, substituting this temperature expression:</p>
+\[n_e = \frac{8\pi}{h^3} \int_0^\infty p^2 \frac{dp}{e^{\mathcal{E}/kT - \Psi} + 1}\]</div>
+<p>We then change variable in terms of <span class="math notranslate nohighlight">\(\mathcal{E}\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[L \sim \frac{T^4 R^4}{\kappa M} \sim \frac{R^4}{\kappa M} \left (\frac{M\mu}{R} \right )^4 \sim \frac{M^3\mu^4}{\kappa}\]</div>
-<p>Now we assume an opacity of the form <span class="math notranslate nohighlight">\(\kappa \sim Z (1 + X) \rho T^{-7/2}\)</span>, giving:</p>
+\[p = \sqrt{2 m \mathcal{E}} \rightarrow dp = \sqrt{\frac{m}{2\mathcal{E}}} d\mathcal{E}\]</div>
+<p>giving</p>
 <div class="math notranslate nohighlight">
-\[L \sim \frac{M^3 \mu^4}{Z (1+X)} \frac{1}{\rho} T^{7/2} \sim \frac{M^3 \mu^4}{Z(1+X)} \frac{R^3}{M} \left (\frac{M\mu}{R} \right )^{7/2} \sim \frac{M^{5.5} \mu^{7.5}}{Z (1+X)} R^{-0.5}\]</div>
-<p>Now we start with the energy equation and substitute our form of
-nuclear energy generation, <span class="math notranslate nohighlight">\(\epsilon \sim X^2 \rho T^4\)</span>:</p>
+\[n_e = \frac{4\pi}{h^3} (2m)^{3/2} \int_0^\infty \frac{\mathcal{E}^{1/2} d\mathcal{E}}{e^{\mathcal{E}/kt - \Psi} + 1}\]</div>
+<p>Finally, defining <span class="math notranslate nohighlight">\(\xi \equiv \mathcal{E}/(kT)\)</span>, we have:</p>
 <div class="math notranslate nohighlight">
-\[L \sim M\epsilon \sim M X^2 \rho T^4 \sim M X^2 \left ( \frac{M}{R^3} \right ) \left (\frac{M\mu}{R} \right )^4 \sim \frac{M^6 \mu^4}{R^7} X^2\]</div>
-<p>Equating these two expressions for <span class="math notranslate nohighlight">\(L\)</span>, we find:</p>
+\[n_e = \frac{4\pi}{h^3} (2 m k T)^{3/2} \int_0^\infty \frac{\xi^{1/2} d\xi}{e^{\xi - \Psi} + 1} = \frac{4\pi}{h^3} (2mkT)^{3/2} F_{1/2} (\Psi)\]</div>
+<p>where we used the definition of the Fermi-Dirac integral given in the problem:</p>
 <div class="math notranslate nohighlight">
-\[\frac{M^{5.5} \mu^{7.5}}{Z (1+X)} R^{-0.5} \sim \frac{M^6 \mu^4}{R^7} X^2\]</div>
+\[F_n(\Psi) = \int_0^\infty \frac{\xi_n}{e^{\xi - \Psi} + 1} d\xi\]</div>
+<p>The pressure is done similarly:</p>
 <div class="math notranslate nohighlight">
-\[R \sim M^{1/13} \mu^{-7/13} \left [ X^2 (1 + X) Z \right ]^{2/13}\]</div>
-<p>Now we can put this back into our expression for L:</p>
+\[P_e = \frac{8\pi}{3 h^3} \int_0^\infty p \frac{p}{m} \frac{p^2 dp}{e^{\mathcal{E}/kT - \Psi} + 1}\]</div>
+<p>where we used the non-relativistic velocity, <span class="math notranslate nohighlight">\(v = p/m\)</span>.  Doing the same substitutions, we have:</p>
 <div class="math notranslate nohighlight">
-\[L \sim \frac{M^{5.5} \mu^{7.5}}{Z (1+X)} M^{-1/26} \mu^{7/26} \left [X^2 (1 + X) Z \right ]^{-1/13}
-    \sim M^{71/13} \mu^{101/13} \left [ Z (1 + X) \right ]^{-14/13} X^{-2/13}\]</div>
-<p>From this point forward, we’ll ignore the <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(X\)</span> dependence.  So we have:</p>
+\[P_e = \frac{8\pi}{3h^2} (2m)^{3/2} \int_0^\infty \frac{\mathcal{E}^{3/2} d\mathcal{E}}{e^{\mathcal{E}/kT - \Psi} + 1} = \frac{8\pi}{3h^3} (2mkT)^{3/2} k T F_{3/2}(\Psi)\]</div>
+<p>we see from these relations that:</p>
 <div class="math notranslate nohighlight">
-\[L \sim M^{71/13} Z^{-14/13}\]</div>
-<div class="math notranslate nohighlight">
-\[R \sim M^{1/13} Z^{2/13}\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a much steeper mass dependence for luminosity than we found with the constant electron scattering
-opacity.</p>
-</div>
+\[\frac{P_e}{n_e} = \frac{2}{3} k T \frac{F_{3/2}(\Psi)}{F_{1/2}(\Psi)}\]</div>
 </section>
 <section id="b">
 <h3>b.<a class="headerlink" href="#b" title="Permalink to this heading">#</a></h3>
-<p>Now we want to find effective temperature.  We start with the blackbody relation:</p>
+<p>We now want to use the expansion for <span class="math notranslate nohighlight">\(\Psi \rightarrow \infty\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[L \sim R^2 T_\mathrm{eff}^4\]</div>
-<p>so</p>
+\[F_n(\Psi) = \frac{\Psi^{n+1}}{n+1} \left [ 1 + \frac{\pi^2}{6} (n+1) n \Psi^{-2} + \mathcal{O}(\Psi^{-4}) \right ]\]</div>
+<p>Keeping only the first term for number density, we have:</p>
 <div class="math notranslate nohighlight">
-\[T_\mathrm{eff} \sim \frac{L^{1/4}}{R^{1/2}} \sim \frac{M^{71/52} Z^{-14/52}}{M^{1/26}Z^{2/26}} \sim M^{69/52} Z^{-18/52}\]</div>
-<p>or replacing <span class="math notranslate nohighlight">\(M\)</span> with <span class="math notranslate nohighlight">\(L\)</span>, we have:</p>
+\[F_{1/2}(\Psi) \sim \frac{2}{3} \Psi^{3/2}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The next term would be <span class="math notranslate nohighlight">\(\propto \Psi^{-1/2}\)</span> which tends to <span class="math notranslate nohighlight">\(0\)</span> for <span class="math notranslate nohighlight">\(\Psi \rightarrow \infty\)</span>, which
+is why we can ignore it.</p>
+</div>
+<p>This gives us</p>
 <div class="math notranslate nohighlight">
-\[T_\mathrm{eff} \sim L^{69/284} Z^{-78/923}\]</div>
-<p>and finally</p>
+\[n_e \sim \frac{8\pi}{2h^3} (2m kT)^{3/2} \Psi^{3/2}\]</div>
+<p>or</p>
 <div class="math notranslate nohighlight">
-\[L \sim T_\mathrm{eff}^{284/69} \left ( Z^{78/923} \right )^{284/69} \sim T_\mathrm{eff}^{284/69} Z^{8/23}\]</div>
+\[\Psi \sim \left ( \frac{3h^3}{8\pi} \right )^{2/3} \frac{n_e^{2/3}}{2 m k T}\]</div>
 </section>
 <section id="c">
 <h3>c.<a class="headerlink" href="#c" title="Permalink to this heading">#</a></h3>
-<p>Our <span class="math notranslate nohighlight">\(Z\)</span> dependence shows that for a smaller Z (e.g. pop II stars), a
-star is less luminous for the same effective temperature.  This means
-that the low metalicity main sequence lies beneath the high metalicity
-main sequence.</p>
+<p>For the pressure integral, we use</p>
+<div class="math notranslate nohighlight">
+\[F_{3/2}(\Psi) \sim \frac{2}{5} \Psi^{5/2} + \frac{\pi^2}{4} \Psi^{1/2}\]</div>
+<p>(again, the next terms tend to zero for <span class="math notranslate nohighlight">\(\Psi \rightarrow \infty\)</span>).</p>
+<p>This allows us to write our pressure as:</p>
+<div class="math notranslate nohighlight">
+\[P_e = n_e k T \frac{2}{3} \frac{\frac{2}{5} \Psi^{5/2} + \frac{\pi^2}{4} \Psi^{1/2}}{\frac{2}{3}\Psi^{3/2}}\]</div>
+<p>or, substituting in our expression <span class="math notranslate nohighlight">\(\Psi(n_e)\)</span>,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+P_e &amp;= n_e k T \frac{2}{3} \left [ \frac{3}{5} \left ( \frac{3h^3}{8\pi} \right )^{2/3} \frac{n_e^{2/3}}{2mkT} +
+                                   \frac{3}{8} \pi^2 \left (\frac{3h^3}{8\pi} \right )^{-2/3} \frac{2mkT}{n_e^{2/3}} \right ] \\
+    &amp;= \frac{h^2}{20m} \left ( \frac{3}{\pi} \right )^{2/3} n_e^{5/3} \left [ 1 + \frac{40\pi^2}{(3/\pi)^{4/3}} \frac{m^2}{h^4} \frac{(kT)^2}{n_e^{4/3}} \right ]
+\end{align*}\]</div>
+<p>We see that the first term is the zero-temperature expression we derived in class for non-relativistic electron degeneracy.  The second term is the finite-temperature
+correction.</p>
 </section>
 </section>
-<section id="schonberg-chandrasekhar-limit">
-<h2>3. Schönberg-Chandrasekhar limit<a class="headerlink" href="#schonberg-chandrasekhar-limit" title="Permalink to this heading">#</a></h2>
-<p>We want to compute the maximum mass of an isothermal core.</p>
-<section id="id1">
-<h3>a.<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<p>Let’s rederive the Virial theorem without going all the way to the surface.  Starting with HSE:</p>
-<div class="math notranslate nohighlight">
-\[dP = - \frac{GM}{4\pi r^4} dM\]</div>
-<p>we multiply by volume and integrate, giving:</p>
-<div class="math notranslate nohighlight">
-\[\int_0^{P(r)} V dP = \frac{\Omega}{3}\]</div>
-<p>We’ll integrate to the edge of the core, which we’ll denote as <span class="math notranslate nohighlight">\(R_c\)</span>
-and the pressure there as <span class="math notranslate nohighlight">\(P_c = P(R_c)\)</span> (this is not central pressure).  Then, integrating by parts, our integral is:</p>
-<div class="math notranslate nohighlight">
-\[\int_0^{P_c} V dP = \int_0^{P_c} d(VP) - \int_0^{V_c} P dV = V_c P_c - \int_0^{M_c} \frac{P}{\rho} dM\]</div>
-<p>where <span class="math notranslate nohighlight">\(M_c\)</span> is the mass of the core.  This is basically what we did
-originally when we derived the Virial theorem in class, except now we
-have the surface term, <span class="math notranslate nohighlight">\(V_c P_c\)</span>.</p>
-</section>
-<section id="id2">
-<h3>b.<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<p>Now we take the core to be isothermal and of uniform composition and well-described by an ideal gas:</p>
-<div class="math notranslate nohighlight">
-\[V_c P_c - \int_0^{M_c} \frac{k T_c}{\mu_c m_u} dM = \frac{\Omega_c}{3}\]</div>
-<p>or</p>
-<div class="math notranslate nohighlight">
-\[\frac{kT_c}{\mu_c m_u} M_c = V_c P_c + \frac{q}{3} \frac{G M_c^2}{R_c}\]</div>
-<p>where <span class="math notranslate nohighlight">\(q\)</span> is the <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> constant in the gravitational potential energy.</p>
-<p>Replacing the volume of the core, we have:</p>
-<div class="math notranslate nohighlight">
-\[P_c = \frac{3}{4\pi} \frac{k T_c}{\mu_c m_u} \frac{M_c}{R_c}^3 - \frac{q}{4\pi} \frac{GM_c^2}{R_c^4}\]</div>
-</section>
-<section id="id3">
-<h3>c.<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
-<p>To find the radius where the pressure is maximum, we differentiate with respect to <span class="math notranslate nohighlight">\(R_c\)</span> and set it to zero:</p>
-<div class="math notranslate nohighlight">
-\[\frac{dP_c}{dR_c} = -\frac{9}{4\pi} \frac{k T_c}{\mu_c m_u} \frac{M_c}{R_c^4} + \frac{q}{\pi} \frac{G M_c^2}{R_c^5} = 0\]</div>
-<p>this gives</p>
-<div class="math notranslate nohighlight">
-\[R_{c,\mathrm{max}} = \frac{4q}{9} \frac{\mu_c m_u}{k T_c} G M_c\]</div>
-<p>and the corresponding pressure is</p>
-<div class="math notranslate nohighlight">
-\[P_{c,\mathrm{max}} = P_c(R_{c,\mathrm{max}}) = \frac{3}{16\pi} \left (\frac{9}{4} \right )^3 \frac{1}{q^3}
-   \left ( \frac{k T_c}{\mu_c m_u} \right )^4 \frac{1}{G^3 M_c^2}\]</div>
-</section>
-<section id="d">
-<h3>d.<a class="headerlink" href="#d" title="Permalink to this heading">#</a></h3>
-<p>Requiring that</p>
-<div class="math notranslate nohighlight">
-\[P_c &gt; \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}\]</div>
-<p>and dropping constants, we have:</p>
-<div class="math notranslate nohighlight">
-\[P_{c, \mathrm{max}}(M_c) \propto \left (\frac{kT_c}{\mu_c m_u} \right )^4 \frac{1}{G^3 M_c^2} \ge \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}\]</div>
-<p>and from the Virial theorem, we have</p>
-<div class="math notranslate nohighlight">
-\[T_c = \frac{1}{2} \frac{GM_\star}{R_\star} \frac{\mu_\mathrm{env} m_u}{k}\]</div>
-<p>giving:</p>
-<div class="math notranslate nohighlight">
-\[\frac{M_c}{M_\star} \le \left (\frac{\mu_\mathrm{env}}{\mu_c} \right )^2 \cdot \mathrm{constant}\]</div>
-</section>
+<section id="intensity-vs-flux">
+<h2>3. Intensity vs. flux<a class="headerlink" href="#intensity-vs-flux" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -600,22 +505,13 @@ have the surface term, <span class="math notranslate nohighlight">\(V_c P_c\)</s
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="homework1-solutions.html"
+       href="homework2-solutions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Homework 1 solutions</p>
+        <p class="prev-next-title">Homework 2 solutions</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="homework3-solutions.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Homework 3 solutions</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -632,20 +528,14 @@ have the surface term, <span class="math notranslate nohighlight">\(V_c P_c\)</s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solid-or-gas">1. Solid or gas?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-analysis">2. Dimensional analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degeneracy">1. Degeneracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-zero-temperature-degeneracy">2. Non-zero temperature degeneracy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">a.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">c.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schonberg-chandrasekhar-limit">3. Schönberg-Chandrasekhar limit</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">a.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">b.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">c.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">d.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intensity-vs-flux">3. Intensity vs. flux</a></li>
 </ul>
   </nav></div>
 
