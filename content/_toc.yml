@@ -11,6 +11,10 @@ parts:
     - file: pp-vs-cno/pp-cno
     - file: hotcno/hot-CNO-breakout-example
 
+  - caption: Stellar Models
+    chapters:
+    - file: polytrope/lane-emden
+
   - caption: Homework solutions
     chapters:
     - file: homework/homework1-solutions
