@@ -380,7 +380,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">c.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intensity-vs-flux">3. Intensity vs. flux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intensity-vs-flux">3. Intensity vs. flux</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">a.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">b.</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -463,6 +467,28 @@ P_e &amp;\sim A \frac{8}{5} x^5 \\
 <section id="b">
 <h3>b.<a class="headerlink" href="#b" title="Permalink to this heading">#</a></h3>
 <p>Now we want the relativistic limit, <span class="math notranslate nohighlight">\(x \gg 1\)</span>.</p>
+<p>We first note that <span class="math notranslate nohighlight">\(\sinh^{-1}(x)\)</span> is a very slowing varying function
+of <span class="math notranslate nohighlight">\(x\)</span> (plot it and you will see).  In particular, the leading term of
+an expansion of <span class="math notranslate nohighlight">\(\sinh^{-1}(x)\)</span> for <span class="math notranslate nohighlight">\(|x| \gg 1\)</span> is <span class="math notranslate nohighlight">\(\log(2|x|)\)</span> (you
+can find this in a table of series expansions).  This grows much
+slower than the polynomial growth of the other terms, so we can ignore
+this.</p>
+<p>Then we have (for <span class="math notranslate nohighlight">\(|x| \gg 1\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[f(x) \sim x \cdot  \underbrace{(2 x^2)}_{2x^2 -3} \cdot \underbrace{x}_{(1+x^2)^{1/2}} \sim 2x^4\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[g(x) \sim 8x^3 \cdot \underbrace{x}_{[(1+x^2)^{1/2} - 1]} - f(x) \sim 6 x^4\]</div>
+<p>Putting these into our expressions,</p>
+<div class="math notranslate nohighlight">
+\[P_e \sim A 2x^4 = \frac{\pi}{3} \left (\frac{m_e c}{h} \right )^3 m_e c^2 \cdot 2 x^4
+      = \frac{2\pi}{3} \left ( \frac{3}{8\pi} \right )^{4/3} h c \left ( \frac{\rho}{\mu_e m_u} \right )^{4/3}\]</div>
+<p>and putting in numbers</p>
+<div class="math notranslate nohighlight">
+\[P_e \sim 1.2\times 10^{15} \left ( \frac{\rho / 1~\mathrm{g~cm^{-3}}}{\mu_e} \right )^{5/3} \mathrm{erg~cm^{-3}}\]</div>
+<p>finally,</p>
+<div class="math notranslate nohighlight">
+\[\rho e_e = \frac{g(x)}{f(x)} P_e = 3 P_e\]</div>
 </section>
 </section>
 <section id="non-zero-temperature-degeneracy">
@@ -543,6 +569,50 @@ correction.</p>
 </section>
 <section id="intensity-vs-flux">
 <h2>3. Intensity vs. flux<a class="headerlink" href="#intensity-vs-flux" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>a.<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>We want to compare the intensity leaving a source to that received by a detector.</p>
+<p>The energy leaving a source with area <span class="math notranslate nohighlight">\(dA\)</span> in direction <span class="math notranslate nohighlight">\(\theta\)</span> into a cone <span class="math notranslate nohighlight">\(d\Omega\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[dE^\mathrm{emit} = I \cos \theta dA d\Omega dt\]</div>
+<p>this is received by a detector a distance <span class="math notranslate nohighlight">\(r\)</span> away, with a detector area <span class="math notranslate nohighlight">\(dA^\prime\)</span>.
+That means the solid angle of the detector as seen by the source is:</p>
+<div class="math notranslate nohighlight">
+\[d\Omega = \frac{dA^\prime \cos\theta^\prime}{r^2}\]</div>
+<p>where the <span class="math notranslate nohighlight">\(\cos\theta^\prime\)</span> is the projection of the detector’s <span class="math notranslate nohighlight">\(dA^\prime\)</span> onto the
+line of sight.  This means that</p>
+<div class="math notranslate nohighlight">
+\[dE^\mathrm{emit} = I \cos \theta dA \frac{dA^\prime \cos\theta^\prime}{r^2} dt\]</div>
+<p>Now the detector receives an energy</p>
+<div class="math notranslate nohighlight">
+\[dE^\mathrm{recv} = I^\prime \cos\theta^\prime dA^\prime d\Omega^\prime dt\]</div>
+<p>where <span class="math notranslate nohighlight">\(d\Omega^\prime\)</span> is the solid angle subtended by the emitter as seen by the
+detector.  This is just</p>
+<div class="math notranslate nohighlight">
+\[d\Omega^\prime = \frac{dA \cos \theta}{r^2}\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[dE^\mathrm{recv} = I^\prime \cos\theta^\prime dA^\prime \frac{dA \cos\theta}{r^2} dt\]</div>
+<p>Finally, since <span class="math notranslate nohighlight">\(dE^\mathrm{emit} = dE^\mathrm{recv}\)</span>, we see that <span class="math notranslate nohighlight">\(I = I^\prime\)</span>.</p>
+</section>
+<section id="id4">
+<h3>b.<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>The flux emitted by our source is:</p>
+<div class="math notranslate nohighlight">
+\[f = \int_\Omega I\cos\theta d\Omega = B \int \cos \theta \sin\theta d\theta d\phi\]</div>
+<p>where we used <span class="math notranslate nohighlight">\(I = B\)</span> is constant.</p>
+<p>We need to figure out our integration limits.  The sphere will subtend an angle <span class="math notranslate nohighlight">\(\theta_c\)</span>
+as seen some distance <span class="math notranslate nohighlight">\(d\)</span> away, with</p>
+<div class="math notranslate nohighlight">
+\[\theta_c = \tan^{-1} \frac{R}{d} \sim \sin^{-1} \frac{R}{d}\]</div>
+<p>then the integration limits are:</p>
+<div class="math notranslate nohighlight">
+\[f = B \int_{\theta=0}^{\theta=\theta_c} \int_{\phi=0}^{\phi=2\pi} \cos\theta \sin\theta d\theta d\phi\]</div>
+<p>changing variables, <span class="math notranslate nohighlight">\(\xi = \sin\theta \rightarrow d\xi = cos\theta d\theta\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[f = 2\pi B \int_0^{R/d} \xi d\xi = \pi B \left ( \frac{R}{d} \right )^2\]</div>
+<p>So we see that the flux falls off as <span class="math notranslate nohighlight">\(\sim 1/d^2\)</span>.</p>
+</section>
 </section>
 </section>
 
@@ -611,7 +681,11 @@ correction.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">c.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intensity-vs-flux">3. Intensity vs. flux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intensity-vs-flux">3. Intensity vs. flux</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">a.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">b.</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
