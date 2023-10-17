@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Homework 2 solutions" href="homework2-solutions.html" />
-    <link rel="prev" title="Lane-Emden polytrope equation" href="../polytrope/lane-emden.html" />
+    <link rel="prev" title="Solving Lane-Emden via Shooting" href="../polytrope/lane-emden-shooting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Stellar Models</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../polytrope/lane-emden.html">Lane-Emden polytrope equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polytrope/lane-emden-shooting.html">Solving Lane-Emden via Shooting</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework solutions</span></p>
 <ul class="current nav bd-sidenav">
@@ -524,15 +525,15 @@ Documentation can be found at https://docs.sympy.org/1.12/
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/672f1df9245389a80147d6124c3fab139067f07485d434711af2c2a85f07c4ee.png" src="../_images/672f1df9245389a80147d6124c3fab139067f07485d434711af2c2a85f07c4ee.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fa0c020a7a0&gt;
+<img alt="../_images/9385570d6d02dc4de3ea66cd3c19cba7335449c209fde1adb0b59162e4e7b3b6.png" src="../_images/9385570d6d02dc4de3ea66cd3c19cba7335449c209fde1adb0b59162e4e7b3b6.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f054d93e350&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now we get the mass by integrating <span class="math notranslate nohighlight">\(dM/dr = 4\pi r^2 \rho(r)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ac7401c3-8011-407c-921a-4b67ef94e71a">
-<span class="eqno">(5)<a class="headerlink" href="#equation-ac7401c3-8011-407c-921a-4b67ef94e71a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5202b75a-b8f4-4e52-b55c-ed3794bde063">
+<span class="eqno">(4)<a class="headerlink" href="#equation-5202b75a-b8f4-4e52-b55c-ed3794bde063" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_\star = \int_0^{R_\star} 4\pi r^2 \rho(r) dr
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -612,8 +613,8 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1b6286618ca96c018b450533a41da5c9e443ded6ba75322d1610c222e312396b.png" src="../_images/1b6286618ca96c018b450533a41da5c9e443ded6ba75322d1610c222e312396b.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fa0bdd9feb0&gt;
+<img alt="../_images/6e19a642a3dad266d36764d85e930eb551aa6f497cfbcb717e55d9b986bbd4f1.png" src="../_images/6e19a642a3dad266d36764d85e930eb551aa6f497cfbcb717e55d9b986bbd4f1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f054dbcf310&gt;
 </pre></div>
 </div>
 </div>
@@ -696,8 +697,8 @@ so we can enforce that here to find <span class="math notranslate nohighlight">\
 </div>
 </div>
 <p>This shows that we can write:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4a8144ab-d08b-4b85-b6b5-f8712ba6516b">
-<span class="eqno">(6)<a class="headerlink" href="#equation-4a8144ab-d08b-4b85-b6b5-f8712ba6516b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8d3745fa-a0ce-4229-920d-97d1544e7e97">
+<span class="eqno">(5)<a class="headerlink" href="#equation-8d3745fa-a0ce-4229-920d-97d1544e7e97" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
                     + \frac{8}{7} \left (\frac{r}{R_\star}\right )^3 
                     - \frac{5}{21} \left ( \frac{r}{R_\star}\right )^8 \right ]
@@ -710,8 +711,8 @@ P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/139087d2a060b196fd6c9a76d2d51af909ce017d4cae97b6e26f075195b30020.png" src="../_images/139087d2a060b196fd6c9a76d2d51af909ce017d4cae97b6e26f075195b30020.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fa0bdd9faf0&gt;
+<img alt="../_images/7e73b7c9a8d7ee37821ecdda849a7da5290723d70203eef6d3f5d07fa8d25cc3.png" src="../_images/7e73b7c9a8d7ee37821ecdda849a7da5290723d70203eef6d3f5d07fa8d25cc3.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f054b310a30&gt;
 </pre></div>
 </div>
 </div>
@@ -780,13 +781,13 @@ central density =  2.78405148265706
 </div>
 </div>
 <p>In class, we did a constant density model.  We found that the central pressure was</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c81f71b-297a-48b6-85b9-bf68849d8d0a">
-<span class="eqno">(7)<a class="headerlink" href="#equation-3c81f71b-297a-48b6-85b9-bf68849d8d0a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a15fb80c-88f5-4faf-8132-5652647e59ed">
+<span class="eqno">(6)<a class="headerlink" href="#equation-a15fb80c-88f5-4faf-8132-5652647e59ed" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}
 \end{equation}\]</div>
 <p>Here, with the cubic density profile, we find</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16bdca70-2126-4a35-8178-9ae8391889f6">
-<span class="eqno">(8)<a class="headerlink" href="#equation-16bdca70-2126-4a35-8178-9ae8391889f6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-473484d8-b01d-4fd9-9da9-6ed48092fb86">
+<span class="eqno">(7)<a class="headerlink" href="#equation-473484d8-b01d-4fd9-9da9-6ed48092fb86" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{63}{80\pi} \frac{G M_\star^{2}}{R_\star^{4}}
 \end{equation}\]</div>
 <p>The pressure is greater in this model because more mass is concentrated toward the center of the star, increasing the force of gravity throughout, making the outer layers weigh more.</p>
@@ -962,15 +963,15 @@ q(r) = \begin{cases}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1994/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2140/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_1994/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
+/tmp/ipykernel_2140/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_1994/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_2140/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa0bdba04c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f054b29fcd0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" src="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" />
@@ -1122,12 +1123,12 @@ q(r) = \begin{cases}
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../polytrope/lane-emden.html"
+       href="../polytrope/lane-emden-shooting.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lane-Emden polytrope equation</p>
+        <p class="prev-next-title">Solving Lane-Emden via Shooting</p>
       </div>
     </a>
     <a class="right-next"
