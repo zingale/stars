@@ -11,6 +11,17 @@ parts:
     - file: pp-vs-cno/pp-cno
     - file: hotcno/hot-CNO-breakout-example
 
+  - caption: Integrating Networks
+    chapters:
+    - file: reaction_networks/stiff-ODEs
+      sections:
+      - file: reaction_networks/ODEs-implicit
+      - file: reaction_networks/ODEs-implicit-systems
+      - file: reaction_networks/ODEs-implicit-nonlinear-systems
+    - file: reaction_networks/reactions
+      sections:
+      - file: reaction_networks/application-CNO-network
+
   - caption: Stellar Models
     chapters:
     - file: polytrope/lane-emden
