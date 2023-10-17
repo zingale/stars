@@ -455,7 +455,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell tag_hide-cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="implicit-methods-for-systems-of-odes">
+<h1>Implicit Methods for Systems of ODEs<a class="headerlink" href="#implicit-methods-for-systems-of-odes" title="Permalink to this heading">#</a></h1>
+<div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
 <span class="collapsed">Show code cell content</span>
@@ -464,16 +466,11 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="implicit-methods-for-systems-of-odes">
-<h1>Implicit Methods for Systems of ODEs<a class="headerlink" href="#implicit-methods-for-systems-of-odes" title="Permalink to this heading">#</a></h1>
 <section id="linear-system">
 <h2>Linear system<a class="headerlink" href="#linear-system" title="Permalink to this heading">#</a></h2>
 <p>Consider the linear system of ODEs</p>
@@ -640,7 +637,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c7b28fe931fbf38031cace36a38c4e3b7315943ffc78588325d5114f1d849995.png" src="../_images/c7b28fe931fbf38031cace36a38c4e3b7315943ffc78588325d5114f1d849995.png" />
+<img alt="../_images/ad6f23a6e87d1def4d2145d10d001ce00a8c0371d6b4e60a35e7388bcb315b1a.png" src="../_images/ad6f23a6e87d1def4d2145d10d001ce00a8c0371d6b4e60a35e7388bcb315b1a.png" />
 </div>
 </div>
 <p>Now let’s see what happens with <span class="math notranslate nohighlight">\(\tau &gt; \tau_\mathrm{ref}\)</span></p>
@@ -652,7 +649,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8a23a475c34f53bdbebde2e034679b23f94f5ee5e6c1a76f9b0c2669d996e599.png" src="../_images/8a23a475c34f53bdbebde2e034679b23f94f5ee5e6c1a76f9b0c2669d996e599.png" />
+<img alt="../_images/dacd8ea03882f5cee417f733347cda3a02121a18bae2f1ad52b3c032a362f337.png" src="../_images/dacd8ea03882f5cee417f733347cda3a02121a18bae2f1ad52b3c032a362f337.png" />
 </div>
 </div>
 <p>We see that we don’t get the position of the rise correct for either size timestep, but we do get the asymptotic limit correct at the end.</p>
@@ -703,7 +700,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6a6e4c7504e739da5247ca5ab7ef0a235152a531e20cce1ae8f9c9a1b71bdf0b.png" src="../_images/6a6e4c7504e739da5247ca5ab7ef0a235152a531e20cce1ae8f9c9a1b71bdf0b.png" />
+<img alt="../_images/a735146d253ebb98a600332026e1c4c193b8d25787820f0cdec87732d8a81601.png" src="../_images/a735146d253ebb98a600332026e1c4c193b8d25787820f0cdec87732d8a81601.png" />
 </div>
 </div>
 <p>Now we see that we completely miss the correct long time solution.</p>
@@ -745,7 +742,7 @@ document.write(`
         t: [ 0.000e+00  1.000e-22 ...  1.969e-07  2.000e-07]
         y: [[ 1.000e+00  1.000e+00 ...  1.001e-14  1.001e-14]
             [ 0.000e+00  1.000e-13 ...  1.000e+00  1.000e+00]]
-      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7f5248fde140&gt;
+      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7fcde8b7f550&gt;
  t_events: None
  y_events: None
      nfev: 734
@@ -762,7 +759,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2bf751869ad3f335feedfd75d0a38843fa0ff53dc278cd429a94c5eea927daf3.png" src="../_images/2bf751869ad3f335feedfd75d0a38843fa0ff53dc278cd429a94c5eea927daf3.png" />
+<img alt="../_images/97484efe3268e07f238490e6d0c59b1c0d62cb024bb53db30d4a845ff3d005b5.png" src="../_images/97484efe3268e07f238490e6d0c59b1c0d62cb024bb53db30d4a845ff3d005b5.png" />
 </div>
 </div>
 <p>We can see how many steps it took, but looking at the shape of the stored solution:</p>

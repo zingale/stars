@@ -453,7 +453,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell tag_hide-cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="implicit-methods-for-odes">
+<h1>Implicit Methods for ODEs<a class="headerlink" href="#implicit-methods-for-odes" title="Permalink to this heading">#</a></h1>
+<div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
 <span class="collapsed">Show code cell content</span>
@@ -462,16 +464,11 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="implicit-methods-for-odes">
-<h1>Implicit Methods for ODEs<a class="headerlink" href="#implicit-methods-for-odes" title="Permalink to this heading">#</a></h1>
 <section id="model-stiff-problem">
 <h2>Model stiff problem<a class="headerlink" href="#model-stiff-problem" title="Permalink to this heading">#</a></h2>
 <p>Consider the ODE</p>
@@ -566,7 +563,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8ae8d7e54903c858caa0db3ca273a3e7c277b862714679aa4c185d362157ce55.png" src="../_images/8ae8d7e54903c858caa0db3ca273a3e7c277b862714679aa4c185d362157ce55.png" />
+<img alt="../_images/8b44c380496715b536ecacae4a2f49c4e6d4b9d869db4ec41cc281616e3b14e6.png" src="../_images/8b44c380496715b536ecacae4a2f49c4e6d4b9d869db4ec41cc281616e3b14e6.png" />
 </div>
 </div>
 <p>We see that we do quite well – the analytic solution and numerical solution are right on top of one another.</p>
@@ -580,7 +577,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f52731397a903257a7ca43dcc0d116ee448e54d78efd3c3edf2a4c0809e008ed.png" src="../_images/f52731397a903257a7ca43dcc0d116ee448e54d78efd3c3edf2a4c0809e008ed.png" />
+<img alt="../_images/6049192e927904a49e0390271f966bd1d00c4cdf60dd6a55b58900854adcf34e.png" src="../_images/6049192e927904a49e0390271f966bd1d00c4cdf60dd6a55b58900854adcf34e.png" />
 </div>
 </div>
 <p>For <span class="math notranslate nohighlight">\(\tau\)</span> twice as big as the shortest timescale in the solution we do okay.  We miss the initial rise (because we are not resolving the short transient), but we get the longterm behavior correct.</p>
@@ -593,7 +590,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2382ceaaa8d6614cdc7a8b7e40a3638673a7b749e3dac4cc8be7d301bab8f8dd.png" src="../_images/2382ceaaa8d6614cdc7a8b7e40a3638673a7b749e3dac4cc8be7d301bab8f8dd.png" />
+<img alt="../_images/3daf5ca665a61e0bfd85b9a9e85a234cbf08f8ee0a37382129ab370c304b675c.png" src="../_images/3daf5ca665a61e0bfd85b9a9e85a234cbf08f8ee0a37382129ab370c304b675c.png" />
 </div>
 </div>
 <p>For <span class="math notranslate nohighlight">\(\tau\)</span> five times larger than the shortest timescale the solution blows up – look at the vertical scale here.</p>
@@ -649,7 +646,7 @@ For our model problem, we can solve for the new state algebraically:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e2a4c69e587a6b35b092d75989a1ddbd41f154065a3b831226cde924bb9633ff.png" src="../_images/e2a4c69e587a6b35b092d75989a1ddbd41f154065a3b831226cde924bb9633ff.png" />
+<img alt="../_images/bf00bdc794e9fde2de0269d288ec4f64325b9651c1d906a889910cef3ce522e6.png" src="../_images/bf00bdc794e9fde2de0269d288ec4f64325b9651c1d906a889910cef3ce522e6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -661,7 +658,7 @@ For our model problem, we can solve for the new state algebraically:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8251b12dc4e8e577e3cb2afb25b51eb4e61d432525ede55424b90a5febc8f0a6.png" src="../_images/8251b12dc4e8e577e3cb2afb25b51eb4e61d432525ede55424b90a5febc8f0a6.png" />
+<img alt="../_images/d53a2bfc6a602db2a12d3a1288518eadecb94e690700c8e668b980cecadc728e.png" src="../_images/d53a2bfc6a602db2a12d3a1288518eadecb94e690700c8e668b980cecadc728e.png" />
 </div>
 </div>
 <p>We see that the backward-Euler / implicit method remains stable even for <span class="math notranslate nohighlight">\(\tau\)</span> larger than the shortest timescale of change in the problem.</p>
