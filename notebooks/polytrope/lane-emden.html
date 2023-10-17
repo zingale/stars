@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'polytrope/lane-emden';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Homework 1 solutions" href="../homework/homework1-solutions.html" />
+    <link rel="next" title="Solving Lane-Emden via Shooting" href="lane-emden-shooting.html" />
     <link rel="prev" title="hot-CNO and breakout" href="../hotcno/hot-CNO-breakout-example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Stellar Models</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lane-Emden polytrope equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lane-emden-shooting.html">Solving Lane-Emden via Shooting</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework solutions</span></p>
 <ul class="nav bd-sidenav">
@@ -427,17 +428,46 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lane-emden-polytrope-equation">
 <h1>Lane-Emden polytrope equation<a class="headerlink" href="#lane-emden-polytrope-equation" title="Permalink to this heading">#</a></h1>
-<p>We want to solve the Lane-Emden equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5d886c4a-4ba7-4ff9-8d04-0b7c22658201">
-<span class="eqno">(1)<a class="headerlink" href="#equation-5d886c4a-4ba7-4ff9-8d04-0b7c22658201" title="Permalink to this equation">#</a></span>\[\begin{equation}
-\frac{1}{\xi^2} \frac{d}{d\xi} \left (\xi^2 \frac{d\theta}{d\xi} \right ) = -\theta^n
-\end{equation}\]</div>
-<p>using a Runge-Kutta integration.  We will rewrite this as 2 first order equations, taking <span class="math notranslate nohighlight">\(y = \theta\)</span>, <span class="math notranslate nohighlight">\(z = \theta^\prime\)</span>:</p>
+<p>We consider just the equations of hydrostatic equilibrium and mass continuity from our
+equations of stellar structure.</p>
+<div class="math notranslate nohighlight">
+\[\frac{dP}{dr} = -\rho \frac{GM(r)}{r^2}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{dM}{dr} = 4\pi r^2 \rho\]</div>
+<p>We can close the system via an equation of state of the form:
+<span class="math notranslate nohighlight">\(P(\rho)\)</span>, which we write as:</p>
+<div class="math notranslate nohighlight">
+\[P = K \rho^{1+1/n}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is called the <em>polytropic index</em>.</p>
+<p>With a bit of algebra, we can combine these equations into a single second-order ODE for density:</p>
+<div class="math notranslate nohighlight">
+\[\left ( \frac{n+1}{n} \right ) \frac{K}{4\pi G} \frac{1}{r^2} \frac{d}{dr} \left ( \frac{r^2}{\rho^{(n-1)/n}} \frac{d\rho}{dr} \right ) = -\rho\]</div>
+<p>and then make it dimensionless, but expressing the density in terms of the central density, <span class="math notranslate nohighlight">\(\rho_c\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\rho(r) = \rho_c \theta^n(r)\]</div>
+<p>where we note that <span class="math notranslate nohighlight">\(0 \le \theta \le 1\)</span>, and a lenghtscale <span class="math notranslate nohighlight">\(\alpha\)</span> such that <span class="math notranslate nohighlight">\(r = \alpha \xi\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\alpha^2 = \frac{(n+1)P_c}{4\pi G\rho_c^2}\]</div>
+<p>Giving</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\xi^2}\frac{d}{d\xi} \left ( \xi^2 \frac{d\theta}{d\xi} \right ) = -\theta^n\]</div>
+<p>The boundary conditions are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\theta(\xi=0) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d\theta / d\xi |_{\xi=0} = 0\)</span> (<span class="math notranslate nohighlight">\(g = 0\)</span> at the center, so <span class="math notranslate nohighlight">\(dP/dr = d\rho/dr = 0\)</span>)</p></li>
+</ul>
+<p>We will rewrite this as 2 first order equations, taking <span class="math notranslate nohighlight">\(y = \theta\)</span>, <span class="math notranslate nohighlight">\(z = \theta^\prime\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{eqnarray*}
 \frac{dy}{d\xi} &amp;=&amp; z \\
 \frac{dz}{d\xi} &amp;=&amp; -\frac{2}{\xi}z - y^n
 \end{eqnarray*}\]</div>
+<p>Then we have:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y(0) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z(0) = 0\)</span></p></li>
+</ul>
+<p>But we have the problem that we do not know the stopping point, <span class="math notranslate nohighlight">\(\xi_1\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -449,19 +479,19 @@ document.write(`
 <p>This is our main class that does the integration.  We initialize it with the polytopic index, and then it will integrate the system for us.  We can then plot it or get
 the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <span class="math notranslate nohighlight">\(-\xi_1^2 d\theta/d\xi |_{\xi_1}\)</span></p>
 <p>We estimate the radius, <span class="math notranslate nohighlight">\(\xi_1\)</span> each step and make sure that the next step does not take us past that estimate.  This prevents us from having negative <span class="math notranslate nohighlight">\(\theta\)</span> values.  Given a point <span class="math notranslate nohighlight">\((\xi_p, \theta(\xi_p))\)</span>, and the derivative at that point, <span class="math notranslate nohighlight">\(\theta^\prime_p = d\theta/d\xi |_{\xi_p}\)</span>, we can write the equation of a line as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7404b018-8aa7-49a0-9f43-9aebf80ff3b9">
-<span class="eqno">(2)<a class="headerlink" href="#equation-7404b018-8aa7-49a0-9f43-9aebf80ff3b9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bf03d47b-f7f5-434a-84ac-00d5ff363025">
+<span class="eqno">(1)<a class="headerlink" href="#equation-bf03d47b-f7f5-434a-84ac-00d5ff363025" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \theta(\xi) - \theta_p = \theta^\prime_p (\xi - \xi_p)
 \end{equation}\]</div>
 <p><img alt="theta intercept" src="../_images/le_extrap.png" /></p>
 <p>Then we can ask when does <span class="math notranslate nohighlight">\(\theta\)</span> become zero, finding:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-45631d95-6abe-41e2-a036-773bba47179b">
-<span class="eqno">(3)<a class="headerlink" href="#equation-45631d95-6abe-41e2-a036-773bba47179b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6f21264f-7b4c-4a13-a540-b44342998dd0">
+<span class="eqno">(2)<a class="headerlink" href="#equation-6f21264f-7b4c-4a13-a540-b44342998dd0" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \xi = -\frac{\theta_p}{\theta^\prime_p} + \xi_p
 \end{equation}\]</div>
 <p>or in terms of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc0f783b-d27f-4eda-956b-6fdc58b7e500">
-<span class="eqno">(4)<a class="headerlink" href="#equation-fc0f783b-d27f-4eda-956b-6fdc58b7e500" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8e30fed0-916a-4ffb-b3ba-69aeee93bd86">
+<span class="eqno">(3)<a class="headerlink" href="#equation-8e30fed0-916a-4ffb-b3ba-69aeee93bd86" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \xi = -\frac{y_p}{z_p} + \xi_p
 \end{equation}\]</div>
 <p>This is our estimate of <span class="math notranslate nohighlight">\(\xi_1\)</span>.  We then make sure our stepsize <span class="math notranslate nohighlight">\(h\)</span> is small enough that we do not go beyond this estimate.</p>
@@ -652,11 +682,11 @@ the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <
       </div>
     </a>
     <a class="right-next"
-       href="../homework/homework1-solutions.html"
+       href="lane-emden-shooting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Homework 1 solutions</p>
+        <p class="prev-next-title">Solving Lane-Emden via Shooting</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
