@@ -14,6 +14,7 @@ parts:
   - caption: Stellar Models
     chapters:
     - file: polytrope/lane-emden
+    - file: polytrope/lane-emden-shooting
 
   - caption: Homework solutions
     chapters:
