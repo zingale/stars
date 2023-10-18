@@ -389,7 +389,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reaction-rates">Reaction Rates</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-network">Structure of a Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-network">Structure of a Network</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molar-fractions">Molar fractions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-fractions">Mass fractions</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-the-network">Integrating the Network</a></li>
 </ul>
             </nav>
@@ -442,6 +446,8 @@ of number density, it is straightforward to write down:</p>
 and we gain 1 nuclei <span class="math notranslate nohighlight">\(A\)</span> for each <span class="math notranslate nohighlight">\(B + C\)</span> reaction.  The factor of 1/2 in the first
 term is because when <span class="math notranslate nohighlight">\(A\)</span> reacts with itself, we don’t want to double count the number
 of pairs.</p>
+<section id="molar-fractions">
+<h3>Molar fractions<a class="headerlink" href="#molar-fractions" title="Permalink to this heading">#</a></h3>
 <p>We can instead write this in terms of molar or mass fractions.  Mass fractions are defined
 as the mass of the species relative to the total mass of all species in a volume, or</p>
 <div class="math notranslate nohighlight">
@@ -468,6 +474,30 @@ is the atomic weight.  Number density is related to mass fraction as:</p>
 \frac{dY_D}{dt} &amp;=&amp;  \rho Y_B Y_C N_A \langle \sigma v \rangle_{BC} \\
 \end{eqnarray*}\]</div>
 <p>This is often the form we write the system of ODEs in when we write a network.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reaction rate compilations often provide fits or tabulations of
+the quantity <span class="math notranslate nohighlight">\(N_A \langle \sigma v\rangle\)</span>.</p>
+</div>
+</section>
+<section id="mass-fractions">
+<h3>Mass fractions<a class="headerlink" href="#mass-fractions" title="Permalink to this heading">#</a></h3>
+<p>An alternate form of the system is to express it as an ODE system of mass fractions.
+Here we note that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dY_k}{dt} = \frac{1}{A_k} \frac{dX_k}{dt}\]</div>
+<p>The system will appear a bit more complicated since the atomic weights now explicitly appear.  For
+example, the evolution equation of species <span class="math notranslate nohighlight">\(A\)</span> will be:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dX_A}{dt} = - 2 \frac{1}{2} \frac{X_A^2}{A_A} N_A \langle \sigma v \rangle_{AA}
+                      \frac{A_A}{A_B A_C} \rho X_B X_C N_A \langle \sigma v \rangle_{BC}\]</div>
+<p>The molar fraction system has the advantage that the coefficients are the same as the
+stoichiometric coefficients of the rate equations.  The mass fraction system has the
+advantage that by construction,</p>
+<div class="math notranslate nohighlight">
+\[\sum_k \frac{dX_k}{dt} = 0\]</div>
+<p>Either system will give the same evolution.</p>
+</section>
 </section>
 <section id="integrating-the-network">
 <h2>Integrating the Network<a class="headerlink" href="#integrating-the-network" title="Permalink to this heading">#</a></h2>
@@ -548,7 +578,11 @@ we often use.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reaction-rates">Reaction Rates</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-network">Structure of a Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-network">Structure of a Network</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molar-fractions">Molar fractions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-fractions">Mass fractions</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-the-network">Integrating the Network</a></li>
 </ul>
   </nav></div>

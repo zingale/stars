@@ -1,8 +1,7 @@
-Application: Nuclear Reaction Networks
-======================================
+# Application: Nuclear Reaction Networks
 
-Reaction Rates
---------------
+
+## Reaction Rates
 
 Nuclear experiments provide us with reaction rates of the form (for a 2-body reaction):
 
@@ -21,8 +20,7 @@ Here the rate, $r$, has units of reactions / time / volume.
 Reaction databases (like ReacLib) often provide fits to $N_A \langle \sigma v
 \rangle$, where $N_A$ is Avogadro's number.
 
-Structure of a Network
-----------------------
+## Structure of a Network
 
 A reaction network is a set of nuclei and the rates that link them together.  Consider
 4 nuclei, $A$, $B$, $C$, and $D$, linked by 2 rates:
@@ -47,6 +45,9 @@ Here the first equation says that we lose 2 nuclei $A$ for each $A + A$ reaction
 and we gain 1 nuclei $A$ for each $B + C$ reaction.  The factor of 1/2 in the first
 term is because when $A$ reacts with itself, we don't want to double count the number
 of pairs.
+
+
+### Molar fractions
 
 We can instead write this in terms of molar or mass fractions.  Mass fractions are defined
 as the mass of the species relative to the total mass of all species in a volume, or
@@ -81,8 +82,35 @@ Substituting these into the above expression we get
 
 This is often the form we write the system of ODEs in when we write a network.
 
-Integrating the Network
------------------------
+```{note}
+Reaction rate compilations often provide fits or tabulations of
+the quantity $N_A \langle \sigma v\rangle$.
+```
+
+### Mass fractions
+
+An alternate form of the system is to express it as an ODE system of mass fractions.
+Here we note that:
+
+$$\frac{dY_k}{dt} = \frac{1}{A_k} \frac{dX_k}{dt}$$
+
+The system will appear a bit more complicated since the atomic weights now explicitly appear.  For
+example, the evolution equation of species $A$ will be:
+
+$$\frac{dX_A}{dt} = - 2 \frac{1}{2} \frac{X_A^2}{A_A} N_A \langle \sigma v \rangle_{AA}
+                      \frac{A_A}{A_B A_C} \rho X_B X_C N_A \langle \sigma v \rangle_{BC}$$
+                      
+The molar fraction system has the advantage that the coefficients are the same as the
+stoichiometric coefficients of the rate equations.  The mass fraction system has the
+advantage that by construction, 
+
+$$\sum_k \frac{dX_k}{dt} = 0$$
+
+Either system will give the same evolution.
+
+
+
+## Integrating the Network
 
 We often need to integrate this system together with an energy
 equation to capture the evolution of the temperature as reactions
