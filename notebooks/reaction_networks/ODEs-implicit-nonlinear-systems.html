@@ -519,6 +519,14 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[{\bf f}(t^{n+1},{\bf y}^{n+1}) = {\bf f}(t^{n+1}, {\bf y}_0^{n+1} )
    + \underbrace{ \left . \frac{\partial {\bf f}}{\partial {\bf y}} \right |_0}_{\equiv {\bf J}} \Delta {\bf y}_0 + \ldots\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here <span class="math notranslate nohighlight">\({\bf J}\)</span> is the Jacobian and has the form:</p>
+<p>{\bf J} = \left ( \begin{array}{ccc}
+\partial f_1 / \partial y_1 &amp; \partial f_1 / \partial y_2 &amp; \partial f_1 / \partial y_3 \
+\partial f_2 / \partial y_1 &amp; \partial f_2 / \partial y_2 &amp; \partial f_2 / \partial y_3 \
+\partial f_3 / \partial y_1 &amp; \partial f_3 / \partial y_2 &amp; \partial f_3 / \partial y_3</p>
+</div>
 <p>Our linearized system becomes:</p>
 <div class="math notranslate nohighlight">
 \[{\bf y}^{n+1} = {\bf y}^n + \tau \left [ {\bf f}(t^{n+1}, {\bf y}_0^{n+1}) + {\bf J}\Delta {\bf y}_0 \right ]\]</div>
@@ -731,7 +739,7 @@ https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.h
         y: [[ 1.000e+00  1.000e+00 ...  2.209e-05  2.075e-05]
             [ 0.000e+00  1.277e-06 ...  8.836e-11  8.300e-11]
             [ 0.000e+00  1.320e-09 ...  1.000e+00  1.000e+00]]
-      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7fa5ab572e90&gt;
+      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7fafb89b2e30&gt;
  t_events: None
  y_events: None
      nfev: 443
