@@ -99,17 +99,19 @@ The system will appear a bit more complicated since the atomic weights
 now explicitly appear.  For example, the evolution equation of species
 $A$ will be:
 
-$$\frac{dX_A}{dt} = - 2 \frac{1}{2} \rho \frac{X_A^2}{A_A} N_A \langle \sigma v \rangle_{AA}
+$$\frac{dX_A}{dt} = - 2 \frac{1}{2} \rho \frac{X_A^2}{A_A} N_A \langle \sigma v \rangle_{AA} +
                       \rho \frac{A_A}{A_B A_C} X_B X_C N_A \langle \sigma v \rangle_{BC}$$
 
-The molar fraction system has the advantage that the coefficients are
+```{note}
+The *molar fraction* system has the advantage that the coefficients are
 the same as the stoichiometric coefficients of the rate equations.
-The mass fraction system has the advantage that by construction,
+
+While the *mass fraction^ system has the advantage that by construction,
 
 $$\sum_k \frac{dX_k}{dt} = 0$$
 
 Either system will give the same evolution.
-
+```
 
 
 ## Integrating the Network
