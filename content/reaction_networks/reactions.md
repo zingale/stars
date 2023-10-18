@@ -106,7 +106,7 @@ $$\frac{dX_A}{dt} = - 2 \frac{1}{2} \rho \frac{X_A^2}{A_A} N_A \langle \sigma v 
 The *molar fraction* system has the advantage that the coefficients are
 the same as the stoichiometric coefficients of the rate equations.
 
-While the *mass fraction^ system has the advantage that by construction,
+While the *mass fraction* system has the advantage that by construction,
 
 $$\sum_k \frac{dX_k}{dt} = 0$$
 
