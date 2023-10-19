@@ -16,10 +16,6 @@ measured by experiements.
 
 Here the rate, $r$, has units of reactions / time / volume.
 
-
-Reaction databases (like ReacLib) often provide fits to $N_A \langle \sigma v
-\rangle$, where $N_A$ is Avogadro's number.
-
 ## Structure of a Network
 
 A reaction network is a set of nuclei and the rates that link them together.  Consider
@@ -66,9 +62,10 @@ $$Y_k = \frac{X_k}{A_k}$$
 where $Y_k$ is the molar fraction of species $k$, $X_k$ is the mass fraction, and $A_k$
 is the atomic weight.  Number density is related to mass fraction as:
 
-$$n_k = \frac{\rho X_k}{m_u A_k}$$
+$$n_k = \frac{\rho X_k}{m_u A_k} = \frac{\rho Y_k}{m_u} = N_A \rho Y_k$$
 
-where $m_u$ is the atomic mass unit ($1/N_A$).
+where $N_A$ is Avogadro's number and m_u$ is the atomic mass unit
+($m_u = 1/N_A$).
 
 Substituting these into the above expression we get
 
