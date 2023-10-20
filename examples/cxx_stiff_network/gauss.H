@@ -49,7 +49,7 @@ void print_Ab(const Array& A, const std::vector<double>& b) {
 
 inline
 std::vector<double> gauss_elim(Array& A, std::vector<double>& b,
-                               const bool quiet=false) {
+                               const bool quiet=true) {
 
     // perform gaussian elimination with pivoting, solving A x = b.
     //
