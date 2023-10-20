@@ -64,7 +64,7 @@ is the atomic weight.  Number density is related to mass fraction as:
 
 $$n_k = \frac{\rho X_k}{m_u A_k} = \frac{\rho Y_k}{m_u} = N_A \rho Y_k$$
 
-where $N_A$ is Avogadro's number and m_u$ is the atomic mass unit
+where $N_A$ is Avogadro's number and $m_u$ is the atomic mass unit
 ($m_u = 1/N_A$).
 
 Substituting these into the above expression we get
