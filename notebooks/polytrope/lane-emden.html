@@ -414,7 +414,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -430,6 +432,17 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation">Derivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-of-first-order-equations">System of first order equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stopping-point">Stopping point</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -441,6 +454,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lane-emden-polytrope-equation">
 <h1>Lane-Emden polytrope equation<a class="headerlink" href="#lane-emden-polytrope-equation" title="Permalink to this heading">#</a></h1>
+<section id="derivation">
+<h2>Derivation<a class="headerlink" href="#derivation" title="Permalink to this heading">#</a></h2>
 <p>We consider just the equations of hydrostatic equilibrium and mass continuity from our
 equations of stellar structure.</p>
 <div class="math notranslate nohighlight">
@@ -469,6 +484,9 @@ equations of stellar structure.</p>
 <li><p><span class="math notranslate nohighlight">\(\theta(\xi=0) = 1\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(d\theta / d\xi |_{\xi=0} = 0\)</span> (<span class="math notranslate nohighlight">\(g = 0\)</span> at the center, so <span class="math notranslate nohighlight">\(dP/dr = d\rho/dr = 0\)</span>)</p></li>
 </ul>
+</section>
+<section id="system-of-first-order-equations">
+<h2>System of first order equations<a class="headerlink" href="#system-of-first-order-equations" title="Permalink to this heading">#</a></h2>
 <p>We will rewrite this as 2 first order equations, taking <span class="math notranslate nohighlight">\(y = \theta\)</span>, <span class="math notranslate nohighlight">\(z = \theta^\prime\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{eqnarray*}
@@ -480,7 +498,39 @@ equations of stellar structure.</p>
 <li><p><span class="math notranslate nohighlight">\(y(0) = 1\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(z(0) = 0\)</span></p></li>
 </ul>
+<p>Notice that if we evaluate the system at <span class="math notranslate nohighlight">\(\xi = 0\)</span>, then the <span class="math notranslate nohighlight">\(dz/d\xi\)</span> term blows up.  We need to use an expansion there.</p>
+<p>In the limit <span class="math notranslate nohighlight">\(\xi \rightarrow 0\)</span>, the solution takes the form:</p>
+<div class="math notranslate nohighlight">
+\[\theta(\xi) = 1 - \frac{1}{6}\xi^2 + \frac{n}{120} \xi^4 + \ldots\]</div>
+<p>which allows us to simply the <span class="math notranslate nohighlight">\(dz/d\xi\)</span> near <span class="math notranslate nohighlight">\(\xi = 0\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dz}{d\xi} \approx -\frac{1}{3}\]</div>
+</section>
+<section id="stopping-point">
+<h2>Stopping point<a class="headerlink" href="#stopping-point" title="Permalink to this heading">#</a></h2>
 <p>But we have the problem that we do not know the stopping point, <span class="math notranslate nohighlight">\(\xi_1\)</span>.</p>
+<p>We estimate the radius, <span class="math notranslate nohighlight">\(\xi_1\)</span> each step and make sure that the next step does not take us past that estimate.  This prevents us from having negative <span class="math notranslate nohighlight">\(\theta\)</span> values.  Given a point <span class="math notranslate nohighlight">\((\xi_p, \theta(\xi_p))\)</span>, and the derivative at that point, <span class="math notranslate nohighlight">\(\theta^\prime_p = d\theta/d\xi |_{\xi_p}\)</span>, we can write the equation of a line as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a591bf84-8c50-4011-847a-aa9f16afd79a">
+<span class="eqno">(1)<a class="headerlink" href="#equation-a591bf84-8c50-4011-847a-aa9f16afd79a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \theta(\xi) - \theta_p = \theta^\prime_p (\xi - \xi_p)
+\end{equation}\]</div>
+<p><img alt="theta intercept" src="../_images/le_extrap.png" /></p>
+<p>Then we can ask when does <span class="math notranslate nohighlight">\(\theta\)</span> become zero, finding:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ebe7abf7-7010-4029-85f3-15ee5bd7d0cf">
+<span class="eqno">(2)<a class="headerlink" href="#equation-ebe7abf7-7010-4029-85f3-15ee5bd7d0cf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \xi = -\frac{\theta_p}{\theta^\prime_p} + \xi_p
+\end{equation}\]</div>
+<p>or in terms of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2ec0a646-ca42-4e61-b707-9b99f5c0ee16">
+<span class="eqno">(3)<a class="headerlink" href="#equation-2ec0a646-ca42-4e61-b707-9b99f5c0ee16" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \xi = -\frac{y_p}{z_p} + \xi_p
+\end{equation}\]</div>
+<p>This is our estimate of <span class="math notranslate nohighlight">\(\xi_1\)</span>.  We then make sure our stepsize <span class="math notranslate nohighlight">\(h\)</span> is small enough that we do not go beyond this estimate.</p>
+</section>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
+<p>This is our main class that does the integration.  We initialize it with the polytopic index, and then it will integrate the system for us.  We can then plot it or get
+the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <span class="math notranslate nohighlight">\(-\xi_1^2 d\theta/d\xi |_{\xi_1}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -489,25 +539,6 @@ equations of stellar structure.</p>
 </div>
 </div>
 </div>
-<p>This is our main class that does the integration.  We initialize it with the polytopic index, and then it will integrate the system for us.  We can then plot it or get
-the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <span class="math notranslate nohighlight">\(-\xi_1^2 d\theta/d\xi |_{\xi_1}\)</span></p>
-<p>We estimate the radius, <span class="math notranslate nohighlight">\(\xi_1\)</span> each step and make sure that the next step does not take us past that estimate.  This prevents us from having negative <span class="math notranslate nohighlight">\(\theta\)</span> values.  Given a point <span class="math notranslate nohighlight">\((\xi_p, \theta(\xi_p))\)</span>, and the derivative at that point, <span class="math notranslate nohighlight">\(\theta^\prime_p = d\theta/d\xi |_{\xi_p}\)</span>, we can write the equation of a line as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f6e1c2b-a771-4e2a-ac29-4b33c8aef16f">
-<span class="eqno">(1)<a class="headerlink" href="#equation-8f6e1c2b-a771-4e2a-ac29-4b33c8aef16f" title="Permalink to this equation">#</a></span>\[\begin{equation}
-    \theta(\xi) - \theta_p = \theta^\prime_p (\xi - \xi_p)
-\end{equation}\]</div>
-<p><img alt="theta intercept" src="../_images/le_extrap.png" /></p>
-<p>Then we can ask when does <span class="math notranslate nohighlight">\(\theta\)</span> become zero, finding:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a0390ebb-8323-4cac-8859-c868435966bb">
-<span class="eqno">(2)<a class="headerlink" href="#equation-a0390ebb-8323-4cac-8859-c868435966bb" title="Permalink to this equation">#</a></span>\[\begin{equation}
-    \xi = -\frac{\theta_p}{\theta^\prime_p} + \xi_p
-\end{equation}\]</div>
-<p>or in terms of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1bbb14c4-3f8c-4880-b987-9de31041ba2c">
-<span class="eqno">(3)<a class="headerlink" href="#equation-1bbb14c4-3f8c-4880-b987-9de31041ba2c" title="Permalink to this equation">#</a></span>\[\begin{equation}
-    \xi = -\frac{y_p}{z_p} + \xi_p
-\end{equation}\]</div>
-<p>This is our estimate of <span class="math notranslate nohighlight">\(\xi_1\)</span>.  We then make sure our stepsize <span class="math notranslate nohighlight">\(h\)</span> is small enough that we do not go beyond this estimate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Polytrope</span><span class="p">:</span>
@@ -654,6 +685,7 @@ the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <
 </div>
 </div>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -709,6 +741,23 @@ the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation">Derivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-of-first-order-equations">System of first order equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stopping-point">Stopping point</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

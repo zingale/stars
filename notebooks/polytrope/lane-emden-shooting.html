@@ -442,22 +442,13 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="solving-lane-emden-via-shooting">
 <h1>Solving Lane-Emden via Shooting<a class="headerlink" href="#solving-lane-emden-via-shooting" title="Permalink to this heading">#</a></h1>
 <p>We’ll use 4th order RK integration and we’ll integrate both inward from the surface and outward from the center and meet at some point in the middle, <span class="math notranslate nohighlight">\(\xi_\mathrm{fit}\)</span>.</p>
-<p>We rewrite our system by defining:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-y &amp;= \theta \\
-z &amp;= d\theta/d\xi = dy/d\xi
-\end{align*}\]</div>
-<p>then our system is:</p>
+<p>As before, our system is:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \frac{dy}{d\xi} &amp;= z \\
 \frac{dz}{d\xi} &amp;= -y^n - \frac{2}{\xi} z
 \end{align*}\]</div>
-<p>At <span class="math notranslate nohighlight">\(\xi = 0\)</span>, the righthand side of <span class="math notranslate nohighlight">\(dz/d\xi\)</span> looks like it blows up, but in the limit <span class="math notranslate nohighlight">\(\xi \rightarrow 0\)</span>, the solution takes the form:</p>
-<div class="math notranslate nohighlight">
-\[\theta(\xi) = 1 - \frac{1}{6}\xi^2 + \frac{n}{120} \xi^4 + \ldots\]</div>
-<p>which allows us to simply the <span class="math notranslate nohighlight">\(dz/d\xi\)</span> near <span class="math notranslate nohighlight">\(\xi = 0\)</span> as:</p>
+<p>with the limit near <span class="math notranslate nohighlight">\(\xi \rightarrow 0\)</span> of</p>
 <div class="math notranslate nohighlight">
 \[\frac{dz}{d\xi} \approx -\frac{1}{3}\]</div>
 <p>We’re going to integrate outward from the center and inward from the surface and meet in the middle.</p>
@@ -476,7 +467,7 @@ z &amp;= d\theta/d\xi = dy/d\xi
 <ul>
 <li><p>Take an initial guess for <span class="math notranslate nohighlight">\(\eta\)</span> and <span class="math notranslate nohighlight">\(\xi_s\)</span>.  Pick <span class="math notranslate nohighlight">\(\xi_f = \xi_s/2\)</span>.</p></li>
 <li><p>Integrate from the center outward to the fit point, <span class="math notranslate nohighlight">\(\xi_f\)</span>, getting the solution: <span class="math notranslate nohighlight">\(y_\mathrm{out}(\xi_f)\)</span>, <span class="math notranslate nohighlight">\(z_\mathrm{out}(\xi_f)\)</span>.</p></li>
-<li><p>Integrate from the surface (starting at the guess <span class="math notranslate nohighlight">\(\xi_s\)</span> inward to the fit point, getting the
+<li><p>Integrate from the surface (starting at the guess <span class="math notranslate nohighlight">\(\xi_s\)</span>) inward to the fit point, getting the
 solution <span class="math notranslate nohighlight">\(y_\mathrm{in}(\xi_f)\)</span>, <span class="math notranslate nohighlight">\(z_\mathrm{in}(\xi_f)\)</span></p></li>
 <li><p>Constrain the solution to match at the fit point by finding the zero of:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -533,7 +524,7 @@ solution <span class="math notranslate nohighlight">\(y_\mathrm{in}(\xi_f)\)</sp
 </div>
 </div>
 </div>
-<p>Now, we still need to understand how to solve for 2 roots from 2 equations (so far, we’ve only done the scalar case).</p>
+<p>We need to find the roots of our system that matches the solution at the midpoint.</p>
 <p>Let’s Taylor expand our functions <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(Z\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -548,7 +539,6 @@ Z(\eta +\Delta \eta, \xi_s + \Delta \xi_s) &amp;= Z(\eta, \xi_s) + \frac{\partia
 <div class="math notranslate nohighlight">
 \[\Delta \xi_s = \frac{-Z + \frac{\partial Z}{\partial \eta} \left ( \frac{\partial Y}{\partial \eta} \right )^{-1} Y}{\frac{\partial Z}{\partial \xi_s} + \frac{\partial Z}{\partial \eta} \left ( \frac{\partial Y}{\partial \eta} \right)^{-1} \frac{\partial Y}{\partial \xi_s}}\]</div>
 <p>We still need the derivatives, which we will compute via differencing.</p>
-<p>For systems with more than 2 equations and 2 unknowns, it becomes tedious to analytically solve for the corrections.  Instead, as we’ll see shortly, we can express this as a linear system and solve for the corrections using numerical linear algebra methods.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solve_le</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
