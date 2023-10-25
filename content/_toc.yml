@@ -18,6 +18,7 @@ parts:
       - file: reaction_networks/ODEs-implicit
       - file: reaction_networks/ODEs-implicit-systems
       - file: reaction_networks/ODEs-implicit-nonlinear-systems
+      - file: reaction_networks/cxx_solver
     - file: reaction_networks/reactions
       sections:
       - file: reaction_networks/application-CNO-network
@@ -32,5 +33,6 @@ parts:
     - file: homework/homework1-solutions
     - file: homework/homework2-solutions
     - file: homework/homework3-solutions
+    - file: homework/homework4-solutions
 
 
