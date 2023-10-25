@@ -391,7 +391,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adiabatic-index">1. Adiabatic index</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convectively-unstable-atmosphere">Convectively unstable atmosphere</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convectively-unstable-atmosphere">Convectively unstable atmosphere</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-we-want-to-find-the-profile-of-an-isentropic-plane-parallel-atmosphere-we-have">a. We want to find the profile of an isentropic plane-parallel atmosphere.  We have:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solar-convection">Solar convection</a></li>
 </ul>
             </nav>
@@ -470,6 +474,38 @@ dq = 0 &amp;= de + P d\left ( \frac{1}{\rho} \right ) \\
 </section>
 <section id="convectively-unstable-atmosphere">
 <h2>Convectively unstable atmosphere<a class="headerlink" href="#convectively-unstable-atmosphere" title="Permalink to this heading">#</a></h2>
+<section id="a-we-want-to-find-the-profile-of-an-isentropic-plane-parallel-atmosphere-we-have">
+<h3>a. We want to find the profile of an isentropic plane-parallel atmosphere.  We have:<a class="headerlink" href="#a-we-want-to-find-the-profile-of-an-isentropic-plane-parallel-atmosphere-we-have" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\frac{dP}{dr} = -\rho |g|\]</div>
+<p>where <span class="math notranslate nohighlight">\(g\)</span> is constant.  If the gas is adiabatic, then the EOS takes the form:</p>
+<div class="math notranslate nohighlight">
+\[P = K \rho^{\Gamma_1}\]</div>
+<p>Putting this together, we have:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\Gamma_1 K \rho^{\Gamma_1 - 1} \frac{d\rho}{dr} &amp;= -\rho |g| \\
+\rho^{\Gamma_1 - 2} d\rho &amp;= - \frac{|g|}{\Gamma_1 K} dr
+\end{align*}\]</div>
+<p>This can be integrated.  We take <span class="math notranslate nohighlight">\(P(r = 0) = P_0\)</span>, <span class="math notranslate nohighlight">\(\rho(r=0) = \rho_0\)</span>  and find:</p>
+<div class="math notranslate nohighlight">
+\[\rho(r) = \rho_0 \left ( 1 - \frac{\Gamma_1 - 1}{\Gamma_1} \frac{|g|}{K} \frac{1}{\rho_0^{\Gamma_1 - 1}} r \right )^{1/(\Gamma_1 - 1)}\]</div>
+<p>we can eliminate <span class="math notranslate nohighlight">\(K\)</span> as <span class="math notranslate nohighlight">\(K = P_0 / \rho_0^{\Gamma_1}\)</span> and get:</p>
+<div class="math notranslate nohighlight">
+\[\rho(r) = \rho_0 \left ( 1 - \frac{\Gamma_1 - 1}{\Gamma_1} \frac{|g|\rho_0}{P_0}  r \right )^{1/(\Gamma_1 - 1)}\]</div>
+<p>or in terms of the scale height, <span class="math notranslate nohighlight">\(H = P_0 / (\rho_0 |g|)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\rho(r) = \rho_0 \left ( 1 - \frac{\Gamma_1 - 1}{\Gamma_1} \frac{r}{H} \right )^{1/(\Gamma_1 - 1)}\]</div>
+<p>Then since <span class="math notranslate nohighlight">\(P(r) = K\rho^{\Gamma_1}\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[P(r) = \rho_0 \left ( 1 - \frac{\Gamma_1 - 1}{\Gamma_1} \frac{r}{H} \right )^{\Gamma_1/(\Gamma_1 - 1)}\]</div>
+</section>
+<section id="b">
+<h3>b.<a class="headerlink" href="#b" title="Permalink to this heading">#</a></h3>
+<p>Here’s a plot</p>
+<p><img alt="Isothermal vs. adiabatic atmosphere" src="../_images/atm.png" /></p>
+<p>Notice that the adiabatic atmosphere falls off much faster than the isothermal atmosphere.</p>
+</section>
 </section>
 <section id="solar-convection">
 <h2>Solar convection<a class="headerlink" href="#solar-convection" title="Permalink to this heading">#</a></h2>
@@ -575,7 +611,11 @@ then</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adiabatic-index">1. Adiabatic index</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convectively-unstable-atmosphere">Convectively unstable atmosphere</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convectively-unstable-atmosphere">Convectively unstable atmosphere</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-we-want-to-find-the-profile-of-an-isentropic-plane-parallel-atmosphere-we-have">a. We want to find the profile of an isentropic plane-parallel atmosphere.  We have:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solar-convection">Solar convection</a></li>
 </ul>
   </nav></div>

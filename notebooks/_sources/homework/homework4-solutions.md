@@ -76,6 +76,44 @@ We see that this has the proper limits:
 
 ## Convectively unstable atmosphere
 
+### a. We want to find the profile of an isentropic plane-parallel atmosphere.  We have:
+
+$$\frac{dP}{dr} = -\rho |g|$$
+
+where $g$ is constant.  If the gas is adiabatic, then the EOS takes the form:
+
+$$P = K \rho^{\Gamma_1}$$
+
+Putting this together, we have:
+
+\begin{align*}
+\Gamma_1 K \rho^{\Gamma_1 - 1} \frac{d\rho}{dr} &= -\rho |g| \\
+\rho^{\Gamma_1 - 2} d\rho &= - \frac{|g|}{\Gamma_1 K} dr
+\end{align*}
+
+This can be integrated.  We take $P(r = 0) = P_0$, $\rho(r=0) = \rho_0$  and find:
+
+$$\rho(r) = \rho_0 \left ( 1 - \frac{\Gamma_1 - 1}{\Gamma_1} \frac{|g|}{K} \frac{1}{\rho_0^{\Gamma_1 - 1}} r \right )^{1/(\Gamma_1 - 1)}$$
+
+we can eliminate $K$ as $K = P_0 / \rho_0^{\Gamma_1}$ and get:
+
+$$\rho(r) = \rho_0 \left ( 1 - \frac{\Gamma_1 - 1}{\Gamma_1} \frac{|g|\rho_0}{P_0}  r \right )^{1/(\Gamma_1 - 1)}$$
+
+or in terms of the scale height, $H = P_0 / (\rho_0 |g|)$, 
+
+$$\rho(r) = \rho_0 \left ( 1 - \frac{\Gamma_1 - 1}{\Gamma_1} \frac{r}{H} \right )^{1/(\Gamma_1 - 1)}$$
+
+Then since $P(r) = K\rho^{\Gamma_1}$, we have:
+
+$$P(r) = \rho_0 \left ( 1 - \frac{\Gamma_1 - 1}{\Gamma_1} \frac{r}{H} \right )^{\Gamma_1/(\Gamma_1 - 1)}$$
+
+### b.
+
+Here's a plot
+
+![Isothermal vs. adiabatic atmosphere](atm.png)
+
+Notice that the adiabatic atmosphere falls off much faster than the isothermal atmosphere.
 
 ## Solar convection
 
