@@ -179,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit.html">Implicit Methods for ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-systems.html">Implicit Methods for Systems of ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-nonlinear-systems.html">Implicit Methods and Nonlinear Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reaction_networks/cxx_solver.html">C++ Solver for Stiff Nonlinear System</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/reactions.html">Application: Nuclear Reaction Networks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -196,6 +197,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework1-solutions.html">Homework 1 solutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework2-solutions.html">Homework 2 solutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework3-solutions.html">Homework 3 solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework4-solutions.html">Homework 4 solutions</a></li>
 </ul>
 
     </div>
@@ -573,7 +575,7 @@ He3 + He3 ⟶ p + p + He4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.9735120950414538
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.9735120801889896
 </pre></div>
 </div>
 </div>
@@ -638,10 +640,10 @@ O15 ⟶ N15 + e⁺ + 𝜈
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{C12 + p ⟶ N13 + 𝛾: 1.0467759242295147e-17,
- C13 + p ⟶ N14 + 𝛾: 3.176211597339997e-17,
- N13 ⟶ C13 + e⁺ + 𝜈: 2.9720852738029567e-07,
+ C13 + p ⟶ N14 + 𝛾: 3.1762115973399955e-17,
+ N13 ⟶ C13 + e⁺ + 𝜈: 2.9720852738029577e-07,
  N14 + p ⟶ O15 + 𝛾: 1.7295781984662848e-20,
- N15 + p ⟶ He4 + C12: 6.954822248932605e-16,
+ N15 + p ⟶ He4 + C12: 6.954822248932606e-16,
  O15 ⟶ N15 + e⁺ + 𝜈: 1.2625681768893483e-06}
 </pre></div>
 </div>
@@ -664,9 +666,9 @@ O15 ⟶ N15 + e⁺ + 𝜈
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 10000000.0, nu = 22.82961446376932
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 10000000.0, nu = 22.829615097171867
 T = 20000000.0, nu = 17.966372387768573
-T = 30000000.0, nu = 15.601859332769518
+T = 30000000.0, nu = 15.601859314950396
 T = 40000000.0, nu = 14.11534690114197
 </pre></div>
 </div>
@@ -716,7 +718,7 @@ T = 40000000.0, nu = 14.11534690114197
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f75a8a6fdc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f84e4c8d9f0&gt;
 </pre></div>
 </div>
 <img alt="../_images/3eed5b5e9b303f6e42e1c800a46d81b7899fa7da17dbe1df203dbc04946be472.png" src="../_images/3eed5b5e9b303f6e42e1c800a46d81b7899fa7da17dbe1df203dbc04946be472.png" />

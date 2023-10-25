@@ -179,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit.html">Implicit Methods for ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-systems.html">Implicit Methods for Systems of ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-nonlinear-systems.html">Implicit Methods and Nonlinear Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reaction_networks/cxx_solver.html">C++ Solver for Stiff Nonlinear System</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/reactions.html">Application: Nuclear Reaction Networks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -196,6 +197,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 1 solutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="homework2-solutions.html">Homework 2 solutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="homework3-solutions.html">Homework 3 solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework4-solutions.html">Homework 4 solutions</a></li>
 </ul>
 
     </div>
@@ -539,15 +541,15 @@ Documentation can be found at https://docs.sympy.org/1.12/
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4c3346c299e4e97acbc34dc096705a80c58bff1ff8d2243008b2fc02b3dbd6b5.png" src="../_images/4c3346c299e4e97acbc34dc096705a80c58bff1ff8d2243008b2fc02b3dbd6b5.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f99f40e1630&gt;
+<img alt="../_images/a434bbedad97fd0d954b9ff410b898edab296cdde22bd28d9aff128f76898539.png" src="../_images/a434bbedad97fd0d954b9ff410b898edab296cdde22bd28d9aff128f76898539.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fb5e1926620&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now we get the mass by integrating <span class="math notranslate nohighlight">\(dM/dr = 4\pi r^2 \rho(r)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-64fe5666-a1a4-42ba-9339-edff6b86a5de">
-<span class="eqno">(4)<a class="headerlink" href="#equation-64fe5666-a1a4-42ba-9339-edff6b86a5de" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0eba3fca-5dbb-4a0e-adcf-f11c55159ea7">
+<span class="eqno">(4)<a class="headerlink" href="#equation-0eba3fca-5dbb-4a0e-adcf-f11c55159ea7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_\star = \int_0^{R_\star} 4\pi r^2 \rho(r) dr
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -627,8 +629,8 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ae937a247c7b70bbbf98ee670af9116e90ee88da637ed18b44caa3227a2fa57a.png" src="../_images/ae937a247c7b70bbbf98ee670af9116e90ee88da637ed18b44caa3227a2fa57a.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f99c2e80df0&gt;
+<img alt="../_images/aa2387d242802cc4693eeddf62d9d69eefa4f5b43aa71bb4f5d87ce1fe92e534.png" src="../_images/aa2387d242802cc4693eeddf62d9d69eefa4f5b43aa71bb4f5d87ce1fe92e534.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fb6149380a0&gt;
 </pre></div>
 </div>
 </div>
@@ -711,8 +713,8 @@ so we can enforce that here to find <span class="math notranslate nohighlight">\
 </div>
 </div>
 <p>This shows that we can write:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-25867e8e-9684-400b-ba34-328eb5442721">
-<span class="eqno">(5)<a class="headerlink" href="#equation-25867e8e-9684-400b-ba34-328eb5442721" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1b83aecd-444f-4828-a423-7682993460df">
+<span class="eqno">(5)<a class="headerlink" href="#equation-1b83aecd-444f-4828-a423-7682993460df" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
                     + \frac{8}{7} \left (\frac{r}{R_\star}\right )^3 
                     - \frac{5}{21} \left ( \frac{r}{R_\star}\right )^8 \right ]
@@ -725,8 +727,8 @@ P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/64cf63639fedc46f0bfe772c67fb86870c08c37a4ad338cda6af3b7461a17c1e.png" src="../_images/64cf63639fedc46f0bfe772c67fb86870c08c37a4ad338cda6af3b7461a17c1e.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f99c2c3af50&gt;
+<img alt="../_images/aaca50c2dd6803f39d0fe7085f5b7a1c516d36c424a198a3ac4f7dbec7de2b05.png" src="../_images/aaca50c2dd6803f39d0fe7085f5b7a1c516d36c424a198a3ac4f7dbec7de2b05.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fb5df4ca9e0&gt;
 </pre></div>
 </div>
 </div>
@@ -795,13 +797,13 @@ central density =  2.78405148265706
 </div>
 </div>
 <p>In class, we did a constant density model.  We found that the central pressure was</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0c4e5b89-cc6f-4b8e-8ecf-e216273fdf9d">
-<span class="eqno">(6)<a class="headerlink" href="#equation-0c4e5b89-cc6f-4b8e-8ecf-e216273fdf9d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-13743f85-fb59-4d5f-b572-c77a5fb13466">
+<span class="eqno">(6)<a class="headerlink" href="#equation-13743f85-fb59-4d5f-b572-c77a5fb13466" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}
 \end{equation}\]</div>
 <p>Here, with the cubic density profile, we find</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bf2cfbdd-9241-4781-9afa-7cf095dec8a9">
-<span class="eqno">(7)<a class="headerlink" href="#equation-bf2cfbdd-9241-4781-9afa-7cf095dec8a9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-eb2b39b8-443d-4b03-b366-b6a6750c8431">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eb2b39b8-443d-4b03-b366-b6a6750c8431" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{63}{80\pi} \frac{G M_\star^{2}}{R_\star^{4}}
 \end{equation}\]</div>
 <p>The pressure is greater in this model because more mass is concentrated toward the center of the star, increasing the force of gravity throughout, making the outer layers weigh more.</p>
@@ -977,15 +979,15 @@ q(r) = \begin{cases}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1995/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2023/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_1995/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
+/tmp/ipykernel_2023/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_1995/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_2023/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f99c2bc0370&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb5df28fee0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" src="../_images/6976f0fc61df869b04b0823a4612b52da361e73753274c623123ec1dc1f3c4f7.png" />
