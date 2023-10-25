@@ -50,7 +50,7 @@ backward_euler(const double t_start, const double t_end, const double dt_init,
     const int max_iter{100};
 
     int neq = static_cast<int>(y_init.size());
-    
+
     double time{t_start};
     double dt{dt_init};
 
@@ -58,18 +58,16 @@ backward_euler(const double t_start, const double t_end, const double dt_init,
     std::vector<double> y_n{y_init};
     std::vector<double> y_new{0.0};
 
-    int converged{0};
-
     while (time < t_end) {
 
-        for (int n = 0; n < y_new.size(); ++n) {
+        for (int n = 0; n < static_cast<int>(y_new.size()); ++n) {
             y_new[n] = y_n[n];
         }
 
-        double error = std::numeric_limits<double>::max();
+        bool converged{false};
 
         int niter{0};
-        while (error > tol && niter < max_iter) {
+        while (!converged && niter < max_iter) {
 
             // construct the matrix A = I - dt J
             Array A = jacobian(y_n);
@@ -104,9 +102,17 @@ backward_euler(const double t_start, const double t_end, const double dt_init,
                 dy_norm += dy[irow] * dy[irow];
                 y_new_norm += y_new[irow] * y_new[irow];
             }
-            error = std::sqrt(dy_norm / y_new_norm);
-            
+            double error = std::sqrt(dy_norm / y_new_norm);
+            if (error < tol) {
+                converged = true;
+            }
+
             niter++;
+        }
+
+        if (!converged) {
+            std::cout << "convergence failure" << std::endl;
+            std::exit(EXIT_FAILURE);
         }
 
         if (time + dt > t_end) {
@@ -121,19 +127,19 @@ backward_euler(const double t_start, const double t_end, const double dt_init,
         time += dt;
     }
 
-    return y_n;          
+    return y_n;
 }
 
 int main() {
 
     // setup the initial conditions
     std::vector<double> y_init{1.0, 0.0, 0.0};
-    
+
     // we are going to do a bunch of short integrations to different
     // end points -- this holds the end times for each interval
     std::vector<double> t_ends{-6.0, -5.0, -4.0, -3.0, -2.0, -1.0, 0.0,
                                1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0};
-    
+
     double time{0.0};
     std::vector<double> y_old{y_init};
 

@@ -7,49 +7,9 @@
 #include <iostream>
 #include <iomanip>
 
-inline
-void print_Ab(const Array& A, const std::vector<double>& b) {
-
-    // printout the matrix A and vector b in a pretty fashion.  We don't use the
-    // numpy print here, because we want to make them side by side
-
-    const int N = b.size();
-
-    for (int irow = 0; irow < N; ++irow) {
-
-        std::cout.precision(4);
-        std::cout << std::fixed;
-
-        if (irow == 0) {
-            std::cout << "/ ";
-        } else if (irow == N-1) {
-            std::cout << "\\ ";
-        } else {
-            std::cout << "| ";
-        }
-
-        for (int jcol = 0; jcol < N; ++jcol) {
-            std::cout << std::setw(8) << A(irow, jcol);
-        }
-
-        std::cout << " | ";
-        std::cout << std::setw(8) << b[irow];
-
-        if (irow == 0) {
-            std::cout << " \\ ";
-        } else if (irow == N-1) {
-            std::cout << " / ";
-        } else {
-            std::cout << " | ";
-        }
-        std::cout << std::endl;
-    }
-    std::cout << std::endl;
-}
 
 inline
-std::vector<double> gauss_elim(Array& A, std::vector<double>& b,
-                               const bool quiet=true) {
+std::vector<double> gauss_elim(Array& A, std::vector<double>& b) {
 
     // perform gaussian elimination with pivoting, solving A x = b.
     //
@@ -81,10 +41,6 @@ std::vector<double> gauss_elim(Array& A, std::vector<double>& b,
     // keep track of the number of times we swapped rows
 
     int num_row_swap{};
-
-    if (!quiet) {
-        print_Ab(A, b);
-    }
 
     // main loop over rows
 
@@ -128,10 +84,6 @@ std::vector<double> gauss_elim(Array& A, std::vector<double>& b,
             scales[krow] = scales[row_max];
             scales[row_max] = tmp_scale;
 
-            if (!quiet) {
-                std::cout << "pivoted" << std::endl;
-            }
-
             ++num_row_swap;
         }
 
@@ -148,9 +100,6 @@ std::vector<double> gauss_elim(Array& A, std::vector<double>& b,
             b[irow] += -coeff * b[krow];
         }
 
-        if (!quiet) {
-            print_Ab(A, b);
-        }
     }
 
     // back-substitution
