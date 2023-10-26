@@ -480,6 +480,12 @@ for quick calculations.</p>
 </div>
 </div>
 <p>MESA provides 2 types of output: profiles and a history.  The profiles represent a snapshot of the start at one instance of time and give the stellar data as a function of radius or enclosed mass.  The history provides some global quantities as a function of time throughout the entire evolution of the star.  We’ll use both.</p>
+<p>The model files are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(1 M_\odot\)</span>: <a class="reference download internal" download="" href="../_downloads/230d7aefe5da4115c3ec24558a60314a/M1_default_profile8.data"><span class="xref download myst">M1_default_profile8.data</span></a>; <a class="reference download internal" download="" href="../_downloads/0b3257dd87c375999297be2234873fc4/M1_default_profile218.data"><span class="xref download myst">M1_default_profile218.data</span></a>; <a class="reference download internal" download="" href="../_downloads/9b1eaa38be3bdb503b38183ab4e8994c/M1_default_trimmed_history.data"><span class="xref download myst">M1_default_trimmed_history.data</span></a></p></li>
+<li><p><span class="math notranslate nohighlight">\(8 M_\odot\)</span>: <a class="reference download internal" download="" href="../_downloads/f57834228967aac2dfdf71d833000007/M8_basic_co_profile8.data"><span class="xref download myst">M8_basic_co_profile8.data</span></a>; <a class="reference download internal" download="" href="../_downloads/148450c9048f18cb9069ddfb502b1707/M8_basic_co_profile39.data"><span class="xref download myst">M8_basic_co_profile39.data</span></a>; <a class="reference download internal" download="" href="../_downloads/9939829007b0f9a3efb65e54b3ed9e52/M8_basic_co_trimmed_history.data"><span class="xref download myst">M8_basic_co_trimmed_history.data</span></a></p></li>
+<li><p><span class="math notranslate nohighlight">\(15 M_\odot\)</span>: <a class="reference download internal" download="" href="../_downloads/7362aa9adce9b3879740e001efa6f06e/M15_aprox21_profile8.data"><span class="xref download myst">M15_aprox21_profile8.data</span></a>; <a class="reference download internal" download="" href="../_downloads/6439f5d95e121eb6cdd8b27a62f39196/M15_aprox21_profile19.data"><span class="xref download myst">M15_aprox21_profile19.data</span></a>; <a class="reference download internal" download="" href="../_downloads/1ff4faed6335f159eeebf02b6c5a76a3/M15_aprox21_trimmed_history.data"><span class="xref download myst">M15_aprox21_trimmed_history.data</span></a></p></li>
+</ul>
 <p>To make the management easier, we’ll create a container for each model that holds the history and profiles, processed by <code class="docutils literal notranslate"><span class="pre">py_mesa_reader</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -545,7 +551,7 @@ for quick calculations.</p>
 <h2>Central evolution<a class="headerlink" href="#central-evolution" title="Permalink to this heading">#</a></h2>
 <p>We want to plot the history of the evolution of the central conditions  in the <span class="math notranslate nohighlight">\(\log \rho\)</span>-<span class="math notranslate nohighlight">\(\log T\)</span> plane.</p>
 <p>We will plot the EOS boundary lines considered before.  These
-functions are now in a module, <code class="docutils literal notranslate"><span class="pre">regimes.py</span></code> to make our life easier.</p>
+functions are now in a module, <a class="reference download internal" download="" href="../_downloads/7a8d11108f5c79b461ce2e4ded06f4b8/regimes.py"><span class="xref download myst">regimes.py</span></a> to make our life easier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">regimes</span>
@@ -578,7 +584,7 @@ functions are now in a module, <code class="docutils literal notranslate"><span 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100000.0, 1000000000.0)
 </pre></div>
 </div>
-<img alt="../_images/4089344baa334645de74ab7e80a72c49801af9eb754f6f09e6cc3ff8c314121a.png" src="../_images/4089344baa334645de74ab7e80a72c49801af9eb754f6f09e6cc3ff8c314121a.png" />
+<img alt="../_images/6647d4dde219291deb068c3d980694b9e3cb300ee5299cfb027893d5a8b10355.png" src="../_images/6647d4dde219291deb068c3d980694b9e3cb300ee5299cfb027893d5a8b10355.png" />
 </div>
 </div>
 <p>Some observations:</p>
@@ -612,7 +618,7 @@ functions are now in a module, <code class="docutils literal notranslate"><span 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fc2bdad897be1e36e68e717bdec20079ec7e021d3d35a37a3fca703f69cb0a4e.png" src="../_images/fc2bdad897be1e36e68e717bdec20079ec7e021d3d35a37a3fca703f69cb0a4e.png" />
+<img alt="../_images/c07da8da633af7e5a4b24478405e135c20384c55fa8d27c947f0b1558e62bf36.png" src="../_images/c07da8da633af7e5a4b24478405e135c20384c55fa8d27c947f0b1558e62bf36.png" />
 </div>
 </div>
 </section>
@@ -670,7 +676,7 @@ functions are now in a module, <code class="docutils literal notranslate"><span 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000.0, 1000000000.0)
 </pre></div>
 </div>
-<img alt="../_images/afd82973fef62d6744660809e47b4099aec3ae47cd8af18c327e17f6cd3de652.png" src="../_images/afd82973fef62d6744660809e47b4099aec3ae47cd8af18c327e17f6cd3de652.png" />
+<img alt="../_images/9b23e47969a6231ed9cdcb19d950347b3d2a8f62f5533969e42a26a05645f242.png" src="../_images/9b23e47969a6231ed9cdcb19d950347b3d2a8f62f5533969e42a26a05645f242.png" />
 </div>
 </div>
 <p>Now the 8 solar mass star</p>
@@ -699,7 +705,7 @@ functions are now in a module, <code class="docutils literal notranslate"><span 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000.0, 1000000000.0)
 </pre></div>
 </div>
-<img alt="../_images/018c9dca61b712e50411785aa47d7ab4762c2549f385d5a0d5b5fec1603320eb.png" src="../_images/018c9dca61b712e50411785aa47d7ab4762c2549f385d5a0d5b5fec1603320eb.png" />
+<img alt="../_images/67ba2c8a3d1bbc0a8af6d17612c0a0bdb67107773ac4ef18b20a6daf7a121f2b.png" src="../_images/67ba2c8a3d1bbc0a8af6d17612c0a0bdb67107773ac4ef18b20a6daf7a121f2b.png" />
 </div>
 </div>
 <p>Finally the 15 solar mass star</p>
@@ -728,7 +734,7 @@ functions are now in a module, <code class="docutils literal notranslate"><span 
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000.0, 1000000000.0)
 </pre></div>
 </div>
-<img alt="../_images/7d6f21461da542573081b401151932304bd0d0f8595b410aec6a84858079737d.png" src="../_images/7d6f21461da542573081b401151932304bd0d0f8595b410aec6a84858079737d.png" />
+<img alt="../_images/c1a9d94e48a2cc89878e8403f8f5d419ab4ebb1bb4701a6c28da9a58e7546b3d.png" src="../_images/c1a9d94e48a2cc89878e8403f8f5d419ab4ebb1bb4701a6c28da9a58e7546b3d.png" />
 </div>
 </div>
 </section>
