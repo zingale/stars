@@ -27,6 +27,7 @@ parts:
     chapters:
     - file: polytrope/lane-emden
     - file: polytrope/lane-emden-shooting
+    - file: stellar_evolution/stellar-models
 
   - caption: Homework solutions
     chapters:
