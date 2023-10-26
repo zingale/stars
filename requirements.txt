@@ -5,4 +5,4 @@ scipy
 sympy
 pynucastro @ git+https://github.com/pynucastro/pynucastro
 myst-nb
-py_mesa_reader @ git+https://github.com/wmwolf/py_mesa_reader
+mesa-reader @ git+https://github.com/wmwolf/py_mesa_reader
