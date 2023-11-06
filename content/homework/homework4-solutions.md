@@ -117,7 +117,7 @@ Here's a plot
 
 Notice that the adiabatic atmosphere falls off much faster than the isothermal atmosphere.
 
-## Solar convection
+## 3. Solar convection
 
 We want to find the thermodynamic profile in the Sun's convective envelope.  If we are convecting, then
 the temperature gradient is just the adiabatic gradient:
