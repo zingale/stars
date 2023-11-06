@@ -74,7 +74,7 @@ We see that this has the proper limits:
 * Pure radiation pressure: $\beta = 0 \rightarrow \Gamma_1 = 4/3$
 
 
-## Convectively unstable atmosphere
+## 2. Convectively unstable atmosphere
 
 ### a.
 
