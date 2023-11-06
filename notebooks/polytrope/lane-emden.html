@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -514,19 +514,19 @@ equations of stellar structure.</p>
 <h2>Stopping point<a class="headerlink" href="#stopping-point" title="Permalink to this heading">#</a></h2>
 <p>But we have the problem that we do not know the stopping point, <span class="math notranslate nohighlight">\(\xi_1\)</span>.</p>
 <p>We estimate the radius, <span class="math notranslate nohighlight">\(\xi_1\)</span> each step and make sure that the next step does not take us past that estimate.  This prevents us from having negative <span class="math notranslate nohighlight">\(\theta\)</span> values.  Given a point <span class="math notranslate nohighlight">\((\xi_p, \theta(\xi_p))\)</span>, and the derivative at that point, <span class="math notranslate nohighlight">\(\theta^\prime_p = d\theta/d\xi |_{\xi_p}\)</span>, we can write the equation of a line as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0b5296be-93d4-4f53-9b2f-d7d722b8d627">
-<span class="eqno">(1)<a class="headerlink" href="#equation-0b5296be-93d4-4f53-9b2f-d7d722b8d627" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3c8b77ad-3e25-47fc-b268-76cbd268776d">
+<span class="eqno">(1)<a class="headerlink" href="#equation-3c8b77ad-3e25-47fc-b268-76cbd268776d" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \theta(\xi) - \theta_p = \theta^\prime_p (\xi - \xi_p)
 \end{equation}\]</div>
 <p><img alt="theta intercept" src="../_images/le_extrap.png" /></p>
 <p>Then we can ask when does <span class="math notranslate nohighlight">\(\theta\)</span> become zero, finding:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-101ed157-6f27-4369-aa3b-d8f057490da5">
-<span class="eqno">(2)<a class="headerlink" href="#equation-101ed157-6f27-4369-aa3b-d8f057490da5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-15a2538d-1dc3-4b02-b366-6c9792705e43">
+<span class="eqno">(2)<a class="headerlink" href="#equation-15a2538d-1dc3-4b02-b366-6c9792705e43" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \xi = -\frac{\theta_p}{\theta^\prime_p} + \xi_p
 \end{equation}\]</div>
 <p>or in terms of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a019bcbb-1e10-44ba-bbf8-b53ce6bbdec1">
-<span class="eqno">(3)<a class="headerlink" href="#equation-a019bcbb-1e10-44ba-bbf8-b53ce6bbdec1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bc1ecd3b-ebf1-4f1e-b8bc-c77b51df5b80">
+<span class="eqno">(3)<a class="headerlink" href="#equation-bc1ecd3b-ebf1-4f1e-b8bc-c77b51df5b80" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \xi = -\frac{y_p}{z_p} + \xi_p
 \end{equation}\]</div>
 <p>This is our estimate of <span class="math notranslate nohighlight">\(\xi_1\)</span>.  We then make sure our stepsize <span class="math notranslate nohighlight">\(h\)</span> is small enough that we do not go beyond this estimate.</p>
@@ -644,7 +644,7 @@ the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fc7c78d0ffaf0c2f742f6ab3f956b8d46fe0aa866983862c6ca5f65995e7390f.png" src="../_images/fc7c78d0ffaf0c2f742f6ab3f956b8d46fe0aa866983862c6ca5f65995e7390f.png" />
+<img alt="../_images/5afcd6d72fc99525210a50120323e1ca0da28abdafa6d7f18021af32b6e589ab.png" src="../_images/5afcd6d72fc99525210a50120323e1ca0da28abdafa6d7f18021af32b6e589ab.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -655,7 +655,7 @@ the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c22dfcedf26900802f6d7e39da28261d634c7878542b56eb0a0fd77124e3b087.png" src="../_images/c22dfcedf26900802f6d7e39da28261d634c7878542b56eb0a0fd77124e3b087.png" />
+<img alt="../_images/4d928c97b841fa68a8e6d4ac007a0fd5421e5dcca197c7ceb14bcd1dc5970d44.png" src="../_images/4d928c97b841fa68a8e6d4ac007a0fd5421e5dcca197c7ceb14bcd1dc5970d44.png" />
 </div>
 </div>
 <p>Here’s a table of the important parameters</p>
@@ -804,8 +804,8 @@ By <a href="https://zingale.github.io">Michael Zingale</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>
