@@ -76,7 +76,9 @@ We see that this has the proper limits:
 
 ## Convectively unstable atmosphere
 
-### a. We want to find the profile of an isentropic plane-parallel atmosphere.  We have:
+### a.
+
+We want to find the profile of an isentropic plane-parallel atmosphere.  We have:
 
 $$\frac{dP}{dr} = -\rho |g|$$
 
