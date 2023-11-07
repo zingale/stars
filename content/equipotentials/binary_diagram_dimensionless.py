@@ -51,8 +51,8 @@ ax.text(0, 1.35 * y, r'$\eta$')
 ax.scatter([x], [y], marker="o", s=20, zorder=100, color="C0")
 
 # label the masses
-ax.text(r1, -offset, r"$M_1 = \mu$", color="C1", horizontalalignment="right", verticalalignment="top")
-ax.text(r2, -offset, r"$M_2 = (1-\mu)$", color="C1", horizontalalignment="left", verticalalignment="top")
+ax.text(r1, -offset, r"$M_1 = 1 - \mu$", color="C1", horizontalalignment="right", verticalalignment="top")
+ax.text(r2, -offset, r"$M_2 = \mu$", color="C1", horizontalalignment="left", verticalalignment="top")
 #ax.text(x, y + 0.25*offset, r"$m$", color="C0", horizontalalignment="right", verticalalignment="bottom")
 
 # annotate orbital radii
