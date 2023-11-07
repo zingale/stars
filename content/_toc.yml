@@ -29,6 +29,10 @@ parts:
     - file: polytrope/lane-emden-shooting
     - file: stellar_evolution/stellar-models
 
+  - caption: Close Binary Evolution
+    chapters:
+    - file: equipotentials/equipotentials
+
   - caption: Homework solutions
     chapters:
     - file: homework/homework1-solutions
