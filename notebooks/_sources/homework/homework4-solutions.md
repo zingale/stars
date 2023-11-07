@@ -74,9 +74,11 @@ We see that this has the proper limits:
 * Pure radiation pressure: $\beta = 0 \rightarrow \Gamma_1 = 4/3$
 
 
-## Convectively unstable atmosphere
+## 2. Convectively unstable atmosphere
 
-### a. We want to find the profile of an isentropic plane-parallel atmosphere.  We have:
+### a.
+
+We want to find the profile of an isentropic plane-parallel atmosphere.  We have:
 
 $$\frac{dP}{dr} = -\rho |g|$$
 
@@ -115,7 +117,7 @@ Here's a plot
 
 Notice that the adiabatic atmosphere falls off much faster than the isothermal atmosphere.
 
-## Solar convection
+## 3. Solar convection
 
 We want to find the thermodynamic profile in the Sun's convective envelope.  If we are convecting, then
 the temperature gradient is just the adiabatic gradient:
