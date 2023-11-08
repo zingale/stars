@@ -514,10 +514,12 @@ into a single effective rate.</p>
 \[\rho Y_B Y_p = \frac{\rho Y_A Y_\alpha \lambda_{\alpha,p} + Y_B \lambda_{\gamma,p}}
                       {\lambda_{p,\gamma} + \lambda_{p,\alpha}}\]</div>
 <p>If we substitute this into the <span class="math notranslate nohighlight">\(dY_A/dt\)</span> equation, we find:</p>
-<div class="math notranslate nohighlight">
-\[\frac{dY_A}{dt} = -\rho Y_A Y_\alpha \left [ \lambda_{\alpha,\gamma} + \lambda_{\alpha,p}
-                                             \left ( 1 - \frac{\lambda_{p,\alpha}}{\lambda_{p,\gamma} + \lambda_{p,\alpha}} \right ) \right ]
-                    + Y_B \left [ \lambda_{\gamma,\alpha} + \frac{\lambda_{p,\alpha} \lambda_{\gamma,p}}{\lambda_{p,\gamma} + \lambda_{p,\alpha}} \right ] \]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{dY_A}{dt} = &amp;-\rho Y_A Y_\alpha \left [ \lambda_{\alpha,\gamma} + \lambda_{\alpha,p}
+                                             \left ( 1 - \frac{\lambda_{p,\alpha}}{\lambda_{p,\gamma} + \lambda_{p,\alpha}} \right ) \right ] \\
+                    &amp;+ Y_B \left [ \lambda_{\gamma,\alpha} + \frac{\lambda_{p,\alpha} \lambda_{\gamma,p}}{\lambda_{p,\gamma} + \lambda_{p,\alpha}} \right ]
+\end{align*}\]</div>
 <p>and we can identify the effective forward rate as (after some simplification) the term in the first set of brackets:</p>
 <div class="math notranslate nohighlight">
 \[\lambda^\prime_{\alpha,\gamma} = \lambda_{\alpha,\gamma} + \frac{\lambda_{\alpha,p}\lambda_{p,\gamma}}{\lambda_{p,\gamma} + \lambda_{p,\alpha}}\]</div>
@@ -553,10 +555,10 @@ into a single effective rate.</p>
 <ul>
 <li><p><span class="math notranslate nohighlight">\(\langle 3\alpha \rangle = \langle \sigma v \rangle\)</span> for the 3-<span class="math notranslate nohighlight">\(\alpha\)</span> reaction.
 We can find this expressed as <span class="math notranslate nohighlight">\(N_A^2 \langle \sigma v \rangle_{\alpha\alpha\alpha}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2aa689ab-d7dd-411d-97ba-70085d885e03">
-<span class="eqno">(8)<a class="headerlink" href="#equation-2aa689ab-d7dd-411d-97ba-70085d885e03" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
         N_A^2 \langle \sigma v \rangle_{\alpha\alpha\alpha} = \frac{2.79\times 10^{-8}}{T_9^3} \exp(-4.4027/T_9)
-  \end{equation}\]</div>
+  \end{equation*}\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(\langle \alpha 12 \rangle =  \langle \sigma v \rangle\)</span> for the
 <span class="math notranslate nohighlight">\({}^{12}\mathrm{C}(\alpha,\gamma){}^{16}\mathrm{O}\)</span> reaction.
@@ -584,14 +586,6 @@ as <span class="math notranslate nohighlight">\(N_A \langle \sigma v \rangle_{O\
                  &amp; \frac{5.38\times 10^2}{T_9^{3/2}} \exp(-12.226/T_9) + \nonumber \\
                  &amp; 1.30\times 10^1 T_9^2 \exp(-20.093/T_9)
   \end{align*}\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-</div>
-</div>
-</div>
 <section id="a-number-density-to-molar-fractions">
 <h3>a. Number density to molar fractions<a class="headerlink" href="#a-number-density-to-molar-fractions" title="Permalink to this heading">#</a></h3>
 <p>As written our system is expressed in terms of number density.  Recall:</p>
@@ -632,6 +626,14 @@ as <span class="math notranslate nohighlight">\(N_A \langle \sigma v \rangle_{O\
 <section id="b-integrating">
 <h3>b. Integrating<a class="headerlink" href="#b-integrating" title="Permalink to this heading">#</a></h3>
 <p>Let’s start by writing our RHS function.  We’ll rely on the ODE solver to estimate the Jacobian.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rhs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">rc12ago16_factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
@@ -950,7 +952,7 @@ the different reactions.  The end result will be in units of energy / mass / tim
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>605872.4480466102
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>605872.4480471261
 </pre></div>
 </div>
 </div>
