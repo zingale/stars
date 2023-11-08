@@ -9,7 +9,6 @@ parts:
   - caption: Reactions
     chapters:
     - file: pp-vs-cno/pp-cno
-    - file: hotcno/hot-CNO-breakout-example
 
   - caption: Integrating Networks
     chapters:
@@ -32,6 +31,10 @@ parts:
   - caption: Close Binary Evolution
     chapters:
     - file: equipotentials/equipotentials
+
+  - caption: Explosions!
+    chapters:
+    - file: hotcno/hot-CNO-breakout-example
 
   - caption: Homework solutions
     chapters:
