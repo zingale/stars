@@ -169,12 +169,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../eos/eos-regimes.html">EOS regimes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reactions</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../pp-vs-cno/pp-cno.html">p-p chain vs. CNO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hotcno/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrating Networks</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../pp-vs-cno/pp-cno.html">p-p chain vs. CNO</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="stiff-ODEs.html">Integrating Stiff ODEs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ODEs-implicit.html">Implicit Methods for ODEs</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Implicit Methods for Systems of ODEs</a></li>
@@ -196,6 +192,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Close Binary Evolution</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../equipotentials/equipotentials.html">Equipotentials</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Explosions!</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hotcno/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework solutions</span></p>
 <ul class="nav bd-sidenav">
@@ -751,7 +751,7 @@ document.write(`
         t: [ 0.000e+00  1.000e-22 ...  1.969e-07  2.000e-07]
         y: [[ 1.000e+00  1.000e+00 ...  1.001e-14  1.001e-14]
             [ 0.000e+00  1.000e-13 ...  1.000e+00  1.000e+00]]
-      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7f2c225f9390&gt;
+      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7fb1b6f98f10&gt;
  t_events: None
  y_events: None
      nfev: 734

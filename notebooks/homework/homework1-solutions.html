@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Homework 2 solutions" href="homework2-solutions.html" />
-    <link rel="prev" title="Equipotentials" href="../equipotentials/equipotentials.html" />
+    <link rel="prev" title="hot-CNO and breakout" href="../hotcno/hot-CNO-breakout-example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,10 +171,6 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reactions</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../pp-vs-cno/pp-cno.html">p-p chain vs. CNO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hotcno/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrating Networks</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/stiff-ODEs.html">Integrating Stiff ODEs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit.html">Implicit Methods for ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-systems.html">Implicit Methods for Systems of ODEs</a></li>
@@ -196,6 +192,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Close Binary Evolution</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../equipotentials/equipotentials.html">Equipotentials</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Explosions!</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hotcno/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework solutions</span></p>
 <ul class="current nav bd-sidenav">
@@ -547,15 +547,15 @@ Documentation can be found at https://docs.sympy.org/1.12/
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9297d8c3b32c9065fcf0a9ed0a8d06030f647375c330f529f4b659b5e8ee5a24.png" src="../_images/9297d8c3b32c9065fcf0a9ed0a8d06030f647375c330f529f4b659b5e8ee5a24.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f655fd51a80&gt;
+<img alt="../_images/f59c4deacaee4a81bfea934e0d092c370c4f7fdc8d4c9ada4ddd1a310abaae60.png" src="../_images/f59c4deacaee4a81bfea934e0d092c370c4f7fdc8d4c9ada4ddd1a310abaae60.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f56d8d61e40&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now we get the mass by integrating <span class="math notranslate nohighlight">\(dM/dr = 4\pi r^2 \rho(r)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0433ee09-968b-4fd5-bc6e-23feee408b3d">
-<span class="eqno">(4)<a class="headerlink" href="#equation-0433ee09-968b-4fd5-bc6e-23feee408b3d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b4c3094a-9639-4622-a98d-cfcfe61d23f7">
+<span class="eqno">(4)<a class="headerlink" href="#equation-b4c3094a-9639-4622-a98d-cfcfe61d23f7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_\star = \int_0^{R_\star} 4\pi r^2 \rho(r) dr
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -635,8 +635,8 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1077502bf8acb6c9866e4573fc5b9bf6ed61b7c6b28ca22ddb2b6bdf8aed4420.png" src="../_images/1077502bf8acb6c9866e4573fc5b9bf6ed61b7c6b28ca22ddb2b6bdf8aed4420.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f655ffcba00&gt;
+<img alt="../_images/b5712a40730b4d5c32f8ab82b92e07733c342d3270044a6842b3a7171b4eeba7.png" src="../_images/b5712a40730b4d5c32f8ab82b92e07733c342d3270044a6842b3a7171b4eeba7.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f56d8d61cc0&gt;
 </pre></div>
 </div>
 </div>
@@ -719,8 +719,8 @@ so we can enforce that here to find <span class="math notranslate nohighlight">\
 </div>
 </div>
 <p>This shows that we can write:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-86973306-1977-479b-97ab-a6d268c05178">
-<span class="eqno">(5)<a class="headerlink" href="#equation-86973306-1977-479b-97ab-a6d268c05178" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f85a1c8b-3a78-49c8-b171-e4325b87ad07">
+<span class="eqno">(5)<a class="headerlink" href="#equation-f85a1c8b-3a78-49c8-b171-e4325b87ad07" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
                     + \frac{8}{7} \left (\frac{r}{R_\star}\right )^3 
                     - \frac{5}{21} \left ( \frac{r}{R_\star}\right )^8 \right ]
@@ -733,8 +733,8 @@ P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/22cc4b27c9b84be6ae254cb0d9304488951a2d330268c1d52818715cfcacbdbc.png" src="../_images/22cc4b27c9b84be6ae254cb0d9304488951a2d330268c1d52818715cfcacbdbc.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f655d7505b0&gt;
+<img alt="../_images/8d8568992530e9c8c6243af1f3028206f024c571a2045c285b4dfb58a97dffe4.png" src="../_images/8d8568992530e9c8c6243af1f3028206f024c571a2045c285b4dfb58a97dffe4.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f56d67b0310&gt;
 </pre></div>
 </div>
 </div>
@@ -803,13 +803,13 @@ central density =  2.78405148265706
 </div>
 </div>
 <p>In class, we did a constant density model.  We found that the central pressure was</p>
-<div class="amsmath math notranslate nohighlight" id="equation-038289de-6bfe-42d8-8fd8-9697c706dfb4">
-<span class="eqno">(6)<a class="headerlink" href="#equation-038289de-6bfe-42d8-8fd8-9697c706dfb4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0fd305b1-f722-4ec7-ba61-6ec591dcc378">
+<span class="eqno">(6)<a class="headerlink" href="#equation-0fd305b1-f722-4ec7-ba61-6ec591dcc378" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}
 \end{equation}\]</div>
 <p>Here, with the cubic density profile, we find</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cd77f3c9-6792-46c2-9674-0158b3e75b8f">
-<span class="eqno">(7)<a class="headerlink" href="#equation-cd77f3c9-6792-46c2-9674-0158b3e75b8f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2f1ebd05-38f9-4466-80ac-6047766b4d00">
+<span class="eqno">(7)<a class="headerlink" href="#equation-2f1ebd05-38f9-4466-80ac-6047766b4d00" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{63}{80\pi} \frac{G M_\star^{2}}{R_\star^{4}}
 \end{equation}\]</div>
 <p>The pressure is greater in this model because more mass is concentrated toward the center of the star, increasing the force of gravity throughout, making the outer layers weigh more.</p>
@@ -985,15 +985,15 @@ q(r) = \begin{cases}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2265/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2123/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_2265/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
+/tmp/ipykernel_2123/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_2265/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_2123/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f655d69bc40&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f56d66c7c70&gt;]
 </pre></div>
 </div>
 <img alt="../_images/dd881606586332685ed007f5528514c04712755117fbd8cb28da47e643df6960.png" src="../_images/dd881606586332685ed007f5528514c04712755117fbd8cb28da47e643df6960.png" />
@@ -1145,12 +1145,12 @@ q(r) = \begin{cases}
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../equipotentials/equipotentials.html"
+       href="../hotcno/hot-CNO-breakout-example.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Equipotentials</p>
+        <p class="prev-next-title">hot-CNO and breakout</p>
       </div>
     </a>
     <a class="right-next"
