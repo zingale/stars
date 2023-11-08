@@ -203,6 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework2-solutions.html">Homework 2 solutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework3-solutions.html">Homework 3 solutions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework4-solutions.html">Homework 4 solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework5-solutions.html">Homework 5 solutions</a></li>
 </ul>
 
     </div>
@@ -422,7 +423,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -438,6 +441,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -500,6 +511,10 @@ we place the center of mass of the system at the coordinate origin.  This appear
 </div>
 </div>
 </div>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
+<p>Here’s our implementation.  We include a method to find the 3 Lagrange points along the <span class="math notranslate nohighlight">\(x\)</span>-axis.  This is done via a minimization
+routine from SciPy (we minimize <span class="math notranslate nohighlight">\(-f\)</span>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Equipotential</span><span class="p">:</span>
@@ -578,13 +593,13 @@ we place the center of mass of the system at the coordinate origin.  This appear
 
         <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">eta</span><span class="p">))</span>
         <span class="n">V_median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">V</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">V_median</span><span class="p">)</span>
         
         <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">V</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlGnBu&quot;</span><span class="p">,</span>
                   <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">xi_min</span><span class="p">,</span> <span class="n">xi_max</span><span class="p">,</span> <span class="n">eta_min</span><span class="p">,</span> <span class="n">eta_max</span><span class="p">],</span>
                   <span class="n">vmax</span><span class="o">=</span><span class="n">V_median</span><span class="p">)</span>
 
+        <span class="c1"># some reference contours</span>
         <span class="n">Vmin</span> <span class="o">=</span> <span class="mf">1.5</span>
         <span class="n">Vmax</span> <span class="o">=</span> <span class="mf">100.0</span>
         <span class="n">nC</span> <span class="o">=</span> <span class="mi">20</span>
@@ -596,7 +611,19 @@ we place the center of mass of the system at the coordinate origin.  This appear
         <span class="n">xi2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_l2</span><span class="p">()</span>
         <span class="n">xi3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_l3</span><span class="p">()</span>
 
+        <span class="c1"># special contours that go through the Lagrange points</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span>
+                   <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">xi1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))],</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span>
+                   <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">xi2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))],</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span>
+                   <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">xi3</span><span class="p">,</span> <span class="mi">0</span><span class="p">))],</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+        
         <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">xi1</span><span class="p">,</span> <span class="n">xi2</span><span class="p">,</span> <span class="n">xi3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+        
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x / (a_1 + a_2)$&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$y / (a_1 + a_2)$&quot;</span><span class="p">)</span>
+        
         <span class="k">return</span> <span class="n">fig</span>
 </pre></div>
 </div>
@@ -604,13 +631,15 @@ we place the center of mass of the system at the coordinate origin.  This appear
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">Equipotential</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
-<span class="n">e</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Exploring the equipotentials</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.35481841016978
+</div>
+<p>Let’s create a system with a mass ratio <span class="math notranslate nohighlight">\(q = 1/2\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">Equipotential</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -622,53 +651,30 @@ we place the center of mass of the system at the coordinate origin.  This appear
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.420000828923267 203.60560791181504 2.0232270575584854
-</pre></div>
-</div>
-<img alt="../_images/87b71dcbea0a9c65403c0b63321b4e3ccf69211fd0ed7b6058f5429956a2af4b.png" src="../_images/87b71dcbea0a9c65403c0b63321b4e3ccf69211fd0ed7b6058f5429956a2af4b.png" />
+<img alt="../_images/59bbac8c04be0ee5c5c9bc5811b15e02118b0b3dd48b8f4c5c1e23cf71e9de7e.png" src="../_images/59bbac8c04be0ee5c5c9bc5811b15e02118b0b3dd48b8f4c5c1e23cf71e9de7e.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span><span class="o">.</span><span class="n">get_l1</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4380762762506286
-</pre></div>
-</div>
-</div>
-</div>
+<p>Now let’s look at a slice along the <span class="math notranslate nohighlight">\(x\)</span>-axis to see the structure.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">get_l1</span><span class="p">(),</span> <span class="n">e</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">get_l1</span><span class="p">(),</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">e</span><span class="o">.</span><span class="n">get_l1</span><span class="p">(),</span> <span class="n">e</span><span class="o">.</span><span class="n">get_l2</span><span class="p">(),</span> <span class="n">e</span><span class="o">.</span><span class="n">get_l3</span><span class="p">()],</span>
+           <span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">get_l1</span><span class="p">(),</span> <span class="mi">0</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">get_l2</span><span class="p">(),</span> <span class="mi">0</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">get_l3</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)],</span>
+           <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f34fb8b2290&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f073309d3f0&gt;
 </pre></div>
 </div>
-<img alt="../_images/fa6fa5072cb3ca7ce0dea2ab521507b7836a9f50933ed8f6ff22c5803cf3dabd.png" src="../_images/fa6fa5072cb3ca7ce0dea2ab521507b7836a9f50933ed8f6ff22c5803cf3dabd.png" />
+<img alt="../_images/69b4aacb5ccfda6c87431aaeff0952aafee29cc050fe86904a9e212aee688d1f.png" src="../_images/69b4aacb5ccfda6c87431aaeff0952aafee29cc050fe86904a9e212aee688d1f.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span><span class="o">.</span><span class="n">mu</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2
-</pre></div>
-</div>
-</div>
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -725,6 +731,20 @@ we place the center of mass of the system at the coordinate origin.  This appear
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
