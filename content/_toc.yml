@@ -9,9 +9,6 @@ parts:
   - caption: Reactions
     chapters:
     - file: pp-vs-cno/pp-cno
-
-  - caption: Integrating Networks
-    chapters:
     - file: reaction_networks/stiff-ODEs
       sections:
       - file: reaction_networks/ODEs-implicit
