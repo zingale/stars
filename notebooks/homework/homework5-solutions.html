@@ -450,7 +450,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alpha-network">2. <span class="math notranslate nohighlight">\(\alpha\)</span> network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alpha-network">2. <span class="math notranslate nohighlight">\(\alpha\)</span> network</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-number-density-to-molar-fractions">a. Number density to molar fractions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-integrating">b. Integrating</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-plotting">c. Plotting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-rate-sensitivity">d. Rate sensitivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-energy-release">e. Energy release</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -531,17 +538,425 @@ into a single effective rate.</p>
 <section id="alpha-network">
 <h2>2. <span class="math notranslate nohighlight">\(\alpha\)</span> network<a class="headerlink" href="#alpha-network" title="Permalink to this heading">#</a></h2>
 <p>We want to evolve the system:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ed34e7a-2284-4982-8bc2-2cb0b5d4dfa6">
-<span class="eqno">(8)<a class="headerlink" href="#equation-5ed34e7a-2284-4982-8bc2-2cb0b5d4dfa6" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
-    \frac{dn_4}{dt} &amp;=&amp; -\frac{3n_4^3}{6} \langle 3\alpha \rangle -
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \frac{dn_4}{dt} &amp;= -\frac{3n_4^3}{6} \langle 3\alpha \rangle -
                           n_4 n_{12} \langle \alpha 12 \rangle -
                           n_4 n_{16} \langle \alpha 16 \rangle \\
-    \frac{dn_{12}}{dt} &amp;=&amp; \frac{n_4^3}{6} \langle 3\alpha \rangle -
+    \frac{dn_{12}}{dt} &amp;= \frac{n_4^3}{6} \langle 3\alpha \rangle -
                           n_4 n_{12} \langle \alpha 12 \rangle \\
-    \frac{dn_{16}}{dt} &amp;=&amp; n_4 n_{12} \langle \alpha 12 \rangle -
+    \frac{dn_{16}}{dt} &amp;= n_4 n_{12} \langle \alpha 12 \rangle -
                           n_4 n_{16} \langle \alpha 16 \rangle \\
-    \frac{dn_{20}}{dt} &amp;=&amp; n_4 n_{16} \langle \alpha 16 \rangle 
-  \end{eqnarray}\]</div>
+    \frac{dn_{20}}{dt} &amp;= n_4 n_{16} \langle \alpha 16 \rangle 
+  \end{align*}\]</div>
+<p>The rates (from CF88) are:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\langle 3\alpha \rangle = \langle \sigma v \rangle\)</span> for the 3-<span class="math notranslate nohighlight">\(\alpha\)</span> reaction.
+We can find this expressed as <span class="math notranslate nohighlight">\(N_A^2 \langle \sigma v \rangle_{\alpha\alpha\alpha}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2aa689ab-d7dd-411d-97ba-70085d885e03">
+<span class="eqno">(8)<a class="headerlink" href="#equation-2aa689ab-d7dd-411d-97ba-70085d885e03" title="Permalink to this equation">#</a></span>\[\begin{equation}
+        N_A^2 \langle \sigma v \rangle_{\alpha\alpha\alpha} = \frac{2.79\times 10^{-8}}{T_9^3} \exp(-4.4027/T_9)
+  \end{equation}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\langle \alpha 12 \rangle =  \langle \sigma v \rangle\)</span> for the
+<span class="math notranslate nohighlight">\({}^{12}\mathrm{C}(\alpha,\gamma){}^{16}\mathrm{O}\)</span> reaction.
+We find this expressed as <span class="math notranslate nohighlight">\(N_A \langle \sigma v \rangle_{C\alpha}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+        N_A \langle \sigma v \rangle_{C\alpha} = &amp; 
+           \frac{1.04\times 10^8}{T_9^2 (1.0 + 0.0489/T_9^{2/3})^2} 
+              \exp(-32.120/T_9^{1/3} - (T_9/3.496)^2) + \nonumber \\
+              &amp; \frac{1.76\times 10^8}{T_9^2 (1.0+0.2654/T_9^{2/3})^2} 
+                \exp(-32.120/T_9^{1/3}) + \nonumber \\
+                &amp;\frac{1.25\times 10^3}{T_9^{3/2}} \exp(-27.499/T_9) +
+                1.43\times 10^{-2} T_9^5 \exp(-15.541/T_9)
+  \end{align*}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\langle \alpha 16 \rangle =  \langle \sigma v \rangle\)</span> for the
+<span class="math notranslate nohighlight">\({}^{16}\mathrm{O}(\alpha,\gamma){}^{20}\mathrm{Ne}\)</span> reaction.  We find this expressed
+as <span class="math notranslate nohighlight">\(N_A \langle \sigma v \rangle_{O\alpha}\)</span>:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+        N_A \langle \sigma v \rangle_{O\alpha} = &amp;
+        \frac{9.37\times 10^9}{T_9^{2/3}} \exp(-39.757/T_9^{1/3}-(T_9/1.586)^2) + \nonumber \\
+                 &amp; \frac{6.21\times 10^1}{T_9^{3/2}} \exp(-10.297/T_9) + \nonumber \\
+                 &amp; \frac{5.38\times 10^2}{T_9^{3/2}} \exp(-12.226/T_9) + \nonumber \\
+                 &amp; 1.30\times 10^1 T_9^2 \exp(-20.093/T_9)
+  \end{align*}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="a-number-density-to-molar-fractions">
+<h3>a. Number density to molar fractions<a class="headerlink" href="#a-number-density-to-molar-fractions" title="Permalink to this heading">#</a></h3>
+<p>As written our system is expressed in terms of number density.  Recall:</p>
+<div class="math notranslate nohighlight">
+\[n_k = \frac{\rho X_k}{m_u A_k} = \frac{\rho Y_k}{m_u}\]</div>
+<p>or using <span class="math notranslate nohighlight">\(N_A = 1/m_u\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[n_k = \frac{\rho N_A X_k}{A_k} = \rho N_A Y_k\]</div>
+<p>We’ll work in terms of mass fractions, which have the property that</p>
+<div class="math notranslate nohighlight">
+\[\sum_k X_k = 1\]</div>
+<p>For example, to rewrite the evolution equation for <span class="math notranslate nohighlight">\({}^{4}\mathrm{He}\)</span>, we could have:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{N_A\rho}{A_4} \frac{dX_4}{dt} = &amp;-\frac{1}{2} \left ( \frac{N_A \rho X_4}{A_4} \right )^3  \langle 3\alpha \rangle -
+                          \left (\frac{N_A\rho X_4}{A_4} \right ) \left ( \frac{N_A\rho X_{12}}{A_{12}} \right ) \langle \alpha 12 \rangle \\ &amp;-
+                          \left ( \frac{N_A\rho  X_4}{A_4} \right ) \left (\frac{N_A\rho X_{16}}{A_{16}} \right ) \langle \alpha 16 \rangle
+\end{align*}\]</div>
+<p>or simplifying:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dY_4}{dt} = -\frac{1}{2} \rho^2 Y_4^3 N_A^2  \langle 3\alpha \rangle -
+                          \rho Y_4 Y_{12} N_A \langle \alpha 12 \rangle -
+                          \rho Y_4 Y_{16} N_A \langle \alpha 16 \rangle\]</div>
+<p>Note how <span class="math notranslate nohighlight">\(N_A\)</span> enters with the rate is consistent with the expressions we were given above.</p>
+<p>The system in terms of molar fractions becomes:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{dY_4}{dt} &amp;= -\frac{1}{2} \rho^2 Y_4^3 N_A^2  \langle 3\alpha \rangle -
+                          \rho Y_4 Y_{12} N_A \langle \alpha 12 \rangle -
+                          \rho Y_4 Y_{16} N_A \langle \alpha 16 \rangle \\
+\frac{dY_{12}}{dt} &amp;= \frac{1}{6} \rho^2 Y_4^3 N_A^2 \langle 3\alpha \rangle -
+                       \rho Y_4 Y_{12} N_A \langle \alpha 12 \rangle \\
+\frac{dY_{16}}{dt} &amp;= \rho Y_4 Y_{12} N_A \langle \alpha 12 \rangle - 
+                      \rho Y_4 Y_{16} N_A \langle \alpha 16 \rangle \\
+\frac{dY_{20}}{dt} &amp;= \rho Y_4 Y_{16} N_A \langle \alpha 16 \rangle
+\end{align*}\]</div>
+</section>
+<section id="b-integrating">
+<h3>b. Integrating<a class="headerlink" href="#b-integrating" title="Permalink to this heading">#</a></h3>
+<p>Let’s start by writing our RHS function.  We’ll rely on the ODE solver to estimate the Jacobian.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rhs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">rc12ago16_factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+
+    <span class="n">Y4</span>  <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Y12</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">Y16</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">Y20</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="c1"># temperature factors</span>
+    <span class="n">T9</span> <span class="o">=</span> <span class="n">T</span><span class="o">/</span><span class="mf">1.e9</span>
+    <span class="n">T913</span> <span class="o">=</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span>
+    <span class="n">T923</span> <span class="o">=</span> <span class="n">T913</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">T932</span> <span class="o">=</span> <span class="n">T9</span><span class="o">**</span><span class="mf">1.5</span>
+
+    <span class="c1"># N_A**2 &lt;sigma v&gt; for 3-alpha from CF88 for T9 &gt; 0.08</span>
+    <span class="n">r3a</span> <span class="o">=</span> <span class="mf">2.79e-8</span> <span class="o">/</span> <span class="n">T9</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">4.4027</span> <span class="o">/</span> <span class="n">T9</span><span class="p">)</span>
+
+    <span class="c1"># N_A &lt;sigma v&gt; for C12(a,g)O16</span>
+    <span class="n">rc12ago16</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.04e8</span> <span class="o">/</span> <span class="n">T9</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">0.0489</span> <span class="o">/</span> <span class="n">T923</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">32.120</span> <span class="o">/</span> <span class="n">T913</span> <span class="o">-</span> <span class="p">(</span><span class="n">T9</span><span class="o">/</span><span class="mf">3.496</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.76e8</span> <span class="o">/</span> <span class="n">T9</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">0.2654</span> <span class="o">/</span> <span class="n">T923</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">32.120</span> <span class="o">/</span> <span class="n">T913</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.25e3</span> <span class="o">/</span> <span class="n">T932</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">27.499</span> <span class="o">/</span> <span class="n">T9</span><span class="p">)</span> <span class="o">+</span>
+                 <span class="mf">1.43e-2</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">15.541</span> <span class="o">/</span> <span class="n">T9</span><span class="p">))</span>
+    <span class="n">rc12ago16</span> <span class="o">*=</span> <span class="n">rc12ago16_factor</span>
+    
+    <span class="c1"># N_A &lt;sigma v&gt; for O16(a,g)Ne20</span>
+    <span class="n">ro16agne20</span> <span class="o">=</span> <span class="p">(</span><span class="mf">9.37e9</span> <span class="o">/</span> <span class="n">T923</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">39.757</span> <span class="o">/</span> <span class="n">T913</span> <span class="o">-</span> <span class="p">(</span><span class="n">T9</span> <span class="o">/</span> <span class="mf">1.586</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> 
+                  <span class="mf">6.21e1</span> <span class="o">/</span> <span class="n">T932</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">10.297</span> <span class="o">/</span> <span class="n">T9</span><span class="p">)</span> <span class="o">+</span> <span class="mf">5.38e2</span> <span class="o">/</span> <span class="n">T932</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">12.226</span> <span class="o">/</span> <span class="n">T9</span><span class="p">)</span> <span class="o">+</span>
+                  <span class="mf">1.30e1</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">20.093</span> <span class="o">/</span> <span class="n">T9</span><span class="p">))</span>
+
+    <span class="n">dY4dt</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span> <span class="o">*</span> <span class="n">rho</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">Y4</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">r3a</span> <span class="o">-</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">Y4</span> <span class="o">*</span> <span class="n">Y12</span> <span class="o">*</span> <span class="n">rc12ago16</span> <span class="o">-</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">Y4</span> <span class="o">*</span> <span class="n">Y16</span> <span class="o">*</span> <span class="n">ro16agne20</span>
+    <span class="n">dY12dt</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">6.</span><span class="p">)</span> <span class="o">*</span> <span class="n">rho</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">Y4</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">r3a</span> <span class="o">-</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">Y4</span> <span class="o">*</span> <span class="n">Y12</span> <span class="o">*</span> <span class="n">rc12ago16</span>
+    <span class="n">dY16dt</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">Y4</span> <span class="o">*</span> <span class="n">Y12</span> <span class="o">*</span> <span class="n">rc12ago16</span> <span class="o">-</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">Y4</span> <span class="o">*</span> <span class="n">Y16</span> <span class="o">*</span> <span class="n">ro16agne20</span>
+    <span class="n">dY20dt</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">Y4</span> <span class="o">*</span> <span class="n">Y16</span> <span class="o">*</span> <span class="n">ro16agne20</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dY4dt</span><span class="p">,</span> <span class="n">dY12dt</span><span class="p">,</span> <span class="n">dY16dt</span><span class="p">,</span> <span class="n">dY20dt</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can already investigate timescales for the burning—consider starting off with pure He, the timescale to consume the helium is:</p>
+<div class="math notranslate nohighlight">
+\[\tau_\mathrm{burn} \sim \frac{Y_0({}^{4}\mathrm{He})}{|dY({}^{4}\mathrm{He})/dt|}\]</div>
+<p>Let’s plot this for <span class="math notranslate nohighlight">\(\rho = 10^5~\mathrm{g~cm^{-3}}\)</span> as a function of temperature.</p>
+<p>Where we note that <span class="math notranslate nohighlight">\(Y_0({}^4\mathrm{He}) = 1/4\)</span>, since the atomic weight is 4.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">1.e5</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mf">8.</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">tau</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">TT</span> <span class="ow">in</span> <span class="n">T</span><span class="p">:</span>
+    <span class="n">dYdt</span> <span class="o">=</span> <span class="n">rhs</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">TT</span><span class="p">)</span>
+    <span class="n">tau</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dYdt</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">tau</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;T [K]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\tau$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fb912098850daabab927e4795189e81bb3eeed8c08587c9147a880544841b132.png" src="../_images/fb912098850daabab927e4795189e81bb3eeed8c08587c9147a880544841b132.png" />
+</div>
+</div>
+<p>Note how strong the temperature dependence is.  At the low end, <span class="math notranslate nohighlight">\(T_9 = 8\)</span>, the timescale to burn is <span class="math notranslate nohighlight">\(&gt; 10^{14}\)</span> s, while at the high end, it is <span class="math notranslate nohighlight">\(\sim 10^2\)</span> s.</p>
+<p>Note that this is only an estimate—once we make C and O, more He will be consumed, further shortening this timescale, but those nuclei will have longer timescales to be consumed.</p>
+<p>Now we can integrate the system.  We’ll use the SciPy <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> function.  Note that this network is stiff, so we will use the <code class="docutils literal notranslate"><span class="pre">&quot;BDF&quot;</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">integrate</span><span class="p">(</span><span class="n">t_end</span><span class="p">,</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">rc12ago16_factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">rhs</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="p">],</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BDF&quot;</span><span class="p">,</span>
+                    <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">rc12ago16_factor</span><span class="p">),</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1.e-8</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="c-plotting">
+<h3>c. Plotting<a class="headerlink" href="#c-plotting" title="Permalink to this heading">#</a></h3>
+<p>Let’s write a simple function to plot the species</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">t_out</span><span class="p">,</span> <span class="n">X_out</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_out</span><span class="p">,</span> <span class="n">X_out</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;He4&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_out</span><span class="p">,</span> <span class="n">X_out</span><span class="p">[</span><span class="mi">1</span><span class="p">,:],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;C12&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_out</span><span class="p">,</span> <span class="n">X_out</span><span class="p">[</span><span class="mi">2</span><span class="p">,:],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;O16&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_out</span><span class="p">,</span> <span class="n">X_out</span><span class="p">[</span><span class="mi">3</span><span class="p">,:],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Ne20&quot;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We want to plot mass fractions, so let’s make an array of atomic weights</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">16.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">1.e-10</span><span class="p">,</span> <span class="mf">1.e-10</span><span class="p">,</span> <span class="mf">1.e-10</span><span class="p">])</span>
+
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">1.e5</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">3e8</span>
+
+<span class="n">tmax</span> <span class="o">=</span> <span class="mf">1.e12</span>
+
+<span class="n">t_out</span><span class="p">,</span> <span class="n">Y_out</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">tmax</span><span class="p">,</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+
+<span class="c1"># convert to mass fractions</span>
+<span class="n">X_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y_out</span><span class="p">)</span>
+<span class="n">X_out</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">X_out</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">X_out</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">X_out</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">t_out</span><span class="p">,</span> <span class="n">X_out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/eb8612df01ef6e445b58725b9e7434c77fafa862d932984b0b309fc0255abe8d.png" src="../_images/eb8612df01ef6e445b58725b9e7434c77fafa862d932984b0b309fc0255abe8d.png" />
+</div>
+</div>
+<p>Notice that as He is consumed, initially we build up C, but once there is enough C, we start to make O and then a little Ne.</p>
+<p>What happens at higher T?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">1.e-10</span><span class="p">,</span> <span class="mf">1.e-10</span><span class="p">,</span> <span class="mf">1.e-10</span><span class="p">])</span>
+
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">1.e5</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">6e8</span>
+
+<span class="n">tmax</span> <span class="o">=</span> <span class="mf">1.e12</span>
+
+<span class="n">t_out</span><span class="p">,</span> <span class="n">Y_out</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">tmax</span><span class="p">,</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+
+<span class="c1"># convert to mass fractions</span>
+<span class="n">X_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y_out</span><span class="p">)</span>
+<span class="n">X_out</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">X_out</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">X_out</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">X_out</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">t_out</span><span class="p">,</span> <span class="n">X_out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/bbf8c1d96747ed3180cfef9931ee07402e1bba35cc0f1e85da57aae6bb9d1911.png" src="../_images/bbf8c1d96747ed3180cfef9931ee07402e1bba35cc0f1e85da57aae6bb9d1911.png" />
+</div>
+</div>
+<p>Now we’ve made a lot of <span class="math notranslate nohighlight">\({}^{20}\mathrm{Ne}\)</span>! and the timescale are overall much shorter.</p>
+<p>But we note that at these temperatures were are starting to miss some other important rates, especially
+those involving <span class="math notranslate nohighlight">\({}^{12}\mathrm{C} + {}^{12}\mathrm{C}\)</span></p>
+</section>
+<section id="d-rate-sensitivity">
+<h3>d. Rate sensitivity<a class="headerlink" href="#d-rate-sensitivity" title="Permalink to this heading">#</a></h3>
+<p>Let’s explore what happens to the <span class="math notranslate nohighlight">\({}^{12}\mathrm{C}(\alpha,\gamma){}^{16}\mathrm{O}\)</span> rate, but
+multiplying it by 1.7 as suggested in Weaver &amp; Woosley 1993.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">1.e-10</span><span class="p">,</span> <span class="mf">1.e-10</span><span class="p">,</span> <span class="mf">1.e-10</span><span class="p">])</span>
+
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">1.e5</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">3e8</span>
+
+<span class="n">tmax</span> <span class="o">=</span> <span class="mf">1.e12</span>
+
+<span class="n">t_out</span><span class="p">,</span> <span class="n">Y_out</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">tmax</span><span class="p">,</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">rc12ago16_factor</span><span class="o">=</span><span class="mf">1.7</span><span class="p">)</span>
+
+<span class="c1"># convert to mass fractions</span>
+<span class="n">X_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y_out</span><span class="p">)</span>
+<span class="n">X_out</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">X_out</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">X_out</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">X_out</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">t_orig</span><span class="p">,</span> <span class="n">Y_orig</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">tmax</span><span class="p">,</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">rc12ago16_factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+
+<span class="c1"># convert to mass fractions</span>
+<span class="n">X_orig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y_orig</span><span class="p">)</span>
+<span class="n">X_orig</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_orig</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">X_orig</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_orig</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">X_orig</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_orig</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">X_orig</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">Y_orig</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_out</span><span class="p">,</span> <span class="n">X_out</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;He&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C0&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_orig</span><span class="p">,</span> <span class="n">X_orig</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C0&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_out</span><span class="p">,</span> <span class="n">X_out</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C1&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_orig</span><span class="p">,</span> <span class="n">X_orig</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C1&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_out</span><span class="p">,</span> <span class="n">X_out</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C2&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_orig</span><span class="p">,</span> <span class="n">X_orig</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C2&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_out</span><span class="p">,</span> <span class="n">X_out</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Ne&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C3&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_orig</span><span class="p">,</span> <span class="n">X_orig</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C3&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1e-10, 2)
+</pre></div>
+</div>
+<img alt="../_images/e5b8479d9232a40fe0b9329fca74e04cc0aa0499b3fa320bf01a02cafa3f79e1.png" src="../_images/e5b8479d9232a40fe0b9329fca74e04cc0aa0499b3fa320bf01a02cafa3f79e1.png" />
+</div>
+</div>
+<p>Here we see the difference when we run with the enhanced rate (solid lines) – we make slightly more oxygen.</p>
+</section>
+<section id="e-energy-release">
+<h3>e. Energy release<a class="headerlink" href="#e-energy-release" title="Permalink to this heading">#</a></h3>
+<p>We can get the energy release from the change in molar abundances over the burn.</p>
+<p>We’ll do this as:</p>
+<div class="math notranslate nohighlight">
+\[\epsilon = -N_A c^2 \sum_k \frac{\Delta Y_k}{\Delta t} m_k\]</div>
+<p>where <span class="math notranslate nohighlight">\(m_k\)</span> is the mass of nucleus <span class="math notranslate nohighlight">\(k\)</span>.  This is effectively just accumulating the <span class="math notranslate nohighlight">\(\Delta m c^2\)</span> from
+the different reactions.  The end result will be in units of energy / mass / time.</p>
+<p>We can get the mass in terms of the mass excess as:</p>
+<div class="math notranslate nohighlight">
+\[m_k = A_k m_u + \frac{\Delta M_k}{c^2}\]</div>
+<p>Here are the mass excesses from AME2020</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">constants</span>
+
+<span class="n">keV2erg</span> <span class="o">=</span> <span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">eV</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">kilo</span><span class="p">)</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">erg</span>
+<span class="n">m_u</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s2">&quot;unified atomic mass unit&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">kilo</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">speed_of_light</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">centi</span>
+<span class="n">N_A</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">Avogadro</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2424.91587</span><span class="p">,</span>  <span class="c1"># He4</span>
+               <span class="mf">0.0</span><span class="p">,</span>  <span class="c1"># C12</span>
+               <span class="o">-</span><span class="mf">4737.00217</span><span class="p">,</span>  <span class="c1"># O16</span>
+               <span class="o">-</span><span class="mf">7041.9322</span>    <span class="c1"># Ne20</span>
+              <span class="p">])</span>
+
+<span class="c1"># let&#39;s get masses in grams</span>
+<span class="n">mass</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">m_u</span> <span class="o">+</span> <span class="n">dm</span> <span class="o">*</span> <span class="n">keV2erg</span> <span class="o">/</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">mass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6.64647907e-24, 1.99264688e-23, 2.65601806e-23, 3.31982279e-23])
+</pre></div>
+</div>
+</div>
+</div>
+<p>we’ll redo our original burn</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">1.e-10</span><span class="p">,</span> <span class="mf">1.e-10</span><span class="p">,</span> <span class="mf">1.e-10</span><span class="p">])</span>
+
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">1.e5</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">3e8</span>
+
+<span class="n">tmax</span> <span class="o">=</span> <span class="mf">1.e12</span>
+
+<span class="n">t_out</span><span class="p">,</span> <span class="n">Y_out</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">tmax</span><span class="p">,</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dY</span><span class="p">)):</span>
+    <span class="n">dY</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y_out</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">Y_out</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">eps</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dY</span><span class="p">)):</span>
+    <span class="n">eps</span> <span class="o">-=</span> <span class="n">N_A</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">mass</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">dY</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    
+<span class="n">eps</span> <span class="o">/=</span> <span class="n">tmax</span>
+<span class="n">eps</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>605872.4480466102
+</pre></div>
+</div>
+</div>
+</div>
+<p>This shows that our energy generation rate was about <span class="math notranslate nohighlight">\(6\times 10^5~\mathrm{erg/g/s}\)</span></p>
+</section>
 </section>
 </section>
 
@@ -604,7 +1019,14 @@ into a single effective rate.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">b.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alpha-network">2. <span class="math notranslate nohighlight">\(\alpha\)</span> network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alpha-network">2. <span class="math notranslate nohighlight">\(\alpha\)</span> network</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-number-density-to-molar-fractions">a. Number density to molar fractions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-integrating">b. Integrating</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-plotting">c. Plotting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-rate-sensitivity">d. Rate sensitivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-energy-release">e. Energy release</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
