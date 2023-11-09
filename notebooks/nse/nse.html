@@ -595,19 +595,20 @@ to dictact the electron fraction of the resulting NSE composition.</p>
     <span class="k">if</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">X_s</span><span class="p">[:,</span><span class="n">k</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">low_limit</span><span class="p">):</span>
         <span class="n">line</span><span class="o">.</span><span class="n">set_linewidth</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;temperature $[K]$&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Mass Fraction&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="n">low_limit</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;small&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;temperature $[K]$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;mass Fraction&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="n">low_limit</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.05, 1.1)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.05, 1.2)
 </pre></div>
 </div>
-<img alt="../_images/8d11ccc577ec1947c25f87a584a195572ae1653c5f35b8e7b3113f6dd3850097.png" src="../_images/8d11ccc577ec1947c25f87a584a195572ae1653c5f35b8e7b3113f6dd3850097.png" />
+<img alt="../_images/3c04e916e4ca17373e30095938cd1adab4195ceab707e843fa305b94690491f8.png" src="../_images/3c04e916e4ca17373e30095938cd1adab4195ceab707e843fa305b94690491f8.png" />
 </div>
 </div>
 <p>We see that at very high temperatures, the composition goes to mostly <span class="math notranslate nohighlight">\(\alpha\)</span> first and then to a mix of neutrons and protons.</p>
