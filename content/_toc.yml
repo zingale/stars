@@ -32,6 +32,7 @@ parts:
   - caption: Explosions!
     chapters:
     - file: hotcno/hot-CNO-breakout-example
+    - file: nse/nse
 
   - caption: Homework solutions
     chapters:
