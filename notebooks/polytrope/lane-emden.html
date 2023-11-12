@@ -197,6 +197,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../hotcno/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nse/nse.html">Nuclear statistical equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOV/tov.html">Neutron star structure</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework solutions</span></p>
 <ul class="nav bd-sidenav">
@@ -520,19 +522,19 @@ equations of stellar structure.</p>
 <h2>Stopping point<a class="headerlink" href="#stopping-point" title="Permalink to this heading">#</a></h2>
 <p>But we have the problem that we do not know the stopping point, <span class="math notranslate nohighlight">\(\xi_1\)</span>.</p>
 <p>We estimate the radius, <span class="math notranslate nohighlight">\(\xi_1\)</span> each step and make sure that the next step does not take us past that estimate.  This prevents us from having negative <span class="math notranslate nohighlight">\(\theta\)</span> values.  Given a point <span class="math notranslate nohighlight">\((\xi_p, \theta(\xi_p))\)</span>, and the derivative at that point, <span class="math notranslate nohighlight">\(\theta^\prime_p = d\theta/d\xi |_{\xi_p}\)</span>, we can write the equation of a line as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ab0e5ac6-d98e-436f-9649-23b5f1c39da7">
-<span class="eqno">(1)<a class="headerlink" href="#equation-ab0e5ac6-d98e-436f-9649-23b5f1c39da7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-83b7e7c9-39ac-4fe9-be65-7781de0aa970">
+<span class="eqno">(1)<a class="headerlink" href="#equation-83b7e7c9-39ac-4fe9-be65-7781de0aa970" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \theta(\xi) - \theta_p = \theta^\prime_p (\xi - \xi_p)
 \end{equation}\]</div>
 <p><img alt="theta intercept" src="../_images/le_extrap.png" /></p>
 <p>Then we can ask when does <span class="math notranslate nohighlight">\(\theta\)</span> become zero, finding:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-816f166e-5cc0-4e74-a567-70bd22e8983a">
-<span class="eqno">(2)<a class="headerlink" href="#equation-816f166e-5cc0-4e74-a567-70bd22e8983a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-eb460e17-7bb1-48d5-8d99-2093114337b9">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eb460e17-7bb1-48d5-8d99-2093114337b9" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \xi = -\frac{\theta_p}{\theta^\prime_p} + \xi_p
 \end{equation}\]</div>
 <p>or in terms of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-560584d6-3cdb-4354-bf55-a19994854560">
-<span class="eqno">(3)<a class="headerlink" href="#equation-560584d6-3cdb-4354-bf55-a19994854560" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cfa26872-04f7-45d2-b301-fdac56bd7f8d">
+<span class="eqno">(3)<a class="headerlink" href="#equation-cfa26872-04f7-45d2-b301-fdac56bd7f8d" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \xi = -\frac{y_p}{z_p} + \xi_p
 \end{equation}\]</div>
 <p>This is our estimate of <span class="math notranslate nohighlight">\(\xi_1\)</span>.  We then make sure our stepsize <span class="math notranslate nohighlight">\(h\)</span> is small enough that we do not go beyond this estimate.</p>
@@ -687,7 +689,9 @@ the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <
    3 :           6.89684862          2.018235951
  3.5 :          9.535805346          1.890557093
    4 :          14.97154635          1.797229914
- 4.5 :          31.83646326          1.737798868
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 4.5 :          31.83646326          1.737798868
 </pre></div>
 </div>
 </div>
