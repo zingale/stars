@@ -33,6 +33,7 @@ parts:
     chapters:
     - file: hotcno/hot-CNO-breakout-example
     - file: nse/nse
+    - file: TOV/tov
 
   - caption: Homework solutions
     chapters:
