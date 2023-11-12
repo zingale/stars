@@ -107,7 +107,7 @@ $$\rho(r) = \rho_0 \left ( 1 - \frac{\Gamma_1 - 1}{\Gamma_1} \frac{r}{H} \right 
 
 Then since $P(r) = K\rho^{\Gamma_1}$, we have:
 
-$$P(r) = \rho_0 \left ( 1 - \frac{\Gamma_1 - 1}{\Gamma_1} \frac{r}{H} \right )^{\Gamma_1/(\Gamma_1 - 1)}$$
+$$P(r) = P_0 \left ( 1 - \frac{\Gamma_1 - 1}{\Gamma_1} \frac{r}{H} \right )^{\Gamma_1/(\Gamma_1 - 1)}$$
 
 ### b.
 
