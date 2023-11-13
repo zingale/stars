@@ -453,6 +453,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-i-newtonian-gravity-neutron-degeneracy">Case I: Newtonian gravity, neutron degeneracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-ii-gr-gravity-degenerate-eos">Case II: GR gravity + degenerate EOS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-iii-gr-gravity-nuclear-eos">Case III: GR gravity + nuclear EOS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-iv-blended-eos">Case IV: Blended EOS</a></li>
 </ul>
             </nav>
         </div>
@@ -809,7 +810,7 @@ criteria.  Then it cuts dx by factors of 2 until we meet our tolerance at the st
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$M$ [$M_\\odot$]&#39;)
 </pre></div>
 </div>
-<img alt="../_images/747a772b8452b48538e98fbf684a482e2212fec94b3efb589291c45b86aa4582.png" src="../_images/747a772b8452b48538e98fbf684a482e2212fec94b3efb589291c45b86aa4582.png" />
+<img alt="../_images/dc4a59516a022f4cba0bdc4cc489c8af7ff8f0f2710a5a056285bae98b7ea3a5.png" src="../_images/dc4a59516a022f4cba0bdc4cc489c8af7ff8f0f2710a5a056285bae98b7ea3a5.png" />
 </div>
 </div>
 <p>Now, adding GR, we see that there is a maximum mass for the neutron star, but it is quite low.</p>
@@ -859,6 +860,128 @@ criteria.  Then it cuts dx by factors of 2 until we meet our tolerance at the st
 <p>In this final case, we get a much more reasonable maximum neutron star mass.  We also see that
 for some values of radius there are multiple masses (the M-R relation is double-valued) – this is okay.
 However, at the very highest central densities, we get a smaller mass than the maximum at a smaller radius – that is not physical, and is dynamically unstable.</p>
+</section>
+<section id="case-iv-blended-eos">
+<h2>Case IV: Blended EOS<a class="headerlink" href="#case-iv-blended-eos" title="Permalink to this heading">#</a></h2>
+<p>Let’s now try an EOS that is stiff at the center but transitions to the non-relativisitic neutron degeneracy EOS at lower densities.</p>
+<p>We’ll write this as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P = \left \{ \begin{array}{cc} K_0 \rho^{\gamma_0} &amp; \mbox{if~} \rho &lt; \rho_{tr} \\
+                                 K_1 \rho^{\gamma_1} &amp; \mbox{otherwise} \end{array} \right .\end{split}\]</div>
+<p>We’ll take <span class="math notranslate nohighlight">\(K_0\)</span>, <span class="math notranslate nohighlight">\(\gamma_0\)</span> to be the non-relativitic neutron degeneracy parameters, <span class="math notranslate nohighlight">\(\gamma_0 = 5/3\)</span>
+and</p>
+<div class="math notranslate nohighlight">
+\[K_0 = \frac{h^2}{20} \left ( \frac{3}{\pi} \right )^{2/3} \frac{1}{m_u^{8/3}}\]</div>
+<p>For the transition density, we will take <span class="math notranslate nohighlight">\(x_F = 1/2\)</span>, which gives</p>
+<div class="math notranslate nohighlight">
+\[\frac{\rho}{m_u} = \frac{8\pi}{3} \left (\frac{m_u c}{h} \right )^3 x_F^3\]</div>
+<p>We’ll take <span class="math notranslate nohighlight">\(\gamma_1 = 2.5\)</span> as above</p>
+<p>Let’s evaluate these</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gamma_0</span> <span class="o">=</span> <span class="mf">5.</span><span class="o">/</span><span class="mf">3.</span>
+<span class="n">gamma_1</span> <span class="o">=</span> <span class="mf">2.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho_tr</span> <span class="o">=</span> <span class="n">m_u</span> <span class="o">*</span> <span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">m_u</span> <span class="o">*</span> <span class="n">c</span> <span class="o">/</span> <span class="n">h</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">rho_tr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>736688938797371.4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K0</span> <span class="o">=</span> <span class="n">h</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">20</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="n">m_u</span><span class="o">**</span><span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">K0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5516831857.874235
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K1</span> <span class="o">=</span> <span class="n">K0</span> <span class="o">*</span> <span class="n">rho_tr</span><span class="o">**</span><span class="p">(</span><span class="n">gamma_0</span> <span class="o">-</span> <span class="n">gamma_1</span><span class="p">)</span>
+<span class="n">K1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00225053768815454
+</pre></div>
+</div>
+</div>
+</div>
+<p>That gives a transition density of <span class="math notranslate nohighlight">\(\sim 7\times 10^{14}~\mathrm{g~cm^{-3}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pres_blend</span><span class="p">(</span><span class="n">rho</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">rho</span> <span class="o">&lt;</span> <span class="n">rho_tr</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">K0</span> <span class="o">*</span> <span class="n">rho</span><span class="o">**</span><span class="n">gamma_0</span>
+    <span class="k">return</span> <span class="n">K1</span> <span class="o">*</span> <span class="n">rho</span><span class="o">**</span><span class="n">gamma_1</span>
+
+<span class="k">def</span> <span class="nf">rho_blend</span><span class="p">(</span><span class="n">pres</span><span class="p">):</span>
+    <span class="n">P_tr</span> <span class="o">=</span> <span class="n">K0</span> <span class="o">*</span> <span class="n">rho_tr</span><span class="o">**</span><span class="n">gamma_0</span>
+    
+    <span class="k">if</span> <span class="n">pres</span> <span class="o">&lt;</span> <span class="n">P_tr</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">pres</span> <span class="o">/</span> <span class="n">K0</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">gamma_0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">pres</span> <span class="o">/</span> <span class="n">K1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">gamma_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ns4</span> <span class="o">=</span> <span class="n">Integrator</span><span class="p">(</span><span class="n">rhs_tov</span><span class="p">,</span> <span class="n">rhs_args</span><span class="o">=</span><span class="p">[</span><span class="n">rho_blend</span><span class="p">],</span>
+                 <span class="n">stop_cond</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;LT&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;LT&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)])</span>
+
+<span class="n">R_max</span> <span class="o">=</span> <span class="mf">5.e6</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># my vector is [m, p]</span>
+<span class="n">mass</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">rhoc</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">1.e14</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">5.e16</span><span class="p">),</span> <span class="mi">100</span><span class="p">):</span>
+
+    <span class="n">Pc</span> <span class="o">=</span> <span class="n">pres_blend</span><span class="p">(</span><span class="n">rhoc</span><span class="p">)</span>
+
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">ns4</span><span class="o">.</span><span class="n">integrate</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Pc</span><span class="p">],</span> <span class="n">R_max</span><span class="o">/</span><span class="n">N</span><span class="p">,</span> <span class="n">R_max</span><span class="p">)</span>
+
+    <span class="n">mass</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s2">&quot;y0&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">2.e33</span><span class="p">)</span>
+    <span class="n">radius</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1.e5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">mass</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$R$ [km]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;$M$ [$M_\odot$]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$M$ [$M_\\odot$]&#39;)
+</pre></div>
+</div>
+<img alt="../_images/cb89fdf3f40b30d3b607d86da614221a3feb5d6e13b5442dbcb35d020f899001.png" src="../_images/cb89fdf3f40b30d3b607d86da614221a3feb5d6e13b5442dbcb35d020f899001.png" />
+</div>
+</div>
 </section>
 </section>
 
@@ -930,6 +1053,7 @@ However, at the very highest central densities, we get a smaller mass than the m
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-i-newtonian-gravity-neutron-degeneracy">Case I: Newtonian gravity, neutron degeneracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-ii-gr-gravity-degenerate-eos">Case II: GR gravity + degenerate EOS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-iii-gr-gravity-nuclear-eos">Case III: GR gravity + nuclear EOS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-iv-blended-eos">Case IV: Blended EOS</a></li>
 </ul>
   </nav></div>
 
