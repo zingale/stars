@@ -729,6 +729,7 @@ criteria.  Then it cuts dx by factors of 2 until we meet our tolerance at the st
 </section>
 <section id="case-i-newtonian-gravity-neutron-degeneracy">
 <h2>Case I: Newtonian gravity, neutron degeneracy<a class="headerlink" href="#case-i-newtonian-gravity-neutron-degeneracy" title="Permalink to this heading">#</a></h2>
+<p>We’ll loop over the central density and integrate the neutron star structure and store the mass and radius corresponding to each central density.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ns1</span> <span class="o">=</span> <span class="n">Integrator</span><span class="p">(</span><span class="n">rhs_newton</span><span class="p">,</span> <span class="n">rhs_args</span><span class="o">=</span><span class="p">[</span><span class="n">rho_deg</span><span class="p">],</span>
@@ -810,7 +811,7 @@ criteria.  Then it cuts dx by factors of 2 until we meet our tolerance at the st
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$M$ [$M_\\odot$]&#39;)
 </pre></div>
 </div>
-<img alt="../_images/dc4a59516a022f4cba0bdc4cc489c8af7ff8f0f2710a5a056285bae98b7ea3a5.png" src="../_images/dc4a59516a022f4cba0bdc4cc489c8af7ff8f0f2710a5a056285bae98b7ea3a5.png" />
+<img alt="../_images/747a772b8452b48538e98fbf684a482e2212fec94b3efb589291c45b86aa4582.png" src="../_images/747a772b8452b48538e98fbf684a482e2212fec94b3efb589291c45b86aa4582.png" />
 </div>
 </div>
 <p>Now, adding GR, we see that there is a maximum mass for the neutron star, but it is quite low.</p>
@@ -866,7 +867,7 @@ However, at the very highest central densities, we get a smaller mass than the m
 <p>Let’s now try an EOS that is stiff at the center but transitions to the non-relativisitic neutron degeneracy EOS at lower densities.</p>
 <p>We’ll write this as:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}P = \left \{ \begin{array}{cc} K_0 \rho^{\gamma_0} &amp; \mbox{if~} \rho &lt; \rho_{tr} \\
+\[\begin{split}P = \left \{ \begin{array}{cc} K_0 \rho^{\gamma_0} &amp; \mbox{if } \rho &lt; \rho_{tr} \\
                                  K_1 \rho^{\gamma_1} &amp; \mbox{otherwise} \end{array} \right .\end{split}\]</div>
 <p>We’ll take <span class="math notranslate nohighlight">\(K_0\)</span>, <span class="math notranslate nohighlight">\(\gamma_0\)</span> to be the non-relativitic neutron degeneracy parameters, <span class="math notranslate nohighlight">\(\gamma_0 = 5/3\)</span>
 and</p>
