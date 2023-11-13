@@ -472,7 +472,7 @@ document.write(`
 <p>and the general relativistic <a class="reference external" href="https://en.wikipedia.org/wiki/Tolman%E2%80%93Oppenheimer%E2%80%93Volkoff_equation">Tolman-Oppenheimer-Volkoff equation</a>:</p>
 <div class="math notranslate nohighlight">
 \[\frac{dP}{dr} = -\frac{G}{r^2} \left (\rho + \frac{P}{c^2}\right )
-    \left ( M(r) + \frac{4\pi r^3 P}{c^2} \right ) \left (1 - \frac{2 GM(r)}{rc^2} \right )\]</div>
+    \left ( M(r) + \frac{4\pi r^3 P}{c^2} \right ) \left (1 - \frac{2 GM(r)}{rc^2} \right )^{-1}\]</div>
 <p>In both cases, <span class="math notranslate nohighlight">\(M(r)\)</span> satisties:</p>
 <div class="math notranslate nohighlight">
 \[\frac{dM}{dr} = 4\pi r^2 \rho\]</div>
@@ -857,7 +857,8 @@ criteria.  Then it cuts dx by factors of 2 until we meet our tolerance at the st
 </div>
 </div>
 <p>In this final case, we get a much more reasonable maximum neutron star mass.  We also see that
-for some values of radius there are multiple masses (the M-R relation is double-valued).</p>
+for some values of radius there are multiple masses (the M-R relation is double-valued) – this is okay.
+However, at the very highest central densities, we get a smaller mass than the maximum at a smaller radius – that is not physical, and is dynamically unstable.</p>
 </section>
 </section>
 
