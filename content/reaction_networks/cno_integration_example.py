@@ -1,5 +1,6 @@
 import numba
 import numpy as np
+from scipy import constants
 from numba.experimental import jitclass
 
 from pynucastro.rates import TableIndex, TableInterpolator, TabularRate, Tfactors
@@ -61,6 +62,26 @@ Z[jf18] = 9
 Z[jf19] = 9
 Z[jne18] = 10
 
+# masses in ergs
+mass = np.zeros((nnuc), dtype=np.float64)
+
+mass[jp] = 0.0015040963030260536
+mass[jhe4] = 0.0059735574925878256
+mass[jc12] = 0.017909017027273523
+mass[jc13] = 0.019406441930882663
+mass[jn13] = 0.01940999951603316
+mass[jn14] = 0.020898440903103103
+mass[jn15] = 0.0223864338056853
+mass[jo14] = 0.020906683076491985
+mass[jo15] = 0.02239084645968795
+mass[jo16] = 0.023871099858982767
+mass[jo17] = 0.02536981167252093
+mass[jo18] = 0.02686227133140636
+mass[jf17] = 0.025374234423440733
+mass[jf18] = 0.026864924401329426
+mass[jf19] = 0.028353560468882166
+mass[jne18] = 0.026872045275379234
+
 names = []
 names.append("H1")
 names.append("He4")
@@ -87,6 +108,15 @@ def to_composition(Y):
     for i, nuc in enumerate(nuclei):
         comp.X[nuc] = Y[i] * A[i]
     return comp
+
+
+def energy_release(dY):
+    """return the energy release in erg/g (/s if dY is actually dY/dt)"""
+    enuc = 0.0
+    for i, y in enumerate(dY):
+        enuc += y * mass[i]
+    enuc *= -1*constants.Avogadro
+    return enuc
 
 @jitclass([
     ("p_C12__N13", numba.float64),
