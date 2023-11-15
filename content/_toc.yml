@@ -32,6 +32,7 @@ parts:
   - caption: Explosions!
     chapters:
     - file: hotcno/hot-CNO-breakout-example
+    - file: lightcurve/lightcurve
     - file: nse/nse
     - file: TOV/tov
 
