@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -141,6 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -410,6 +411,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -419,6 +421,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -773,6 +776,48 @@ criteria.  Then it cuts dx by factors of 2 until we meet our tolerance at the st
 </div>
 </div>
 <p>Here we see a curve reminiscient of the white dwarf mass-radius relation.  This is not physical since we’ve neglected GR and the nuclear interactions.</p>
+<p>What happens if we take <span class="math notranslate nohighlight">\(\rho \rightarrow \infty\)</span>?  We should get the neutron star version of the
+Chandrasekhar mass:</p>
+<div class="math notranslate nohighlight">
+\[M_\mathrm{Ch} = 1.44 \left ( \frac{2}{\mu} \right )^2 M_\odot\]</div>
+<p>For electrons, the <span class="math notranslate nohighlight">\(\mu\)</span> was <span class="math notranslate nohighlight">\(\mu_e\)</span>, but now it is just <span class="math notranslate nohighlight">\(\mu = 1\)</span> for neutrons, giving a mass of
+<span class="math notranslate nohighlight">\(M_\mathrm{Ch} \sim 5.76~ M_\odot\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ns1</span> <span class="o">=</span> <span class="n">Integrator</span><span class="p">(</span><span class="n">rhs_newton</span><span class="p">,</span> <span class="n">rhs_args</span><span class="o">=</span><span class="p">[</span><span class="n">rho_deg</span><span class="p">],</span>
+                 <span class="n">stop_cond</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;LT&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;LT&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)])</span>
+
+<span class="n">R_max</span> <span class="o">=</span> <span class="mf">5.e6</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">mass</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">rhoc</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">5.e14</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">5.e18</span><span class="p">),</span> <span class="mi">100</span><span class="p">):</span>
+    
+    <span class="n">Pc</span> <span class="o">=</span> <span class="n">pres_deg</span><span class="p">(</span><span class="n">rhoc</span><span class="p">)</span>
+    
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">ns1</span><span class="o">.</span><span class="n">integrate</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Pc</span><span class="p">],</span> <span class="n">R_max</span><span class="o">/</span><span class="n">N</span><span class="p">,</span> <span class="n">R_max</span><span class="p">)</span>
+    
+    <span class="n">mass</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s2">&quot;y0&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">2.e33</span><span class="p">)</span>
+    <span class="n">radius</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1.e5</span><span class="p">)</span>
+    
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">mass</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$R$ [km]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;$M$ [$M_\odot$]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$M$ [$M_\\odot$]&#39;)
+</pre></div>
+</div>
+<img alt="../_images/747867800ccd59ef64a49597eecbc5131b86e978c6e16bca7cc125dbbd572e8c.png" src="../_images/747867800ccd59ef64a49597eecbc5131b86e978c6e16bca7cc125dbbd572e8c.png" />
+</div>
+</div>
+<p>We see that we are approaching that maximum mas as <span class="math notranslate nohighlight">\(R \rightarrow 0\)</span>, as expected.</p>
 </section>
 <section id="case-ii-gr-gravity-degenerate-eos">
 <h2>Case II: GR gravity + degenerate EOS<a class="headerlink" href="#case-ii-gr-gravity-degenerate-eos" title="Permalink to this heading">#</a></h2>
@@ -1016,7 +1061,7 @@ and</p>
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../nse/nse.html"
@@ -1078,6 +1123,7 @@ By <a href="https://zingale.github.io">Michael Zingale</a>
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -1103,8 +1149,8 @@ By <a href="https://zingale.github.io">Michael Zingale</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
