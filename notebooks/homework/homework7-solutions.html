@@ -454,6 +454,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-heat-capacity">1. Electron heat capacity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wd-cooling">2. WD cooling</a></li>
 </ul>
             </nav>
         </div>
@@ -486,8 +487,8 @@ document.write(`
 </div>
 </div>
 <p>In a previous homework, we found:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fb9777a6-5d89-4a79-bc11-a324ffe3d732">
-<span class="eqno">(8)<a class="headerlink" href="#equation-fb9777a6-5d89-4a79-bc11-a324ffe3d732" title="Permalink to this equation">#</a></span>\[\begin{equation}    
+<div class="amsmath math notranslate nohighlight" id="equation-a9eede98-ead1-4e19-87db-7371ba7bb67f">
+<span class="eqno">(8)<a class="headerlink" href="#equation-a9eede98-ead1-4e19-87db-7371ba7bb67f" title="Permalink to this equation">#</a></span>\[\begin{equation}    
     P_e = \frac{h^2}{20m_e} \left ( \frac{3}{\pi} \right )^{2/3} n_e^{5/3}               
         \left [ 1 + \frac{40\pi^2}{(3/\pi)^{4/3}} \frac{m_e^2}{h^4} \frac{(kT)^2}{n_e^{4/3}}
         \right ]             
@@ -611,6 +612,85 @@ document.write(`
 \[c_{v,ions} = 10^7~\mathrm{erg/g/K}\]</div>
 <p>so <span class="math notranslate nohighlight">\(c_{v,ions} \gg c_{v,e}\)</span>, justifying our assumption in class.</p>
 </section>
+<section id="wd-cooling">
+<h2>2. WD cooling<a class="headerlink" href="#wd-cooling" title="Permalink to this heading">#</a></h2>
+<p>Another assumption we made when we did white dwarf cooling was to assume that the radiative layer was thin.  Here we’ll check that.</p>
+<p>We showed that the radiative layer behaves like a polytrope with an equation of state:</p>
+<div class="math notranslate nohighlight">
+\[P = K^\prime T^{1+n_\mathrm{eff}}\]</div>
+<p>with <span class="math notranslate nohighlight">\(n_\mathrm{eff} = 13/4\)</span>.</p>
+<p>Let’s start with hydrostatic equilibrium:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dP}{dr} = -\rho \frac{G M_\star}{r^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(M_\star\)</span> is assumed to be the constant mass of the star (the layer does not have
+significant masss).</p>
+<p>Using the chain rule, we can write:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dP}{dr} = \frac{dP}{dT} \frac{dT}{dr} = \frac{1}{\nabla} \frac{P}{T} \frac{dT}{dr}\]</div>
+<p>and from our EOS, we see <span class="math notranslate nohighlight">\(\nabla^{-1} = 1 + n_\mathrm{eff} =  17/4\)</span>.</p>
+<p>Now we use the ideal gas law to replace <span class="math notranslate nohighlight">\(P/T = \rho k /(\mu m_u)\)</span>, giving</p>
+<div class="math notranslate nohighlight">
+\[\frac{dT}{dr} = -\frac{\mu m_u}{k}  \nabla \frac{GM_\star}{r^2}\]</div>
+<p>We can integrate this from the transition radius (where <span class="math notranslate nohighlight">\(T = T_c\)</span>) to the surface of the star</p>
+<div class="math notranslate nohighlight">
+\[\int_{T_c}^{T_\star} dT = - \frac{\mu m_u}{k} \nabla G M_\star \int_{r_\mathrm{tr}}^{R_\star} \frac{1}{{r^\prime}^2} dr^\prime\]</div>
+<p>which gives</p>
+<div class="math notranslate nohighlight">
+\[T_\star - T_c = \nabla \frac{\mu m_u}{k} G M_\star \left ( \frac{1}{r_\mathrm{tr}} - \frac{1}{R_\star} \right )\]</div>
+<p>we can take the surface temperature to be 0, giving</p>
+<div class="math notranslate nohighlight">
+\[\frac{k T_c}{\mu m_u} = \nabla \frac{GM_\star}{R_\star} \frac{R_\star - r_\mathrm{tr}}{r_\mathrm{tr}} \sim \nabla g l\]</div>
+<p>with <span class="math notranslate nohighlight">\(l = R_\star - r_\mathrm{tr}\)</span> as the layer thickness.</p>
+<p>This gives</p>
+<div class="math notranslate nohighlight">
+\[l \sim \frac{17}{4} \frac{k T_c}{\mu m_u g}\]</div>
+<p>Let’s put in numbers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">solar_mass_cgs</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">0.012</span> <span class="o">*</span> <span class="mf">7.e10</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">cm</span>
+<span class="n">G</span> <span class="o">=</span> <span class="mf">6.67e-8</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">dyne</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">g</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">G</span> <span class="o">*</span> <span class="n">M</span> <span class="o">/</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">g</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cm/s**2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>unyt_quantity(1.12778349e+08, &#39;cm/s**2&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tc</span> <span class="o">=</span> <span class="mf">1.e8</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="mf">17.</span><span class="o">/</span><span class="mf">4.</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">Tc</span> <span class="o">/</span> <span class="p">(</span><span class="n">mu</span> <span class="o">*</span> <span class="n">m_u</span> <span class="o">*</span> <span class="n">g</span><span class="p">)</span>
+<span class="p">(</span><span class="n">l</span><span class="o">/</span><span class="n">R</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;dimensionless&quot;</span><span class="p">)</span>                      
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>unyt_quantity(0.03089337, &#39;dimensionless&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that for <span class="math notranslate nohighlight">\(T_c = 10^7~\mathrm{K}\)</span> the layer is indeed thin.</p>
+<p>We also see that if we increase <span class="math notranslate nohighlight">\(T_c\)</span> by a factor of 10, then <span class="math notranslate nohighlight">\(l \sim R_\star\)</span>, so our approximation is no longer as good.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -668,6 +748,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-heat-capacity">1. Electron heat capacity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wd-cooling">2. WD cooling</a></li>
 </ul>
   </nav></div>
 
