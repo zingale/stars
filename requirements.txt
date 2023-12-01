@@ -6,3 +6,4 @@ sympy
 pynucastro @ git+https://github.com/pynucastro/pynucastro
 myst-nb
 mesa-reader @ git+https://github.com/wmwolf/py_mesa_reader
+unyt
