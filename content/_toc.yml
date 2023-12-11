@@ -45,5 +45,6 @@ parts:
     - file: homework/homework5-solutions
     - file: homework/homework6-solutions
     - file: homework/homework7-solutions
+    - file: homework/homework8-solutions
 
 
