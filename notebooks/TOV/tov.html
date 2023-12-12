@@ -929,7 +929,7 @@ and</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gamma_0</span> <span class="o">=</span> <span class="mf">5.</span><span class="o">/</span><span class="mf">3.</span>
-<span class="n">gamma_1</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">gamma_1</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </div>
@@ -968,7 +968,7 @@ and</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00225053768815454
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.041337677911962e-115
 </pre></div>
 </div>
 </div>
@@ -1013,6 +1013,42 @@ and</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">for</span> <span class="n">rhoc</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">1.e14</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">5.e16</span><span class="p">),</span> <span class="mi">100</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">Pc</span> <span class="o">=</span> <span class="n">pres_blend</span><span class="p">(</span><span class="n">rhoc</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">14</span>     <span class="n">sol</span> <span class="o">=</span> <span class="n">ns4</span><span class="o">.</span><span class="n">integrate</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Pc</span><span class="p">],</span> <span class="n">R_max</span><span class="o">/</span><span class="n">N</span><span class="p">,</span> <span class="n">R_max</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">mass</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s2">&quot;y0&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">2.e33</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">radius</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1.e5</span><span class="p">)</span>
+
+<span class="nn">Cell In[2], line 68,</span> in <span class="ni">Integrator.integrate</span><span class="nt">(self, initial_conditions, dx, xmax, tol)</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span> <span class="n">y</span> <span class="o">=</span> <span class="n">initial_conditions</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span> <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">xmax</span> <span class="ow">and</span> <span class="n">dx</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="o">*</span> <span class="n">xmax</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span>     <span class="c1"># advance for a step</span>
+<span class="ne">---&gt; </span><span class="mi">68</span>     <span class="n">ynew</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rk4_step</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>     <span class="k">if</span> <span class="n">ynew</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>         <span class="c1"># we hit our stopping condition</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>         <span class="c1"># cut the stepsize so we can try to get closer</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>         <span class="n">dx</span> <span class="o">/=</span> <span class="mi">2</span>
+
+<span class="nn">Cell In[2], line 28,</span> in <span class="ni">Integrator.rk4_step</span><span class="nt">(self, x, y, dx)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dx</span><span class="o">*</span><span class="n">dydx2</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_stop_cond</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
+<span class="ne">---&gt; </span><span class="mi">28</span> <span class="n">dydx3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rhs</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="n">y3</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dx</span><span class="o">*</span><span class="n">dydx3</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_stop_cond</span><span class="p">(</span><span class="n">y3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">Cell In[4], line 17,</span> in <span class="ni">rhs_tov</span><span class="nt">(r, y, rho_func)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">metric_term</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">G</span> <span class="o">*</span> <span class="n">m</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">dPdr</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">G</span> <span class="o">/</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">rho_term</span> <span class="o">*</span> <span class="n">m_term</span> <span class="o">/</span> <span class="n">metric_term</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dmdr</span><span class="p">,</span> <span class="n">dPdr</span><span class="p">])</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1024,11 +1060,12 @@ and</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$M$ [$M_\\odot$]&#39;)
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
 </pre></div>
 </div>
-<img alt="../_images/f10bf2f860c483c17cac2aa99e63bd5fa96328061740f55e8dd0849903d86779.png" src="../_images/f10bf2f860c483c17cac2aa99e63bd5fa96328061740f55e8dd0849903d86779.png" />
 </div>
 </div>
 </section>
