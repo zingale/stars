@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -78,10 +78,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -122,11 +121,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -470,7 +472,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="neutron-star-structure">
 <h1>Neutron star structure<a class="headerlink" href="#neutron-star-structure" title="Permalink to this heading">#</a></h1>
@@ -1024,29 +1026,15 @@ and</p>
 <span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">mass</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s2">&quot;y0&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">2.e33</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">radius</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1.e5</span><span class="p">)</span>
 
-<span class="nn">Cell In[2], line 68,</span> in <span class="ni">Integrator.integrate</span><span class="nt">(self, initial_conditions, dx, xmax, tol)</span>
+<span class="nn">Cell In[2], line 66,</span> in <span class="ni">Integrator.integrate</span><span class="nt">(self, initial_conditions, dx, xmax, tol)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="n">sol</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">64</span> <span class="n">y</span> <span class="o">=</span> <span class="n">initial_conditions</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span> <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">xmax</span> <span class="ow">and</span> <span class="n">dx</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="o">*</span> <span class="n">xmax</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">66</span> <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">xmax</span> <span class="ow">and</span> <span class="n">dx</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="o">*</span> <span class="n">xmax</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">67</span>     <span class="c1"># advance for a step</span>
-<span class="ne">---&gt; </span><span class="mi">68</span>     <span class="n">ynew</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rk4_step</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>     <span class="n">ynew</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rk4_step</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">70</span>     <span class="k">if</span> <span class="n">ynew</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">71</span>         <span class="c1"># we hit our stopping condition</span>
 <span class="g g-Whitespace">     </span><span class="mi">72</span>         <span class="c1"># cut the stepsize so we can try to get closer</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>         <span class="n">dx</span> <span class="o">/=</span> <span class="mi">2</span>
-
-<span class="nn">Cell In[2], line 30,</span> in <span class="ni">Integrator.rk4_step</span><span class="nt">(self, x, y, dx)</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="n">dydx3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rhs</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="n">y3</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dx</span><span class="o">*</span><span class="n">dydx3</span>
-<span class="ne">---&gt; </span><span class="mi">30</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_stop_cond</span><span class="p">(</span><span class="n">y3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="n">dydx4</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rhs</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="n">y_final</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mf">6.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">dydx1</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">dydx2</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">dydx3</span> <span class="o">+</span> <span class="n">dydx4</span><span class="p">)</span>
-
-<span class="nn">Cell In[2], line 46,</span> in <span class="ni">Integrator.check_stop_cond</span><span class="nt">(self, y)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="n">c</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">cond</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s2">&quot;LT&quot;</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">46</span>     <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">:</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="s2">&quot;GT&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="k">if</span> <span class="n">ynew</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">v</span><span class="p">:</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1131,6 +1119,7 @@ and</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1190,8 +1179,8 @@ By <a href="https://zingale.github.io">Michael Zingale</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
