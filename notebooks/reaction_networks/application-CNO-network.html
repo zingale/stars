@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Integration Example &#8212; PHY 521 Fall 2023</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reaction_networks/application-CNO-network';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,27 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -118,8 +109,13 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -143,6 +139,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../intro.html">
   
@@ -154,7 +152,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">PHY 521 Fall 2023</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -172,17 +181,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reactions</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../pp-vs-cno/pp-cno.html">p-p chain vs. CNO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="stiff-ODEs.html">Integrating Stiff ODEs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="stiff-ODEs.html">Integrating Stiff ODEs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="ODEs-implicit.html">Implicit Methods for ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ODEs-implicit-systems.html">Implicit Methods for Systems of ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ODEs-implicit-nonlinear-systems.html">Implicit Methods and Nonlinear Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cxx_solver.html">C++ Solver for Stiff Nonlinear System</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="reactions.html">Application: Nuclear Reaction Networks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="reactions.html">Application: Nuclear Reaction Networks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Integration Example</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Stellar Models</span></p>
 <ul class="nav bd-sidenav">
@@ -201,17 +210,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../nse/nse.html">Nuclear statistical equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../TOV/tov.html">Neutron star structure</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework solutions</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework1-solutions.html">Homework 1 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework2-solutions.html">Homework 2 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework3-solutions.html">Homework 3 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework4-solutions.html">Homework 4 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework5-solutions.html">Homework 5 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework6-solutions.html">Homework 6 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework7-solutions.html">Homework 7 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework8-solutions.html">Homework 8 solutions</a></li>
-</ul>
 
     </div>
 </nav></div>
@@ -226,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -235,14 +233,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -267,14 +265,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/reaction_networks/application-CNO-network.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -285,14 +283,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/reaction_networks/application-CNO-network.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -416,10 +414,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -427,7 +425,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -458,15 +456,15 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="integration-example">
-<h1>Integration Example<a class="headerlink" href="#integration-example" title="Permalink to this heading">#</a></h1>
+<h1>Integration Example<a class="headerlink" href="#integration-example" title="Link to this heading">#</a></h1>
 <p>We can use <a class="reference external" href="https://github.com/pynucastro/pynucastro">pynucastro</a> to generate the righthand side function for an astrophysical reaction network.</p>
 <p>We’ll create a CNO network that has the rates for all 4 CNO cycles + hot-CNO, as listed here:
 <a class="reference external" href="https://reaclib.jinaweb.org/popularRates.php">https://reaclib.jinaweb.org/popularRates.php</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pynucastro</span> <span class="k">as</span> <span class="nn">pyna</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pynucastro</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pyna</span>
 </pre></div>
 </div>
 </div>
@@ -509,7 +507,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/05b11ad76688096c48a488129693fb7e9a0b4e46f94a5a57a368a16ac7a47b47.png" src="../_images/05b11ad76688096c48a488129693fb7e9a0b4e46f94a5a57a368a16ac7a47b47.png" />
+<img alt="../_images/f7547fadd0f4b6e59cdfa030e8a7079e596827472e6d2bda5c008044fabc71c2.png" src="../_images/f7547fadd0f4b6e59cdfa030e8a7079e596827472e6d2bda5c008044fabc71c2.png" />
 </div>
 </div>
 <p>pynucastro can write out the python code needed to evaluate the reaction rates</p>
@@ -600,21 +598,21 @@ Z[jne18] = 10
 # masses in ergs
 mass = np.zeros((nnuc), dtype=np.float64)
 
-mass[jp] = 0.0015040963030260536
-mass[jhe4] = 0.0059735574925878256
+mass[jp] = 0.0015040963047307696
+mass[jhe4] = 0.0059735574859708365
 mass[jc12] = 0.017909017027273523
-mass[jc13] = 0.019406441930882663
+mass[jc13] = 0.01940644192976114
 mass[jn13] = 0.01940999951603316
-mass[jn14] = 0.020898440903103103
-mass[jn15] = 0.0223864338056853
-mass[jo14] = 0.020906683076491985
+mass[jn14] = 0.020898440897976135
+mass[jn15] = 0.022386433805845516
+mass[jo14] = 0.020906683078094165
 mass[jo15] = 0.02239084645968795
-mass[jo16] = 0.023871099858982767
-mass[jo17] = 0.02536981167252093
-mass[jo18] = 0.02686227133140636
+mass[jo16] = 0.023871099855618198
+mass[jo17] = 0.025369811672200496
+mass[jo18] = 0.026862271330925704
 mass[jf17] = 0.025374234423440733
 mass[jf18] = 0.026864924401329426
-mass[jf19] = 0.028353560468882166
+mass[jf19] = 0.028353560476732827
 mass[jne18] = 0.026872045275379234
 
 names = []
@@ -723,15 +721,15 @@ def p_C13__N14(rate_eval, tf):
     # C13 + p --&gt; N14
     rate = 0.0
 
-    # nacrr
-    rate += np.exp(  15.1825 + -13.5543*tf.T9i
-                  + -1.5*tf.lnT9)
     # nacrn
     rate += np.exp(  18.5155 + -13.72*tf.T913i + -0.450018*tf.T913
                   + 3.70823*tf.T9 + -1.70545*tf.T953 + -0.666667*tf.lnT9)
     # nacrr
     rate += np.exp(  13.9637 + -5.78147*tf.T9i + -0.196703*tf.T913
                   + 0.142126*tf.T9 + -0.0238912*tf.T953 + -1.5*tf.lnT9)
+    # nacrr
+    rate += np.exp(  15.1825 + -13.5543*tf.T9i
+                  + -1.5*tf.lnT9)
 
     rate_eval.p_C13__N14 = rate
 
@@ -764,9 +762,6 @@ def p_N14__O15(rate_eval, tf):
     # N14 + p --&gt; O15
     rate = 0.0
 
-    # im05n
-    rate += np.exp(  17.01 + -15.193*tf.T913i + -0.161954*tf.T913
-                  + -7.52123*tf.T9 + -0.987565*tf.T953 + -0.666667*tf.lnT9)
     # im05r
     rate += np.exp(  6.73578 + -4.891*tf.T9i
                   + 0.0682*tf.lnT9)
@@ -776,6 +771,9 @@ def p_N14__O15(rate_eval, tf):
     # im05n
     rate += np.exp(  20.1169 + -15.193*tf.T913i + -4.63975*tf.T913
                   + 9.73458*tf.T9 + -9.55051*tf.T953 + 0.333333*tf.lnT9)
+    # im05n
+    rate += np.exp(  17.01 + -15.193*tf.T913i + -0.161954*tf.T913
+                  + -7.52123*tf.T9 + -0.987565*tf.T953 + -0.666667*tf.lnT9)
 
     rate_eval.p_N14__O15 = rate
 
@@ -824,15 +822,15 @@ def p_N15__O16(rate_eval, tf):
     # N15 + p --&gt; O16
     rate = 0.0
 
-    # li10n
-    rate += np.exp(  20.0176 + -15.24*tf.T913i + 0.334926*tf.T913
-                  + 4.59088*tf.T9 + -4.78468*tf.T953 + -0.666667*tf.lnT9)
     # li10r
     rate += np.exp(  14.5444 + -10.2295*tf.T9i
                   + 0.0459037*tf.T9 + -1.5*tf.lnT9)
     # li10r
     rate += np.exp(  6.59056 + -2.92315*tf.T9i
                   + -1.5*tf.lnT9)
+    # li10n
+    rate += np.exp(  20.0176 + -15.24*tf.T913i + 0.334926*tf.T913
+                  + 4.59088*tf.T9 + -4.78468*tf.T953 + -0.666667*tf.lnT9)
 
     rate_eval.p_N15__O16 = rate
 
@@ -863,9 +861,6 @@ def p_O17__He4_N14(rate_eval, tf):
     rate = 0.0
 
     # il10r
-    rate += np.exp(  5.5336 + -2.11477*tf.T9i
-                  + -1.5*tf.lnT9)
-    # il10r
     rate += np.exp(  -7.20763 + -0.753395*tf.T9i
                   + -1.5*tf.lnT9)
     # il10n
@@ -874,6 +869,9 @@ def p_O17__He4_N14(rate_eval, tf):
     # il10r
     rate += np.exp(  10.174 + -4.95865*tf.T9i + 5.10182*tf.T913
                   + 0.379373*tf.T9 + -0.0672515*tf.T953 + -1.5*tf.lnT9)
+    # il10r
+    rate += np.exp(  5.5336 + -2.11477*tf.T9i
+                  + -1.5*tf.lnT9)
 
     rate_eval.p_O17__He4_N14 = rate
 
@@ -882,15 +880,15 @@ def p_O17__F18(rate_eval, tf):
     # O17 + p --&gt; F18
     rate = 0.0
 
-    # il10n
-    rate += np.exp(  15.8929 + -16.4035*tf.T913i + 4.31885*tf.T913
-                  + -0.709921*tf.T9 + -2.0*tf.T953 + -0.666667*tf.lnT9)
     # il10r
     rate += np.exp(  9.39048 + -6.22828*tf.T9i + 2.31435*tf.T913
                   + -0.302835*tf.T9 + 0.020133*tf.T953 + -1.5*tf.lnT9)
     # il10r
     rate += np.exp(  -13.077 + -0.746296*tf.T9i
                   + -1.5*tf.lnT9)
+    # il10n
+    rate += np.exp(  15.8929 + -16.4035*tf.T913i + 4.31885*tf.T913
+                  + -0.709921*tf.T9 + -2.0*tf.T953 + -0.666667*tf.lnT9)
 
     rate_eval.p_O17__F18 = rate
 
@@ -910,9 +908,6 @@ def p_O18__He4_N15(rate_eval, tf):
     rate = 0.0
 
     # il10r
-    rate += np.exp(  10.2725 + -1.663*tf.T9i
-                  + -1.5*tf.lnT9)
-    # il10r
     rate += np.exp(  -27.9044 + -0.245884*tf.T9i
                   + -1.5*tf.lnT9)
     # il10n
@@ -921,6 +916,9 @@ def p_O18__He4_N15(rate_eval, tf):
     # il10r
     rate += np.exp(  8.94352 + -5.32335*tf.T9i + 11.6568*tf.T913
                   + -2.16303*tf.T9 + 0.209965*tf.T953 + -1.5*tf.lnT9)
+    # il10r
+    rate += np.exp(  10.2725 + -1.663*tf.T9i
+                  + -1.5*tf.lnT9)
 
     rate_eval.p_O18__He4_N15 = rate
 
@@ -929,9 +927,6 @@ def p_O18__F19(rate_eval, tf):
     # O18 + p --&gt; F19
     rate = 0.0
 
-    # il10r
-    rate += np.exp(  -35.0079 + -0.244743*tf.T9i
-                  + -1.5*tf.lnT9)
     # il10n
     rate += np.exp(  19.917 + -16.7246*tf.T913i
                   + -3.0*tf.T953 + -0.666667*tf.lnT9)
@@ -941,6 +936,9 @@ def p_O18__F19(rate_eval, tf):
     # il10r
     rate += np.exp(  5.07648 + -1.65681*tf.T9i
                   + -1.5*tf.lnT9)
+    # il10r
+    rate += np.exp(  -35.0079 + -0.244743*tf.T9i
+                  + -1.5*tf.lnT9)
 
     rate_eval.p_O18__F19 = rate
 
@@ -949,9 +947,6 @@ def p_F19__He4_O16(rate_eval, tf):
     # F19 + p --&gt; He4 + O16
     rate = 0.0
 
-    # nacr 
-    rate += np.exp(  8.239 + -2.46828*tf.T9i
-                  + -1.5*tf.lnT9)
     # nacr 
     rate += np.exp(  -52.7043 + -0.12765*tf.T9i
                   + -1.5*tf.lnT9)
@@ -964,6 +959,9 @@ def p_F19__He4_O16(rate_eval, tf):
     # nacr 
     rate += np.exp(  15.1955 + -3.75185*tf.T9i
                   + -1.5*tf.lnT9)
+    # nacr 
+    rate += np.exp(  8.239 + -2.46828*tf.T9i
+                  + -1.5*tf.lnT9)
 
     rate_eval.p_F19__He4_O16 = rate
 
@@ -972,6 +970,12 @@ def He4_O14__p_F17(rate_eval, tf):
     # O14 + He4 --&gt; p + F17
     rate = 0.0
 
+    # Ha96r
+    rate += np.exp(  12.1289 + -12.0223*tf.T9i
+                  + -1.5*tf.lnT9)
+    # Ha96r
+    rate += np.exp(  18.6518 + -26.0*tf.T9i
+                  + -1.5*tf.lnT9)
     # Ha96n
     rate += np.exp(  40.8358 + -39.388*tf.T913i + -17.4673*tf.T913
                   + 35.3029*tf.T9 + -24.8162*tf.T953 + -0.666667*tf.lnT9)
@@ -983,12 +987,6 @@ def He4_O14__p_F17(rate_eval, tf):
                   + -1.5*tf.lnT9)
     # Ha96r
     rate += np.exp(  -106.091 + -0.453036*tf.T9i
-                  + -1.5*tf.lnT9)
-    # Ha96r
-    rate += np.exp(  12.1289 + -12.0223*tf.T9i
-                  + -1.5*tf.lnT9)
-    # Ha96r
-    rate += np.exp(  18.6518 + -26.0*tf.T9i
                   + -1.5*tf.lnT9)
 
     rate_eval.He4_O14__p_F17 = rate
@@ -1022,15 +1020,15 @@ def p_F18__He4_O15(rate_eval, tf):
     # F18 + p --&gt; He4 + O15
     rate = 0.0
 
-    # il10n
-    rate += np.exp(  62.0058 + -21.4023*tf.T913i + -80.8891*tf.T913
-                  + 134.6*tf.T9 + -126.504*tf.T953 + -0.666667*tf.lnT9)
     # il10r
     rate += np.exp(  1.75704 + -3.01675*tf.T9i + 13.3223*tf.T913
                   + -1.36696*tf.T9 + 0.0757363*tf.T953 + -1.5*tf.lnT9)
     # il10r
     rate += np.exp(  -31.7388 + -0.376432*tf.T9i + 61.738*tf.T913
                   + -108.29*tf.T9 + -34.2365*tf.T953 + -1.5*tf.lnT9)
+    # il10n
+    rate += np.exp(  62.0058 + -21.4023*tf.T913i + -80.8891*tf.T913
+                  + 134.6*tf.T9 + -126.504*tf.T953 + -0.666667*tf.lnT9)
 
     rate_eval.p_F18__He4_O15 = rate
 
@@ -1123,114 +1121,114 @@ def rhs_eq(t, Y, rho, T, screen_func):
     dYdt = np.zeros((nnuc), dtype=np.float64)
 
     dYdt[jp] = (
-       -rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13
-       -rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14
-       -rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14
-       -rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15
-       -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12
-       -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16
-       -rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17
-       -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14
-       -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18
-       -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15
-       -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19
-       -rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
-       -rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18
-       -rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
-       +rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17
+          -rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13  +
+          -rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14  +
+          -rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14  +
+          -rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15  +
+          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12  +
+          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16  +
+          -rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17  +
+          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14  +
+          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18  +
+          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15  +
+          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19  +
+          -rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16  +
+          +rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17  +
+          -rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18  +
+          -rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
        )
 
     dYdt[jhe4] = (
-       -rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17
-       +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12
-       +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14
-       +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15
-       +rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
-       +rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
+          +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12  +
+          +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14  +
+          +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15  +
+          +rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16  +
+          -rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17  +
+          +rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
        )
 
     dYdt[jc12] = (
-       -rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13
-       +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12
+          -rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13  +
+          +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12
        )
 
     dYdt[jc13] = (
-       -rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14
-       +Y[jn13]*rate_eval.N13__C13__weak__wc12
+          -rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14  +
+          +Y[jn13]*rate_eval.N13__C13__weak__wc12
        )
 
     dYdt[jn13] = (
-       -Y[jn13]*rate_eval.N13__C13__weak__wc12
-       -rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14
-       +rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13
+          +rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13  +
+          -Y[jn13]*rate_eval.N13__C13__weak__wc12  +
+          -rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14
        )
 
     dYdt[jn14] = (
-       -rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15
-       +rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14
-       +Y[jo14]*rate_eval.O14__N14__weak__wc12
-       +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14
+          +rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14  +
+          -rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15  +
+          +Y[jo14]*rate_eval.O14__N14__weak__wc12  +
+          +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14
        )
 
     dYdt[jn15] = (
-       -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12
-       -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16
-       +Y[jo15]*rate_eval.O15__N15__weak__wc12
-       +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15
+          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12  +
+          +Y[jo15]*rate_eval.O15__N15__weak__wc12  +
+          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16  +
+          +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15
        )
 
     dYdt[jo14] = (
-       -Y[jo14]*rate_eval.O14__N14__weak__wc12
-       -rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17
-       +rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14
+          +rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14  +
+          -Y[jo14]*rate_eval.O14__N14__weak__wc12  +
+          -rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17
        )
 
     dYdt[jo15] = (
-       -Y[jo15]*rate_eval.O15__N15__weak__wc12
-       +rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15
-       +rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
+          +rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15  +
+          -Y[jo15]*rate_eval.O15__N15__weak__wc12  +
+          +rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
        )
 
     dYdt[jo16] = (
-       -rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17
-       +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16
-       +rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
+          +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16  +
+          -rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17  +
+          +rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
        )
 
     dYdt[jo17] = (
-       -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14
-       -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18
-       +Y[jf17]*rate_eval.F17__O17__weak__wc12
+          +Y[jf17]*rate_eval.F17__O17__weak__wc12  +
+          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14  +
+          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18
        )
 
     dYdt[jo18] = (
-       -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15
-       -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19
-       +Y[jf18]*rate_eval.F18__O18__weak__wc12
+          +Y[jf18]*rate_eval.F18__O18__weak__wc12  +
+          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15  +
+          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19
        )
 
     dYdt[jf17] = (
-       -Y[jf17]*rate_eval.F17__O17__weak__wc12
-       -rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18
-       +rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17
-       +rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17
+          +rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17  +
+          -Y[jf17]*rate_eval.F17__O17__weak__wc12  +
+          +rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17  +
+          -rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18
        )
 
     dYdt[jf18] = (
-       -Y[jf18]*rate_eval.F18__O18__weak__wc12
-       -rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
-       +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18
-       +Y[jne18]*rate_eval.Ne18__F18__weak__wc12
+          +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18  +
+          -Y[jf18]*rate_eval.F18__O18__weak__wc12  +
+          +Y[jne18]*rate_eval.Ne18__F18__weak__wc12  +
+          -rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
        )
 
     dYdt[jf19] = (
-       -rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
-       +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19
+          +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19  +
+          -rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
        )
 
     dYdt[jne18] = (
-       -Y[jne18]*rate_eval.Ne18__F18__weak__wc12
-       +rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18
+          +rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18  +
+          -Y[jne18]*rate_eval.Ne18__F18__weak__wc12
        )
 
     return dYdt
@@ -1665,7 +1663,7 @@ def jacobian_eq(t, Y, rho, T, screen_func):
 <p>Now we can import the network that was just created</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cno_integration_example</span> <span class="k">as</span> <span class="nn">cno</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cno_integration_example</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cno</span>
 </pre></div>
 </div>
 </div>
@@ -1673,12 +1671,12 @@ def jacobian_eq(t, Y, rho, T, screen_func):
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">cno_integration_example</span> <span class="k">as</span> <span class="nn">cno</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">cno_integration_example</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cno</span>
 
 <span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">stars</span><span class="o">/</span><span class="n">stars</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">reaction_networks</span><span class="o">/</span><span class="n">cno_integration_example</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numba</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">constants</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numba</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;numba&#39;
 </pre></div>
@@ -1688,7 +1686,7 @@ def jacobian_eq(t, Y, rho, T, screen_func):
 <p>We’ll use the BDF solver from SciPy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
 </pre></div>
 </div>
 </div>
@@ -1810,7 +1808,7 @@ def jacobian_eq(t, Y, rho, T, screen_func):
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1837,8 +1835,6 @@ def jacobian_eq(t, Y, rho, T, screen_func):
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
@@ -1882,8 +1878,8 @@ By <a href="https://zingale.github.io">Michael Zingale</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

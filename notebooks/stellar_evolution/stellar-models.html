@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Exploring MESA models &#8212; PHY 521 Fall 2023</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'stellar_evolution/stellar-models';</script>
@@ -78,27 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -120,8 +111,13 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -145,6 +141,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../intro.html">
   
@@ -156,7 +154,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">PHY 521 Fall 2023</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -174,17 +183,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reactions</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../pp-vs-cno/pp-cno.html">p-p chain vs. CNO</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/stiff-ODEs.html">Integrating Stiff ODEs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/stiff-ODEs.html">Integrating Stiff ODEs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit.html">Implicit Methods for ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-systems.html">Implicit Methods for Systems of ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-nonlinear-systems.html">Implicit Methods and Nonlinear Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/cxx_solver.html">C++ Solver for Stiff Nonlinear System</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/reactions.html">Application: Nuclear Reaction Networks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/reactions.html">Application: Nuclear Reaction Networks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/application-CNO-network.html">Integration Example</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Stellar Models</span></p>
 <ul class="current nav bd-sidenav">
@@ -203,17 +212,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../nse/nse.html">Nuclear statistical equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../TOV/tov.html">Neutron star structure</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework solutions</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework1-solutions.html">Homework 1 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework2-solutions.html">Homework 2 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework3-solutions.html">Homework 3 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework4-solutions.html">Homework 4 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework5-solutions.html">Homework 5 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework6-solutions.html">Homework 6 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework7-solutions.html">Homework 7 solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework8-solutions.html">Homework 8 solutions</a></li>
-</ul>
 
     </div>
 </nav></div>
@@ -228,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -237,14 +235,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -269,14 +267,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/stellar_evolution/stellar-models.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -287,14 +285,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/stellar_evolution/stellar-models.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -418,10 +416,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -429,14 +427,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -474,7 +472,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exploring-mesa-models">
-<h1>Exploring MESA models<a class="headerlink" href="#exploring-mesa-models" title="Permalink to this heading">#</a></h1>
+<h1>Exploring MESA models<a class="headerlink" href="#exploring-mesa-models" title="Link to this heading">#</a></h1>
 <p>Let’s look at the output from the <a class="reference external" href="https://docs.mesastar.org/">MESA stellar evolution code</a> for 3 different mass progenitors: 1, 8, and 15 <span class="math notranslate nohighlight">\(M_\odot\)</span>.
 These models were all created using <a class="reference external" href="http://user.astro.wisc.edu/~townsend/static.php?ref=mesa-web-submit">MESA Web</a> a web-based interface to MESA
 for quick calculations.</p>
@@ -488,9 +486,9 @@ for quick calculations.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">mesa_reader</span> <span class="k">as</span> <span class="nn">mr</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mesa_reader</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mr</span>
 </pre></div>
 </div>
 </div>
@@ -505,8 +503,8 @@ for quick calculations.</p>
 <p>To make the management easier, we’ll create a container for each model that holds the history and profiles, processed by <code class="docutils literal notranslate"><span class="pre">py_mesa_reader</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Model</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">profiles</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">history</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Model</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">profiles</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">history</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">mass</span>
         <span class="k">if</span> <span class="n">history</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">history</span> <span class="o">=</span> <span class="n">mr</span><span class="o">.</span><span class="n">MesaData</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
@@ -539,7 +537,7 @@ for quick calculations.</p>
 </div>
 </div>
 <section id="hr-diagram">
-<h2>HR diagram<a class="headerlink" href="#hr-diagram" title="Permalink to this heading">#</a></h2>
+<h2>HR diagram<a class="headerlink" href="#hr-diagram" title="Link to this heading">#</a></h2>
 <p>Now we’ll make an HR diagram and label the points where <span class="math notranslate nohighlight">\(H\)</span> and <span class="math notranslate nohighlight">\(He\)</span> burning commences.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -557,20 +555,20 @@ for quick calculations.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7b42aa2cf28ecb2ffe1f83183b4558d147ab12a54330c5f78d77a1d1ab4d369a.png" src="../_images/7b42aa2cf28ecb2ffe1f83183b4558d147ab12a54330c5f78d77a1d1ab4d369a.png" />
+<img alt="../_images/981571064f207e1747010a6c3b79c9ee3d6d97b099f3237adca0b80a8156bdfe.png" src="../_images/981571064f207e1747010a6c3b79c9ee3d6d97b099f3237adca0b80a8156bdfe.png" />
 </div>
 </div>
 <p>You can see the main sequence clearly on this plot.</p>
 <p>We also see that only the 1 solar mass star “finished’ stellar evolution, winding up as a cooling white dwarf at the end – the path it is following is essentially a line of constant radius, since the white dwarf does not contract as it cools (it is degenerate).</p>
 </section>
 <section id="central-evolution">
-<h2>Central evolution<a class="headerlink" href="#central-evolution" title="Permalink to this heading">#</a></h2>
+<h2>Central evolution<a class="headerlink" href="#central-evolution" title="Link to this heading">#</a></h2>
 <p>We want to plot the history of the evolution of the central conditions  in the <span class="math notranslate nohighlight">\(\log \rho\)</span>-<span class="math notranslate nohighlight">\(\log T\)</span> plane.</p>
 <p>We will plot the EOS boundary lines considered before.  These
 functions are now in a module, <a class="reference download internal" download="" href="../_downloads/7a8d11108f5c79b461ce2e4ded06f4b8/regimes.py"><span class="xref download myst">regimes.py</span></a> to make our life easier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">regimes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">regimes</span>
 </pre></div>
 </div>
 </div>
@@ -600,7 +598,7 @@ functions are now in a module, <a class="reference download internal" download="
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100000.0, 1000000000.0)
 </pre></div>
 </div>
-<img alt="../_images/040550c0fc434f7b76e13c8d8f8f2f1b496c7472af7d711aa21dc6ce8246844f.png" src="../_images/040550c0fc434f7b76e13c8d8f8f2f1b496c7472af7d711aa21dc6ce8246844f.png" />
+<img alt="../_images/26c0461d85f8eea1d24742ab2bd94ea021e6cd4e4fd2787fd7bca32583d9ce11.png" src="../_images/26c0461d85f8eea1d24742ab2bd94ea021e6cd4e4fd2787fd7bca32583d9ce11.png" />
 </div>
 </div>
 <p>Some observations:</p>
@@ -634,12 +632,12 @@ functions are now in a module, <a class="reference download internal" download="
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9cc86d656f1205647172306dd9f451db7b2aeccbde87683641d9488ccfa086c3.png" src="../_images/9cc86d656f1205647172306dd9f451db7b2aeccbde87683641d9488ccfa086c3.png" />
+<img alt="../_images/d8da5b35109fd05d783d6aecefe937c0c162625096f7350d360bf4646386f251.png" src="../_images/d8da5b35109fd05d783d6aecefe937c0c162625096f7350d360bf4646386f251.png" />
 </div>
 </div>
 </section>
 <section id="main-sequence-lifetime">
-<h2>Main sequence lifetime<a class="headerlink" href="#main-sequence-lifetime" title="Permalink to this heading">#</a></h2>
+<h2>Main sequence lifetime<a class="headerlink" href="#main-sequence-lifetime" title="Link to this heading">#</a></h2>
 <p>We can estimate the main sequence lifetime just by looking for when the core H is all consumed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -658,13 +656,13 @@ functions are now in a module, <a class="reference download internal" download="
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10000.0, 20000000000.0)
 </pre></div>
 </div>
-<img alt="../_images/a3beadf2345a350d04bee84dcf1c5156a41b378e77d3002a1e2c09871833bd3d.png" src="../_images/a3beadf2345a350d04bee84dcf1c5156a41b378e77d3002a1e2c09871833bd3d.png" />
+<img alt="../_images/a595936346ff7d482b2afc9507cf7ce0dcac6f997e8964055f2ac79cb64ffcf4.png" src="../_images/a595936346ff7d482b2afc9507cf7ce0dcac6f997e8964055f2ac79cb64ffcf4.png" />
 </div>
 </div>
 <p>From this plot, we see that the main sequence lifetime of the 15 <span class="math notranslate nohighlight">\(M_\odot\)</span> star is <span class="math notranslate nohighlight">\(\sim 6\times 10^6\)</span> yr, for the 8 <span class="math notranslate nohighlight">\(M_\odot\)</span> star <span class="math notranslate nohighlight">\(\sim 2\times 10^7\)</span> yr, and for the 1 <span class="math notranslate nohighlight">\(M_\odot\)</span> star <span class="math notranslate nohighlight">\(\sim 9\times 10^9\)</span> yr.</p>
 </section>
 <section id="profiles">
-<h2>Profiles<a class="headerlink" href="#profiles" title="Permalink to this heading">#</a></h2>
+<h2>Profiles<a class="headerlink" href="#profiles" title="Link to this heading">#</a></h2>
 <p>Let’s next look at the profiles of the stars in the <span class="math notranslate nohighlight">\(\log \rho\)</span>-<span class="math notranslate nohighlight">\(\log T\)</span> plane</p>
 <p>First the 1 solar mass star</p>
 <div class="cell docutils container">
@@ -692,7 +690,7 @@ functions are now in a module, <a class="reference download internal" download="
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000.0, 1000000000.0)
 </pre></div>
 </div>
-<img alt="../_images/bb38ab0307215dca037393a75b8c936cb5dc631320b75dc373b6291b075daf3c.png" src="../_images/bb38ab0307215dca037393a75b8c936cb5dc631320b75dc373b6291b075daf3c.png" />
+<img alt="../_images/55884e6277f6846fda121629d2b52826e59a5cb29df875839d2960128e9d0f50.png" src="../_images/55884e6277f6846fda121629d2b52826e59a5cb29df875839d2960128e9d0f50.png" />
 </div>
 </div>
 <p>Now the 8 solar mass star</p>
@@ -721,7 +719,7 @@ functions are now in a module, <a class="reference download internal" download="
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000.0, 1000000000.0)
 </pre></div>
 </div>
-<img alt="../_images/2948272cc7d3ab7ad113f030a333e175a84963f2648d32fc35ef5799c74648f3.png" src="../_images/2948272cc7d3ab7ad113f030a333e175a84963f2648d32fc35ef5799c74648f3.png" />
+<img alt="../_images/6cd166dff0395ae5a06fc2ad4bdec9aa32e6e12b3ca1308a1349e9dbc1e6ac77.png" src="../_images/6cd166dff0395ae5a06fc2ad4bdec9aa32e6e12b3ca1308a1349e9dbc1e6ac77.png" />
 </div>
 </div>
 <p>Finally the 15 solar mass star</p>
@@ -750,12 +748,12 @@ functions are now in a module, <a class="reference download internal" download="
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000.0, 1000000000.0)
 </pre></div>
 </div>
-<img alt="../_images/4475c0f7efd03856d7a1b7135b44ee83a8bc63205c8dbbe9b17246ea49f86abc.png" src="../_images/4475c0f7efd03856d7a1b7135b44ee83a8bc63205c8dbbe9b17246ea49f86abc.png" />
+<img alt="../_images/947a9a0935464168cc5b72d0203f157a71fad7c0eb2f2a9c1072e7b124bb5bac.png" src="../_images/947a9a0935464168cc5b72d0203f157a71fad7c0eb2f2a9c1072e7b124bb5bac.png" />
 </div>
 </div>
 </section>
 <section id="convection">
-<h2>Convection<a class="headerlink" href="#convection" title="Permalink to this heading">#</a></h2>
+<h2>Convection<a class="headerlink" href="#convection" title="Link to this heading">#</a></h2>
 <p>We can look at where the models are convective by comparing <span class="math notranslate nohighlight">\(\nabla\)</span> and <span class="math notranslate nohighlight">\(\nabla_\mathrm{ad}\)</span>.</p>
 <p>First the H burning profiles</p>
 <div class="cell docutils container">
@@ -775,7 +773,7 @@ functions are now in a module, <a class="reference download internal" download="
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/93938d368d2d5880d60ac8600774e8e3db402b1408cab93a947da6cf1b8391bd.png" src="../_images/93938d368d2d5880d60ac8600774e8e3db402b1408cab93a947da6cf1b8391bd.png" />
+<img alt="../_images/f0b91485607cbf8455835db0b1f47e3b091e19e1b02c0b1f429ecc3b463cb632.png" src="../_images/f0b91485607cbf8455835db0b1f47e3b091e19e1b02c0b1f429ecc3b463cb632.png" />
 </div>
 </div>
 <p>We see that the massive stars have convective cores <span class="math notranslate nohighlight">\(\nabla \sim \nabla_\mathrm{ad}\)</span>, but the 1 solar mass star has a radiative core.</p>
@@ -797,7 +795,7 @@ functions are now in a module, <a class="reference download internal" download="
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/222c7994655d11d07d980add8504d5a8ecf5bab3341de1506213976dab16b406.png" src="../_images/222c7994655d11d07d980add8504d5a8ecf5bab3341de1506213976dab16b406.png" />
+<img alt="../_images/35c06f93d2ba73e69f90011a4f43890c69eec984f88bb5f2d882444981ffcfe2.png" src="../_images/35c06f93d2ba73e69f90011a4f43890c69eec984f88bb5f2d882444981ffcfe2.png" />
 </div>
 </div>
 <p>On this scale, we see that the Sun’s outer convective zone is ~ 1/3rd of its radius</p>
@@ -831,7 +829,7 @@ functions are now in a module, <a class="reference download internal" download="
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -920,8 +918,8 @@ By <a href="https://zingale.github.io">Michael Zingale</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
