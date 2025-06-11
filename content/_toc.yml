@@ -36,15 +36,5 @@ parts:
     - file: nse/nse
     - file: TOV/tov
 
-  - caption: Homework solutions
-    chapters:
-    - file: homework/homework1-solutions
-    - file: homework/homework2-solutions
-    - file: homework/homework3-solutions
-    - file: homework/homework4-solutions
-    - file: homework/homework5-solutions
-    - file: homework/homework6-solutions
-    - file: homework/homework7-solutions
-    - file: homework/homework8-solutions
 
 
