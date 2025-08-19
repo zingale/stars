@@ -1,9 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: PHY 521 Fall 2023
+title: PHY 521 Fall 2025
 author: <a href="https://zingale.github.io">Michael Zingale</a>
-copyright: "2023"
+copyright: "2025"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -28,7 +28,7 @@ html:
   use_repository_button: true
   extra_footer: |
     <p>
-    &copy; 2023; CC-BY-NC-SA 4.0
+    &copy; 2025; CC-BY-NC-SA 4.0
     <p>
 
 sphinx:

@@ -65,21 +65,21 @@ Z[jne18] = 10
 # masses in ergs
 mass = np.zeros((nnuc), dtype=np.float64)
 
-mass[jp] = 0.0015040963030260536
-mass[jhe4] = 0.0059735574925878256
+mass[jp] = 0.0015040963047307696
+mass[jhe4] = 0.0059735574859708365
 mass[jc12] = 0.017909017027273523
-mass[jc13] = 0.019406441930882663
+mass[jc13] = 0.01940644192976114
 mass[jn13] = 0.01940999951603316
-mass[jn14] = 0.020898440903103103
-mass[jn15] = 0.0223864338056853
-mass[jo14] = 0.020906683076491985
+mass[jn14] = 0.020898440897976135
+mass[jn15] = 0.022386433805845516
+mass[jo14] = 0.020906683078094165
 mass[jo15] = 0.02239084645968795
-mass[jo16] = 0.023871099858982767
-mass[jo17] = 0.02536981167252093
-mass[jo18] = 0.02686227133140636
+mass[jo16] = 0.023871099855618198
+mass[jo17] = 0.025369811672200496
+mass[jo18] = 0.026862271330925704
 mass[jf17] = 0.025374234423440733
 mass[jf18] = 0.026864924401329426
-mass[jf19] = 0.028353560468882166
+mass[jf19] = 0.028353560476732827
 mass[jne18] = 0.026872045275379234
 
 names = []
@@ -188,15 +188,15 @@ def p_C13__N14(rate_eval, tf):
     # C13 + p --> N14
     rate = 0.0
 
-    # nacrr
-    rate += np.exp(  15.1825 + -13.5543*tf.T9i
-                  + -1.5*tf.lnT9)
     # nacrn
     rate += np.exp(  18.5155 + -13.72*tf.T913i + -0.450018*tf.T913
                   + 3.70823*tf.T9 + -1.70545*tf.T953 + -0.666667*tf.lnT9)
     # nacrr
     rate += np.exp(  13.9637 + -5.78147*tf.T9i + -0.196703*tf.T913
                   + 0.142126*tf.T9 + -0.0238912*tf.T953 + -1.5*tf.lnT9)
+    # nacrr
+    rate += np.exp(  15.1825 + -13.5543*tf.T9i
+                  + -1.5*tf.lnT9)
 
     rate_eval.p_C13__N14 = rate
 
@@ -229,9 +229,6 @@ def p_N14__O15(rate_eval, tf):
     # N14 + p --> O15
     rate = 0.0
 
-    # im05n
-    rate += np.exp(  17.01 + -15.193*tf.T913i + -0.161954*tf.T913
-                  + -7.52123*tf.T9 + -0.987565*tf.T953 + -0.666667*tf.lnT9)
     # im05r
     rate += np.exp(  6.73578 + -4.891*tf.T9i
                   + 0.0682*tf.lnT9)
@@ -241,6 +238,9 @@ def p_N14__O15(rate_eval, tf):
     # im05n
     rate += np.exp(  20.1169 + -15.193*tf.T913i + -4.63975*tf.T913
                   + 9.73458*tf.T9 + -9.55051*tf.T953 + 0.333333*tf.lnT9)
+    # im05n
+    rate += np.exp(  17.01 + -15.193*tf.T913i + -0.161954*tf.T913
+                  + -7.52123*tf.T9 + -0.987565*tf.T953 + -0.666667*tf.lnT9)
 
     rate_eval.p_N14__O15 = rate
 
@@ -289,15 +289,15 @@ def p_N15__O16(rate_eval, tf):
     # N15 + p --> O16
     rate = 0.0
 
-    # li10n
-    rate += np.exp(  20.0176 + -15.24*tf.T913i + 0.334926*tf.T913
-                  + 4.59088*tf.T9 + -4.78468*tf.T953 + -0.666667*tf.lnT9)
     # li10r
     rate += np.exp(  14.5444 + -10.2295*tf.T9i
                   + 0.0459037*tf.T9 + -1.5*tf.lnT9)
     # li10r
     rate += np.exp(  6.59056 + -2.92315*tf.T9i
                   + -1.5*tf.lnT9)
+    # li10n
+    rate += np.exp(  20.0176 + -15.24*tf.T913i + 0.334926*tf.T913
+                  + 4.59088*tf.T9 + -4.78468*tf.T953 + -0.666667*tf.lnT9)
 
     rate_eval.p_N15__O16 = rate
 
@@ -328,9 +328,6 @@ def p_O17__He4_N14(rate_eval, tf):
     rate = 0.0
 
     # il10r
-    rate += np.exp(  5.5336 + -2.11477*tf.T9i
-                  + -1.5*tf.lnT9)
-    # il10r
     rate += np.exp(  -7.20763 + -0.753395*tf.T9i
                   + -1.5*tf.lnT9)
     # il10n
@@ -339,6 +336,9 @@ def p_O17__He4_N14(rate_eval, tf):
     # il10r
     rate += np.exp(  10.174 + -4.95865*tf.T9i + 5.10182*tf.T913
                   + 0.379373*tf.T9 + -0.0672515*tf.T953 + -1.5*tf.lnT9)
+    # il10r
+    rate += np.exp(  5.5336 + -2.11477*tf.T9i
+                  + -1.5*tf.lnT9)
 
     rate_eval.p_O17__He4_N14 = rate
 
@@ -347,15 +347,15 @@ def p_O17__F18(rate_eval, tf):
     # O17 + p --> F18
     rate = 0.0
 
-    # il10n
-    rate += np.exp(  15.8929 + -16.4035*tf.T913i + 4.31885*tf.T913
-                  + -0.709921*tf.T9 + -2.0*tf.T953 + -0.666667*tf.lnT9)
     # il10r
     rate += np.exp(  9.39048 + -6.22828*tf.T9i + 2.31435*tf.T913
                   + -0.302835*tf.T9 + 0.020133*tf.T953 + -1.5*tf.lnT9)
     # il10r
     rate += np.exp(  -13.077 + -0.746296*tf.T9i
                   + -1.5*tf.lnT9)
+    # il10n
+    rate += np.exp(  15.8929 + -16.4035*tf.T913i + 4.31885*tf.T913
+                  + -0.709921*tf.T9 + -2.0*tf.T953 + -0.666667*tf.lnT9)
 
     rate_eval.p_O17__F18 = rate
 
@@ -375,9 +375,6 @@ def p_O18__He4_N15(rate_eval, tf):
     rate = 0.0
 
     # il10r
-    rate += np.exp(  10.2725 + -1.663*tf.T9i
-                  + -1.5*tf.lnT9)
-    # il10r
     rate += np.exp(  -27.9044 + -0.245884*tf.T9i
                   + -1.5*tf.lnT9)
     # il10n
@@ -386,6 +383,9 @@ def p_O18__He4_N15(rate_eval, tf):
     # il10r
     rate += np.exp(  8.94352 + -5.32335*tf.T9i + 11.6568*tf.T913
                   + -2.16303*tf.T9 + 0.209965*tf.T953 + -1.5*tf.lnT9)
+    # il10r
+    rate += np.exp(  10.2725 + -1.663*tf.T9i
+                  + -1.5*tf.lnT9)
 
     rate_eval.p_O18__He4_N15 = rate
 
@@ -394,9 +394,6 @@ def p_O18__F19(rate_eval, tf):
     # O18 + p --> F19
     rate = 0.0
 
-    # il10r
-    rate += np.exp(  -35.0079 + -0.244743*tf.T9i
-                  + -1.5*tf.lnT9)
     # il10n
     rate += np.exp(  19.917 + -16.7246*tf.T913i
                   + -3.0*tf.T953 + -0.666667*tf.lnT9)
@@ -406,6 +403,9 @@ def p_O18__F19(rate_eval, tf):
     # il10r
     rate += np.exp(  5.07648 + -1.65681*tf.T9i
                   + -1.5*tf.lnT9)
+    # il10r
+    rate += np.exp(  -35.0079 + -0.244743*tf.T9i
+                  + -1.5*tf.lnT9)
 
     rate_eval.p_O18__F19 = rate
 
@@ -414,9 +414,6 @@ def p_F19__He4_O16(rate_eval, tf):
     # F19 + p --> He4 + O16
     rate = 0.0
 
-    # nacr 
-    rate += np.exp(  8.239 + -2.46828*tf.T9i
-                  + -1.5*tf.lnT9)
     # nacr 
     rate += np.exp(  -52.7043 + -0.12765*tf.T9i
                   + -1.5*tf.lnT9)
@@ -429,6 +426,9 @@ def p_F19__He4_O16(rate_eval, tf):
     # nacr 
     rate += np.exp(  15.1955 + -3.75185*tf.T9i
                   + -1.5*tf.lnT9)
+    # nacr 
+    rate += np.exp(  8.239 + -2.46828*tf.T9i
+                  + -1.5*tf.lnT9)
 
     rate_eval.p_F19__He4_O16 = rate
 
@@ -437,6 +437,12 @@ def He4_O14__p_F17(rate_eval, tf):
     # O14 + He4 --> p + F17
     rate = 0.0
 
+    # Ha96r
+    rate += np.exp(  12.1289 + -12.0223*tf.T9i
+                  + -1.5*tf.lnT9)
+    # Ha96r
+    rate += np.exp(  18.6518 + -26.0*tf.T9i
+                  + -1.5*tf.lnT9)
     # Ha96n
     rate += np.exp(  40.8358 + -39.388*tf.T913i + -17.4673*tf.T913
                   + 35.3029*tf.T9 + -24.8162*tf.T953 + -0.666667*tf.lnT9)
@@ -448,12 +454,6 @@ def He4_O14__p_F17(rate_eval, tf):
                   + -1.5*tf.lnT9)
     # Ha96r
     rate += np.exp(  -106.091 + -0.453036*tf.T9i
-                  + -1.5*tf.lnT9)
-    # Ha96r
-    rate += np.exp(  12.1289 + -12.0223*tf.T9i
-                  + -1.5*tf.lnT9)
-    # Ha96r
-    rate += np.exp(  18.6518 + -26.0*tf.T9i
                   + -1.5*tf.lnT9)
 
     rate_eval.He4_O14__p_F17 = rate
@@ -487,15 +487,15 @@ def p_F18__He4_O15(rate_eval, tf):
     # F18 + p --> He4 + O15
     rate = 0.0
 
-    # il10n
-    rate += np.exp(  62.0058 + -21.4023*tf.T913i + -80.8891*tf.T913
-                  + 134.6*tf.T9 + -126.504*tf.T953 + -0.666667*tf.lnT9)
     # il10r
     rate += np.exp(  1.75704 + -3.01675*tf.T9i + 13.3223*tf.T913
                   + -1.36696*tf.T9 + 0.0757363*tf.T953 + -1.5*tf.lnT9)
     # il10r
     rate += np.exp(  -31.7388 + -0.376432*tf.T9i + 61.738*tf.T913
                   + -108.29*tf.T9 + -34.2365*tf.T953 + -1.5*tf.lnT9)
+    # il10n
+    rate += np.exp(  62.0058 + -21.4023*tf.T913i + -80.8891*tf.T913
+                  + 134.6*tf.T9 + -126.504*tf.T953 + -0.666667*tf.lnT9)
 
     rate_eval.p_F18__He4_O15 = rate
 
@@ -588,114 +588,114 @@ def rhs_eq(t, Y, rho, T, screen_func):
     dYdt = np.zeros((nnuc), dtype=np.float64)
 
     dYdt[jp] = (
-       -rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13
-       -rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14
-       -rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14
-       -rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15
-       -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12
-       -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16
-       -rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17
-       -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14
-       -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18
-       -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15
-       -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19
-       -rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
-       -rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18
-       -rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
-       +rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17
+          -rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13  +
+          -rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14  +
+          -rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14  +
+          -rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15  +
+          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12  +
+          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16  +
+          -rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17  +
+          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14  +
+          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18  +
+          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15  +
+          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19  +
+          -rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16  +
+          +rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17  +
+          -rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18  +
+          -rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
        )
 
     dYdt[jhe4] = (
-       -rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17
-       +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12
-       +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14
-       +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15
-       +rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
-       +rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
+          +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12  +
+          +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14  +
+          +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15  +
+          +rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16  +
+          -rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17  +
+          +rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
        )
 
     dYdt[jc12] = (
-       -rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13
-       +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12
+          -rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13  +
+          +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12
        )
 
     dYdt[jc13] = (
-       -rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14
-       +Y[jn13]*rate_eval.N13__C13__weak__wc12
+          -rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14  +
+          +Y[jn13]*rate_eval.N13__C13__weak__wc12
        )
 
     dYdt[jn13] = (
-       -Y[jn13]*rate_eval.N13__C13__weak__wc12
-       -rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14
-       +rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13
+          +rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13  +
+          -Y[jn13]*rate_eval.N13__C13__weak__wc12  +
+          -rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14
        )
 
     dYdt[jn14] = (
-       -rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15
-       +rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14
-       +Y[jo14]*rate_eval.O14__N14__weak__wc12
-       +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14
+          +rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14  +
+          -rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15  +
+          +Y[jo14]*rate_eval.O14__N14__weak__wc12  +
+          +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14
        )
 
     dYdt[jn15] = (
-       -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12
-       -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16
-       +Y[jo15]*rate_eval.O15__N15__weak__wc12
-       +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15
+          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12  +
+          +Y[jo15]*rate_eval.O15__N15__weak__wc12  +
+          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16  +
+          +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15
        )
 
     dYdt[jo14] = (
-       -Y[jo14]*rate_eval.O14__N14__weak__wc12
-       -rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17
-       +rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14
+          +rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14  +
+          -Y[jo14]*rate_eval.O14__N14__weak__wc12  +
+          -rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17
        )
 
     dYdt[jo15] = (
-       -Y[jo15]*rate_eval.O15__N15__weak__wc12
-       +rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15
-       +rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
+          +rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15  +
+          -Y[jo15]*rate_eval.O15__N15__weak__wc12  +
+          +rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
        )
 
     dYdt[jo16] = (
-       -rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17
-       +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16
-       +rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
+          +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16  +
+          -rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17  +
+          +rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
        )
 
     dYdt[jo17] = (
-       -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14
-       -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18
-       +Y[jf17]*rate_eval.F17__O17__weak__wc12
+          +Y[jf17]*rate_eval.F17__O17__weak__wc12  +
+          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14  +
+          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18
        )
 
     dYdt[jo18] = (
-       -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15
-       -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19
-       +Y[jf18]*rate_eval.F18__O18__weak__wc12
+          +Y[jf18]*rate_eval.F18__O18__weak__wc12  +
+          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15  +
+          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19
        )
 
     dYdt[jf17] = (
-       -Y[jf17]*rate_eval.F17__O17__weak__wc12
-       -rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18
-       +rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17
-       +rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17
+          +rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17  +
+          -Y[jf17]*rate_eval.F17__O17__weak__wc12  +
+          +rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17  +
+          -rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18
        )
 
     dYdt[jf18] = (
-       -Y[jf18]*rate_eval.F18__O18__weak__wc12
-       -rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
-       +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18
-       +Y[jne18]*rate_eval.Ne18__F18__weak__wc12
+          +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18  +
+          -Y[jf18]*rate_eval.F18__O18__weak__wc12  +
+          +Y[jne18]*rate_eval.Ne18__F18__weak__wc12  +
+          -rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
        )
 
     dYdt[jf19] = (
-       -rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
-       +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19
+          +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19  +
+          -rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
        )
 
     dYdt[jne18] = (
-       -Y[jne18]*rate_eval.Ne18__F18__weak__wc12
-       +rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18
+          +rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18  +
+          -Y[jne18]*rate_eval.Ne18__F18__weak__wc12
        )
 
     return dYdt
