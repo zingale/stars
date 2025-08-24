@@ -26,19 +26,14 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
-  use)download_button: true
   extra_footer: |
     <p>
     &copy; 2025; CC-BY-NC-SA 4.0
     <p>
-  
+
 sphinx:
-  recursive_update: true
   config:
     html_show_copyright: false
-    html_theme_options:
-      use_download_button: true
-    templates_path: ["_templates"]
 
 launch_buttons:
    binderhub_url: "https://mybinder.org"
