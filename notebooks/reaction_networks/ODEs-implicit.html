@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Implicit Methods for ODEs &#8212; PHY 521 Fall 2023</title>
+    <title>Implicit Methods for ODEs &#8212; PHY 521 Fall 2025</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -151,7 +151,7 @@
   
   
   
-    <p class="title logo__title">PHY 521 Fall 2023</p>
+    <p class="title logo__title">PHY 521 Fall 2025</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -474,10 +474,10 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="implicit-methods-for-odes">
 <h1>Implicit Methods for ODEs<a class="headerlink" href="#implicit-methods-for-odes" title="Link to this heading">#</a></h1>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -581,7 +581,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/41194f90971dde2e4404e0ab88c17279b3eb5e034a1c06ace15ad70209fe2346.png" src="../_images/41194f90971dde2e4404e0ab88c17279b3eb5e034a1c06ace15ad70209fe2346.png" />
+<img alt="../_images/e49550e064d9c3802397fcb4aebe8dee3e3b7450556ad3b71776a328826bcf2d.png" src="../_images/e49550e064d9c3802397fcb4aebe8dee3e3b7450556ad3b71776a328826bcf2d.png" />
 </div>
 </div>
 <p>We see that we do quite well – the analytic solution and numerical solution are right on top of one another.</p>
@@ -595,7 +595,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e81989ac307ebdde934689b1334db489654ee6ac692e35a54b3b3c58be321841.png" src="../_images/e81989ac307ebdde934689b1334db489654ee6ac692e35a54b3b3c58be321841.png" />
+<img alt="../_images/b15bf6b2c35693948af715b035b00c2b0b77583688432075e49c331d957b7838.png" src="../_images/b15bf6b2c35693948af715b035b00c2b0b77583688432075e49c331d957b7838.png" />
 </div>
 </div>
 <p>For <span class="math notranslate nohighlight">\(\tau\)</span> twice as big as the shortest timescale in the solution we do okay.  We miss the initial rise (because we are not resolving the short transient), but we get the longterm behavior correct.</p>
@@ -608,7 +608,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8116897f56047ebefd1a296c011443258d20a080a62e81bda3def6b27100ee31.png" src="../_images/8116897f56047ebefd1a296c011443258d20a080a62e81bda3def6b27100ee31.png" />
+<img alt="../_images/670fadfe1bf9790f92df259ef2d039db64734a86dc49911dfbe66ee1f65c4d35.png" src="../_images/670fadfe1bf9790f92df259ef2d039db64734a86dc49911dfbe66ee1f65c4d35.png" />
 </div>
 </div>
 <p>For <span class="math notranslate nohighlight">\(\tau\)</span> five times larger than the shortest timescale the solution blows up – look at the vertical scale here.</p>
@@ -664,7 +664,7 @@ For our model problem, we can solve for the new state algebraically:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/850f1d37198c229cacc5d6171edc02b10898a8a28c1f1de52245aa1d6dea426f.png" src="../_images/850f1d37198c229cacc5d6171edc02b10898a8a28c1f1de52245aa1d6dea426f.png" />
+<img alt="../_images/342db6c0ecab12ecdc5a1fd68d755a18f07d77334b520f3254555fc998b19b1c.png" src="../_images/342db6c0ecab12ecdc5a1fd68d755a18f07d77334b520f3254555fc998b19b1c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -676,7 +676,7 @@ For our model problem, we can solve for the new state algebraically:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/28fb412690a6b4c76e7fa1c824c520f5a7f82dd5a03d202b5df6aada7013f253.png" src="../_images/28fb412690a6b4c76e7fa1c824c520f5a7f82dd5a03d202b5df6aada7013f253.png" />
+<img alt="../_images/ae6c8edf3c6eb380421aa1e326538b39641d9f52fd24d5cb651d3c66a0e13c61.png" src="../_images/ae6c8edf3c6eb380421aa1e326538b39641d9f52fd24d5cb651d3c66a0e13c61.png" />
 </div>
 </div>
 <p>We see that the backward-Euler / implicit method remains stable even for <span class="math notranslate nohighlight">\(\tau\)</span> larger than the shortest timescale of change in the problem.</p>
@@ -784,7 +784,7 @@ By <a href="https://zingale.github.io">Michael Zingale</a>
     
 <div class="extra_footer">
   <p>
-&copy; 2023; CC-BY-NC-SA 4.0
+&copy; 2025; CC-BY-NC-SA 4.0
 <p>
 
 </div>
