@@ -528,19 +528,19 @@ equations of stellar structure.</p>
 <h2>Stopping point<a class="headerlink" href="#stopping-point" title="Link to this heading">#</a></h2>
 <p>But we have the problem that we do not know the stopping point, <span class="math notranslate nohighlight">\(\xi_1\)</span>.</p>
 <p>We estimate the radius, <span class="math notranslate nohighlight">\(\xi_1\)</span> each step and make sure that the next step does not take us past that estimate.  This prevents us from having negative <span class="math notranslate nohighlight">\(\theta\)</span> values.  Given a point <span class="math notranslate nohighlight">\((\xi_p, \theta(\xi_p))\)</span>, and the derivative at that point, <span class="math notranslate nohighlight">\(\theta^\prime_p = d\theta/d\xi |_{\xi_p}\)</span>, we can write the equation of a line as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-94a01ce5-5eaa-4d83-9f5a-7efc8b548572">
-<span class="eqno">(1)<a class="headerlink" href="#equation-94a01ce5-5eaa-4d83-9f5a-7efc8b548572" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cf6d1403-5f33-4290-800e-dde8e4d108a7">
+<span class="eqno">(1)<a class="headerlink" href="#equation-cf6d1403-5f33-4290-800e-dde8e4d108a7" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \theta(\xi) - \theta_p = \theta^\prime_p (\xi - \xi_p)
 \end{equation}\]</div>
 <p><img alt="theta intercept" src="../_images/le_extrap.png" /></p>
 <p>Then we can ask when does <span class="math notranslate nohighlight">\(\theta\)</span> become zero, finding:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52eccd8d-c50b-4498-976c-8da17413fd6a">
-<span class="eqno">(2)<a class="headerlink" href="#equation-52eccd8d-c50b-4498-976c-8da17413fd6a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-38705328-25d4-4eb2-897a-6b125a191a48">
+<span class="eqno">(2)<a class="headerlink" href="#equation-38705328-25d4-4eb2-897a-6b125a191a48" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \xi = -\frac{\theta_p}{\theta^\prime_p} + \xi_p
 \end{equation}\]</div>
 <p>or in terms of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-abfbee87-a1f6-4ba3-9baa-1907b5824fb5">
-<span class="eqno">(3)<a class="headerlink" href="#equation-abfbee87-a1f6-4ba3-9baa-1907b5824fb5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a772f0e0-c2d4-487a-9524-93558b335bba">
+<span class="eqno">(3)<a class="headerlink" href="#equation-a772f0e0-c2d4-487a-9524-93558b335bba" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \xi = -\frac{y_p}{z_p} + \xi_p
 \end{equation}\]</div>
 <p>This is our estimate of <span class="math notranslate nohighlight">\(\xi_1\)</span>.  We then make sure our stepsize <span class="math notranslate nohighlight">\(h\)</span> is small enough that we do not go beyond this estimate.</p>
@@ -658,7 +658,7 @@ the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/402c2da28bb1917d7a28312428464b6b3dbd19e3de4317978313b205134d2c03.png" src="../_images/402c2da28bb1917d7a28312428464b6b3dbd19e3de4317978313b205134d2c03.png" />
+<img alt="../_images/b3be6ab5559916755fc25857809ecd3af7a970fde4761c114a660b38c9a2c8a2.png" src="../_images/b3be6ab5559916755fc25857809ecd3af7a970fde4761c114a660b38c9a2c8a2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -669,7 +669,7 @@ the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a15e9442f4ad72a65b40d500a778cb1cdaf04e5d9e7c46282af7c54b9d4cfd61.png" src="../_images/a15e9442f4ad72a65b40d500a778cb1cdaf04e5d9e7c46282af7c54b9d4cfd61.png" />
+<img alt="../_images/eca3995f2d26c2c599b8ae913cdae4607ed2c4fdbe26279a326859bbcaca5cb4.png" src="../_images/eca3995f2d26c2c599b8ae913cdae4607ed2c4fdbe26279a326859bbcaca5cb4.png" />
 </div>
 </div>
 <p>Here’s a table of the important parameters</p>

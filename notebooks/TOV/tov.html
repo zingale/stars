@@ -772,14 +772,14 @@ criteria.  Then it cuts dx by factors of 2 until we meet our tolerance at the st
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
 &lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-/tmp/ipykernel_2196/1020375860.py:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+/tmp/ipykernel_2249/1020375860.py:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
   ax.set_ylabel(&quot;$M$ [$M_\odot$]&quot;)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$M$ [$M_\\odot$]&#39;)
 </pre></div>
 </div>
-<img alt="../_images/44762e0bc5765673a79605b465ff444a5665ba06a8a1e9e5dfdc638077c3b750.png" src="../_images/44762e0bc5765673a79605b465ff444a5665ba06a8a1e9e5dfdc638077c3b750.png" />
+<img alt="../_images/d9336050db6c9262b7214b51458eab4cab40834acf705f057d0a7dcda05740e8.png" src="../_images/d9336050db6c9262b7214b51458eab4cab40834acf705f057d0a7dcda05740e8.png" />
 </div>
 </div>
 <p>Here we see a curve reminiscient of the white dwarf mass-radius relation.  This is not physical since we’ve neglected GR and the nuclear interactions.</p>
@@ -821,7 +821,7 @@ Chandrasekhar mass:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$M$ [$M_\\odot$]&#39;)
 </pre></div>
 </div>
-<img alt="../_images/ac9738a21f974d03c9c84111ade6c56fea47d9d7086f9049013a60ff15ff9d83.png" src="../_images/ac9738a21f974d03c9c84111ade6c56fea47d9d7086f9049013a60ff15ff9d83.png" />
+<img alt="../_images/4ebc2ce27ebf7cadc46d9277f005a18fc6a645f1e89a38986b162d632eb67193.png" src="../_images/4ebc2ce27ebf7cadc46d9277f005a18fc6a645f1e89a38986b162d632eb67193.png" />
 </div>
 </div>
 <p>We see that we are approaching that maximum mas as <span class="math notranslate nohighlight">\(R \rightarrow 0\)</span>, as expected.</p>
@@ -865,7 +865,7 @@ Chandrasekhar mass:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$M$ [$M_\\odot$]&#39;)
 </pre></div>
 </div>
-<img alt="../_images/9555d930a4e540c7b3a4157db8a065cac7eb5b862857a919d21631fa7e48a12a.png" src="../_images/9555d930a4e540c7b3a4157db8a065cac7eb5b862857a919d21631fa7e48a12a.png" />
+<img alt="../_images/073b7bca4340afaee189fda3b740d0e23caa93cf3a1abe508f60dd579b5ef17c.png" src="../_images/073b7bca4340afaee189fda3b740d0e23caa93cf3a1abe508f60dd579b5ef17c.png" />
 </div>
 </div>
 <p>Now, adding GR, we see that there is a maximum mass for the neutron star, but it is quite low.</p>
@@ -909,7 +909,7 @@ Chandrasekhar mass:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$M$ [$M_\\odot$]&#39;)
 </pre></div>
 </div>
-<img alt="../_images/c543e2644d1534a8e4be73a7d28246ce96fc44a7bbbf7aa8e722e55f79ca0234.png" src="../_images/c543e2644d1534a8e4be73a7d28246ce96fc44a7bbbf7aa8e722e55f79ca0234.png" />
+<img alt="../_images/2a2b2a0257ab9d750c57c2f1d66e9643a4f6efa45db36e08caceccd4a2135a78.png" src="../_images/2a2b2a0257ab9d750c57c2f1d66e9643a4f6efa45db36e08caceccd4a2135a78.png" />
 </div>
 </div>
 <p>In this final case, we get a much more reasonable maximum neutron star mass.  We also see that
@@ -1107,20 +1107,20 @@ and</p>
 <span class="g g-Whitespace">     </span><span class="mi">72</span>         <span class="c1"># cut the stepsize so we can try to get closer</span>
 <span class="g g-Whitespace">     </span><span class="mi">73</span>         <span class="n">dx</span> <span class="o">/=</span> <span class="mi">2</span>
 
-<span class="nn">Cell In[2], line 30,</span> in <span class="ni">Integrator.rk4_step</span><span class="nt">(self, x, y, dx)</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="n">dydx3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rhs</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="n">y3</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dx</span><span class="o">*</span><span class="n">dydx3</span>
-<span class="ne">---&gt; </span><span class="mi">30</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_stop_cond</span><span class="p">(</span><span class="n">y3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="n">dydx4</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rhs</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="n">y_final</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mf">6.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">dydx1</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">dydx2</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">dydx3</span> <span class="o">+</span> <span class="n">dydx4</span><span class="p">)</span>
+<span class="nn">Cell In[2], line 22,</span> in <span class="ni">Integrator.rk4_step</span><span class="nt">(self, x, y, dx)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">dydx1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rhs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dx</span><span class="o">*</span><span class="n">dydx1</span>
+<span class="ne">---&gt; </span><span class="mi">22</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_stop_cond</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="n">dydx2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rhs</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dx</span><span class="o">*</span><span class="n">dydx2</span>
 
-<span class="nn">Cell In[2], line 39,</span> in <span class="ni">Integrator.check_stop_cond</span><span class="nt">(self, y)</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_stop_cond</span><span class="p">(</span><span class="n">y_final</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="k">return</span> <span class="n">y_final</span>
-<span class="ne">---&gt; </span><span class="mi">39</span> <span class="k">def</span><span class="w"> </span><span class="nf">check_stop_cond</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="nn">Cell In[2], line 42,</span> in <span class="ni">Integrator.check_stop_cond</span><span class="nt">(self, y)</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="k">def</span><span class="w"> </span><span class="nf">check_stop_cond</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="c1"># check our stopping conditions</span>
 <span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop_cond</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">cond</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stop_cond</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">42</span>         <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">cond</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stop_cond</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="k">if</span> <span class="n">cond</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">continue</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>             <span class="n">c</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">cond</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
