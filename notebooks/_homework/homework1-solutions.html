@@ -529,7 +529,7 @@ Documentation can be found at https://docs.sympy.org/1.14.0/
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\s&#39;
 &lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-/tmp/ipykernel_2259/1554243202.py:6: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+/tmp/ipykernel_2230/1554243202.py:6: SyntaxWarning: invalid escape sequence &#39;\s&#39;
   Mstar, Rstar = symbols(&#39;M_\star R_\star&#39;)
 </pre></div>
 </div>
@@ -565,14 +565,14 @@ Documentation can be found at https://docs.sympy.org/1.14.0/
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/5bfea1c4b26875f828d5bd5f065508d85b397994214b02ec64e046db38c6efd1.png" src="../_images/5bfea1c4b26875f828d5bd5f065508d85b397994214b02ec64e046db38c6efd1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x7f6e3cb892e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x7f7f86b53920&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now we get the mass by integrating <span class="math notranslate nohighlight">\(dM/dr = 4\pi r^2 \rho(r)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bcaa6ceb-34ac-4d75-9b32-a60cbfef6863">
-<span class="eqno">()<a class="headerlink" href="#equation-bcaa6ceb-34ac-4d75-9b32-a60cbfef6863" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3cc422d8-b85a-4b0c-af9c-426b9fec65e7">
+<span class="eqno">()<a class="headerlink" href="#equation-3cc422d8-b85a-4b0c-af9c-426b9fec65e7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_\star = \int_0^{R_\star} 4\pi r^2 \rho(r) dr
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -653,7 +653,7 @@ radius.  Your answer will be in the form of <span class="math notranslate nohigh
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/22e2f245cefca6ebd5b8d53b14dc211626381136eb38c0a5b4bc67dbcfeb7dbd.png" src="../_images/22e2f245cefca6ebd5b8d53b14dc211626381136eb38c0a5b4bc67dbcfeb7dbd.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x7f6e0559ac90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x7f7f78ddc080&gt;
 </pre></div>
 </div>
 </div>
@@ -736,8 +736,8 @@ so we can enforce that here to find <span class="math notranslate nohighlight">\
 </div>
 </div>
 <p>This shows that we can write:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-39d09920-2959-46af-ac25-0e43755e22cb">
-<span class="eqno">()<a class="headerlink" href="#equation-39d09920-2959-46af-ac25-0e43755e22cb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5345d8d6-ebca-4a53-8150-a2abb7fdaad9">
+<span class="eqno">()<a class="headerlink" href="#equation-5345d8d6-ebca-4a53-8150-a2abb7fdaad9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
                     + \frac{8}{7} \left (\frac{r}{R_\star}\right )^3 
                     - \frac{5}{21} \left ( \frac{r}{R_\star}\right )^8 \right ]
@@ -751,7 +751,7 @@ P(r) = P_c \left [1 - \frac{40}{21} \left (\frac{r}{R_\star}\right )^2
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/43cc903d93b49dbdb5eea7b0c7feec44e8fd8c04b981d184fd0f7df648534d59.png" src="../_images/43cc903d93b49dbdb5eea7b0c7feec44e8fd8c04b981d184fd0f7df648534d59.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x7f6e15042030&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x7f7f767edfa0&gt;
 </pre></div>
 </div>
 </div>
@@ -820,13 +820,13 @@ central density =  2.78405148265706
 </div>
 </div>
 <p>In class, we did a constant density model.  We found that the central pressure was</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a177f03d-53e0-4a91-a4da-2d17eb20cd2d">
-<span class="eqno">()<a class="headerlink" href="#equation-a177f03d-53e0-4a91-a4da-2d17eb20cd2d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-03320270-55b1-457a-a874-5afc9a5e9507">
+<span class="eqno">()<a class="headerlink" href="#equation-03320270-55b1-457a-a874-5afc9a5e9507" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{3}{8\pi} \frac{GM_\star^2}{R_\star^4}
 \end{equation}\]</div>
 <p>Here, with the cubic density profile, we find</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4587a111-2693-4d7f-9e50-e0ad40af9275">
-<span class="eqno">()<a class="headerlink" href="#equation-4587a111-2693-4d7f-9e50-e0ad40af9275" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-70466977-ed2e-4708-9c9d-d1358178f0f5">
+<span class="eqno">()<a class="headerlink" href="#equation-70466977-ed2e-4708-9c9d-d1358178f0f5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P_c = \frac{63}{80\pi} \frac{G M_\star^{2}}{R_\star^{4}}
 \end{equation}\]</div>
 <p>The pressure is greater in this model because more mass is concentrated toward the center of the star, increasing the force of gravity throughout, making the outer layers weigh more.</p>
@@ -1002,15 +1002,15 @@ q(r) = \begin{cases}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2259/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2230/2254914631.py:2: RuntimeWarning: divide by zero encountered in power
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_2259/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
+/tmp/ipykernel_2230/2254914631.py:2: RuntimeWarning: divide by zero encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
-/tmp/ipykernel_2259/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_2230/2254914631.py:2: RuntimeWarning: invalid value encountered in divide
   return x**-5 / (np.exp(1/x) - 1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6e05261bb0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7f76552960&gt;]
 </pre></div>
 </div>
 <img alt="../_images/86a0ae5175b3e7715d720f334772e9f579ce132368f57ba5bdc3c606368ef44e.png" src="../_images/86a0ae5175b3e7715d720f334772e9f579ce132368f57ba5bdc3c606368ef44e.png" />
