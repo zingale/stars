@@ -457,8 +457,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transition-to-degeneracy">Transition to Degeneracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-degeneracy-parameter">Computing the Degeneracy Parameter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-trend-of-psi-with-rho-t">Finding the trend of <span class="math notranslate nohighlight">\(\Psi\)</span> with <span class="math notranslate nohighlight">\(\rho, T\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-psi">Visualizing <span class="math notranslate nohighlight">\(\Psi\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-trend-of-eta-with-rho-t">Finding the trend of <span class="math notranslate nohighlight">\(\eta\)</span> with <span class="math notranslate nohighlight">\(\rho, T\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-eta">Visualizing <span class="math notranslate nohighlight">\(\eta\)</span></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-pressure">Computing Pressure</a></li>
@@ -479,15 +479,15 @@ document.write(`
 <p>The origin of this is <a class="reference external" href="https://en.wikipedia.org/wiki/Fermi%E2%80%93Dirac_statistics">Fermi-Dirac statistics</a>—no two electrons can occupy the same state, so as they get confined to a smaller and smaller volume, they need to take on larger momenta.</p>
 <p>The distribution function describes the properties of the electrons, and has the following meaning: <span class="math notranslate nohighlight">\(n(p) d^3 x d^3 p\)</span> is the number of particles with momentum <span class="math notranslate nohighlight">\(p\)</span> in a volume <span class="math notranslate nohighlight">\(d^3x\)</span>.  Our distribution function is:</p>
 <div class="math notranslate nohighlight">
-\[n(p) = \frac{2}{h^3} \frac{1}{e^{\mathcal{E}(p)/{k_B T} - \Psi} + 1}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> is the kinetic energy of the electron, <span class="math notranslate nohighlight">\(T\)</span> is the temperature, and <span class="math notranslate nohighlight">\(\Psi\)</span> is the <em>degeneracy parameter</em> which is related to the chemical potential, <span class="math notranslate nohighlight">\(\mu\)</span>, and the <a class="reference external" href="https://en.wikipedia.org/wiki/Fermi_energy">Fermi energy</a>, <span class="math notranslate nohighlight">\(\mathcal{E}_F\)</span>, as:</p>
+\[n(p) = \frac{2}{h^3} \frac{1}{e^{\mathcal{E}(p)/{k_B T} - \eta} + 1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> is the kinetic energy of the electron, <span class="math notranslate nohighlight">\(T\)</span> is the temperature, and <span class="math notranslate nohighlight">\(\eta\)</span> is the <em>degeneracy parameter</em> which is related to the chemical potential, <span class="math notranslate nohighlight">\(\mu\)</span>, and the <a class="reference external" href="https://en.wikipedia.org/wiki/Fermi_energy">Fermi energy</a>, <span class="math notranslate nohighlight">\(\mathcal{E}_F\)</span>, as:</p>
 <div class="math notranslate nohighlight">
-\[\Psi = \frac{\mu - m_e c^2}{k_B T} = \frac{\mathcal{E}_F}{k_B T}\]</div>
+\[\eta = \frac{\mu - m_e c^2}{k_B T} = \frac{\mathcal{E}_F}{k_B T}\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Some sources use <span class="math notranslate nohighlight">\(\eta\)</span> instead of <span class="math notranslate nohighlight">\(\Psi\)</span> for the degeneracy parameter</p>
+<p>Some sources use <span class="math notranslate nohighlight">\(\Psi\)</span> instead of <span class="math notranslate nohighlight">\(\eta\)</span> for the degeneracy parameter</p>
 </div>
-<p>The electrons are degenerate when <span class="math notranslate nohighlight">\(\Psi \gg 1\)</span>, which means that the Fermi energy is much greater than the thermal energy.  The electrons behave as an ideal gas when <span class="math notranslate nohighlight">\(-\Psi \gg 1\)</span> (in this case, the <span class="math notranslate nohighlight">\(+1\)</span> in the denominator of <span class="math notranslate nohighlight">\(n(p)\)</span> is insignificant and we get the Maxwell-Boltzmann distribution).</p>
+<p>The electrons are degenerate when <span class="math notranslate nohighlight">\(\eta \gg 1\)</span>, which means that the Fermi energy is much greater than the thermal energy.  The electrons behave as an ideal gas when <span class="math notranslate nohighlight">\(-\eta \gg 1\)</span> (in this case, the <span class="math notranslate nohighlight">\(+1\)</span> in the denominator of <span class="math notranslate nohighlight">\(n(p)\)</span> is insignificant and we get the Maxwell-Boltzmann distribution).</p>
 <p>To get the <em>number density</em>, we integrate over all momenta:</p>
 <div class="math notranslate nohighlight">
 \[n = \int n(p) d^3 p\]</div>
@@ -500,15 +500,15 @@ document.write(`
 <h2>Transition to Degeneracy<a class="headerlink" href="#transition-to-degeneracy" title="Link to this heading">#</a></h2>
 <p>Let’s look at the behavior of the distribution function.  Consider:</p>
 <div class="math notranslate nohighlight">
-\[F(\mathcal{E}) = \frac{1}{e^{\mathcal{E}/k_B T - \Psi} + 1}\]</div>
+\[F(\mathcal{E}) = \frac{1}{e^{\mathcal{E}/k_B T - \eta} + 1}\]</div>
 <p>let’s define</p>
 <div class="math notranslate nohighlight">
 \[\xi \equiv \frac{\mathcal{E}}{k_B T}\]</div>
 <p>then we have</p>
 <div class="math notranslate nohighlight">
-\[F(\xi) = \frac{1}{e^{\xi - \Psi} + 1}\]</div>
-<p>and for each choice of <span class="math notranslate nohighlight">\(\Psi\)</span> we have a unique distribution.</p>
-<p>We note that <span class="math notranslate nohighlight">\(\xi/\Psi = \mathcal{E}/\mathcal{E}_F\)</span>.</p>
+\[F(\xi) = \frac{1}{e^{\xi - \eta} + 1}\]</div>
+<p>and for each choice of <span class="math notranslate nohighlight">\(\eta\)</span> we have a unique distribution.</p>
+<p>We note that <span class="math notranslate nohighlight">\(\xi/\eta = \mathcal{E}/\mathcal{E}_F\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -519,22 +519,22 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">F</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">psi</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">xi</span> <span class="o">-</span> <span class="n">psi</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">F</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">xi</span> <span class="o">-</span> <span class="n">eta</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s look at the case of <span class="math notranslate nohighlight">\(\Psi &gt; 1\)</span></p>
+<p>Let’s look at the case of <span class="math notranslate nohighlight">\(\eta &gt; 1\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
-<span class="c1"># we&#39;ll work in terms of r = xi / Psi</span>
+<span class="c1"># we&#39;ll work in terms of r = xi / eta</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">psi</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">]:</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="n">psi</span> <span class="o">*</span> <span class="n">r</span><span class="p">,</span> <span class="n">psi</span><span class="o">=</span><span class="n">psi</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$\Psi = </span><span class="si">{</span><span class="n">psi</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">eta</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">]:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="n">eta</span> <span class="o">*</span> <span class="n">r</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="n">eta</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">&quot;$\eta = </span><span class="si">{</span><span class="n">eta</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
     
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;$F$&quot;</span><span class="p">)</span>
@@ -543,19 +543,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\P&#39;
-&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\P&#39;
-/tmp/ipykernel_2351/289879296.py:7: SyntaxWarning: invalid escape sequence &#39;\P&#39;
-  ax.plot(r, F(psi * r, psi=psi), label=f&quot;$\Psi = {psi}$&quot;)
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$\\mathcal{E}/\\mathcal{E}_F$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/605eea57da14482bbc0f4fd4df1e7fc7c0abbc4981c2c863425b298e2312b13e.png" src="../_images/605eea57da14482bbc0f4fd4df1e7fc7c0abbc4981c2c863425b298e2312b13e.png" />
+<img alt="../_images/38755d6b8f35fdd9d0b4ee25efe993ad6be904c2d9b9fd3b070c1f3dc2912c31.png" src="../_images/38755d6b8f35fdd9d0b4ee25efe993ad6be904c2d9b9fd3b070c1f3dc2912c31.png" />
 </div>
 </div>
-<p>As we see, as <span class="math notranslate nohighlight">\(\Psi \rightarrow \infty\)</span>, the distribution, <span class="math notranslate nohighlight">\(F(\mathcal{E})\)</span> becomes a step function.  This is the limit of complete degeneracy, and we have:</p>
+<p>As we see, as <span class="math notranslate nohighlight">\(\eta \rightarrow \infty\)</span>, the distribution, <span class="math notranslate nohighlight">\(F(\mathcal{E})\)</span> becomes a step function.  This is the limit of complete degeneracy, and we have:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}F(\mathcal{E}) = \left \{ \begin{array}{cc} 1 &amp; \mathcal{E} &lt; \mathcal{E}_F \\
                                               0 &amp; \mathcal{E} &gt; \mathcal{E}_F \end{array} \right .\end{split}\]</div>
@@ -567,20 +561,20 @@ document.write(`
 </section>
 <section id="computing-the-degeneracy-parameter">
 <h2>Computing the Degeneracy Parameter<a class="headerlink" href="#computing-the-degeneracy-parameter" title="Link to this heading">#</a></h2>
-<p>For other values of <span class="math notranslate nohighlight">\(\Psi\)</span>, we have a problem:</p>
+<p>For other values of <span class="math notranslate nohighlight">\(\eta\)</span>, we have a problem:</p>
 <div class="math notranslate nohighlight">
-\[n_e = \frac{8\pi}{h^3} \int_0^\infty \frac{p^2}{e^{\mathcal{E}(p)/k_B T - \Psi} + 1} dp\]</div>
-<p>We don’t know what the value of <span class="math notranslate nohighlight">\(\Psi\)</span> is ahead of time.  Instead, we typically know what the density of the star is, and we can find the
+\[n_e = \frac{8\pi}{h^3} \int_0^\infty \frac{p^2}{e^{\mathcal{E}(p)/k_B T - \eta} + 1} dp\]</div>
+<p>We don’t know what the value of <span class="math notranslate nohighlight">\(\eta\)</span> is ahead of time.  Instead, we typically know what the density of the star is, and we can find the
 number density of electrons as:</p>
 <div class="math notranslate nohighlight">
 \[n_e = \frac{\rho Y_e}{m_u}\]</div>
 <p>where <span class="math notranslate nohighlight">\(Y_e\)</span> is the electron fraction (typically around <span class="math notranslate nohighlight">\(1/2\)</span> for compositions heavier than hydrogen).  This means that given <span class="math notranslate nohighlight">\(\rho, T\)</span>,
-we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
-<p>Once we have <span class="math notranslate nohighlight">\(\Psi\)</span>, we can then find the pressure and energy of the gas.</p>
-<section id="finding-the-trend-of-psi-with-rho-t">
-<h3>Finding the trend of <span class="math notranslate nohighlight">\(\Psi\)</span> with <span class="math notranslate nohighlight">\(\rho, T\)</span><a class="headerlink" href="#finding-the-trend-of-psi-with-rho-t" title="Link to this heading">#</a></h3>
-<p>Let’s now implement an algorithm to find the <span class="math notranslate nohighlight">\(\Psi\)</span> that corresponds to an input <span class="math notranslate nohighlight">\(\rho\)</span> (or <span class="math notranslate nohighlight">\(n_e\)</span>) and <span class="math notranslate nohighlight">\(T\)</span>.</p>
-<p>We first need a function to compute <span class="math notranslate nohighlight">\(n_e\)</span> given a <span class="math notranslate nohighlight">\(T\)</span> and a guess for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
+we can solve for <span class="math notranslate nohighlight">\(\eta\)</span>.</p>
+<p>Once we have <span class="math notranslate nohighlight">\(\eta\)</span>, we can then find the pressure and energy of the gas.</p>
+<section id="finding-the-trend-of-eta-with-rho-t">
+<h3>Finding the trend of <span class="math notranslate nohighlight">\(\eta\)</span> with <span class="math notranslate nohighlight">\(\rho, T\)</span><a class="headerlink" href="#finding-the-trend-of-eta-with-rho-t" title="Link to this heading">#</a></h3>
+<p>Let’s now implement an algorithm to find the <span class="math notranslate nohighlight">\(\eta\)</span> that corresponds to an input <span class="math notranslate nohighlight">\(\rho\)</span> (or <span class="math notranslate nohighlight">\(n_e\)</span>) and <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>We first need a function to compute <span class="math notranslate nohighlight">\(n_e\)</span> given a <span class="math notranslate nohighlight">\(T\)</span> and a guess for <span class="math notranslate nohighlight">\(\eta\)</span>.</p>
 <p>The kinetic energy of a particle can be found from the relativisitic expression:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{E}(p) = m_e c^2 \left [ \sqrt{1 + \left ( \frac{p}{m_e c} \right )^2 } - 1 \right ]\]</div>
@@ -592,15 +586,26 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 </div>
 <p>Defining <span class="math notranslate nohighlight">\(x = p/(m_e c)\)</span> and <span class="math notranslate nohighlight">\(\alpha = m_e c^2 / (k_B T)\)</span>, our integral becomes:</p>
 <div class="math notranslate nohighlight">
-\[n_e = \frac{8\pi}{h^3} (m_e c)^3 \int_0^\infty \frac{x^2 dx}{e^{\alpha (\sqrt{1 + x^2} - 1) - \Psi} + 1}\]</div>
+\[n_e = \frac{8\pi}{h^3} (m_e c)^3 \int_0^\infty \frac{x^2 dx}{e^{\alpha (\sqrt{1 + x^2} - 1) - \eta} + 1}\]</div>
 <p>We need to do this numerically</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We usually define a Fermi-Dirac integral in terms of dimensionless energy, and write:</p>
+<div class="math notranslate nohighlight">
+\[F_k(\eta, \beta) = \int_0^\infty \frac{x^k (1 + \beta x / 2)^{1/2}}{e^{x-\eta} + 1} dx\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta = k T / (m_e c^2)\)</span> is a measure of how important relativistic effects are.  Then we can write number density as:</p>
+<div class="math notranslate nohighlight">
+\[n_e = \frac{8\sqrt{2}\pi (m_e c)^3}{h^3} \left [ F_{1/2}(\eta, \beta) + \beta F_{3/2}(\eta, \beta) \right ]\]</div>
+<p>Many sources discuss how to compute these <span class="math notranslate nohighlight">\(F_k(\eta, \beta)\)</span>. A python implementation is <a class="reference external" href="https://pynucastro.github.io/pynucastro/fermi-integrals.html">available in pynucastro</a>.</p>
+</div>
 <p>Let’s write a function that returns the integrand.  Note, we run a risk of the exponential in the denominator overflowing, especially when <span class="math notranslate nohighlight">\(\alpha\)</span> is large (<span class="math notranslate nohighlight">\(T\)</span> is small).  So we take <code class="docutils literal notranslate"><span class="pre">exp(500)</span></code> to be infinite and set the integrand to zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">integrand</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">psi</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">integrand</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">eta</span><span class="p">):</span>
+    <span class="n">term</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">eta</span>
+    <span class="k">if</span> <span class="n">term</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">0.0</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">psi</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">term</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -629,36 +634,36 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute_ne</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">psi</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;given a temperature and degeneracy parameter, psi,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute_ne</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">eta</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;given a temperature and degeneracy parameter, eta,</span>
 <span class="sd">    compute the number density of electrons by integrating</span>
 <span class="sd">    the Fermi-Dirac distribution over all momenta&quot;&quot;&quot;</span>
     <span class="n">alpha</span> <span class="o">=</span> <span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_B</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
-    <span class="n">I</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">),</span> <span class="n">epsabs</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="n">epsrel</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">)</span>
+    <span class="n">I</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">eta</span><span class="p">),</span> <span class="n">epsabs</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="n">epsrel</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">)</span>
     <span class="n">ne</span> <span class="o">=</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">h_planck</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">I</span>
     <span class="k">return</span> <span class="n">ne</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now we want to do a root find on this, to find the value of <span class="math notranslate nohighlight">\(\Psi\)</span> that gives us our desired <span class="math notranslate nohighlight">\(n_e\)</span>.</p>
+<p>Now we want to do a root find on this, to find the value of <span class="math notranslate nohighlight">\(\eta\)</span> that gives us our desired <span class="math notranslate nohighlight">\(n_e\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find_psi</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find_eta</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
     
     <span class="n">ne_input</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">Ye</span> <span class="o">/</span> <span class="n">m_u</span>
-    <span class="n">psi_low</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1000</span>
-    <span class="n">psi_high</span> <span class="o">=</span> <span class="mi">100000</span>
+    <span class="n">eta_low</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+    <span class="n">eta_high</span> <span class="o">=</span> <span class="mi">100000</span>
     
-    <span class="n">psi</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">brentq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">psi</span><span class="p">:</span> <span class="n">ne_input</span> <span class="o">-</span> <span class="n">compute_ne</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">psi</span><span class="p">),</span> <span class="n">psi_low</span><span class="p">,</span> <span class="n">psi_high</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">psi</span>
+    <span class="n">eta</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">brentq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">eta</span><span class="p">:</span> <span class="n">ne_input</span> <span class="o">-</span> <span class="n">compute_ne</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">eta</span><span class="p">),</span> <span class="n">eta_low</span><span class="p">,</span> <span class="n">eta_high</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">eta</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find_psi</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.e6</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">find_eta</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.e6</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -669,18 +674,18 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 </div>
 </div>
 </section>
-<section id="visualizing-psi">
-<h3>Visualizing <span class="math notranslate nohighlight">\(\Psi\)</span><a class="headerlink" href="#visualizing-psi" title="Link to this heading">#</a></h3>
+<section id="visualizing-eta">
+<h3>Visualizing <span class="math notranslate nohighlight">\(\eta\)</span><a class="headerlink" href="#visualizing-eta" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_psi_rho</span><span class="p">(</span><span class="n">rhos</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">1.e7</span><span class="p">):</span>
-    <span class="n">psis</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_eta_rho</span><span class="p">(</span><span class="n">rhos</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">1.e7</span><span class="p">):</span>
+    <span class="n">etas</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">for</span> <span class="n">rho</span> <span class="ow">in</span> <span class="n">rhos</span><span class="p">:</span>
-        <span class="n">psi</span> <span class="o">=</span> <span class="n">find_psi</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
-        <span class="n">psis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+        <span class="n">eta</span> <span class="o">=</span> <span class="n">find_eta</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+        <span class="n">etas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eta</span><span class="p">)</span>
         
-    <span class="k">return</span> <span class="n">psis</span>
+    <span class="k">return</span> <span class="n">etas</span>
 </pre></div>
 </div>
 </div>
@@ -692,22 +697,22 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 <span class="n">rhos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1.e6</span><span class="p">,</span> <span class="mf">1.e7</span><span class="p">,</span> <span class="mf">1.e8</span><span class="p">]:</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rhos</span><span class="p">,</span> <span class="n">get_psi_rho</span><span class="p">(</span><span class="n">rhos</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;T = </span><span class="si">{</span><span class="n">T</span><span class="si">:</span><span class="s2">5.2g</span><span class="si">}</span><span class="s2"> K&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rhos</span><span class="p">,</span> <span class="n">get_eta_rho</span><span class="p">(</span><span class="n">rhos</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;T = </span><span class="si">{</span><span class="n">T</span><span class="si">:</span><span class="s2">5.2g</span><span class="si">}</span><span class="s2"> K&quot;</span><span class="p">)</span>
     
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\rho$&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\Psi$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\eta$&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;symlog&quot;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mf">1.e-2</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc476bcfbc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f15953c1250&gt;
 </pre></div>
 </div>
-<img alt="../_images/340df91d2b2a5c672bcfac1eb8f084398547bda2ebac5e8489076d58c9faab43.png" src="../_images/340df91d2b2a5c672bcfac1eb8f084398547bda2ebac5e8489076d58c9faab43.png" />
+<img alt="../_images/b894c1bc2c96003b01c8bb406170e3c99a31b52286a6ffcbae5af2c80c8bac5b.png" src="../_images/b894c1bc2c96003b01c8bb406170e3c99a31b52286a6ffcbae5af2c80c8bac5b.png" />
 </div>
 </div>
 <p>Notice that at high <span class="math notranslate nohighlight">\(T\)</span> and low <span class="math notranslate nohighlight">\(\rho\)</span>, the degeneracy parameter becomes negative–this is when we are an ideal gas.</p>
@@ -720,19 +725,20 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 \[v(p) = \frac{p}{m_e} \left [ 1 + \left (\frac{p}{m_e c} \right )^2 \right ]^{-1/2}\]</div>
 <p>our pressure integral becomes:</p>
 <div class="math notranslate nohighlight">
-\[P = \frac{8\pi}{3m_e h^3} (m_e c)^5 \int_0^\infty \frac{x^4}{\sqrt{1 + x^2}} \frac{dx}{e^{\alpha (\sqrt{1 + x^2} - 1) - \Psi} + 1}\]</div>
-<p>To do this integral, we first need to compute <span class="math notranslate nohighlight">\(\Psi\)</span>.  Here’s the overall pressure function.  At low temperatures / low densities, we need to ensure that the tolerance used by the integrator is tight to get a good solution.</p>
+\[P = \frac{8\pi}{3m_e h^3} (m_e c)^5 \int_0^\infty \frac{x^4}{\sqrt{1 + x^2}} \frac{dx}{e^{\alpha (\sqrt{1 + x^2} - 1) - \eta} + 1}\]</div>
+<p>To do this integral, we first need to compute <span class="math notranslate nohighlight">\(\eta\)</span>.  Here’s the overall pressure function.  At low temperatures / low densities, we need to ensure that the tolerance used by the integrator is tight to get a good solution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">p_integrand</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">psi</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">p_integrand</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">eta</span><span class="p">):</span>
+    <span class="n">term</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">eta</span>
+    <span class="k">if</span> <span class="n">term</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">0.0</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">psi</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">term</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">p</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
     <span class="n">alpha</span> <span class="o">=</span> <span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_B</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
-    <span class="n">psi</span> <span class="o">=</span> <span class="n">find_psi</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="n">Ye</span><span class="p">)</span>
-    <span class="n">I</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">p_integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">psi</span><span class="p">),</span> <span class="n">epsabs</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="n">epsrel</span><span class="o">=</span><span class="mf">1.e-12</span><span class="p">)</span>
+    <span class="n">eta</span> <span class="o">=</span> <span class="n">find_eta</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Ye</span><span class="o">=</span><span class="n">Ye</span><span class="p">)</span>
+    <span class="n">I</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">p_integrand</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">eta</span><span class="p">),</span> <span class="n">epsabs</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="n">epsrel</span><span class="o">=</span><span class="mf">1.e-12</span><span class="p">)</span>
     <span class="k">return</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">m_e</span> <span class="o">*</span> <span class="n">h_planck</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">m_e</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mi">5</span> <span class="o">*</span> <span class="n">I</span>
 </pre></div>
 </div>
@@ -764,16 +770,16 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$P$&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc476b844a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f1594584290&gt;
 </pre></div>
 </div>
-<img alt="../_images/1b681fd40d9042149e226440fec38ce13722a8bab3909f2863fc7f0d92668b1f.png" src="../_images/1b681fd40d9042149e226440fec38ce13722a8bab3909f2863fc7f0d92668b1f.png" />
+<img alt="../_images/43dc42979c4301e3a92d197531212783321a9f7c949e2bc5df2498791603e753.png" src="../_images/43dc42979c4301e3a92d197531212783321a9f7c949e2bc5df2498791603e753.png" />
 </div>
 </div>
 <p>Here you clearly see that hotter temperatures require higher densities before they transition from an ideal gas to degeneracy.  For the coldest line, the <span class="math notranslate nohighlight">\(\alpha\)</span> factor is making the exponential overflow, making the solution a bit unstable.</p>
@@ -808,7 +814,7 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9d75befa433910b6f0abb419a9b797e1a4c38ec429311db97896a1448bdefee5.png" src="../_images/9d75befa433910b6f0abb419a9b797e1a4c38ec429311db97896a1448bdefee5.png" />
+<img alt="../_images/b04f54207ffc5dac4689be5ebcdac20ab0286293a34943a4316f92d26dd5a479.png" src="../_images/b04f54207ffc5dac4689be5ebcdac20ab0286293a34943a4316f92d26dd5a479.png" />
 </div>
 </div>
 <p>Here we see that this zero-temperature curve works really well at low temperatures and at high densities.</p>
@@ -881,8 +887,8 @@ we can solve for <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transition-to-degeneracy">Transition to Degeneracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-degeneracy-parameter">Computing the Degeneracy Parameter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-trend-of-psi-with-rho-t">Finding the trend of <span class="math notranslate nohighlight">\(\Psi\)</span> with <span class="math notranslate nohighlight">\(\rho, T\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-psi">Visualizing <span class="math notranslate nohighlight">\(\Psi\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-trend-of-eta-with-rho-t">Finding the trend of <span class="math notranslate nohighlight">\(\eta\)</span> with <span class="math notranslate nohighlight">\(\rho, T\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-eta">Visualizing <span class="math notranslate nohighlight">\(\eta\)</span></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-pressure">Computing Pressure</a></li>
