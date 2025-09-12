@@ -458,11 +458,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sun">Sun</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth">Earth</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-ideal-gas-pressure">b. Ideal gas pressure</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-energy">c. Energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth">Earth</a></li>
 </ul>
             </nav>
         </div>
@@ -567,83 +563,20 @@ document.write(`
 </div>
 </div>
 </div>
-<p>now let’s integrate over p</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_I_int</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
-<span class="n">n_I_int</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gamma</span> <span class="o">=</span> <span class="p">(</span><span class="n">Z</span> <span class="o">*</span> <span class="n">e</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">((</span><span class="n">A</span> <span class="o">*</span> <span class="n">m_u</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">4.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span> <span class="o">*</span> <span class="n">G</span> <span class="o">*</span> <span class="n">M</span><span class="o">**</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span><span class="p">))</span>
+<span class="n">gamma</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">n_I_int</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">n_I_int</span>
-
-<span class="ne">NameError</span>: name &#39;integrate&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>unyt_quantity(167.13713567, &#39;(dimensionless)&#39;)
 </pre></div>
 </div>
 </div>
 </div>
-<p>This is equal to <span class="math notranslate nohighlight">\(n_I\)</span>.  We want to substitute this back into <span class="math notranslate nohighlight">\(n(p)\)</span>.  Let’s solve for <span class="math notranslate nohighlight">\(g\)</span> in terms of <span class="math notranslate nohighlight">\(n_I\)</span>
-and then use that as a way to substitute this back.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_solve</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">n_I_int</span><span class="p">,</span> <span class="n">n_I</span><span class="p">),</span> <span class="n">g</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_solve</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">g_solve</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-<span class="n">n</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we see that we have the normal Maxwell-Boltzmann distribution.</p>
-<section id="b-ideal-gas-pressure">
-<h3>b. Ideal gas pressure<a class="headerlink" href="#b-ideal-gas-pressure" title="Link to this heading">#</a></h3>
-<p>The pressure integral is simply:</p>
-<div class="math notranslate nohighlight">
-\[P = \frac{1}{3} \int_0^\infty n(p) v p dp\]</div>
-<p>with <span class="math notranslate nohighlight">\(v = p / m\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">m</span><span class="p">,</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
-<span class="n">P</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We see that we get the familiar ideal gas law!</p>
-</section>
-</section>
-<section id="c-energy">
-<h2>c. Energy<a class="headerlink" href="#c-energy" title="Link to this heading">#</a></h2>
-<p>The energy is:</p>
-<div class="math notranslate nohighlight">
-\[\rho e = \int_0^\infty n(p) E(p) dp\]</div>
-<p>with <span class="math notranslate nohighlight">\(E(p) = p^2 / (2m)\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rhoe</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span><span class="n">m</span><span class="p">),</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
-<span class="n">rhoe</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>So we see that this is <span class="math notranslate nohighlight">\(3/2 P\)</span>.</p>
+<p>Now we see that <span class="math notranslate nohighlight">\(\Gamma \gg 1\)</span>, so Earth is a solid.</p>
 </section>
 </section>
 
@@ -712,11 +645,7 @@ and then use that as a way to substitute this back.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sun">Sun</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth">Earth</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-ideal-gas-pressure">b. Ideal gas pressure</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-energy">c. Energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth">Earth</a></li>
 </ul>
   </nav></div>
 
