@@ -3,6 +3,8 @@ root: intro
 parts:
   - caption: Equation of State
     chapters:
+    - file: eos/solid-or-gas
+    - file: eos/ideal-gas
     - file: eos/degeneracy-parameter
     - file: eos/eos-regimes
 
