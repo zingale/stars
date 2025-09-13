@@ -34,6 +34,8 @@ parts:
   - caption: Explosions!
     chapters:
     - file: hotcno/hot-CNO-breakout-example
+    - file: xrbs/xrb-lightcurves
+    - file: xrbs/xrb-one-zone
     - file: lightcurves/lightcurves
     - file: nse/nse
     - file: TOV/tov
