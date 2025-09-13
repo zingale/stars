@@ -209,6 +209,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explosions!</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../hotcno/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xrbs/xrb-lightcurves.html">X-ray Burst Timing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xrbs/xrb-one-zone.html">One-zone X-ray Burst Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lightcurves/lightcurves.html">Simple supernova lightcurve</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nse/nse.html">Nuclear statistical equilibrium</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Neutron star structure</a></li>
@@ -774,7 +776,7 @@ criteria.  Then it cuts dx by factors of 2 until we meet our tolerance at the st
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
 &lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-/tmp/ipykernel_2186/1020375860.py:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+/tmp/ipykernel_2185/1020375860.py:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
   ax.set_ylabel(&quot;$M$ [$M_\odot$]&quot;)
 </pre></div>
 </div>
@@ -1109,19 +1111,17 @@ and</p>
 <span class="g g-Whitespace">     </span><span class="mi">72</span>         <span class="c1"># cut the stepsize so we can try to get closer</span>
 <span class="g g-Whitespace">     </span><span class="mi">73</span>         <span class="n">dx</span> <span class="o">/=</span> <span class="mi">2</span>
 
-<span class="nn">Cell In[2], line 35,</span> in <span class="ni">Integrator.rk4_step</span><span class="nt">(self, x, y, dx)</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="n">dydx4</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rhs</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="n">y_final</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mf">6.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">dydx1</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">dydx2</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">dydx3</span> <span class="o">+</span> <span class="n">dydx4</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">35</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_stop_cond</span><span class="p">(</span><span class="n">y_final</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="k">return</span> <span class="n">y_final</span>
+<span class="nn">Cell In[2], line 24,</span> in <span class="ni">Integrator.rk4_step</span><span class="nt">(self, x, y, dx)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dx</span><span class="o">*</span><span class="n">dydx1</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_stop_cond</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
+<span class="ne">---&gt; </span><span class="mi">24</span> <span class="n">dydx2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rhs</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dx</span><span class="o">*</span><span class="n">dydx2</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_stop_cond</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
 
-<span class="nn">Cell In[2], line 39,</span> in <span class="ni">Integrator.check_stop_cond</span><span class="nt">(self, y)</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_stop_cond</span><span class="p">(</span><span class="n">y_final</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="k">return</span> <span class="n">y_final</span>
-<span class="ne">---&gt; </span><span class="mi">39</span> <span class="k">def</span><span class="w"> </span><span class="nf">check_stop_cond</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="c1"># check our stopping conditions</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop_cond</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">cond</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stop_cond</span><span class="p">):</span>
+<span class="nn">Cell In[4], line 17,</span> in <span class="ni">rhs_tov</span><span class="nt">(r, y, rho_func)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">metric_term</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">G</span> <span class="o">*</span> <span class="n">m</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">dPdr</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">G</span> <span class="o">/</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">rho_term</span> <span class="o">*</span> <span class="n">m_term</span> <span class="o">/</span> <span class="n">metric_term</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dmdr</span><span class="p">,</span> <span class="n">dPdr</span><span class="p">])</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Solid or Gas? &#8212; PHY 521 Fall 2025</title>
+    <title>X-ray Burst Timing &#8212; PHY 521 Fall 2025</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'eos/solid-or-gas';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'xrbs/xrb-lightcurves';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Maxwell-Boltzmann Distribution and Ideal Gas" href="ideal-gas.html" />
-    <link rel="prev" title="PHY 521: Stars" href="../intro.html" />
+    <link rel="next" title="One-zone X-ray Burst Model" href="xrb-one-zone.html" />
+    <link rel="prev" title="hot-CNO and breakout" href="../hotcno/hot-CNO-breakout-example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,11 +176,11 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Equation of State</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Solid or Gas?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ideal-gas.html">Maxwell-Boltzmann Distribution and Ideal Gas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="degeneracy-parameter.html">Degenerate Electrons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eos-regimes.html">EOS regimes</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../eos/solid-or-gas.html">Solid or Gas?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eos/ideal-gas.html">Maxwell-Boltzmann Distribution and Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eos/degeneracy-parameter.html">Degenerate Electrons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eos/eos-regimes.html">EOS regimes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reactions</span></p>
 <ul class="nav bd-sidenav">
@@ -208,10 +208,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../equipotentials/equipotentials.html">Equipotentials</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explosions!</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../hotcno/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../xrbs/xrb-lightcurves.html">X-ray Burst Timing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../xrbs/xrb-one-zone.html">One-zone X-ray Burst Model</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">X-ray Burst Timing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xrb-one-zone.html">One-zone X-ray Burst Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lightcurves/lightcurves.html">Simple supernova lightcurve</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nse/nse.html">Nuclear statistical equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../TOV/tov.html">Neutron star structure</a></li>
@@ -269,7 +269,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/eos/solid-or-gas.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/xrbs/xrb-lightcurves.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/eos/solid-or-gas.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/xrbs/xrb-lightcurves.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +335,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Feos/solid-or-gas.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fxrbs/xrb-lightcurves.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -365,7 +365,7 @@
       
       
       
-      <li><a href="../_sources/eos/solid-or-gas.ipynb" target="_blank"
+      <li><a href="../_sources/xrbs/xrb-lightcurves.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -436,9 +436,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -449,20 +447,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Solid or Gas?</h1>
+    <h1>X-ray Burst Timing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sun">Sun</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth">Earth</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -472,114 +461,188 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="solid-or-gas">
-<h1>Solid or Gas?<a class="headerlink" href="#solid-or-gas" title="Link to this heading">#</a></h1>
-<p>Let’s compare the Coulomb energy to <span class="math notranslate nohighlight">\(kT\)</span> to determine if a star is a solid or a gas.</p>
-<p>We’ll defined the quantity:</p>
-<div class="math notranslate nohighlight">
-\[\Gamma = \frac{E_\mathrm{Coul}}{kT}\]</div>
-<p>as a measure of the importance of the Coulomb energy to the thermal energy.  If <span class="math notranslate nohighlight">\(\Gamma \gg 1\)</span>, then we are a solid.</p>
-<p>The Coulomb energy (in CGS) is:</p>
-<div class="math notranslate nohighlight">
-\[E_\mathrm{Coul} = \frac{(Ze)^2}{r}\]</div>
-<p>where <span class="math notranslate nohighlight">\(Z\)</span> is the proton number of the nucleus we are dealing with.  We can find the separation, <span class="math notranslate nohighlight">\(r\)</span>, from the average density, <span class="math notranslate nohighlight">\(d \sim n^{-1/3}\)</span> with</p>
-<div class="math notranslate nohighlight">
-\[n = \frac{\rho}{A m_u}\]</div>
-<p>so</p>
-<div class="math notranslate nohighlight">
-\[d \sim \left ( \frac{A m_u}{\rho} \right )^{1/3} \sim \left ( \frac{4\pi A m_m}{3 M} \right )^{1/3} R\]</div>
-<p>where we assumed that <span class="math notranslate nohighlight">\(\rho = \bar{\rho}\)</span>, the average density of the star.</p>
-<p>From the Virial theorem, we found that</p>
-<div class="math notranslate nohighlight">
-\[k T \sim \frac{1}{3} \frac{GM A m_u}{R}\]</div>
-<p>so together, we have:</p>
-<div class="math notranslate nohighlight">
-\[\Gamma \sim \frac{Z^2 e^2}{A^{4/3} m_u^{4/3} G M^{2/3}}\]</div>
-<section id="sun">
-<h2>Sun<a class="headerlink" href="#sun" title="Link to this heading">#</a></h2>
-<p>We’ll keep track of units using the unyt package.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="x-ray-burst-timing">
+<h1>X-ray Burst Timing<a class="headerlink" href="#x-ray-burst-timing" title="Link to this heading">#</a></h1>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Rossi_X-ray_Timing_Explorer">Rossi X-ray Timing Explorer</a> (RXTE) has very high time resolution and has been used to observe a large number of X-ray sources.  We’ll look at the data from the low-mass X-ray binary 4U 1728-34—this is an <a class="reference external" href="https://en.wikipedia.org/wiki/X-ray_burster">X-ray burst</a> system.</p>
+<p>In <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/1996ApJ...469L...9S/abstract">Strohmayer et al. 1996</a> it was shown that the neutron star spin rate can be seen in the Fourier transform of the lightcurve of the burst.  Here we repeat the analysis.</p>
+<p><em>We thank Tod Strohmayer for sharing the data from that paper</em>: <a class="reference download internal" download="" href="../_downloads/1e7c878eefd2e0730e8c394b4a7e9730/4u1728_burstdata.txt"><span class="xref download myst">4u1728_burstdata.txt</span></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the data is stored in a multidimensional fashion in the file, it is actually a time-series.  We’ll flatten the data into a 1-d array when we read.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">unyt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">unyt</span><span class="o">.</span><span class="n">qe</span><span class="o">.</span><span class="n">in_cgs</span><span class="p">()</span>
-<span class="n">m_u</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">unyt</span><span class="o">.</span><span class="n">amu</span><span class="p">)</span><span class="o">.</span><span class="n">in_cgs</span><span class="p">()</span>
-<span class="n">G</span> <span class="o">=</span> <span class="n">unyt</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">in_cgs</span><span class="p">()</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">unyt</span><span class="o">.</span><span class="n">Msun</span><span class="o">.</span><span class="n">in_cgs</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;4u1728_burstdata.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Notice that these have units:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m_u</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">N</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>unyt_quantity(1.66053892e-24, &#39;g&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>262144
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s just take <span class="math notranslate nohighlight">\(A = 1\)</span> and <span class="math notranslate nohighlight">\(Z = 1\)</span> (hydrogen)</p>
+<p>We can start out by plotting all of the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we can compute <span class="math notranslate nohighlight">\(\Gamma\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gamma</span> <span class="o">=</span> <span class="p">(</span><span class="n">Z</span> <span class="o">*</span> <span class="n">e</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">((</span><span class="n">A</span> <span class="o">*</span> <span class="n">m_u</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">4.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span> <span class="o">*</span> <span class="n">G</span> <span class="o">*</span> <span class="n">M</span><span class="o">**</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span><span class="p">))</span>
-<span class="n">gamma</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;counts&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;time bins&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>unyt_quantity(0.01111733, &#39;(dimensionless)&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;time bins&#39;)
+</pre></div>
+</div>
+<img alt="../_images/6d670ac950073ac24dd63536c1ed21954cdb1aef7f8609ec9c49622c4da94bee.png" src="../_images/6d670ac950073ac24dd63536c1ed21954cdb1aef7f8609ec9c49622c4da94bee.png" />
+</div>
+</div>
+<p>We’ll bin the data into fewer samples to build up the signal to noise.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We can do this by reshaping it into a 2-d array and then summing over the columns.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binned_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N</span> <span class="o">//</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>This gives <span class="math notranslate nohighlight">\(\Gamma \sim 0.01 \ll 1\)</span>, so the Sun is not a solid.</p>
-</section>
-<section id="earth">
-<h2>Earth<a class="headerlink" href="#earth" title="Link to this heading">#</a></h2>
-<p>For Earth, let’s use iron.</p>
+<p>We also know that the data is 32 s, so we can put a physical time</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">56</span>
-<span class="n">Z</span> <span class="o">=</span> <span class="mi">26</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">unyt</span><span class="o">.</span><span class="n">Mearth</span><span class="o">.</span><span class="n">in_cgs</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">binned_data</span><span class="p">),</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gamma</span> <span class="o">=</span> <span class="p">(</span><span class="n">Z</span> <span class="o">*</span> <span class="n">e</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">((</span><span class="n">A</span> <span class="o">*</span> <span class="n">m_u</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">4.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span> <span class="o">*</span> <span class="n">G</span> <span class="o">*</span> <span class="n">M</span><span class="o">**</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span><span class="p">))</span>
-<span class="n">gamma</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">binned_data</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;time (s)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;counts&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>unyt_quantity(167.13713567, &#39;(dimensionless)&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;counts&#39;)
+</pre></div>
+</div>
+<img alt="../_images/ee1334757d489dc4e70f950fa5b2d62ad4852a17a89d7c5444e480ffc6f5539a.png" src="../_images/ee1334757d489dc4e70f950fa5b2d62ad4852a17a89d7c5444e480ffc6f5539a.png" />
+</div>
+</div>
+<p>Now we see a much clearer X-ray lightcurve.  This looks very similar to Figure 1 in Stohmayer et al. 1996.</p>
+<p>Next we want to take the FFT and look to see if there are any interesting frequencies with a lot of power</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now we see that <span class="math notranslate nohighlight">\(\Gamma \gg 1\)</span>, so Earth is a solid.</p>
-</section>
+<p>We want to get the physical frequencies corresponding to the Fourier coefficients</p>
+<p>The data encompasses 32 s (and with 262144 points, has a sampling rate of 1/8192 s).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>NumPy’s <code class="docutils literal notranslate"><span class="pre">rfftfreq</span></code> can take the sampling rate to return physical frequencies</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rate</span> <span class="o">=</span> <span class="n">T</span> <span class="o">/</span> <span class="n">N</span>
+<span class="n">kfreq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">rate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can plot the power spectrum.  We normalize by <span class="math notranslate nohighlight">\(2/N\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kfreq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">c_k</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nu_k$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;power&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;power&#39;)
+</pre></div>
+</div>
+<img alt="../_images/3267d32fc3c66494d322105385be95a31d26b0bfc05bab2182f5282d65983a71.png" src="../_images/3267d32fc3c66494d322105385be95a31d26b0bfc05bab2182f5282d65983a71.png" />
+</div>
+</div>
+<p>Here we see a signal around 300 Hz. We’ll bin the Fourier data to increase the signal to noise.  The original paper did this by a factor of 8.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_k_binned</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">c_k</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c_k</span><span class="p">)</span><span class="o">//</span><span class="mi">8</span><span class="p">),</span> <span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">kfreq_binned</span> <span class="o">=</span> <span class="n">kfreq</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kfreq</span><span class="p">)</span><span class="o">//</span><span class="mi">8</span><span class="p">),</span> <span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kfreq_binned</span><span class="p">,</span> <span class="n">c_k_binned</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nu_k$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;power&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;power&#39;)
+</pre></div>
+</div>
+<img alt="../_images/e10ce27dc4ff7031b4d9c2b2ccf6309239b906dc0bf6917a45589642390823b7.png" src="../_images/e10ce27dc4ff7031b4d9c2b2ccf6309239b906dc0bf6917a45589642390823b7.png" />
+</div>
+</div>
+<p>Now we see the strong signal at around 363 Hz—this is the same frequency identified as the neutron star rotation rate in the original paper.</p>
+<p>We can zoom in on the peak around 300 Hz</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;linear&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;linear&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span> <span class="mi">380</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4739ea9e1b5a07ce23162ed69bead068497d80e0b708c3414da7acf4fd00686f.png" src="../_images/4739ea9e1b5a07ce23162ed69bead068497d80e0b708c3414da7acf4fd00686f.png" />
+</div>
+</div>
+<p>This shows a clear peak around 363 Hz, matching the inset in Figure 1 of Strohmayer et al. 1996.
+This was identified as the rotation rate of the neutron star.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -595,7 +658,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./eos"
+            path: "./xrbs"
         },
         predefinedOutput: true
     }
@@ -613,20 +676,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="../hotcno/hot-CNO-breakout-example.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">PHY 521: Stars</p>
+        <p class="prev-next-title">hot-CNO and breakout</p>
       </div>
     </a>
     <a class="right-next"
-       href="ideal-gas.html"
+       href="xrb-one-zone.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Maxwell-Boltzmann Distribution and Ideal Gas</p>
+        <p class="prev-next-title">One-zone X-ray Burst Model</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -636,22 +699,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sun">Sun</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth">Earth</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
