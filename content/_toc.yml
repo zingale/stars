@@ -40,5 +40,7 @@ parts:
     - file: nse/nse
     - file: TOV/tov
 
-
+  - caption: Homework solutions
+    chapters:
+    - file: homework/homework1-solutions.ipynb
 
