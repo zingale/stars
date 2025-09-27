@@ -57,8 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"svg": {"fontCache": "global", "scale": 1}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reaction_networks/ODEs-implicit-nonlinear-systems';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -745,7 +745,7 @@ document.write(`
 </div>
 </div>
 <p>Now we can try integrating this system using any of the methods built into SciPy
-https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html</p>
+<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html</a></p>
 <p>We are successful if we try <code class="docutils literal notranslate"><span class="pre">BDF</span></code>, but we fail if we try the <code class="docutils literal notranslate"><span class="pre">RK45</span></code> method.  This is an emperical demonstration that this problem is stiff.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -768,7 +768,7 @@ https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.h
         y: [[ 1.000e+00  1.000e+00 ...  2.209e-05  2.075e-05]
             [ 0.000e+00  1.277e-06 ...  8.836e-11  8.300e-11]
             [ 0.000e+00  1.320e-09 ...  1.000e+00  1.000e+00]]
-      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7fc3e6e01e80&gt;
+      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7f4a0d17e960&gt;
  t_events: None
  y_events: None
      nfev: 443
