@@ -148,7 +148,7 @@ $$n_e = \frac{4\pi}{h^3} (2 m k T)^{3/2} \int_0^\infty \frac{\xi^{1/2} d\xi}{e^{
 
 where we used the definition of the Fermi-Dirac integral given in the problem:
 
-$$F_n(\eta) = \int_0^\infty \frac{\xi_n}{e^{\xi - \eta} + 1} d\xi$$
+$$F_n(\eta) = \int_0^\infty \frac{\xi^n}{e^{\xi - \eta} + 1} d\xi$$
 
 The pressure is done similarly:
 
