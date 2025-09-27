@@ -43,4 +43,5 @@ parts:
   - caption: Homework solutions
     chapters:
     - file: homework/homework1-solutions.ipynb
+    - file: homework/homework2-solutions.md
 
