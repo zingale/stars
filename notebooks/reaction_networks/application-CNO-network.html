@@ -180,6 +180,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../eos/degeneracy-parameter.html">Degenerate Electrons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../eos/eos-regimes.html">EOS regimes</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Convection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../convection/convection-2d.html">Simulating convection</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reactions</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../pp-vs-cno/pp-cno.html">p-p chain vs. CNO</a></li>
@@ -1676,21 +1680,6 @@ def jacobian_eq(t, Y, rho, T, screen_func):
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">cno_integration_example</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cno</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">stars</span><span class="o">/</span><span class="n">stars</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">reaction_networks</span><span class="o">/</span><span class="n">cno_integration_example</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numba</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numba&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>We’ll use the BDF solver from SciPy</p>
 <div class="cell docutils container">
@@ -1751,18 +1740,18 @@ def jacobian_eq(t, Y, rho, T, screen_func):
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  message: The solver successfully reached the end of the integration interval.
   success: True
    status: 0
-        t: [ 0.000e+00  1.183e+01 ...  2.591e+19  1.000e+20]
-        y: [[ 7.000e-01  7.000e-01 ... -4.285e-18 -4.285e-18]
+        t: [ 0.000e+00  1.183e+01 ...  9.013e+19  1.000e+20]
+        y: [[ 7.000e-01  7.000e-01 ... -1.629e-20 -4.978e-21]
             [ 7.000e-02  7.000e-02 ...  2.442e-01  2.442e-01]
             ...
             [ 0.000e+00  6.957e-63 ...  9.840e-13  9.840e-13]
-            [ 0.000e+00  1.798e-53 ...  5.792e-57  9.024e-58]]
-      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7fbd696bc610&gt;
+            [ 0.000e+00  1.798e-53 ...  3.340e-60  7.623e-60]]
+      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7f9ddf2d5550&gt;
  t_events: None
  y_events: None
-     nfev: 355
-     njev: 22
-      nlu: 64
+     nfev: 372
+     njev: 24
+      nlu: 72
 </pre></div>
 </div>
 </div>
@@ -1785,7 +1774,7 @@ def jacobian_eq(t, Y, rho, T, screen_func):
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c746d77a476e65e1d5d4b2fc2a2f5ac507605b5669d4d2b786689f7a31e1fa78.png" src="../_images/c746d77a476e65e1d5d4b2fc2a2f5ac507605b5669d4d2b786689f7a31e1fa78.png" />
+<img alt="../_images/03a65adfd026f213664110c720942dfffba87f978e58187c660f065b38f4fe06.png" src="../_images/03a65adfd026f213664110c720942dfffba87f978e58187c660f065b38f4fe06.png" />
 </div>
 </div>
 </section>
