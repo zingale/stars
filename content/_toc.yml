@@ -8,6 +8,10 @@ parts:
     - file: eos/degeneracy-parameter
     - file: eos/eos-regimes
 
+  - caption: Convection
+    chapters:
+    - file: convection/convection-2d
+
   - caption: Reactions
     chapters:
     - file: pp-vs-cno/pp-cno
