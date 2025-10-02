@@ -1,4 +1,4 @@
-# Homework 3 solutions
+# Homework 2 solutions
 
 
 ## 1. Degeneracy
@@ -29,9 +29,9 @@ We want to expand in the non-relativistic limit ($x \ll 1$).
 
 Let's look at the terms in $f(x)$ for $x \ll 1$:
 
-* $(1 + x^2)^{1/2} \sim 1 + \frac{x^2}{2} - \frac{x^4}{8} + \ldots$$
+* $(1 + x^2)^{1/2} \sim 1 + \frac{x^2}{2} - \frac{x^4}{8} + \ldots$
 
-* $\sinh^{-1}(x) \sim x - \frac{x^3}{6} + \frac{3x^5}{40} + \ldots$$
+* $\sinh^{-1}(x) \sim x - \frac{x^3}{6} + \frac{3x^5}{40} + \ldots$
 
 then
 
@@ -123,7 +123,7 @@ We can do this analytically.
 
 Finite temperature means that the degeneracy parameter,
 
-$$\Psi = \frac{\mu - mc^2}{kT}$$
+$$\eta = \frac{\mu - mc^2}{kT}$$
 
 is not infinite.
 
@@ -132,7 +132,7 @@ is not infinite.
 We start by writing our number density as the integral of the Fermi-Dirac distribution
 over all momentum:
 
-$$n_e = \frac{8\pi}{h^3} \int_0^\infty p^2 \frac{dp}{e^{\mathcal{E}/kT - \Psi} + 1}$$
+$$n_e = \frac{8\pi}{h^3} \int_0^\infty p^2 \frac{dp}{e^{\mathcal{E}/kT - \eta} + 1}$$
 
 We then change variable in terms of $\mathcal{E}$:
 
@@ -140,64 +140,64 @@ $$p = \sqrt{2 m \mathcal{E}} \rightarrow dp = \sqrt{\frac{m}{2\mathcal{E}}} d\ma
 
 giving
 
-$$n_e = \frac{4\pi}{h^3} (2m)^{3/2} \int_0^\infty \frac{\mathcal{E}^{1/2} d\mathcal{E}}{e^{\mathcal{E}/kt - \Psi} + 1}$$
+$$n_e = \frac{4\pi}{h^3} (2m)^{3/2} \int_0^\infty \frac{\mathcal{E}^{1/2} d\mathcal{E}}{e^{\mathcal{E}/kt - \eta} + 1}$$
 
 Finally, defining $\xi \equiv \mathcal{E}/(kT)$, we have:
 
-$$n_e = \frac{4\pi}{h^3} (2 m k T)^{3/2} \int_0^\infty \frac{\xi^{1/2} d\xi}{e^{\xi - \Psi} + 1} = \frac{4\pi}{h^3} (2mkT)^{3/2} F_{1/2} (\Psi)$$
+$$n_e = \frac{4\pi}{h^3} (2 m k T)^{3/2} \int_0^\infty \frac{\xi^{1/2} d\xi}{e^{\xi - \eta} + 1} = \frac{4\pi}{h^3} (2mkT)^{3/2} F_{1/2} (\eta)$$
 
 where we used the definition of the Fermi-Dirac integral given in the problem:
 
-$$F_n(\Psi) = \int_0^\infty \frac{\xi_n}{e^{\xi - \Psi} + 1} d\xi$$
+$$F_n(\eta) = \int_0^\infty \frac{\xi^n}{e^{\xi - \eta} + 1} d\xi$$
 
 The pressure is done similarly:
 
-$$P_e = \frac{8\pi}{3 h^3} \int_0^\infty p \frac{p}{m} \frac{p^2 dp}{e^{\mathcal{E}/kT - \Psi} + 1}$$
+$$P_e = \frac{8\pi}{3 h^3} \int_0^\infty p \frac{p}{m} \frac{p^2 dp}{e^{\mathcal{E}/kT - \eta} + 1}$$
 
 where we used the non-relativistic velocity, $v = p/m$.  Doing the same substitutions, we have:
 
-$$P_e = \frac{8\pi}{3h^2} (2m)^{3/2} \int_0^\infty \frac{\mathcal{E}^{3/2} d\mathcal{E}}{e^{\mathcal{E}/kT - \Psi} + 1} = \frac{8\pi}{3h^3} (2mkT)^{3/2} k T F_{3/2}(\Psi)$$
+$$P_e = \frac{8\pi}{3h^2} (2m)^{3/2} \int_0^\infty \frac{\mathcal{E}^{3/2} d\mathcal{E}}{e^{\mathcal{E}/kT - \eta} + 1} = \frac{8\pi}{3h^3} (2mkT)^{3/2} k T F_{3/2}(\eta)$$
 
 we see from these relations that:
 
-$$\frac{P_e}{n_e} = \frac{2}{3} k T \frac{F_{3/2}(\Psi)}{F_{1/2}(\Psi)}$$
+$$\frac{P_e}{n_e} = \frac{2}{3} k T \frac{F_{3/2}(\eta)}{F_{1/2}(\eta)}$$
 
 ### b.
 
-We now want to use the expansion for $\Psi \rightarrow \infty$:
+We now want to use the expansion for $\eta \rightarrow \infty$:
 
-$$F_n(\Psi) = \frac{\Psi^{n+1}}{n+1} \left [ 1 + \frac{\pi^2}{6} (n+1) n \Psi^{-2} + \mathcal{O}(\Psi^{-4}) \right ]$$
+$$F_n(\eta) = \frac{\eta^{n+1}}{n+1} \left [ 1 + \frac{\pi^2}{6} (n+1) n \eta^{-2} + \mathcal{O}(\eta^{-4}) \right ]$$
 
 Keeping only the first term for number density, we have:
 
-$$F_{1/2}(\Psi) \sim \frac{2}{3} \Psi^{3/2}$$
+$$F_{1/2}(\eta) \sim \frac{2}{3} \eta^{3/2}$$
 
 ```{note}
-The next term would be $\propto \Psi^{-1/2}$ which tends to $0$ for $\Psi \rightarrow \infty$, which
+The next term would be $\propto \eta^{-1/2}$ which tends to $0$ for $\eta \rightarrow \infty$, which
 is why we can ignore it.
 ```
 
 This gives us
 
-$$n_e \sim \frac{8\pi}{2h^3} (2m kT)^{3/2} \Psi^{3/2}$$
+$$n_e \sim \frac{8\pi}{2h^3} (2m kT)^{3/2} \eta^{3/2}$$
 
 or
 
-$$\Psi \sim \left ( \frac{3h^3}{8\pi} \right )^{2/3} \frac{n_e^{2/3}}{2 m k T}$$
+$$\eta \sim \left ( \frac{3h^3}{8\pi} \right )^{2/3} \frac{n_e^{2/3}}{2 m k T}$$
 
 ### c.
 
 For the pressure integral, we use
 
-$$F_{3/2}(\Psi) \sim \frac{2}{5} \Psi^{5/2} + \frac{\pi^2}{4} \Psi^{1/2}$$
+$$F_{3/2}(\eta) \sim \frac{2}{5} \eta^{5/2} + \frac{\pi^2}{4} \eta^{1/2}$$
 
-(again, the next terms tend to zero for $\Psi \rightarrow \infty$).
+(again, the next terms tend to zero for $\eta \rightarrow \infty$).
 
 This allows us to write our pressure as:
 
-$$P_e = n_e k T \frac{2}{3} \frac{\frac{2}{5} \Psi^{5/2} + \frac{\pi^2}{4} \Psi^{1/2}}{\frac{2}{3}\Psi^{3/2}}$$
+$$P_e = n_e k T \frac{2}{3} \frac{\frac{2}{5} \eta^{5/2} + \frac{\pi^2}{4} \eta^{1/2}}{\frac{2}{3}\eta^{3/2}}$$
 
-or, substituting in our expression $\Psi(n_e)$,
+or, substituting in our expression $\eta(n_e)$,
 
 \begin{align*}
 P_e &= n_e k T \frac{2}{3} \left [ \frac{3}{5} \left ( \frac{3h^3}{8\pi} \right )^{2/3} \frac{n_e^{2/3}}{2mkT} +
@@ -208,60 +208,76 @@ P_e &= n_e k T \frac{2}{3} \left [ \frac{3}{5} \left ( \frac{3h^3}{8\pi} \right 
 We see that the first term is the zero-temperature expression we derived in class for non-relativistic electron degeneracy.  The second term is the finite-temperature
 correction.
 
-## 3. Intensity vs. flux
+## 3. Adiabatic index
 
-### a.
+We want to compute
 
-We want to compare the intensity leaving a source to that received by a detector.
+$$\Gamma_1 = \left . \frac{d\log P}{d\log \rho} \right |_s = \frac{\rho}{P} \left . \frac{dP}{d\rho} \right |_s$$
 
-The energy leaving a source with area $dA$ in direction $\theta$ into a cone $d\Omega$ is:
+for a gas composed of a mix of an ideal gas and radiation:
 
-$$dE^\mathrm{emit} = I \cos \theta dA d\Omega dt$$
+$$P = \frac{1}{3} a T^4 + \frac{\rho k T}{\mu m_u}$$
 
-this is received by a detector a distance $r$ away, with a detector area $dA^\prime$.
-That means the solid angle of the detector as seen by the source is:
+The corresponding specific energy is:
 
-$$d\Omega = \frac{dA^\prime \cos\theta^\prime}{r^2}$$
+$$e = \frac{a  T^4}{\rho} + \frac{3}{2} \frac{kT}{\mu m_u}$$
 
-where the $\cos\theta^\prime$ is the projection of the detector's $dA^\prime$ onto the
-line of sight.  This means that
+We start by writing our EOS as $P = P(\rho, T(\rho, s))$ and then
+takking the derivative with respect to density:
 
-$$dE^\mathrm{emit} = I \cos \theta dA \frac{dA^\prime \cos\theta^\prime}{r^2} dt$$
+$$\left . \frac{dP}{d\rho} \right |_s
+   = \left . \frac{\partial P}{\partial \rho} \right |_T
+                      + \left . \frac{\partial P}{\partial T} \right |_\rho  \left . \frac{dT}{d\rho} \right |_s $$
 
-Now the detector receives an energy
+Now, from the first law of thermodynamics, we take entropy to be constant:
 
-$$dE^\mathrm{recv} = I^\prime \cos\theta^\prime dA^\prime d\Omega^\prime dt$$
+\begin{align*}
+dq = 0 &= de + P d\left ( \frac{1}{\rho} \right ) \\
+       &= \left . \frac{\partial e}{\partial T} \right |_\rho dT
+        + \left . \frac{\partial e}{\partial \rho} \right |_T d\rho - \frac{P}{\rho^2} d\rho
+\end{align*}
 
-where $d\Omega^\prime$ is the solid angle subtended by the emitter as seen by the
-detector.  This is just
+where we expanded out $de$ in terms of $T$ and $\rho$.  This shows us that:
 
-$$d\Omega^\prime = \frac{dA \cos \theta}{r^2}$$
+$$\left . \frac{dT}{d\rho} \right |_s =
+  \left ( \left . \frac{\partial e}{\partial T} \right |_\rho \right )^{-1}
+  \left (\frac{P}{\rho^2} - \left . \frac{\partial e}{\partial \rho} \right |_T \right )$$
+
+
+Now we need to compute all the derivatives.  From our equation of state, we have:
+
+$$\left . \frac{\partial P}{\partial \rho} \right |_T = \frac{kT}{\mu m_i} = \frac{P_g}{\rho}$$
+
+$$\left . \frac{\partial P}{\partial T} \right |_\rho =
+  \frac{4}{3} a T^3 + \frac{\rho k}{\mu m_u} = \frac{1}{T} \left ( 4 P_\gamma + P_g \right )$$
+
+$$\left . \frac{\partial e}{\partial \rho} \right |_T =
+  - \frac{aT^4}{\rho^2} = -\frac{3P_\gamma}{\rho^2}$$
+
+$$\left . \frac{\partial e}{\partial T} \right |_\rho =
+ 4 \frac{aT^3}{\rho} + \frac{3}{2} \frac{k}{\mu m_u} = 12 \frac{P_\gamma}{\rho T} + \frac{3}{2} \frac{P_g}{\rho T}$$
+
+Then inserting these into the above expression for $dT/d\rho |_s$, we have:
+
+$$\left . \frac{dT}{d\rho} \right |_s = \frac{T}{\rho} \frac{1 + 3 (1-\beta)}{12 (1- \beta) + \frac{3}{2}\beta}
+  = 2 \frac{T}{\rho} \frac{4 - 3\beta}{24 - 21\beta}$$
+
+and finally:
+
+\begin{align*}
+\left . \frac{dP}{d\rho} \right |_s &= \frac{\beta P}{\rho} +
+       \frac{P}{T} \left [ 4(1-\beta) + \beta\right ] 2 \frac{T}{\rho}
+         \frac{4 - 3\beta}{24 - 21\beta} \\
+&=\frac{P}{\rho} \frac{32 - 24\beta -3 \beta^2}{24 - 21\beta}
+\end{align*}
 
 so
 
-$$dE^\mathrm{recv} = I^\prime \cos\theta^\prime dA^\prime \frac{dA \cos\theta}{r^2} dt$$
+$$\Gamma_1 = \frac{32 - 24\beta -3 \beta^2}{24 - 21\beta}$$
 
-Finally, since $dE^\mathrm{emit} = dE^\mathrm{recv}$, we see that $I = I^\prime$.
+We see that this has the proper limits:
 
-### b.
+* Pure gas pressure: $\beta = 1 \rightarrow \Gamma_1 = 5/3$
 
-The flux emitted by our source is:
+* Pure radiation pressure: $\beta = 0 \rightarrow \Gamma_1 = 4/3$
 
-$$f = \int_\Omega I\cos\theta d\Omega = B \int \cos \theta \sin\theta d\theta d\phi$$
-
-where we used $I = B$ is constant.
-
-We need to figure out our integration limits.  The sphere will subtend an angle $\theta_c$
-as seen some distance $d$ away, with
-
-$$\theta_c = \tan^{-1} \frac{R}{d} \sim \sin^{-1} \frac{R}{d}$$
-
-then the integration limits are:
-
-$$f = B \int_{\theta=0}^{\theta=\theta_c} \int_{\phi=0}^{\phi=2\pi} \cos\theta \sin\theta d\theta d\phi$$
-
-changing variables, $\xi = \sin\theta \rightarrow d\xi = cos\theta d\theta$, we have:
-
-$$f = 2\pi B \int_0^{R/d} \xi d\xi = \pi B \left ( \frac{R}{d} \right )^2$$
-
-So we see that the flux falls off as $\sim 1/d^2$.

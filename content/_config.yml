@@ -34,6 +34,11 @@ html:
 sphinx:
   config:
     html_show_copyright: false
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
+    mathjax3_config:
+      svg:
+        fontCache: "global"    # (good for many pages)
+        scale: 1
 
 launch_buttons:
    binderhub_url: "https://mybinder.org"
@@ -46,3 +51,5 @@ parse:
     # including those that are enabled by default!
     - amsmath
     - dollarmath
+    - linkify
+
