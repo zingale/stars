@@ -48,4 +48,5 @@ parts:
     chapters:
     - file: homework/homework1-solutions.ipynb
     - file: homework/homework2-solutions.md
+    - file: homework/homework3-solutions.md
 
