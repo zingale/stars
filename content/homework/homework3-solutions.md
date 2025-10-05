@@ -12,7 +12,7 @@ $$g = \frac{GM_\odot}{R_\odot^2} = \frac{6.67\times 10^{-8}~\mathrm{dyn~cm^2~g^{
 
 We use the ideal gas law:
 
-$$P = \frac{\\rho k T}{\mu m_u}$$
+$$P = \frac{\rho k T}{\mu m_u}$$
 
 and substituting this into HSE, we have:
 
