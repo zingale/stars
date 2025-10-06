@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>p-p chain vs. CNO &#8212; PHY 521 Fall 2025</title>
+    <title>Binding Energy per Nucleon &#8212; PHY 521 Fall 2025</title>
   
   
   
@@ -57,13 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"svg": {"fontCache": "global", "scale": 1}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'pp-vs-cno/pp-cno';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nuclear/binding-energy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Integrating Stiff ODEs" href="../reaction_networks/stiff-ODEs.html" />
-    <link rel="prev" title="Binding Energy per Nucleon" href="../nuclear/binding-energy.html" />
+    <link rel="next" title="p-p chain vs. CNO" href="../pp-vs-cno/pp-cno.html" />
+    <link rel="prev" title="Mass Excess Visualized" href="mass-excess.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,13 +186,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../convection/convection-2d.html">Simulating convection</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nuclear Properties</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nuclear/mass-excess.html">Mass Excess Visualized</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nuclear/binding-energy.html">Binding Energy per Nucleon</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mass-excess.html">Mass Excess Visualized</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Binding Energy per Nucleon</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reactions</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">p-p chain vs. CNO</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../pp-vs-cno/pp-cno.html">p-p chain vs. CNO</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/stiff-ODEs.html">Integrating Stiff ODEs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit.html">Implicit Methods for ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-systems.html">Implicit Methods for Systems of ODEs</a></li>
@@ -285,7 +283,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/pp-vs-cno/pp-cno.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/nuclear/binding-energy.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +301,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/pp-vs-cno/pp-cno.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/nuclear/binding-energy.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -351,7 +349,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fpp-vs-cno/pp-cno.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fnuclear/binding-energy.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -381,7 +379,7 @@
       
       
       
-      <li><a href="../_sources/pp-vs-cno/pp-cno.ipynb" target="_blank"
+      <li><a href="../_sources/nuclear/binding-energy.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -465,7 +463,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>p-p chain vs. CNO</h1>
+    <h1>Binding Energy per Nucleon</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -475,9 +473,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-p-p-chain">Simple p-p chain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cno">CNO</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-p-p-vs-cno">Comparing p-p vs. CNO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#most-tightly-bound-nucleus">Most tightly bound nucleus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binding-energy-plot">Binding energy plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaner-plot">Cleaner plot</a></li>
 </ul>
             </nav>
         </div>
@@ -489,10 +487,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="p-p-chain-vs-cno">
-<h1>p-p chain vs. CNO<a class="headerlink" href="#p-p-chain-vs-cno" title="Link to this heading">#</a></h1>
-<p>We will explore the p-p chain and the CNO cycle to learn which rates are the slowest in each and when each dominates inside of stars.</p>
-<p>We will use <a class="reference external" href="https://github.com/pynucastro/pynucastro">pynucastro</a> for all of this work.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="binding-energy-per-nucleon">
+<h1>Binding Energy per Nucleon<a class="headerlink" href="#binding-energy-per-nucleon" title="Link to this heading">#</a></h1>
+<p>We can explore and plot the binding energy per nucleon to understand when fusion and fission operate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pynucastro</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pyna</span>
@@ -500,241 +497,58 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We start by getting the rates from the <a class="reference external" href="https://reaclib.jinaweb.org/index.php">JINA ReacLib database</a>.  This has 80,000+ reaction rates in a standardized format.</p>
+<p>First we’ll get all nuclei with known masses and look at the binding energy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rl</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">ReacLibLibrary</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nuclei</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">get_all_nuclei</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="simple-p-p-chain">
-<h2>Simple p-p chain<a class="headerlink" href="#simple-p-p-chain" title="Link to this heading">#</a></h2>
-<p>We’ll start by getting the 3 main sequences that make up the p-p chain.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pp_rates</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;p(p,)d&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;d(p,g)he3&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;he3(he3,pp)he4&quot;</span><span class="p">]</span>
-<span class="n">rates</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="n">pp_rates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can look at which rates it pulled in:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rates</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">nuclei</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p + p ⟶ H2 + e⁺ + 𝜈
-p + p + e⁻ ⟶ H2 + 𝜈
-H2 + p ⟶ He3 + 𝛾
-He3 + He3 ⟶ p + p + He4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3558
 </pre></div>
 </div>
 </div>
 </div>
-<p>Note that ReacLib actually splits the p+p rate into two.  We will add them together.</p>
-<p>We can look at the temperature dependence of one of these rates</p>
+<p>We see there are &gt; 3500 nuclei with measured masses</p>
+<section id="most-tightly-bound-nucleus">
+<h2>Most tightly bound nucleus<a class="headerlink" href="#most-tightly-bound-nucleus" title="Link to this heading">#</a></h2>
+<p>We can easily find the nucleus that is most tightly bound</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">rates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Tmin</span><span class="o">=</span><span class="mf">1.e7</span><span class="p">,</span> <span class="n">Tmax</span><span class="o">=</span><span class="mf">1.e8</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nuc_bound</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">nuclei</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">n</span> <span class="p">:</span> <span class="n">n</span><span class="o">.</span><span class="n">nucbind</span><span class="p">)</span>
+<span class="n">nuc_bound</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f51b8ae3a16c2d2d72379daf45c5facbd5a136fc4e19e8afd108ba2310af151e.png" src="../_images/f51b8ae3a16c2d2d72379daf45c5facbd5a136fc4e19e8afd108ba2310af151e.png" />
-</div>
-</div>
-<p>We see that it is very temperature dependent</p>
-<p>Next we build our network (we’ll use a <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code>) with these rates</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_pp</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">RateCollection</span><span class="p">(</span><span class="n">rates</span><span class="o">=</span><span class="n">rates</span><span class="p">)</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ni62
 </pre></div>
 </div>
-</div>
-</div>
-<p>We can create a thermodynamic state approximating the center of the Sun and evaluate the rates</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">1.5e7</span>
-<span class="n">rho</span> <span class="o">=</span> <span class="mi">150</span>
-<span class="n">comp</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">Composition</span><span class="p">(</span><span class="n">rc_pp</span><span class="o">.</span><span class="n">unique_nuclei</span><span class="p">)</span>
-<span class="n">comp</span><span class="o">.</span><span class="n">set_solar_like</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_pp</span><span class="o">.</span><span class="n">evaluate_rates</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{p + p ⟶ H2 + e⁺ + 𝜈: 2.978374743269655e-18,
- p + p + e⁻ ⟶ H2 + 𝜈: 1.357778476769111e-20,
- H2 + p ⟶ He3 + 𝛾: 0.005874533290651895,
- He3 + He3 ⟶ p + p + He4: 1.849294558580789e-13}
-</pre></div>
-</div>
-</div>
-</div>
-<p>We see from this that the first reaction, p + p, is by far the slowest.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">rc_pp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span> <span class="n">hide_xp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">always_show_alpha</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/0d90aeedbb88e1b9aa75bf27dc9b2a06f2d9c7c96a9ef148ba30cf7d9f36c51f.png" src="../_images/0d90aeedbb88e1b9aa75bf27dc9b2a06f2d9c7c96a9ef148ba30cf7d9f36c51f.png" />
-</div>
-</div>
-<p>We can therefore approximate the p-p chain based on the slowest rate.  If we express the rate as:</p>
-<div class="math notranslate nohighlight">
-\[r = r_0 \left (\frac{T}{T_0}\right )^\nu\]</div>
-<p>then we can find the exponent <span class="math notranslate nohighlight">\(\nu\)</span> about some temperature <span class="math notranslate nohighlight">\(T_0\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_pp</span> <span class="o">=</span> <span class="n">rc_pp</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="s2">&quot;p(p,)d&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">T0</span> <span class="o">=</span> <span class="mf">1.5e7</span>
-<span class="n">r_pp</span><span class="o">.</span><span class="n">get_rate_exponent</span><span class="p">(</span><span class="n">T0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.9735120801889896
-</pre></div>
-</div>
-</div>
-</div>
-<p>Around the conditions in the Sun, the p-p chain has a temperature dependence of <span class="math notranslate nohighlight">\(\sim T^4\)</span></p>
-</section>
-<section id="cno">
-<h2>CNO<a class="headerlink" href="#cno" title="Link to this heading">#</a></h2>
-<p>Now we consider the main CNO cycle.  This involves 6 rates</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cno_rates</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;c12(p,g)n13&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;c13(p,g)n14&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;n13(,)c13&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;n14(p,g)o15&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;n15(p,a)c12&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;o15(,)n15&quot;</span><span class="p">]</span>
-<span class="n">rates</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="n">cno_rates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rates</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C12 + p ⟶ N13 + 𝛾
-C13 + p ⟶ N14 + 𝛾
-N13 ⟶ C13 + e⁺ + 𝜈
-N14 + p ⟶ O15 + 𝛾
-N15 + p ⟶ He4 + C12
-O15 ⟶ N15 + e⁺ + 𝜈
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_cno</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">RateCollection</span><span class="p">(</span><span class="n">rates</span><span class="o">=</span><span class="n">rates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comp</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">Composition</span><span class="p">(</span><span class="n">rc_cno</span><span class="o">.</span><span class="n">unique_nuclei</span><span class="p">)</span>
-<span class="n">comp</span><span class="o">.</span><span class="n">set_solar_like</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Again we can look evaluate each of the rates:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_cno</span><span class="o">.</span><span class="n">evaluate_rates</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{C12 + p ⟶ N13 + 𝛾: 1.0467759242295144e-17,
- C13 + p ⟶ N14 + 𝛾: 3.176211597339995e-17,
- N13 ⟶ C13 + e⁺ + 𝜈: 2.9720852738029567e-07,
- N14 + p ⟶ O15 + 𝛾: 1.7295781984662848e-20,
- N15 + p ⟶ He4 + C12: 6.954822248932605e-16,
- O15 ⟶ N15 + e⁺ + 𝜈: 1.2625681768893481e-06}
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we see that the N14(p,g)O15 rate is the slowest.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_cno</span> <span class="o">=</span> <span class="n">rc_cno</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="s2">&quot;n14(p,g)o15&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This is a much steeper function of temperature.  Let’s explore the temperature dependence around a few points</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1.e7</span><span class="p">,</span> <span class="mf">2.e7</span><span class="p">,</span> <span class="mf">3.e7</span><span class="p">,</span> <span class="mf">4.e7</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;T = </span><span class="si">{</span><span class="n">T</span><span class="si">}</span><span class="s2">, nu = </span><span class="si">{</span><span class="n">r_cno</span><span class="o">.</span><span class="n">get_rate_exponent</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 10000000.0, nu = 22.829615097171867
-T = 20000000.0, nu = 17.966372387768573
-T = 30000000.0, nu = 15.601859314950396
-T = 40000000.0, nu = 14.115346885210606
-</pre></div>
-</div>
-</div>
-</div>
-<p>Here’s what the CNO cycle looks like</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">rc_cno</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span> <span class="n">hide_xp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/3343e6c8df8d842cfdf968fba2041b514783ef565903a8f6c63d9e15afccf845.png" src="../_images/3343e6c8df8d842cfdf968fba2041b514783ef565903a8f6c63d9e15afccf845.png" />
 </div>
 </div>
 </section>
-<section id="comparing-p-p-vs-cno">
-<h2>Comparing p-p vs. CNO<a class="headerlink" href="#comparing-p-p-vs-cno" title="Link to this heading">#</a></h2>
-<p>The temperature dependence suggests that if the temperature were a little higher, then CNO would go faster then p-p.  We can plot the two rate-limiting rates on the same axes</p>
+<section id="binding-energy-plot">
+<h2>Binding energy plot<a class="headerlink" href="#binding-energy-plot" title="Link to this heading">#</a></h2>
+<p>Now we can make a plot of binding energy per nucleon for all nuclei</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">As</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">A</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nuclei</span><span class="p">]</span>
+<span class="n">BEs</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">nucbind</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nuclei</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mf">6.8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -742,24 +556,81 @@ T = 40000000.0, nu = 14.115346885210606
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span> <span class="p">[</span><span class="n">r_pp</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">Ts</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;p-p&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span> <span class="p">[</span><span class="n">r_cno</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">Ts</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CNO&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">As</span><span class="p">,</span> <span class="n">BEs</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;number of nucleons&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;binding energy per nucleon (MeV)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fb81322ed50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;binding energy per nucleon (MeV)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/5309314d15bd58f814900999188b274a616a1c87fa834dc87da1244cb67803e9.png" src="../_images/5309314d15bd58f814900999188b274a616a1c87fa834dc87da1244cb67803e9.png" />
+<img alt="../_images/13e1b35d23c42339edfaca37de31d003a9d72b01b7ab98887919b0775a545c5a.png" src="../_images/13e1b35d23c42339edfaca37de31d003a9d72b01b7ab98887919b0775a545c5a.png" />
 </div>
 </div>
-<p>Notice that they cross over at a temperature just hotter than the Sun’s core.  This means that stars more massive than the Sun (actually, about <span class="math notranslate nohighlight">\(1.5~M_\odot\)</span>) are powered by CNO and less massive stars are powered by p-p.  The strong <span class="math notranslate nohighlight">\(T\)</span> dependence of CNO will play a role in determining the structure of those more massive stars.</p>
+<p>We see that there is quite a spread in binding energy for each nucleon count.</p>
+</section>
+<section id="cleaner-plot">
+<h2>Cleaner plot<a class="headerlink" href="#cleaner-plot" title="Link to this heading">#</a></h2>
+<p>We can instead consider only the most tightly bound nucleus at each mass number.  We will also
+only consider those that are stable (or have half lives &gt; 1 million years)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nuc</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>1 million years in seconds</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">million_years</span> <span class="o">=</span> <span class="mf">1.e6</span> <span class="o">*</span> <span class="mf">365.25</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">3600</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">A</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">As</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># for mass number A, find the nucleus with the maximum binding energy</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">_new</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nuclei</span>
+                    <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">A</span> <span class="o">==</span> <span class="n">A</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">tau</span> <span class="o">==</span> <span class="s2">&quot;stable&quot;</span> <span class="ow">or</span>
+                                     <span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">tau</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">n</span><span class="o">.</span><span class="n">tau</span> <span class="o">&gt;</span> <span class="n">million_years</span><span class="p">))),</span>
+                   <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">q</span><span class="p">:</span> <span class="n">q</span><span class="o">.</span><span class="n">nucbind</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="c1"># no stable nucleus of this mass</span>
+        <span class="k">continue</span>
+    <span class="n">nuc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_new</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now plot just these most tightly bound nuclei</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">As</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">A</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nuc</span><span class="p">]</span>
+<span class="n">BEs</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">nucbind</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nuc</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">As</span><span class="p">,</span> <span class="n">BEs</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="s2">&quot;3&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;number of nucleons&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;binding energy per nucleon (MeV)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f09445e2c2d2e0709ac454863e621d88557a6cd85894b0a258fd22627adeca3a.png" src="../_images/f09445e2c2d2e0709ac454863e621d88557a6cd85894b0a258fd22627adeca3a.png" />
+</div>
+</div>
 </section>
 </section>
 
@@ -776,7 +647,7 @@ T = 40000000.0, nu = 14.115346885210606
         },
         kernelOptions: {
             name: "python3",
-            path: "./pp-vs-cno"
+            path: "./nuclear"
         },
         predefinedOutput: true
     }
@@ -794,20 +665,20 @@ T = 40000000.0, nu = 14.115346885210606
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../nuclear/binding-energy.html"
+       href="mass-excess.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Binding Energy per Nucleon</p>
+        <p class="prev-next-title">Mass Excess Visualized</p>
       </div>
     </a>
     <a class="right-next"
-       href="../reaction_networks/stiff-ODEs.html"
+       href="../pp-vs-cno/pp-cno.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Integrating Stiff ODEs</p>
+        <p class="prev-next-title">p-p chain vs. CNO</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -827,9 +698,9 @@ T = 40000000.0, nu = 14.115346885210606
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-p-p-chain">Simple p-p chain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cno">CNO</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-p-p-vs-cno">Comparing p-p vs. CNO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#most-tightly-bound-nucleus">Most tightly bound nucleus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binding-energy-plot">Binding energy plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaner-plot">Cleaner plot</a></li>
 </ul>
   </nav></div>
 
