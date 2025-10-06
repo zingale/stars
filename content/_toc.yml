@@ -13,6 +13,11 @@ parts:
     - file: convection/compare-atmospheres
     - file: convection/convection-2d
 
+  - caption: Nuclear Properties
+    chapters:
+    - file: nuclear/mass-excess
+    - file: nuclear/binding-energy
+
   - caption: Reactions
     chapters:
     - file: pp-vs-cno/pp-cno
