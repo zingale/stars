@@ -600,7 +600,7 @@ only consider those that are stable (or have half lives &gt; 1 million years)</p
                                      <span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">tau</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">n</span><span class="o">.</span><span class="n">tau</span> <span class="o">&gt;</span> <span class="n">million_years</span><span class="p">))),</span>
                    <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">q</span><span class="p">:</span> <span class="n">q</span><span class="o">.</span><span class="n">nucbind</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="c1"># no stable nucleus of this pass</span>
+        <span class="c1"># no stable nucleus of this mass</span>
         <span class="k">continue</span>
     <span class="n">nuc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_new</span><span class="p">)</span>
 </pre></div>
