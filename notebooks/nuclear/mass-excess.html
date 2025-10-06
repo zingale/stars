@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Integrating Stiff ODEs &#8212; PHY 521 Fall 2025</title>
+    <title>Mass Excess Visualized &#8212; PHY 521 Fall 2025</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"svg": {"fontCache": "global", "scale": 1}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'reaction_networks/stiff-ODEs';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nuclear/mass-excess';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Implicit Methods for ODEs" href="ODEs-implicit.html" />
-    <link rel="prev" title="p-p chain vs. CNO" href="../pp-vs-cno/pp-cno.html" />
+    <link rel="next" title="Binding Energy per Nucleon" href="binding-energy.html" />
+    <link rel="prev" title="Simulating convection" href="../convection/convection-2d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,22 +188,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../convection/convection-2d.html">Simulating convection</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nuclear Properties</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nuclear/mass-excess.html">Mass Excess Visualized</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nuclear/binding-energy.html">Binding Energy per Nucleon</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mass Excess Visualized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binding-energy.html">Binding Energy per Nucleon</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reactions</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../pp-vs-cno/pp-cno.html">p-p chain vs. CNO</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Integrating Stiff ODEs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="ODEs-implicit.html">Implicit Methods for ODEs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ODEs-implicit-systems.html">Implicit Methods for Systems of ODEs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ODEs-implicit-nonlinear-systems.html">Implicit Methods and Nonlinear Systems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cxx_solver.html">C++ Solver for Stiff Nonlinear System</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/stiff-ODEs.html">Integrating Stiff ODEs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit.html">Implicit Methods for ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-systems.html">Implicit Methods for Systems of ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-nonlinear-systems.html">Implicit Methods and Nonlinear Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reaction_networks/cxx_solver.html">C++ Solver for Stiff Nonlinear System</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="reactions.html">Application: Nuclear Reaction Networks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="application-CNO-network.html">Integration Example</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/reactions.html">Application: Nuclear Reaction Networks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reaction_networks/application-CNO-network.html">Integration Example</a></li>
 </ul>
 </details></li>
 </ul>
@@ -277,6 +277,55 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/nuclear/mass-excess.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/nuclear/mass-excess.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -302,7 +351,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Freaction_networks/stiff-ODEs.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fnuclear/mass-excess.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +381,7 @@
       
       
       
-      <li><a href="../_sources/reaction_networks/stiff-ODEs.md" target="_blank"
+      <li><a href="../_sources/nuclear/mass-excess.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -342,7 +391,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -414,7 +463,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Integrating Stiff ODEs</h1>
+    <h1>Mass Excess Visualized</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -428,9 +477,122 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="integrating-stiff-odes">
-<h1>Integrating Stiff ODEs<a class="headerlink" href="#integrating-stiff-odes" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="mass-excess-visualized">
+<h1>Mass Excess Visualized<a class="headerlink" href="#mass-excess-visualized" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pynucastro</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pyna</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First we’ll get all nuclei with known masses and look at the binding energy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nuclei</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">get_all_nuclei</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We want to visualize the mass excess and binding energy in the <span class="math notranslate nohighlight">\(Z\)</span>-<span class="math notranslate nohighlight">\(N\)</span> plane.
+First let’s get the extent of <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(Z\)</span> in our nucleus list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_Z</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">nuclei</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">n</span> <span class="p">:</span> <span class="n">n</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span><span class="o">.</span><span class="n">Z</span>
+<span class="n">max_N</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">nuclei</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">n</span> <span class="p">:</span> <span class="n">n</span><span class="o">.</span><span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">N</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and the maximum absolute value of the mass excess (in MeV)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dm_mag</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">nuclei</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">dm</span><span class="p">))</span><span class="o">.</span><span class="n">dm</span><span class="p">)</span>
+<span class="n">dm_mag</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>201.37
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we’ll create an array to store dm(Z, N) and be(Z, N) and loop over all the nuclei and store each mass excess and binding energy / nucleon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">dm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">max_Z</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_N</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">be</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">max_Z</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_N</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll initialize these to NaN so we can mask out the regions where there are no nuclei</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">be</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nuclei</span><span class="p">:</span>
+    <span class="n">dm</span><span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">dm</span>
+    <span class="n">be</span><span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">nucbind</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to mass excess estimation in the nuclear databases, a few nuclei have negative binding energies.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nuclei</span> <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">nucbind</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Li3, B6]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we can plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_nbval-ignore-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mask out the regions with no nuclei</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colormaps</span><span class="p">[</span><span class="s1">&#39;RdYlBu&#39;</span><span class="p">]</span>
+<span class="n">cmap</span><span class="o">.</span><span class="n">set_bad</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlBu&quot;</span><span class="p">,</span>
+               <span class="n">vmin</span><span class="o">=-</span><span class="mi">100</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;N&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Z&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;mass excess&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MeV&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6d5c6511145c8ed0f417783778d82e9b2b806baf2920d4797642a5e5f31bfd85.png" src="../_images/6d5c6511145c8ed0f417783778d82e9b2b806baf2920d4797642a5e5f31bfd85.png" />
+</div>
 </div>
 </section>
 
@@ -447,7 +609,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./reaction_networks"
+            path: "./nuclear"
         },
         predefinedOutput: true
     }
@@ -465,20 +627,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../pp-vs-cno/pp-cno.html"
+       href="../convection/convection-2d.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">p-p chain vs. CNO</p>
+        <p class="prev-next-title">Simulating convection</p>
       </div>
     </a>
     <a class="right-next"
-       href="ODEs-implicit.html"
+       href="binding-energy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Implicit Methods for ODEs</p>
+        <p class="prev-next-title">Binding Energy per Nucleon</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
