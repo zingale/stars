@@ -18,9 +18,12 @@ parts:
     - file: nuclear/mass-excess
     - file: nuclear/binding-energy
 
-  - caption: Reactions
+  - caption: Reaction Rates
     chapters:
+    - file: h-burning/pp-chains
     - file: h-burning/pp-cno
+
+  - caption: Integrating Stiff Networks
     - file: reaction_networks/stiff-ODEs
       sections:
       - file: reaction_networks/ODEs-implicit
