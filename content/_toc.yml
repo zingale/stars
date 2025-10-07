@@ -20,7 +20,7 @@ parts:
 
   - caption: Reactions
     chapters:
-    - file: pp-vs-cno/pp-cno
+    - file: h-burning/pp-cno
     - file: reaction_networks/stiff-ODEs
       sections:
       - file: reaction_networks/ODEs-implicit
@@ -43,7 +43,7 @@ parts:
 
   - caption: Explosions!
     chapters:
-    - file: hotcno/hot-CNO-breakout-example
+    - file: h-burning/hot-CNO-breakout-example
     - file: xrbs/xrb-lightcurves
     - file: xrbs/xrb-one-zone
     - file: lightcurves/lightcurves
