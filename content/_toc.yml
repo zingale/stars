@@ -24,6 +24,7 @@ parts:
     - file: h-burning/pp-cno
 
   - caption: Integrating Stiff Networks
+    chapters:
     - file: reaction_networks/stiff-ODEs
       sections:
       - file: reaction_networks/ODEs-implicit
