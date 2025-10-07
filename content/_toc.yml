@@ -23,6 +23,7 @@ parts:
     - file: h-burning/pp-chains
     - file: h-burning/pp-cno
     - file: he-and-heavier-burning/he-burning
+    - file: he-and-heavier-burning/heavier-burning
 
   - caption: Integrating Stiff Networks
     chapters:
