@@ -8,9 +8,25 @@ parts:
     - file: eos/degeneracy-parameter
     - file: eos/eos-regimes
 
-  - caption: Reactions
+  - caption: Convection
     chapters:
-    - file: pp-vs-cno/pp-cno
+    - file: convection/compare-atmospheres
+    - file: convection/convection-2d
+
+  - caption: Nuclear Properties
+    chapters:
+    - file: nuclear/mass-excess
+    - file: nuclear/binding-energy
+
+  - caption: Reaction Rates
+    chapters:
+    - file: h-burning/pp-chains
+    - file: h-burning/pp-cno
+    - file: he-and-heavier-burning/he-burning
+    - file: he-and-heavier-burning/heavier-burning
+
+  - caption: Integrating Stiff Networks
+    chapters:
     - file: reaction_networks/stiff-ODEs
       sections:
       - file: reaction_networks/ODEs-implicit
@@ -33,7 +49,7 @@ parts:
 
   - caption: Explosions!
     chapters:
-    - file: hotcno/hot-CNO-breakout-example
+    - file: h-burning/hot-CNO-breakout-example
     - file: xrbs/xrb-lightcurves
     - file: xrbs/xrb-one-zone
     - file: lightcurves/lightcurves
@@ -43,4 +59,6 @@ parts:
   - caption: Homework solutions
     chapters:
     - file: homework/homework1-solutions.ipynb
+    - file: homework/homework2-solutions.md
+    - file: homework/homework3-solutions.md
 

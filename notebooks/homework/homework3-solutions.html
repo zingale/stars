@@ -1,0 +1,662 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Homework 3 solutions &#8212; PHY 521 Fall 2025</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"svg": {"fontCache": "global", "scale": 1}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/homework3-solutions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Homework 2 solutions" href="homework2-solutions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">PHY 521 Fall 2025</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    PHY 521: Stars
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Equation of State</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../eos/solid-or-gas.html">Solid or Gas?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eos/ideal-gas.html">Maxwell-Boltzmann Distribution and Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eos/degeneracy-parameter.html">Degenerate Electrons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eos/eos-regimes.html">EOS regimes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Convection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../convection/compare-atmospheres.html">Convective temperature gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convection/convection-2d.html">Simulating convection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nuclear Properties</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../nuclear/mass-excess.html">Mass Excess Visualized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nuclear/binding-energy.html">Binding Energy per Nucleon</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reaction Rates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../h-burning/pp-chains.html">PP Chains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../h-burning/pp-cno.html">p-p chain vs. CNO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../he-and-heavier-burning/he-burning.html">Helium Burning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../he-and-heavier-burning/heavier-burning.html">Explosive Nucleosynthesis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrating Stiff Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/stiff-ODEs.html">Integrating Stiff ODEs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit.html">Implicit Methods for ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-systems.html">Implicit Methods for Systems of ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-nonlinear-systems.html">Implicit Methods and Nonlinear Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reaction_networks/cxx_solver.html">C++ Solver for Stiff Nonlinear System</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/reactions.html">Application: Nuclear Reaction Networks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reaction_networks/application-CNO-network.html">Integration Example</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stellar Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../polytrope/lane-emden.html">Lane-Emden polytrope equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polytrope/lane-emden-shooting.html">Solving Lane-Emden via Shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stellar_evolution/stellar-models.html">Exploring MESA models</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Close Binary Evolution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../equipotentials/equipotentials.html">Equipotentials</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Explosions!</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../h-burning/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xrbs/xrb-lightcurves.html">X-ray Burst Timing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xrbs/xrb-one-zone.html">One-zone X-ray Burst Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lightcurves/lightcurves.html">Simple supernova lightcurve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nse/nse.html">Nuclear statistical equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOV/tov.html">Neutron star structure</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework solutions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="homework1-solutions.html">Homework 1 solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework2-solutions.html">Homework 2 solutions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 3 solutions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/zingale/stars" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fhomework/homework3-solutions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/homework/homework3-solutions.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Homework 3 solutions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lte">1. LTE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limb-darkening">2. Limb darkening</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atmospheres">3. Atmospheres</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="homework-3-solutions">
+<h1>Homework 3 solutions<a class="headerlink" href="#homework-3-solutions" title="Link to this heading">#</a></h1>
+<section id="lte">
+<h2>1. LTE<a class="headerlink" href="#lte" title="Link to this heading">#</a></h2>
+<p>The equation of HSE is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dP}{dr} = -\rho |g|\]</div>
+<p>we can take <span class="math notranslate nohighlight">\(g\)</span> as a constant, using the value at the surface of the Sun:</p>
+<div class="math notranslate nohighlight">
+\[g = \frac{GM_\odot}{R_\odot^2} = \frac{6.67\times 10^{-8}~\mathrm{dyn~cm^2~g^{-2}} \cdot 2\times 10^{33}~\mathrm{g}}{(7\times 10^{10}~\mathrm{cm})^2} = 2.7\times 10^4~\mathrm{cm~s^{-2}}\]</div>
+<p>We use the ideal gas law:</p>
+<div class="math notranslate nohighlight">
+\[P = \frac{\rho k T}{\mu m_u}\]</div>
+<p>and substituting this into HSE, we have:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\rho} \frac{d\rho}{dr} = \underbrace{\frac{\mu m_u g}{k T}}_{H^{-1}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(H\)</span> is the scale height. Upon integrating, we get:</p>
+<div class="math notranslate nohighlight">
+\[\rho = \rho_0 e^{-r/H}\]</div>
+<p>We can evaluate <span class="math notranslate nohighlight">\(H\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[H = \frac{kT}{\mu m_u g} = \frac{1.38\times 10^{-16}~\mathrm{erg~K^{-1}} \cdot 6000~\mathrm{K}}{0.6 \cdot 1.66\times 10^{-24}~\mathrm{g} \cdot 2.7\times 10^4~\mathrm{cm~s^{-2}}} = 300~\mathrm{km}\]</div>
+<p>Now, we know that the mean free path is:</p>
+<div class="math notranslate nohighlight">
+\[\lambda_\gamma = \frac{1}{\kappa \rho}\]</div>
+<p>If we take <span class="math notranslate nohighlight">\(\kappa = 0.264~\mathrm{cm^2~g^{-1}}\)</span> and <span class="math notranslate nohighlight">\(\rho = 2.5\times 10^{-7}~\mathrm{g~cm^{-3}}\)</span> (both typical of the photosphere), then we find:</p>
+<div class="math notranslate nohighlight">
+\[\lambda_\gamma = \frac{1}{0.264~\mathrm{cm^2~g^{-1}} \cdot 2.5\times 10^{-7}~\mathrm{g~cm^{-3}}} = 150~\mathrm{km}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\lambda_\gamma \sim H\)</span>, we cannot assume LTE in the photosphere.</p>
+</section>
+<section id="limb-darkening">
+<h2>2. Limb darkening<a class="headerlink" href="#limb-darkening" title="Link to this heading">#</a></h2>
+<p>From class, we know that</p>
+<div class="math notranslate nohighlight">
+\[\langle I \rangle = \frac{1}{2} \int_{-1}^1 I(\mu) d\mu\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[U = \frac{2\pi}{c} \int_{-1}^1 I(\mu) d\mu\]</div>
+<p>together this tells us that</p>
+<div class="math notranslate nohighlight">
+\[U = \frac{4\pi}{c} \langle I \rangle\]</div>
+<p>Now, if we:</p>
+<ul class="simple">
+<li><p>Use the closure <span class="math notranslate nohighlight">\(P = (1/3) U\)</span></p></li>
+<li><p>Assume we are isotropic and in radiative equilibrium, so
+<span class="math notranslate nohighlight">\(\langle I \rangle = S\)</span></p></li>
+</ul>
+<p>then we have</p>
+<div class="math notranslate nohighlight">
+\[P(\tau) = \frac{F}{c} \left (\tau + \frac{2}{3} \right ) =
+   \frac{4\pi}{3c} S\]</div>
+<p>which says that</p>
+<div class="math notranslate nohighlight">
+\[S = \frac{3}{4\pi} F \left (\tau + \frac{2}{3} \right )\]</div>
+<p>The outgoing solution to the rad transfer equation is:</p>
+<div class="math notranslate nohighlight">
+\[I(\tau, \mu&gt; 0) = \frac{1}{\mu} \int_\tau^\infty e^{-(t-\tau)/\mu} S(t) dt\]</div>
+<p>(we took the reference to be <span class="math notranslate nohighlight">\(\tau_0 \rightarrow \infty\)</span>).
+Substituting in our <span class="math notranslate nohighlight">\(S(\tau)\)</span> and evaluating at <span class="math notranslate nohighlight">\(\tau = 0\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[I_0(\mu&gt; 0) = \frac{1}{\mu} \int_0^\infty e^{-t/\mu} \left [ \frac{3F}{4\pi} \left ( t + \frac{2}{3} \right ) \right ] dt\]</div>
+<p>making the substitution <span class="math notranslate nohighlight">\(\xi = t / \mu\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[I_0(\mu &gt; 0) = \frac{3F}{3\pi} \int_0^\infty e^{-\xi} \left (\mu \xi + \frac{2}{3} \right ) d\xi = \frac{3F}{4\pi} \mu \Gamma(2) - \frac{1}{2} \frac{F}{\pi} \left . e^{-\xi} \right |_0^\infty\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[I_0(\mu &gt; 0) = \frac{3F}{4\pi} \left (\mu + \frac{2}{3} \right )\]</div>
+<p>What does this mean?</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\theta = 0 \rightarrow \mu = 1\)</span> means the center of the disk, where the intensity is the greatest</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta = \pi/2 \rightarrow \mu = 0\)</span> means the limb.  But notice that the intensity is not zero there!</p></li>
+</ul>
+<p>Normalizing by the intensity at the center of the Sun, we have:</p>
+<div class="math notranslate nohighlight">
+\[\frac{I_0(\mu)}{I_0(\mu = 1)} = \frac{3}{5} \left (\cos\theta + \frac{2}{3} \right)\]</div>
+</section>
+<section id="atmospheres">
+<h2>3. Atmospheres<a class="headerlink" href="#atmospheres" title="Link to this heading">#</a></h2>
+<p>Starting with the solution to the radiation transfer equation, with our referenece optical depth <span class="math notranslate nohighlight">\(\tau_0\)</span>:</p>
+<p>we now assume:</p>
+<ul class="simple">
+<li><p>We are looking from above, so we care about the <span class="math notranslate nohighlight">\(\mu = 1\)</span> direction</p></li>
+<li><p>We are at the top of the slab, so we can take <span class="math notranslate nohighlight">\(\tau = 0\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[I_0 = e^{-\tau_0} I(\tau_0) - \int_{\tau_0}^0 e^{-t} S(t) dt\]</div>
+<p>Finally, taking <span class="math notranslate nohighlight">\(S\)</span> as constant, we can do the integral:</p>
+<div class="math notranslate nohighlight">
+\[I_0 = e^{-\tau_0} I(\tau_0) - S \int_{\tau_0}^0 e^{-t} dt =
+        e^{-\tau_0} I(\tau_0) + S \left (1 - e^{-\tau_0} \right )\]</div>
+<p>Now we can consider different cases:</p>
+<p>a. If <span class="math notranslate nohighlight">\(\tau_0 \gg 1\)</span>, then <span class="math notranslate nohighlight">\(e^{-\tau_0} \rightarrow 0\)</span>, and $I_0 = S = B–we see blackbody radiation.</p>
+<p>b. If <span class="math notranslate nohighlight">\(\tau_0 \ll 1\)</span>, then <span class="math notranslate nohighlight">\(e^{-\tau_0} \sim 1 - \tau_0\)</span>, and we have:</p>
+<div class="math notranslate nohighlight">
+\[I_0 = I(\tau_0) - \tau_0 [I(\tau_0) - S] \]</div>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(I(\tau_0) &gt; S\)</span>, then we see absorption</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(I(\tau_0) &lt; S\)</span>, then we see emission lines</p></li>
+</ul>
+<p>These are known as <a class="reference external" href="https://en.wikipedia.org/wiki/Gustav_Kirchhoff#Kirchhoff's_three_laws_of_spectroscopy">Kirchhoff’s laws</a>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./homework"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="homework2-solutions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Homework 2 solutions</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lte">1. LTE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limb-darkening">2. Limb darkening</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atmospheres">3. Atmospheres</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://zingale.github.io">Michael Zingale</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+&copy; 2025; CC-BY-NC-SA 4.0
+<p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -57,8 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"svg": {"fontCache": "global", "scale": 1}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'TOV/tov';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -182,9 +182,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../eos/degeneracy-parameter.html">Degenerate Electrons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../eos/eos-regimes.html">EOS regimes</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reactions</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Convection</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../pp-vs-cno/pp-cno.html">p-p chain vs. CNO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convection/compare-atmospheres.html">Convective temperature gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convection/convection-2d.html">Simulating convection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nuclear Properties</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../nuclear/mass-excess.html">Mass Excess Visualized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nuclear/binding-energy.html">Binding Energy per Nucleon</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reaction Rates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../h-burning/pp-chains.html">PP Chains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../h-burning/pp-cno.html">p-p chain vs. CNO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../he-and-heavier-burning/he-burning.html">Helium Burning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../he-and-heavier-burning/heavier-burning.html">Explosive Nucleosynthesis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrating Stiff Networks</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../reaction_networks/stiff-ODEs.html">Integrating Stiff ODEs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit.html">Implicit Methods for ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reaction_networks/ODEs-implicit-systems.html">Implicit Methods for Systems of ODEs</a></li>
@@ -209,7 +225,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Explosions!</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../hotcno/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../h-burning/hot-CNO-breakout-example.html">hot-CNO and breakout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../xrbs/xrb-lightcurves.html">X-ray Burst Timing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../xrbs/xrb-one-zone.html">One-zone X-ray Burst Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lightcurves/lightcurves.html">Simple supernova lightcurve</a></li>
@@ -219,6 +235,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework solutions</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework1-solutions.html">Homework 1 solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework2-solutions.html">Homework 2 solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework3-solutions.html">Homework 3 solutions</a></li>
 </ul>
 
     </div>
@@ -781,7 +799,7 @@ criteria.  Then it cuts dx by factors of 2 until we meet our tolerance at the st
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
 &lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-/tmp/ipykernel_2188/1020375860.py:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+/tmp/ipykernel_2192/1020375860.py:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
   ax.set_ylabel(&quot;$M$ [$M_\odot$]&quot;)
 </pre></div>
 </div>
@@ -1097,38 +1115,10 @@ and</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.611055136885705e+16
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="n">rhoc</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">Pc</span> <span class="o">=</span> <span class="n">pres_blend</span><span class="p">(</span><span class="n">rhoc</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">sol</span> <span class="o">=</span> <span class="n">ns4</span><span class="o">.</span><span class="n">integrate</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Pc</span><span class="p">],</span> <span class="n">R_max</span><span class="o">/</span><span class="n">N</span><span class="p">,</span> <span class="n">R_max</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">mass</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s2">&quot;y0&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">2.e33</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">radius</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1.e5</span><span class="p">)</span>
-
-<span class="nn">Cell In[2], line 68,</span> in <span class="ni">Integrator.integrate</span><span class="nt">(self, initial_conditions, dx, xmax, tol)</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span> <span class="n">y</span> <span class="o">=</span> <span class="n">initial_conditions</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span> <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">xmax</span> <span class="ow">and</span> <span class="n">dx</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="o">*</span> <span class="n">xmax</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span>     <span class="c1"># advance for a step</span>
-<span class="ne">---&gt; </span><span class="mi">68</span>     <span class="n">ynew</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rk4_step</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>     <span class="k">if</span> <span class="n">ynew</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>         <span class="c1"># we hit our stopping condition</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>         <span class="c1"># cut the stepsize so we can try to get closer</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>         <span class="n">dx</span> <span class="o">/=</span> <span class="mi">2</span>
-
-<span class="nn">Cell In[2], line 32,</span> in <span class="ni">Integrator.rk4_step</span><span class="nt">(self, x, y, dx)</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="n">y3</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dx</span><span class="o">*</span><span class="n">dydx3</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_stop_cond</span><span class="p">(</span><span class="n">y3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
-<span class="ne">---&gt; </span><span class="mi">32</span> <span class="n">dydx4</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rhs</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="n">y_final</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mf">6.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">dydx1</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">dydx2</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">dydx3</span> <span class="o">+</span> <span class="n">dydx4</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_stop_cond</span><span class="p">(</span><span class="n">y_final</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
-
-<span class="nn">Cell In[4], line 1,</span> in <span class="ni">rhs_tov</span><span class="nt">(r, y, rho_func)</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">rhs_tov</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rho_func</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">m</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">P</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7950237529825086e+16
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0000000000000004e+16
 </pre></div>
 </div>
 </div>
@@ -1147,12 +1137,22 @@ and</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$M$ [$M_\\odot$]&#39;)
 </pre></div>
 </div>
-<img alt="../_images/99e5545189d582b6fbefa511c7d3d7498d7eb87191dbc23ed694c63ac6d698c2.png" src="../_images/99e5545189d582b6fbefa511c7d3d7498d7eb87191dbc23ed694c63ac6d698c2.png" />
+<img alt="../_images/0b306d82f9c36e8516a0e777e890c75cbb05706076385af810bb716c3c82e3b3.png" src="../_images/0b306d82f9c36e8516a0e777e890c75cbb05706076385af810bb716c3c82e3b3.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">b</span>
+
+<span class="ne">NameError</span>: name &#39;b&#39; is not defined
 </pre></div>
 </div>
 </div>
