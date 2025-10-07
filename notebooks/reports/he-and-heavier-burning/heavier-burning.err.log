@@ -25,37 +25,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-rates_to_derive = []
-for r in all_lib.get_rates():
-    if r.derived_from_inverse:
-        # this rate was computed using detailed balance, regardless
-        # of whether Q < 0 or not.  We want to remove it and then
-        # recompute it
-        rates_to_derive.append(r)
-
-# now for each of those derived rates, look to see if the pair exists
-
-for r in rates_to_derive:
-    fr = all_lib.get_rate_by_nuclei(r.products, r.reactants)
-    if fr:
-        print(f"modifying {r} from {fr}")
-        all_lib.remove_rate(r)
-        d = pyna.DerivedRate(rate=fr, compute_Q=True, use_pf=True)
-        all_lib.add_rate(d)
+all_lib.eliminate_duplicates()
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mAttributeError[39m                            Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[7][39m[32m, line 3[39m
-[32m      1[39m rates_to_derive = []
-[32m      2[39m [38;5;28;01mfor[39;00m r [38;5;129;01min[39;00m all_lib.get_rates():
-[32m----> [39m[32m3[39m     [38;5;28;01mif[39;00m [43mr[49m[43m.[49m[43mderived_from_inverse[49m:
-[32m      4[39m         [38;5;66;03m# this rate was computed using detailed balance, regardless[39;00m
-[32m      5[39m         [38;5;66;03m# of whether Q < 0 or not.  We want to remove it and then[39;00m
-[32m      6[39m         [38;5;66;03m# recompute it[39;00m
-[32m      7[39m         rates_to_derive.append(r)
-[32m      9[39m [38;5;66;03m# now for each of those derived rates, look to see if the pair exists[39;00m
+[36mCell[39m[36m [39m[32mIn[8][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [43mall_lib[49m[43m.[49m[43meliminate_duplicates[49m()
 
-[31mAttributeError[39m: 'ReacLibRate' object has no attribute 'derived_from_inverse'
+[31mAttributeError[39m: 'Library' object has no attribute 'eliminate_duplicates'
 

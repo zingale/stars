@@ -588,40 +588,16 @@ warning: Fe54 was not able to be linked in TabularLibrary
 <p>Finally, we replace the reverse rates from ReacLib by rederiving them via detailed balance, and including the partition functions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rates_to_derive</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">all_lib</span><span class="o">.</span><span class="n">get_rates</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">derived_from_inverse</span><span class="p">:</span>
-        <span class="c1"># this rate was computed using detailed balance, regardless</span>
-        <span class="c1"># of whether Q &lt; 0 or not.  We want to remove it and then</span>
-        <span class="c1"># recompute it</span>
-        <span class="n">rates_to_derive</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rates_to_derive</span> <span class="o">=</span> <span class="n">all_lib</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span><span class="o">.</span><span class="n">get_rates</span><span class="p">()</span>
 
 <span class="c1"># now for each of those derived rates, look to see if the pair exists</span>
 
 <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rates_to_derive</span><span class="p">:</span>
     <span class="n">fr</span> <span class="o">=</span> <span class="n">all_lib</span><span class="o">.</span><span class="n">get_rate_by_nuclei</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">products</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">reactants</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">fr</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;modifying </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">fr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">all_lib</span><span class="o">.</span><span class="n">remove_rate</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
         <span class="n">d</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">DerivedRate</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="n">fr</span><span class="p">,</span> <span class="n">compute_Q</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_pf</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">all_lib</span><span class="o">.</span><span class="n">add_rate</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">rates_to_derive</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">all_lib</span><span class="o">.</span><span class="n">get_rates</span><span class="p">():</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">derived_from_inverse</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="c1"># this rate was computed using detailed balance, regardless</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="c1"># of whether Q &lt; 0 or not.  We want to remove it and then</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="c1"># recompute it</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="n">rates_to_derive</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># now for each of those derived rates, look to see if the pair exists</span>
-
-<span class="ne">AttributeError</span>: &#39;ReacLibRate&#39; object has no attribute &#39;derived_from_inverse&#39;
 </pre></div>
 </div>
 </div>
@@ -633,6 +609,16 @@ warning: Fe54 was not able to be linked in TabularLibrary
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_lib</span><span class="o">.</span><span class="n">eliminate_duplicates</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">all_lib</span><span class="o">.</span><span class="n">eliminate_duplicates</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;Library&#39; object has no attribute &#39;eliminate_duplicates&#39;
 </pre></div>
 </div>
 </div>
@@ -832,13 +818,13 @@ modifying p_Co56__n_Ni56__derived to use NSE protons
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
+/home/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
+/home/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
+/home/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
 </pre></div>
 </div>
@@ -886,7 +872,7 @@ modifying p_Co56__n_Ni56__derived to use NSE protons
 <div class="cell tag_nbval-ignore-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmax</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">tmin</span> <span class="o">=</span> <span class="mf">1.e-6</span>
+<span class="n">tmin</span> <span class="o">=</span> <span class="mf">1.e-9</span>
 <span class="n">factor</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">factor</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">tmax</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">tmin</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="n">t_eval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">tmin</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">tmax</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -937,7 +923,7 @@ modifying p_Co56__n_Ni56__derived to use NSE protons
                   <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;X(</span><span class="si">{</span><span class="n">he_burn</span><span class="o">.</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1.e-6</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;small&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;small&quot;</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;t (s)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
@@ -945,7 +931,7 @@ modifying p_Co56__n_Ni56__derived to use NSE protons
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f861673b73e176d5fb7ad99f8f1a6c09e1f57ca2c8fd3d612e9e8ff74a74e637.png" src="../_images/f861673b73e176d5fb7ad99f8f1a6c09e1f57ca2c8fd3d612e9e8ff74a74e637.png" />
+<img alt="../_images/0ebd5dd8416fda2d5689df06b8046098bb5bc1de8feac1b7bf286b6434d30f92.png" src="../_images/0ebd5dd8416fda2d5689df06b8046098bb5bc1de8feac1b7bf286b6434d30f92.png" />
 </div>
 </div>
 </section>
@@ -979,25 +965,43 @@ modifying p_Co56__n_Ni56__derived to use NSE protons
 <p>Finally, we can visualize the evolution of the flow through the network.  We’ll just work with a few of the times that were saved.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">factor</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">factor</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
     <span class="n">Y</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span> <span class="n">idx</span><span class="p">]</span>
     <span class="n">comp</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">Y</span> <span class="o">*</span> <span class="n">he_burn</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">,</span> <span class="n">outfile</span><span class="o">=</span><span class="s2">&quot;subch_simple.png&quot;</span><span class="p">,</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">,</span>
                <span class="n">rotated</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">hide_xalpha</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">curved_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1500</span><span class="p">,</span> <span class="mi">450</span><span class="p">),</span>
                <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-15</span><span class="p">,</span>
                <span class="n">color_nodes_by_abundance</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                <span class="n">node_size</span><span class="o">=</span><span class="mi">550</span><span class="p">,</span> <span class="n">node_font_size</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t = </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t = </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/959f874426f12533af371a4128b91f42a9f530193f701e5cb67e6ebfd39b7956.png" src="../_images/959f874426f12533af371a4128b91f42a9f530193f701e5cb67e6ebfd39b7956.png" />
-<img alt="../_images/63ab58a21dfad2dba2156ada3b6130af58409f58d335010075b06857d925326b.png" src="../_images/63ab58a21dfad2dba2156ada3b6130af58409f58d335010075b06857d925326b.png" />
-<img alt="../_images/78204a6c4a08206b9b3133e4c6d55c23b6084a6c34bb8cf095e13d3925f6317e.png" src="../_images/78204a6c4a08206b9b3133e4c6d55c23b6084a6c34bb8cf095e13d3925f6317e.png" />
-<img alt="../_images/386e07ce8da2b9d7c380b3363719168da3b94046afd8bf759ae31e248b4a7726.png" src="../_images/386e07ce8da2b9d7c380b3363719168da3b94046afd8bf759ae31e248b4a7726.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/home/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/home/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/home/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/home/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/home/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/home/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/home/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+</pre></div>
+</div>
+<img alt="../_images/8c869eab7d865672b34521d03656f5ad53889a268759f4794a2ae164f04e460a.png" src="../_images/8c869eab7d865672b34521d03656f5ad53889a268759f4794a2ae164f04e460a.png" />
+<img alt="../_images/fb528ea214f8ab96a4252a87566c6395627683f9ec7024e99a37db775e3d2d79.png" src="../_images/fb528ea214f8ab96a4252a87566c6395627683f9ec7024e99a37db775e3d2d79.png" />
+<img alt="../_images/84aa6a7c70ed0663cc0a4ca581d0da810f86b844c9a1df6630227de65b57d092.png" src="../_images/84aa6a7c70ed0663cc0a4ca581d0da810f86b844c9a1df6630227de65b57d092.png" />
+<img alt="../_images/04f2963af0a06e591986d2ce221a88d9c0b4fc320ea5a2b64409cad34348a7e5.png" src="../_images/04f2963af0a06e591986d2ce221a88d9c0b4fc320ea5a2b64409cad34348a7e5.png" />
 </div>
 </div>
 </section>
