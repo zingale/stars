@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>p-p chain vs. CNO &#8212; PHY 521 Fall 2025</title>
+    <title>PP Chains &#8212; PHY 521 Fall 2025</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"svg": {"fontCache": "global", "scale": 1}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'h-burning/pp-cno';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'h-burning/pp-chains';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Integrating Stiff ODEs" href="../reaction_networks/stiff-ODEs.html" />
-    <link rel="prev" title="PP Chains" href="pp-chains.html" />
+    <link rel="next" title="p-p chain vs. CNO" href="pp-cno.html" />
+    <link rel="prev" title="Binding Energy per Nucleon" href="../nuclear/binding-energy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -194,8 +194,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reaction Rates</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="pp-chains.html">PP Chains</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">p-p chain vs. CNO</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">PP Chains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pp-cno.html">p-p chain vs. CNO</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrating Stiff Networks</span></p>
 <ul class="nav bd-sidenav">
@@ -289,7 +289,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/h-burning/pp-cno.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/h-burning/pp-chains.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +307,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/h-burning/pp-cno.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/h-burning/pp-chains.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -355,7 +355,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fh-burning/pp-cno.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fh-burning/pp-chains.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -385,7 +385,7 @@
       
       
       
-      <li><a href="../_sources/h-burning/pp-cno.ipynb" target="_blank"
+      <li><a href="../_sources/h-burning/pp-chains.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -469,7 +469,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>p-p chain vs. CNO</h1>
+    <h1>PP Chains</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -479,9 +479,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-p-p-chain">Simple p-p chain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cno">CNO</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-p-p-vs-cno">Comparing p-p vs. CNO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-network">Creating a network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approximating-composition-in-sun-s-core">Approximating composition in Sun’s core</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-pp-i-vs-pp-ii">Importance of PP-I vs. PP-II</a></li>
 </ul>
             </nav>
         </div>
@@ -493,10 +493,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="p-p-chain-vs-cno">
-<h1>p-p chain vs. CNO<a class="headerlink" href="#p-p-chain-vs-cno" title="Link to this heading">#</a></h1>
-<p>We will explore the p-p chain and the CNO cycle to learn which rates are the slowest in each and when each dominates inside of stars.</p>
-<p>We will use <a class="reference external" href="https://github.com/pynucastro/pynucastro">pynucastro</a> for all of this work.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="pp-chains">
+<h1>PP Chains<a class="headerlink" href="#pp-chains" title="Link to this heading">#</a></h1>
+<p>There are multiple proton-proton chains.</p>
+<ul class="simple">
+<li><p>PP-I involves: <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\({}^3\mathrm{He}\)</span>, <span class="math notranslate nohighlight">\({}^4\mathrm{He}\)</span></p></li>
+<li><p>PP-II adds: <span class="math notranslate nohighlight">\({}^7\mathrm{Li}\)</span>, <span class="math notranslate nohighlight">\({}^7\mathrm{Be}\)</span></p></li>
+<li><p>PP-III adds: <span class="math notranslate nohighlight">\({}^8\mathrm{Be}\)</span>, <span class="math notranslate nohighlight">\({}^8\mathrm{B}\)</span></p></li>
+</ul>
+<p>Here we can explore them all.</p>
+<section id="creating-a-network">
+<h2>Creating a network<a class="headerlink" href="#creating-a-network" title="Link to this heading">#</a></h2>
+<p>We’ll use pynucastro to create a network with all of these nuclei.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pynucastro</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pyna</span>
@@ -504,266 +512,268 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We start by getting the rates from the <a class="reference external" href="https://reaclib.jinaweb.org/index.php">JINA ReacLib database</a>.  This has 80,000+ reaction rates in a standardized format.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rl</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">ReacLibLibrary</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="simple-p-p-chain">
-<h2>Simple p-p chain<a class="headerlink" href="#simple-p-p-chain" title="Link to this heading">#</a></h2>
-<p>We’ll start by getting the 3 main sequences that make up the p-p chain.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pp_rates</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;p(p,)d&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;d(p,g)he3&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;he3(he3,pp)he4&quot;</span><span class="p">]</span>
-<span class="n">rates</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="n">pp_rates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can look at which rates it pulled in:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rates</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">network_helper</span><span class="p">([</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;he3&quot;</span><span class="p">,</span> <span class="s2">&quot;he4&quot;</span><span class="p">,</span>
+                           <span class="s2">&quot;li7&quot;</span><span class="p">,</span> <span class="s2">&quot;be7&quot;</span><span class="p">,</span> <span class="s2">&quot;be8&quot;</span><span class="p">,</span> <span class="s2">&quot;b8&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p + p ⟶ H2 + e⁺ + 𝜈
-p + p + e⁻ ⟶ H2 + 𝜈
-H2 + p ⟶ He3 + 𝛾
-He3 + He3 ⟶ p + p + He4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>warning: He4 was not able to be linked in TabularLibrary
+warning: d was not able to be linked in TabularLibrary
+warning: B8 was not able to be linked in TabularLibrary
+warning: Li7 was not able to be linked in TabularLibrary
+warning: p was not able to be linked in TabularLibrary
+warning: He3 was not able to be linked in TabularLibrary
+warning: Be8 was not able to be linked in TabularLibrary
+warning: Be7 was not able to be linked in TabularLibrary
+modifying He3 ⟶ p + H2 from H2 + p ⟶ He3 + 𝛾
+modifying He4 ⟶ H2 + H2 from H2 + H2 ⟶ He4 + 𝛾
+modifying Be7 ⟶ He4 + He3 from He3 + He4 ⟶ Be7 + 𝛾
+modifying B8 ⟶ p + Be7 from Be7 + p ⟶ B8 + 𝛾
+modifying p + He4 ⟶ H2 + He3 from He3 + H2 ⟶ p + He4
+modifying He4 + He4 ⟶ p + Li7 from Li7 + p ⟶ He4 + He4
+modifying p + p + He4 ⟶ He3 + He3 from He3 + He3 ⟶ p + p + He4
+modifying p + He4 + He4 ⟶ H2 + Be7 from Be7 + H2 ⟶ p + He4 + He4
+modifying p + p + He4 + He4 ⟶ He3 + Be7 from Be7 + He3 ⟶ p + p + He4 + He4
 </pre></div>
 </div>
 </div>
 </div>
-<p>Note that ReacLib actually splits the p+p rate into two.  We will add them together.</p>
-<p>We can look at the temperature dependence of one of these rates</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">rates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Tmin</span><span class="o">=</span><span class="mf">1.e7</span><span class="p">,</span> <span class="n">Tmax</span><span class="o">=</span><span class="mf">1.e8</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/f51b8ae3a16c2d2d72379daf45c5facbd5a136fc4e19e8afd108ba2310af151e.png" src="../_images/f51b8ae3a16c2d2d72379daf45c5facbd5a136fc4e19e8afd108ba2310af151e.png" />
-</div>
-</div>
-<p>We see that it is very temperature dependent</p>
-<p>Next we build our network (we’ll use a <code class="docutils literal notranslate"><span class="pre">RateCollection</span></code>) with these rates</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_pp</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">RateCollection</span><span class="p">(</span><span class="n">rates</span><span class="o">=</span><span class="n">rates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can create a thermodynamic state approximating the center of the Sun and evaluate the rates</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">1.5e7</span>
-<span class="n">rho</span> <span class="o">=</span> <span class="mi">150</span>
-<span class="n">comp</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">Composition</span><span class="p">(</span><span class="n">rc_pp</span><span class="o">.</span><span class="n">unique_nuclei</span><span class="p">)</span>
-<span class="n">comp</span><span class="o">.</span><span class="n">set_solar_like</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_pp</span><span class="o">.</span><span class="n">evaluate_rates</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{p + p ⟶ H2 + e⁺ + 𝜈: 2.978374743269655e-18,
- p + p + e⁻ ⟶ H2 + 𝜈: 1.357778476769111e-20,
- H2 + p ⟶ He3 + 𝛾: 0.005874533290651895,
- He3 + He3 ⟶ p + p + He4: 1.849294558580789e-13}
-</pre></div>
-</div>
-</div>
-</div>
-<p>We see from this that the first reaction, p + p, is by far the slowest.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">rc_pp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span> <span class="n">hide_xp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">always_show_alpha</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/0d90aeedbb88e1b9aa75bf27dc9b2a06f2d9c7c96a9ef148ba30cf7d9f36c51f.png" src="../_images/0d90aeedbb88e1b9aa75bf27dc9b2a06f2d9c7c96a9ef148ba30cf7d9f36c51f.png" />
-</div>
-</div>
-<p>We can therefore approximate the p-p chain based on the slowest rate.  If we express the rate as:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ReacLib does not provide the rate for <span class="math notranslate nohighlight">\({}^8\mathrm{Be} \rightarrow \alpha + \alpha\)</span> because it is so short lived.  It essentially will break apart into two <span class="math notranslate nohighlight">\(\alpha\)</span> immediately.  It instead has a rate that combines:</p>
 <div class="math notranslate nohighlight">
-\[r = r_0 \left (\frac{T}{T_0}\right )^\nu\]</div>
-<p>then we can find the exponent <span class="math notranslate nohighlight">\(\nu\)</span> about some temperature <span class="math notranslate nohighlight">\(T_0\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_pp</span> <span class="o">=</span> <span class="n">rc_pp</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="s2">&quot;p(p,)d&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">T0</span> <span class="o">=</span> <span class="mf">1.5e7</span>
-<span class="n">r_pp</span><span class="o">.</span><span class="n">get_rate_exponent</span><span class="p">(</span><span class="n">T0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.9735120801889896
-</pre></div>
-</div>
-</div>
-</div>
-<p>Around the conditions in the Sun, the p-p chain has a temperature dependence of <span class="math notranslate nohighlight">\(\sim T^4\)</span></p>
-</section>
-<section id="cno">
-<h2>CNO<a class="headerlink" href="#cno" title="Link to this heading">#</a></h2>
-<p>Now we consider the main CNO cycle.  This involves 6 rates</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cno_rates</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;c12(p,g)n13&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;c13(p,g)n14&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;n13(,)c13&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;n14(p,g)o15&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;n15(p,a)c12&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;o15(,)n15&quot;</span><span class="p">]</span>
-<span class="n">rates</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="n">cno_rates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rates</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C12 + p ⟶ N13 + 𝛾
-C13 + p ⟶ N14 + 𝛾
-N13 ⟶ C13 + e⁺ + 𝜈
-N14 + p ⟶ O15 + 𝛾
-N15 + p ⟶ He4 + C12
-O15 ⟶ N15 + e⁺ + 𝜈
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_cno</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">RateCollection</span><span class="p">(</span><span class="n">rates</span><span class="o">=</span><span class="n">rates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comp</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">Composition</span><span class="p">(</span><span class="n">rc_cno</span><span class="o">.</span><span class="n">unique_nuclei</span><span class="p">)</span>
-<span class="n">comp</span><span class="o">.</span><span class="n">set_solar_like</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Again we can look evaluate each of the rates:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc_cno</span><span class="o">.</span><span class="n">evaluate_rates</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{C12 + p ⟶ N13 + 𝛾: 1.0467759242295144e-17,
- C13 + p ⟶ N14 + 𝛾: 3.176211597339995e-17,
- N13 ⟶ C13 + e⁺ + 𝜈: 2.9720852738029567e-07,
- N14 + p ⟶ O15 + 𝛾: 1.7295781984662848e-20,
- N15 + p ⟶ He4 + C12: 6.954822248932605e-16,
- O15 ⟶ N15 + e⁺ + 𝜈: 1.2625681768893481e-06}
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we see that the N14(p,g)O15 rate is the slowest.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_cno</span> <span class="o">=</span> <span class="n">rc_cno</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="s2">&quot;n14(p,g)o15&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This is a much steeper function of temperature.  Let’s explore the temperature dependence around a few points</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1.e7</span><span class="p">,</span> <span class="mf">2.e7</span><span class="p">,</span> <span class="mf">3.e7</span><span class="p">,</span> <span class="mf">4.e7</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;T = </span><span class="si">{</span><span class="n">T</span><span class="si">}</span><span class="s2">, nu = </span><span class="si">{</span><span class="n">r_cno</span><span class="o">.</span><span class="n">get_rate_exponent</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 10000000.0, nu = 22.829615097171867
-T = 20000000.0, nu = 17.966372387768573
-T = 30000000.0, nu = 15.601859314950396
-T = 40000000.0, nu = 14.115346885210606
-</pre></div>
-</div>
-</div>
-</div>
-<p>Here’s what the CNO cycle looks like</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">rc_cno</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span> <span class="n">hide_xp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/3343e6c8df8d842cfdf968fba2041b514783ef565903a8f6c63d9e15afccf845.png" src="../_images/3343e6c8df8d842cfdf968fba2041b514783ef565903a8f6c63d9e15afccf845.png" />
-</div>
+\[{}^8\mathrm{B} \rightarrow {}^8\mathrm{Be} + e^+ + \nu_e\]</div>
+<div class="math notranslate nohighlight">
+\[{}^8\mathrm{Be} \rightarrow \alpha + \alpha\]</div>
 </div>
 </section>
-<section id="comparing-p-p-vs-cno">
-<h2>Comparing p-p vs. CNO<a class="headerlink" href="#comparing-p-p-vs-cno" title="Link to this heading">#</a></h2>
-<p>The temperature dependence suggests that if the temperature were a little higher, then CNO would go faster then p-p.  We can plot the two rate-limiting rates on the same axes</p>
+<section id="approximating-composition-in-sun-s-core">
+<h2>Approximating composition in Sun’s core<a class="headerlink" href="#approximating-composition-in-sun-s-core" title="Link to this heading">#</a></h2>
+<p>We need a reasonably accurate estimate for the composition in the core of the Sun.  We’ll find this by integrating an initial H/He mix for 4.5 billion years–this should find an equilibrium</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmax</span> <span class="o">=</span> <span class="mf">4.5e9</span> <span class="o">*</span> <span class="mf">365.25</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">3600</span>
+<span class="n">tmax</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.420092e+17
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">write_network</span><span class="p">(</span><span class="s2">&quot;pp.py&quot;</span><span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: He3 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: d partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: Be7 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: B8 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: Li7 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll integrate this using solve_ivp</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mf">6.8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">nnuc</span><span class="p">)</span>
+<span class="n">X0</span><span class="p">[</span><span class="n">pp</span><span class="o">.</span><span class="n">jp</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.72</span>
+<span class="n">X0</span><span class="p">[</span><span class="n">pp</span><span class="o">.</span><span class="n">jhe4</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.28</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span> <span class="p">[</span><span class="n">r_pp</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">Ts</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;p-p&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span> <span class="p">[</span><span class="n">r_cno</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">Ts</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CNO&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">Y0</span> <span class="o">=</span> <span class="n">X0</span> <span class="o">/</span> <span class="n">pp</span><span class="o">.</span><span class="n">A</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="mi">150</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">1.5e7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">rhs</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">],</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BDF&quot;</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span><span class="n">pp</span><span class="o">.</span><span class="n">jacobian</span><span class="p">,</span>
+                <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">),</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1.e-7</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1.e-12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s get the composition at the final time</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_final</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">pp</span><span class="o">.</span><span class="n">A</span>
+<span class="n">X_final</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fbe35c60f20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.81318714e-01, 2.04411172e-18, 8.77279202e-06, 7.18672513e-01,
+       2.03687202e-15, 9.99888210e-12, 4.53092291e-54, 1.95666221e-21])
 </pre></div>
 </div>
-<img alt="../_images/5309314d15bd58f814900999188b274a616a1c87fa834dc87da1244cb67803e9.png" src="../_images/5309314d15bd58f814900999188b274a616a1c87fa834dc87da1244cb67803e9.png" />
 </div>
 </div>
-<p>Notice that they cross over at a temperature just hotter than the Sun’s core.  This means that stars more massive than the Sun (actually, about <span class="math notranslate nohighlight">\(1.5~M_\odot\)</span>) are powered by CNO and less massive stars are powered by p-p.  The strong <span class="math notranslate nohighlight">\(T\)</span> dependence of CNO will play a role in determining the structure of those more massive stars.</p>
+<p>and create a pynucastro Composition from this</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comp</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">Composition</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">unique_nuclei</span><span class="p">)</span>
+<span class="n">comp</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">X_final</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">comp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  X(p) : 0.28131871449282164
+  X(d) : 2.0441117249462732e-18
+  X(He3) : 8.772792020130378e-06
+  X(He4) : 0.7186725127051565
+  X(Li7) : 2.0368720231888285e-15
+  X(Be7) : 9.998882102842114e-12
+  X(Be8) : 4.530922913017406e-54
+  X(B8) : 1.956662207786176e-21
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importance-of-pp-i-vs-pp-ii">
+<h2>Importance of PP-I vs. PP-II<a class="headerlink" href="#importance-of-pp-i-vs-pp-ii" title="Link to this heading">#</a></h2>
+<p>We can evaluate the rates with this composition</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_sun</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">evaluate_rates</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: He3 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: d partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: Be7 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: B8 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: Li7 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s look at just the rates that consume <span class="math notranslate nohighlight">\({}^3\mathrm{He}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">r_sun</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">pyna</span><span class="o">.</span><span class="n">Nucleus</span><span class="p">(</span><span class="s2">&quot;he3&quot;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">reactants</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="si">:</span><span class="s2">30</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">r_sun</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="si">:</span><span class="s2">12.6g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>He3 + p ⟶ He4 + e⁺ + 𝜈        :  2.73268e-26
+He3 + He4 ⟶ Be7 + 𝛾           :  1.97861e-19
+He3 + H2 ⟶ p + He4            :  9.85879e-23
+He3 + He3 ⟶ p + p + He4       :  1.42325e-19
+Be7 + He3 ⟶ p + p + He4 + He4 :  2.64203e-39
+He3 ⟶ p + H2                  :            0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the rate of <span class="math notranslate nohighlight">\({}^3\mathrm{He}({}^3\mathrm{He},pp){}^4\mathrm{He}\)</span> is only slightly slower than <span class="math notranslate nohighlight">\({}^4\mathrm{He}({}^3\mathrm{He},\gamma){}^7\mathrm{Be}\)</span> at this point.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r33</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="s2">&quot;he3(he3,pp)he4&quot;</span><span class="p">)</span>
+<span class="n">r34</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">get_rate_by_name</span><span class="p">(</span><span class="s2">&quot;he4(he3,g)be7&quot;</span><span class="p">)</span>
+
+<span class="n">ratio</span> <span class="o">=</span> <span class="n">r_sun</span><span class="p">[</span><span class="n">r33</span><span class="p">]</span> <span class="o">/</span> <span class="n">r_sun</span><span class="p">[</span><span class="n">r34</span><span class="p">]</span>
+<span class="n">ratio</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.7193207261903833)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">,</span>
+               <span class="n">curved_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">always_show_alpha</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">always_show_p</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/289b3a5704d6de31b632463907a3d2c625ab0446029780560dedb922b06821c0.png" src="../_images/289b3a5704d6de31b632463907a3d2c625ab0446029780560dedb922b06821c0.png" />
+</div>
+</div>
+<p>Now let’s consider a bit hotter.  We’ll keep the same composition</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">3.5e7</span> 
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">,</span>
+               <span class="n">curved_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">always_show_alpha</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">always_show_p</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d5c47ce778b9654b0aa2753f9dd84acc44d475f6e0768a6e90b27f99d2ba2a8c.png" src="../_images/d5c47ce778b9654b0aa2753f9dd84acc44d475f6e0768a6e90b27f99d2ba2a8c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_hot</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">evaluate_rates</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">)</span>
+<span class="n">ratio_hot</span> <span class="o">=</span> <span class="n">r_hot</span><span class="p">[</span><span class="n">r33</span><span class="p">]</span> <span class="o">/</span> <span class="n">r_hot</span><span class="p">[</span><span class="n">r34</span><span class="p">]</span>
+<span class="n">ratio_hot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.41694689409397745)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we see that <span class="math notranslate nohighlight">\({}^4\mathrm{He}({}^3\mathrm{He},\gamma){}^7\mathrm{Be}\)</span> is much faster.</p>
+<p>Overall, as the temperature increases, we see that the <span class="math notranslate nohighlight">\({}^4\mathrm{He}({}^3\mathrm{He},\gamma){}^7\mathrm{Be}\)</span> rate is more active.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These rates are <em>strongly</em> dependent on the amount of <span class="math notranslate nohighlight">\({}^3\mathrm{He}\)</span> present, so we should really compute the equilibrium abundance before making the comparisons.</p>
+</div>
 </section>
 </section>
 
@@ -798,20 +808,20 @@ T = 40000000.0, nu = 14.115346885210606
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pp-chains.html"
+       href="../nuclear/binding-energy.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">PP Chains</p>
+        <p class="prev-next-title">Binding Energy per Nucleon</p>
       </div>
     </a>
     <a class="right-next"
-       href="../reaction_networks/stiff-ODEs.html"
+       href="pp-cno.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Integrating Stiff ODEs</p>
+        <p class="prev-next-title">p-p chain vs. CNO</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -831,9 +841,9 @@ T = 40000000.0, nu = 14.115346885210606
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-p-p-chain">Simple p-p chain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cno">CNO</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-p-p-vs-cno">Comparing p-p vs. CNO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-network">Creating a network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approximating-composition-in-sun-s-core">Approximating composition in Sun’s core</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-pp-i-vs-pp-ii">Importance of PP-I vs. PP-II</a></li>
 </ul>
   </nav></div>
 
