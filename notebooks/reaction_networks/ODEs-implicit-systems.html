@@ -197,6 +197,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../h-burning/pp-chains.html">PP Chains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../h-burning/pp-cno.html">p-p chain vs. CNO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../he-and-heavier-burning/he-burning.html">Helium Burning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../he-and-heavier-burning/he-co-ratio.html">Ratio of C/O from He burning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../he-and-heavier-burning/heavier-burning.html">Explosive Nucleosynthesis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrating Stiff Networks</span></p>
@@ -681,7 +682,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/80f60cc828c1395d52e37700308b42130fa054e3a971e3c59fd7a3a8c9e1808f.png" src="../_images/80f60cc828c1395d52e37700308b42130fa054e3a971e3c59fd7a3a8c9e1808f.png" />
+<img alt="../_images/5496f3ad9a39cbc9fcfc8b7e30ad3f26c2a56b5db07e7a890e9855fe21cb0436.png" src="../_images/5496f3ad9a39cbc9fcfc8b7e30ad3f26c2a56b5db07e7a890e9855fe21cb0436.png" />
 </div>
 </div>
 <p>Now let’s see what happens with <span class="math notranslate nohighlight">\(\tau &gt; \tau_\mathrm{ref}\)</span></p>
@@ -693,7 +694,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0e9872dd00e8c592f877a18641c78136ed25a947e838dae56476eb7f40bafab0.png" src="../_images/0e9872dd00e8c592f877a18641c78136ed25a947e838dae56476eb7f40bafab0.png" />
+<img alt="../_images/2ff7ac114dc8ecab47c00b67d7bd228af7f02d113be29ce74178ad5aa740d49e.png" src="../_images/2ff7ac114dc8ecab47c00b67d7bd228af7f02d113be29ce74178ad5aa740d49e.png" />
 </div>
 </div>
 <p>We see that we don’t get the position of the rise correct for either size timestep, but we do get the asymptotic limit correct at the end.</p>
@@ -744,7 +745,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d045908e2920e5f5785838131871b6fd6175f0a946697e17014d633a2169a834.png" src="../_images/d045908e2920e5f5785838131871b6fd6175f0a946697e17014d633a2169a834.png" />
+<img alt="../_images/978721182d01e3319636a26759d0d98595ef3e5232002aaba7e7d27242452c1c.png" src="../_images/978721182d01e3319636a26759d0d98595ef3e5232002aaba7e7d27242452c1c.png" />
 </div>
 </div>
 <p>Now we see that we completely miss the correct long time solution.</p>
@@ -786,7 +787,7 @@ document.write(`
         t: [ 0.000e+00  1.000e-22 ...  1.969e-07  2.000e-07]
         y: [[ 1.000e+00  1.000e+00 ...  1.001e-14  1.001e-14]
             [ 0.000e+00  1.000e-13 ...  1.000e+00  1.000e+00]]
-      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7fb3647061e0&gt;
+      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7f9c97a082f0&gt;
  t_events: None
  y_events: None
      nfev: 734
@@ -803,7 +804,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/86f1b465b39693aed4dde72b55d4adc3e5365432ffba93af2c2f0ac81c9ce565.png" src="../_images/86f1b465b39693aed4dde72b55d4adc3e5365432ffba93af2c2f0ac81c9ce565.png" />
+<img alt="../_images/d8a3430eac70c860f0b656d3f01fe428e4369e00388e2d6bb61f946645978b14.png" src="../_images/d8a3430eac70c860f0b656d3f01fe428e4369e00388e2d6bb61f946645978b14.png" />
 </div>
 </div>
 <p>We can see how many steps it took, but looking at the shape of the stored solution:</p>
@@ -833,7 +834,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IPython console for SymPy 1.14.0 (Python 3.12.11-64-bit) (ground types: python)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IPython console for SymPy 1.14.0 (Python 3.13.7-64-bit) (ground types: python)
 
 These commands were executed:
 &gt;&gt;&gt; from sympy import *

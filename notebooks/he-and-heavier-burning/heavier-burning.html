@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Integrating Stiff ODEs" href="../reaction_networks/stiff-ODEs.html" />
-    <link rel="prev" title="Helium Burning" href="he-burning.html" />
+    <link rel="prev" title="Ratio of C/O from He burning" href="he-co-ratio.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -197,6 +197,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../h-burning/pp-chains.html">PP Chains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../h-burning/pp-cno.html">p-p chain vs. CNO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="he-burning.html">Helium Burning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="he-co-ratio.html">Ratio of C/O from He burning</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Explosive Nucleosynthesis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrating Stiff Networks</span></p>
@@ -637,58 +638,6 @@ warning: Zn60 was not able to be linked in TabularLibrary
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>using approximate rate S32 + He4 ⟶ Ar36 + 𝛾
-using approximate rate Ar36 ⟶ S32 + He4
-using approximate rate Ar36 + He4 ⟶ Ca40 + 𝛾
-using approximate rate Ca40 ⟶ Ar36 + He4
-using approximate rate Ca40 + He4 ⟶ Ti44 + 𝛾
-using approximate rate Ti44 ⟶ Ca40 + He4
-using approximate rate Ti44 + He4 ⟶ Cr48 + 𝛾
-using approximate rate Cr48 ⟶ Ti44 + He4
-removing rate S32 + He4 ⟶ Ar36 + 𝛾
-removing rate S32 + He4 ⟶ p + Cl35
-removing rate Cl35 + p ⟶ Ar36 + 𝛾
-removing rate Ar36 ⟶ He4 + S32
-removing rate Ar36 ⟶ p + Cl35
-removing rate Cl35 + p ⟶ He4 + S32
-removing rate Ar36 + He4 ⟶ Ca40 + 𝛾
-removing rate Ar36 + He4 ⟶ p + K39
-removing rate K39 + p ⟶ Ca40 + 𝛾
-removing rate Ca40 ⟶ He4 + Ar36
-removing rate Ca40 ⟶ p + K39
-removing rate K39 + p ⟶ He4 + Ar36
-removing rate Ca40 + He4 ⟶ Ti44 + 𝛾
-removing rate Ca40 + He4 ⟶ p + Sc43
-removing rate Sc43 + p ⟶ Ti44 + 𝛾
-removing rate Ti44 ⟶ He4 + Ca40
-removing rate Ti44 ⟶ p + Sc43
-removing rate Sc43 + p ⟶ He4 + Ca40
-removing rate Ti44 + He4 ⟶ Cr48 + 𝛾
-removing rate Ti44 + He4 ⟶ p + V47
-removing rate V47 + p ⟶ Cr48 + 𝛾
-removing rate Cr48 ⟶ He4 + Ti44
-removing rate Cr48 ⟶ p + V47
-removing rate V47 + p ⟶ He4 + Ti44
-looking to remove P31 + He4 ⟶ Cl35 + 𝛾
-looking to remove Cl35 + He4 ⟶ K39 + 𝛾
-looking to remove Cl35 ⟶ He4 + P31
-looking to remove K39 ⟶ He4 + Cl35
-looking to remove Cl35 + He4 ⟶ K39 + 𝛾
-looking to remove K39 + He4 ⟶ Sc43 + 𝛾
-looking to remove K39 ⟶ He4 + Cl35
-looking to remove Sc43 ⟶ He4 + K39
-looking to remove K39 + He4 ⟶ Sc43 + 𝛾
-looking to remove Sc43 + He4 ⟶ V47 + 𝛾
-looking to remove Sc43 ⟶ He4 + K39
-looking to remove V47 ⟶ He4 + Sc43
-looking to remove Sc43 + He4 ⟶ V47 + 𝛾
-looking to remove V47 + He4 ⟶ Mn51 + 𝛾
-looking to remove V47 ⟶ He4 + Sc43
-looking to remove Mn51 ⟶ He4 + V47
-</pre></div>
-</div>
-</div>
 </div>
 <p>We will also approximate some of the neutron captures:</p>
 <div class="cell docutils container">
@@ -698,97 +647,12 @@ looking to remove Mn51 ⟶ He4 + V47
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>approximating out Fe53
-using approximate rate Fe52 + n + n ⟶ Fe54 + 𝛾
-using approximate rate Fe54 ⟶ Fe52 + n + n
-approximating out Fe55
-using approximate rate Fe54 + n + n ⟶ Fe56 + 𝛾
-using approximate rate Fe56 ⟶ Fe54 + n + n
-approximating out Ni57
-using approximate rate Ni56 + n + n ⟶ Ni58 + 𝛾
-using approximate rate Ni58 ⟶ Ni56 + n + n
-removing rate Fe52 + n ⟶ Fe53 + 𝛾
-removing rate Fe53 + n ⟶ Fe54 + 𝛾
-removing rate Fe54 ⟶ n + Fe53
-removing rate Fe53 ⟶ n + Fe52
-removing rate Fe54 + n ⟶ Fe55 + 𝛾
-removing rate Fe55 + n ⟶ Fe56 + 𝛾
-removing rate Fe56 ⟶ n + Fe55
-removing rate Fe55 ⟶ n + Fe54
-removing rate Ni56 + n ⟶ Ni57 + 𝛾
-removing rate Ni57 + n ⟶ Ni58 + 𝛾
-removing rate Ni58 ⟶ n + Ni57
-removing rate Ni57 ⟶ n + Ni56
-looking to remove Fe53 + He4 ⟶ Ni57 + 𝛾
-looking to remove Fe53 + He4 ⟶ p + Co56
-looking to remove Ni56 + n ⟶ He4 + Fe53
-looking to remove Ni57 ⟶ He4 + Fe53
-looking to remove Fe53 + He4 ⟶ n + Ni56
-looking to remove Co56 + p ⟶ He4 + Fe53
-looking to remove Fe55 + p ⟶ Co56 + 𝛾
-looking to remove Co55 + n ⟶ p + Fe55
-looking to remove Ni58 + n ⟶ He4 + Fe55
-looking to remove Co56 ⟶ p + Fe55
-looking to remove Fe55 + p ⟶ n + Co55
-looking to remove Fe55 + He4 ⟶ n + Ni58
-looking to remove Co55 + e⁻ ⟶ Fe55 + 𝜈
-looking to remove Fe55 ⟶ Co55 + e⁻ + 𝜈
-looking to remove Fe53 + He4 ⟶ Ni57 + 𝛾
-looking to remove Co56 + p ⟶ Ni57 + 𝛾
-looking to remove Ni57 + n ⟶ p + Co57
-looking to remove Ni57 + n ⟶ He4 + Fe54
-looking to remove Zn60 + n ⟶ He4 + Ni57
-looking to remove Ni57 ⟶ p + Co56
-looking to remove Ni57 ⟶ He4 + Fe53
-looking to remove Fe54 + He4 ⟶ n + Ni57
-looking to remove Co57 + p ⟶ n + Ni57
-looking to remove Ni57 + He4 ⟶ n + Zn60
-looking to remove Co57 ⟶ Ni57 + e⁻ + 𝜈
-looking to remove Ni57 + e⁻ ⟶ Co57 + 𝜈
-</pre></div>
-</div>
-</div>
 </div>
 <p>and finally, make some of the protons into NSE protons</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make all rates with A &gt;= 48 use NSE protons</span>
 <span class="n">net</span><span class="o">.</span><span class="n">make_nse_protons</span><span class="p">(</span><span class="mi">48</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>modifying p_Mn51__Fe52 to use NSE protons
-modifying Fe52__p_Mn51__derived to use NSE protons
-modifying p_Co55__Ni56 to use NSE protons
-modifying Ni56__p_Co55__derived to use NSE protons
-modifying p_Cu59__Zn60 to use NSE protons
-modifying Zn60__p_Cu59__derived to use NSE protons
-modifying He4_Cr48__p_Mn51 to use NSE protons
-modifying p_Mn51__He4_Cr48__derived to use NSE protons
-modifying He4_Fe52__p_Co55 to use NSE protons
-modifying p_Co55__He4_Fe52__derived to use NSE protons
-modifying p_Cu59__He4_Ni56 to use NSE protons
-modifying He4_Ni56__p_Cu59__derived to use NSE protons
-modifying p_Fe54__Co55 to use NSE protons
-modifying Co55__p_Fe54__derived to use NSE protons
-modifying p_Fe56__Co57 to use NSE protons
-modifying Co57__p_Fe56__derived to use NSE protons
-modifying p_Co57__Ni58 to use NSE protons
-modifying Ni58__p_Co57__derived to use NSE protons
-modifying p_Ni58__Cu59 to use NSE protons
-modifying Cu59__p_Ni58__derived to use NSE protons
-modifying He4_Mn51__p_Fe54 to use NSE protons
-modifying p_Fe54__He4_Mn51__derived to use NSE protons
-modifying He4_Co55__p_Ni58 to use NSE protons
-modifying p_Ni58__He4_Co55__derived to use NSE protons
-modifying n_Co56__p_Fe56 to use NSE protons
-modifying p_Fe56__n_Co56__derived to use NSE protons
-modifying p_Co57__He4_Fe54 to use NSE protons
-modifying He4_Fe54__p_Co57__derived to use NSE protons
-modifying n_Ni56__p_Co56 to use NSE protons
-modifying p_Co56__n_Ni56__derived to use NSE protons
 </pre></div>
 </div>
 </div>
@@ -805,7 +669,7 @@ modifying p_Co56__n_Ni56__derived to use NSE protons
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c93ac263ad14b660843a2927abb7f6d120877dab345e39a8fa50d2eb12efb828.png" src="../_images/c93ac263ad14b660843a2927abb7f6d120877dab345e39a8fa50d2eb12efb828.png" />
+<img alt="../_images/6914e4894c7dca42839ae1c45487c11b47a02871dd835cccd86fdfc7ca81aa64.png" src="../_images/6914e4894c7dca42839ae1c45487c11b47a02871dd835cccd86fdfc7ca81aa64.png" />
 </div>
 </div>
 </section>
@@ -820,13 +684,13 @@ modifying p_Co56__n_Ni56__derived to use NSE protons
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
 </pre></div>
 </div>
@@ -942,7 +806,7 @@ modifying p_Co56__n_Ni56__derived to use NSE protons
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/72d6a0679db8c5825e2748898693c4c73b2d6e9e8e6a35f12b851bff91be24a2.png" src="../_images/72d6a0679db8c5825e2748898693c4c73b2d6e9e8e6a35f12b851bff91be24a2.png" />
+<img alt="../_images/c5ab35c5e195b738da25d84e899e28003e6cdfb2b2df0603c9b5fd52df2d5900.png" src="../_images/c5ab35c5e195b738da25d84e899e28003e6cdfb2b2df0603c9b5fd52df2d5900.png" />
 </div>
 </div>
 </section>
@@ -992,31 +856,31 @@ modifying p_Co56__n_Ni56__derived to use NSE protons
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
 </pre></div>
 </div>
-<img alt="../_images/c14379f1c6c160e5aacfc0f815b0ba28bf4bb9179cc22c181036559eeadc2db2.png" src="../_images/c14379f1c6c160e5aacfc0f815b0ba28bf4bb9179cc22c181036559eeadc2db2.png" />
-<img alt="../_images/665f6fb0cdf0287078377260891b3a624e25cb75f6d5acb07691dcf56ebe2721.png" src="../_images/665f6fb0cdf0287078377260891b3a624e25cb75f6d5acb07691dcf56ebe2721.png" />
-<img alt="../_images/4fb4d3471e2e68bb87e67c3e741f7603b2459a8ac7f9388132e3a8f1dd1825d1.png" src="../_images/4fb4d3471e2e68bb87e67c3e741f7603b2459a8ac7f9388132e3a8f1dd1825d1.png" />
-<img alt="../_images/4169af187ed2c93f2a0ddc4b73217121108fb385ea2918a466b7949279bcc4cd.png" src="../_images/4169af187ed2c93f2a0ddc4b73217121108fb385ea2918a466b7949279bcc4cd.png" />
-<img alt="../_images/6da619a6735211a993945b9895056f2e79ad1000d0b8cbff03c3024040c9409a.png" src="../_images/6da619a6735211a993945b9895056f2e79ad1000d0b8cbff03c3024040c9409a.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+</pre></div>
+</div>
+<img alt="../_images/8e6e3b45c3849f7c54f191944ccfffe52dc41e45632ae9c54efc03a67ec3fe2a.png" src="../_images/8e6e3b45c3849f7c54f191944ccfffe52dc41e45632ae9c54efc03a67ec3fe2a.png" />
+<img alt="../_images/b7b962d1aa8baad49007f2ae92d565a976f3832631ff53c259eb4088721549f4.png" src="../_images/b7b962d1aa8baad49007f2ae92d565a976f3832631ff53c259eb4088721549f4.png" />
+<img alt="../_images/b48af6758c23956a1c31fd78bce6129f7ae43bcb1b16e18eea8b387faaf0a880.png" src="../_images/b48af6758c23956a1c31fd78bce6129f7ae43bcb1b16e18eea8b387faaf0a880.png" />
+<img alt="../_images/4e1ce2f29568043b888cae38d33344b873e43c5fe2f93f86e4931378ce4f98dc.png" src="../_images/4e1ce2f29568043b888cae38d33344b873e43c5fe2f93f86e4931378ce4f98dc.png" />
+<img alt="../_images/84735327770753cdf5932d9a608e5b5bf788e4e9dc2d8716a4553a0fabe4d7ea.png" src="../_images/84735327770753cdf5932d9a608e5b5bf788e4e9dc2d8716a4553a0fabe4d7ea.png" />
 </div>
 </div>
 </section>
@@ -1054,12 +918,12 @@ modifying p_Co56__n_Ni56__derived to use NSE protons
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="he-burning.html"
+       href="he-co-ratio.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Helium Burning</p>
+        <p class="prev-next-title">Ratio of C/O from He burning</p>
       </div>
     </a>
     <a class="right-next"
