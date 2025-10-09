@@ -112,7 +112,7 @@ $$I_0 = e^{-\tau_0} I(\tau_0) - S \int_{\tau_0}^0 e^{-t} dt =
 
 Now we can consider different cases:
 
-a. If $\tau_0 \gg 1$, then $e^{-\tau_0} \rightarrow 0$, and $I_0 = S = B--we see blackbody radiation.
+a. If $\tau_0 \gg 1$, then $e^{-\tau_0} \rightarrow 0$, and $I_0 = S = B$--we see blackbody radiation.
 
 b. If $\tau_0 \ll 1$, then $e^{-\tau_0} \sim 1 - \tau_0$, and we have:
 
