@@ -487,6 +487,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transition-from-cno-to-hot-cno">Transition from CNO to hot-CNO</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-hot-cno-set-in">When does hot-CNO set in?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breakout">Breakout</a></li>
 </ul>
             </nav>
         </div>
@@ -507,7 +508,6 @@ document.write(`
 </div>
 </div>
 </div>
-<p>This collection of rates has the main CNO rates plus a breakout rate into the hot CNO cycle(s)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rl</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">ReacLibLibrary</span><span class="p">()</span>
@@ -515,7 +515,10 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We’ll get all the rates linking the core nuclei in CNO and the various hot-CNO cycles, but we’ll explicitly remove <span class="math notranslate nohighlight">\(3\)</span>-<span class="math notranslate nohighlight">\(\alpha\)</span>, since it is not strong at the temperatures where CNO operates.</p>
+<section id="transition-from-cno-to-hot-cno">
+<h2>Transition from CNO to hot-CNO<a class="headerlink" href="#transition-from-cno-to-hot-cno" title="Link to this heading">#</a></h2>
+<p>We’ll start with nuclei involved in main CNO and hot-CNO cycles.  We won’t worry about the CNO-II, CNO-III, and variations of hot-CNO.</p>
+<p>Also, we’ll remove the 3-<span class="math notranslate nohighlight">\(\alpha\)</span> rate, since it is not dominant at the temperatures we are considering here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linking_nuclei</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="s2">&quot;he4&quot;</span><span class="p">,</span>
@@ -545,8 +548,6 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="transition-from-cno-to-hot-cno">
-<h2>Transition from CNO to hot-CNO<a class="headerlink" href="#transition-from-cno-to-hot-cno" title="Link to this heading">#</a></h2>
 <p>Let’s look at the CNO cycle at a temperature and density just a bit hotter than the Sun’s core</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -556,14 +557,19 @@ document.write(`
 </div>
 </div>
 </div>
+<p>When we plot, we’ll use a cut on the rates consuming a nucleus, to only show those within 5% of the fastest rate.
+This will hide links that are not important at the current thermodynamic conditions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span> <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-20</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span>
+              <span class="n">consuming_rate_threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+              <span class="n">show_small_ydot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a70b09bc0dc1db6d74450a97f7674b6aa01681d8a346d8dc62e5c5eb097e371a.png" src="../_images/a70b09bc0dc1db6d74450a97f7674b6aa01681d8a346d8dc62e5c5eb097e371a.png" />
+<img alt="../_images/60e852b3ebf8faac927f4afa942921984ae1f6410f6f66873c8abeee750b6528.png" src="../_images/60e852b3ebf8faac927f4afa942921984ae1f6410f6f66873c8abeee750b6528.png" />
 </div>
 </div>
 <p>Starting at <span class="math notranslate nohighlight">\({}^{12}\mathrm{C}\)</span>, we see the following sequence dominate:</p>
@@ -579,12 +585,15 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">3.e8</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span> <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-20</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span>
+              <span class="n">consuming_rate_threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+              <span class="n">show_small_ydot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d1e565491bd500915eb9f406dd4b17cf1767d5dc82f20fcfd2153c5123b27710.png" src="../_images/d1e565491bd500915eb9f406dd4b17cf1767d5dc82f20fcfd2153c5123b27710.png" />
+<img alt="../_images/c6097c1dd4ac4eb298e468f0de25e1bab4aa3dcbc28a195a861daa7dd3d57a7c.png" src="../_images/c6097c1dd4ac4eb298e468f0de25e1bab4aa3dcbc28a195a861daa7dd3d57a7c.png" />
 </div>
 </div>
 <p>Now we see that the proton capture on <span class="math notranslate nohighlight">\({}^{13}\mathrm{N}\)</span> is faster than the beta-decay, and we make <span class="math notranslate nohighlight">\({}^{14}\mathrm{O}\)</span>.  Then the cycle continues as before.</p>
@@ -593,12 +602,15 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">5.e8</span>
 <span class="n">rho</span> <span class="o">=</span> <span class="mf">1.e4</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span> <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-20</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="n">comp</span><span class="p">,</span>
+              <span class="n">consuming_rate_threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+              <span class="n">show_small_ydot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d3daa02b9663a8512050113ad310023ca4a9c43b215edba34813ef0c5ff9ca2c.png" src="../_images/d3daa02b9663a8512050113ad310023ca4a9c43b215edba34813ef0c5ff9ca2c.png" />
+<img alt="../_images/a7b6b6d0ed74cd37a54adb6b92db37987873527dd01931bb60f15142a4f53018.png" src="../_images/a7b6b6d0ed74cd37a54adb6b92db37987873527dd01931bb60f15142a4f53018.png" />
 </div>
 </div>
 <p>Since the beta-decays are temperature independent (you just have to wait for the nucleus to decay), the overall hot-CNO rate becomes insensitive to temperature.</p>
@@ -640,14 +652,104 @@ document.write(`
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/481679ae26e8e094bdda4d39957af682e12e8cf46340565b653107e383ea2244.png" src="../_images/481679ae26e8e094bdda4d39957af682e12e8cf46340565b653107e383ea2244.png" />
+<img alt="../_images/bce3aa129afa20eb895d67a8f3847c662c4ee5369b54d220c9b186afbb39e05e.png" src="../_images/bce3aa129afa20eb895d67a8f3847c662c4ee5369b54d220c9b186afbb39e05e.png" />
 </div>
 </div>
 <p>We see that above <span class="math notranslate nohighlight">\(T \sim 2\times 10^8~\mathrm{K}\)</span>, the proton-capture proceeds faster than the beta-decay, and we transition to hot-CNO.</p>
+</section>
+<section id="breakout">
+<h2>Breakout<a class="headerlink" href="#breakout" title="Link to this heading">#</a></h2>
+<p>Let’s now include some heavier nuclei to see what happens when we break out of hot-CNO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linking_nuclei</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="s2">&quot;he4&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;c12&quot;</span><span class="p">,</span> <span class="s2">&quot;c13&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;n13&quot;</span><span class="p">,</span> <span class="s2">&quot;n14&quot;</span><span class="p">,</span> <span class="s2">&quot;n15&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;o14&quot;</span><span class="p">,</span> <span class="s2">&quot;o15&quot;</span><span class="p">,</span> <span class="s2">&quot;o16&quot;</span><span class="p">,</span> <span class="s2">&quot;o17&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;f17&quot;</span><span class="p">,</span> <span class="s2">&quot;f18&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;ne18&quot;</span><span class="p">,</span> <span class="s2">&quot;ne19&quot;</span><span class="p">,</span> <span class="s2">&quot;ne20&quot;</span><span class="p">]</span>
+<span class="n">lib</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">linking_nuclei</span><span class="p">(</span><span class="n">linking_nuclei</span><span class="p">,</span> <span class="n">with_reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rc</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">RateCollection</span><span class="p">(</span><span class="n">libraries</span><span class="o">=</span><span class="n">lib</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comp</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">Composition</span><span class="p">(</span><span class="n">rc</span><span class="o">.</span><span class="n">unique_nuclei</span><span class="p">)</span>
+<span class="n">comp</span><span class="o">.</span><span class="n">set_solar_like</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="mf">1.e4</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">1.e8</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">,</span>
+              <span class="n">consuming_rate_threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+              <span class="n">show_small_ydot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-20</span><span class="p">,</span>
+              <span class="n">hide_xalpha</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">hide_xp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">Z_range</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">N_range</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+</pre></div>
+</div>
+<img alt="../_images/df740e5f172a2ea76488b29d63fe2b1932d16ce435cd5c4b7cdb7bbce7456f04.png" src="../_images/df740e5f172a2ea76488b29d63fe2b1932d16ce435cd5c4b7cdb7bbce7456f04.png" />
+</div>
+</div>
+<p>We see at a temperature of <span class="math notranslate nohighlight">\(10^8~\mathrm{K}\)</span>, we stick with the hot-CNO cycle.</p>
+<p>Now let’s increase the temperature</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">4.e8</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">rc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">,</span>
+              <span class="n">consuming_rate_threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+              <span class="n">show_small_ydot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-20</span><span class="p">,</span>
+              <span class="n">hide_xalpha</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">hide_xp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">Z_range</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">N_range</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+</pre></div>
+</div>
+<img alt="../_images/07e3d486e0db99930f3bf30f5492f2189d6b9be57aa0018a3f47f6cfd595c2d7.png" src="../_images/07e3d486e0db99930f3bf30f5492f2189d6b9be57aa0018a3f47f6cfd595c2d7.png" />
+</div>
+</div>
+<p>Now we see that <span class="math notranslate nohighlight">\({}^{15}\mathrm{O}(\alpha, \gamma){}^{19}\mathrm{Ne}\)</span> is operating about as fast as the decay of <span class="math notranslate nohighlight">\({}^{15}\mathrm{O}\)</span>, allowing us to break out of the hot-CNO cycle.</p>
 </section>
 </section>
 
@@ -717,6 +819,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transition-from-cno-to-hot-cno">Transition from CNO to hot-CNO</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-hot-cno-set-in">When does hot-CNO set in?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breakout">Breakout</a></li>
 </ul>
   </nav></div>
 
