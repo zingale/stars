@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Maxwell-Boltzmann Distribution and Ideal Gas &#8212; PHY 521 Fall 2025</title>
+    <title>Eddington Standard Model &#8212; PHY 521 Fall 2025</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"svg": {"fontCache": "global", "scale": 1}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'eos/ideal-gas';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'stellar_evolution/eddington_standard_model';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Degenerate Electrons" href="degeneracy-parameter.html" />
-    <link rel="prev" title="Solid or Gas?" href="solid-or-gas.html" />
+    <link rel="next" title="Exploring MESA models" href="stellar-models.html" />
+    <link rel="prev" title="Solving Lane-Emden via Shooting" href="../polytrope/lane-emden-shooting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,12 +176,12 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Equation of State</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="solid-or-gas.html">Solid or Gas?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Maxwell-Boltzmann Distribution and Ideal Gas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="degeneracy-parameter.html">Degenerate Electrons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eos-regimes.html">EOS regimes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="electron-eos.html">Electrons and Positrons</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../eos/solid-or-gas.html">Solid or Gas?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eos/ideal-gas.html">Maxwell-Boltzmann Distribution and Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eos/degeneracy-parameter.html">Degenerate Electrons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eos/eos-regimes.html">EOS regimes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eos/electron-eos.html">Electrons and Positrons</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Convection</span></p>
 <ul class="nav bd-sidenav">
@@ -216,11 +216,11 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Stellar Models</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../polytrope/lane-emden.html">Lane-Emden polytrope equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../polytrope/lane-emden-shooting.html">Solving Lane-Emden via Shooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stellar_evolution/eddington_standard_model.html">Eddington Standard Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stellar_evolution/stellar-models.html">Exploring MESA models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Eddington Standard Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stellar-models.html">Exploring MESA models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Close Binary Evolution</span></p>
 <ul class="nav bd-sidenav">
@@ -295,7 +295,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/eos/ideal-gas.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/stellar_evolution/eddington_standard_model.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -313,7 +313,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/eos/ideal-gas.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/stellar_evolution/eddington_standard_model.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +361,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Feos/ideal-gas.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fstellar_evolution/eddington_standard_model.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -391,7 +391,7 @@
       
       
       
-      <li><a href="../_sources/eos/ideal-gas.ipynb" target="_blank"
+      <li><a href="../_sources/stellar_evolution/eddington_standard_model.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -475,7 +475,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Maxwell-Boltzmann Distribution and Ideal Gas</h1>
+    <h1>Eddington Standard Model</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -485,10 +485,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-maxwell-boltzmann-distribution">Explore the Maxwell-Boltzmann distribution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-number-density">Using number density</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure">Pressure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy">Energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">Loading the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-eddington-profile">Creating Eddington profile</a></li>
 </ul>
             </nav>
         </div>
@@ -500,158 +498,180 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="maxwell-boltzmann-distribution-and-ideal-gas">
-<h1>Maxwell-Boltzmann Distribution and Ideal Gas<a class="headerlink" href="#maxwell-boltzmann-distribution-and-ideal-gas" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="eddington-standard-model">
+<h1>Eddington Standard Model<a class="headerlink" href="#eddington-standard-model" title="Link to this heading">#</a></h1>
+<p>Let’s look at the output from the <a class="reference external" href="https://docs.mesastar.org/">MESA stellar evolution code</a> for 4 different mass progenitors: 0.3, 1, 8, and 15 <span class="math notranslate nohighlight">\(M_\odot\)</span>
+and see how well the Eddington standard model does in comparison.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>These models were all created using <a class="reference external" href="http://user.astro.wisc.edu/~townsend/static.php?ref=mesa-web-submit">MESA Web</a> a web-based interface to MESA
+for quick calculations.</p>
+</div>
+<p>To read in these files, we use <a class="reference external" href="https://github.com/wmwolf/py_mesa_reader">py_mesa_reader</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code class="docutils literal notranslate"><span class="pre">py_mesa_reader</span></code> is available on PyPI, so it can be installed using <code class="docutils literal notranslate"><span class="pre">pip</span></code> as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">mesa_reader</span>
+</pre></div>
+</div>
+</div>
+<section id="loading-the-data">
+<h2>Loading the data<a class="headerlink" href="#loading-the-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">init_session</span>
-<span class="n">init_session</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s2">&quot;mathjax&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IPython console for SymPy 1.14.0 (Python 3.13.8-64-bit) (ground types: python)
-
-These commands were executed:
-&gt;&gt;&gt; from sympy import *
-&gt;&gt;&gt; x, y, z, t = symbols(&#39;x y z t&#39;)
-&gt;&gt;&gt; k, m, n = symbols(&#39;k m n&#39;, integer=True)
-&gt;&gt;&gt; f, g, h = symbols(&#39;f g h&#39;, cls=Function)
-&gt;&gt;&gt; init_printing()
-
-Documentation can be found at https://docs.sympy.org/1.14.0/
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mesa_reader</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mr</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="explore-the-maxwell-boltzmann-distribution">
-<h2>Explore the Maxwell-Boltzmann distribution<a class="headerlink" href="#explore-the-maxwell-boltzmann-distribution" title="Link to this heading">#</a></h2>
-<p>In class, we started with the general distribution function:</p>
-<div class="math notranslate nohighlight">
-\[n(p) = \frac{g}{h^3} \frac{1}{e^{(-\mu + \mathcal{E}_0 + \mathcal{E}(p))/kT} \pm 1}\]</div>
-<p>and we said that since <span class="math notranslate nohighlight">\(\mu/kT \ll -1\)</span>, we can ignore the “<span class="math notranslate nohighlight">\(\pm 1\)</span>” term, and we also
-assumed that we are non-relativistic (<span class="math notranslate nohighlight">\(\mathcal{E}(p) = p^2/2m\)</span>), giving:</p>
-<div class="math notranslate nohighlight">
-\[n(p) = \frac{g}{h^3} e^{\mu/kT} e^{-\mathcal{E}_0/kT} e^{-p^2/2mkT}\]</div>
-<p>We will now integrate this to understand its properties.</p>
-<p>We need to create the symbols for SymPy that go into the Maxwell-Boltzmann distribution.</p>
+<p>MESA provides 2 types of output: profiles and a history.  The profiles represent a snapshot of the start at one instance of time and give the stellar data as a function of radius or enclosed mass.  The history provides some global quantities as a function of time throughout the entire evolution of the star.  We’ll use both.</p>
+<p>The model files are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0.3 M_\odot\)</span>:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../_downloads/40f70a8770c0bd485a79aafbb81d57e6/M0.3_default_profile8.data"><span class="xref download myst">M0.3_default_profile8.data</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/59e926126cccfd3c339da909967818f6/M0.3_default_trimmed_history.data"><span class="xref download myst">M0.3_default_trimmed_history.data</span></a></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(1 M_\odot\)</span>:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../_downloads/230d7aefe5da4115c3ec24558a60314a/M1_default_profile8.data"><span class="xref download myst">M1_default_profile8.data</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/0b3257dd87c375999297be2234873fc4/M1_default_profile218.data"><span class="xref download myst">M1_default_profile218.data</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/9b1eaa38be3bdb503b38183ab4e8994c/M1_default_trimmed_history.data"><span class="xref download myst">M1_default_trimmed_history.data</span></a></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(8 M_\odot\)</span>:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../_downloads/f57834228967aac2dfdf71d833000007/M8_basic_co_profile8.data"><span class="xref download myst">M8_basic_co_profile8.data</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/148450c9048f18cb9069ddfb502b1707/M8_basic_co_profile39.data"><span class="xref download myst">M8_basic_co_profile39.data</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/9939829007b0f9a3efb65e54b3ed9e52/M8_basic_co_trimmed_history.data"><span class="xref download myst">M8_basic_co_trimmed_history.data</span></a></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(15 M_\odot\)</span>:</p>
+<ul>
+<li><p><a class="reference download internal" download="" href="../_downloads/7362aa9adce9b3879740e001efa6f06e/M15_aprox21_profile8.data"><span class="xref download myst">M15_aprox21_profile8.data</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/6439f5d95e121eb6cdd8b27a62f39196/M15_aprox21_profile19.data"><span class="xref download myst">M15_aprox21_profile19.data</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/1ff4faed6335f159eeebf02b6c5a76a3/M15_aprox21_trimmed_history.data"><span class="xref download myst">M15_aprox21_trimmed_history.data</span></a></p></li>
+</ul>
+</li>
+</ul>
+<p>To make the management easier, we’ll create a container for each model that holds the history and profiles, processed by <code class="docutils literal notranslate"><span class="pre">py_mesa_reader</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ni</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;n_I m k_B T&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">p</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;p v&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">n_I</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;n_I&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">g</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">h</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">E_0</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\mathcal</span><span class="si">{E_0}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">mu</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Model</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">profiles</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">history</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">mass</span>
+        <span class="k">if</span> <span class="n">history</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">history</span> <span class="o">=</span> <span class="n">mr</span><span class="o">.</span><span class="n">MesaData</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">profiles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">profiles</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">profiles</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">profiles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mr</span><span class="o">.</span><span class="n">MesaData</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We start with</p>
+<p>Now read in all the data.  For all but the lowest mass we have 2 profiles and 1 history.  The profiles were picked to roughly correspond to the midpoint of core H burning and core He burning.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">g</span> <span class="o">/</span> <span class="n">h</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">mu</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">E_0</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">p</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">))</span>
-<span class="n">n</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">models</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Model</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">profiles</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M0.3_default_profile8.data&quot;</span><span class="p">],</span>
+                    <span class="n">history</span><span class="o">=</span><span class="s2">&quot;M0.3_default_trimmed_history.data&quot;</span><span class="p">))</span>
+
+<span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Model</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">profiles</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1_default_profile8.data&quot;</span><span class="p">,</span>
+                                 <span class="s2">&quot;M1_default_profile218.data&quot;</span><span class="p">],</span>
+                    <span class="n">history</span><span class="o">=</span><span class="s2">&quot;M1_default_trimmed_history.data&quot;</span><span class="p">))</span>
+
+<span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Model</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">profiles</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M8_basic_co_profile8.data&quot;</span><span class="p">,</span>
+                                 <span class="s2">&quot;M8_basic_co_profile39.data&quot;</span><span class="p">],</span>
+                    <span class="n">history</span><span class="o">=</span><span class="s2">&quot;M8_basic_co_trimmed_history.data&quot;</span><span class="p">))</span>
+
+<span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Model</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">profiles</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M15_aprox21_profile8.data&quot;</span><span class="p">,</span>
+                                  <span class="s2">&quot;M15_aprox21_profile19.data&quot;</span><span class="p">],</span>
+                    <span class="n">history</span><span class="o">=</span><span class="s2">&quot;M15_aprox21_trimmed_history.data&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{4 \pi g p^{2} e^{- \frac{\mathcal{E_0}}{T k_{B}}} e^{\frac{\mu}{T k_{B}}} e^{- \frac{p^{2}}{2 T k_{B} m}}}{h^{3}}\]</div>
 </div>
 </div>
 </section>
-<section id="using-number-density">
-<h2>Using number density<a class="headerlink" href="#using-number-density" title="Link to this heading">#</a></h2>
-<p>We typically know the number density of our system–let’s call it <span class="math notranslate nohighlight">\(n_I\)</span>.</p>
-<p>Now let’s integrate over <span class="math notranslate nohighlight">\(p\)</span> to find the number density–we use this to constrain <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\mathcal{E}_0\)</span>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_I_int</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
-<span class="n">n_I_int</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{2 \sqrt{2} \pi^{\frac{3}{2}} T^{\frac{3}{2}} g k_{B}^{\frac{3}{2}} m^{\frac{3}{2}} e^{- \frac{\mathcal{E_0}}{T k_{B}}} e^{\frac{\mu}{T k_{B}}}}{h^{3}}\]</div>
-</div>
-</div>
-<p>This is equal to <span class="math notranslate nohighlight">\(n_I\)</span>.  We want to substitute this back into <span class="math notranslate nohighlight">\(n(p)\)</span>.  Let’s solve for <span class="math notranslate nohighlight">\(g\)</span> in terms of <span class="math notranslate nohighlight">\(n_I\)</span>
-and then use that as a way to substitute this back.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_solve</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">n_I_int</span><span class="p">,</span> <span class="n">n_I</span><span class="p">),</span> <span class="n">g</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_solve</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{\sqrt{2} h^{3} n_{I} e^{\frac{\mathcal{E_0} - \mu}{T k_{B}}}}{4 \pi^{\frac{3}{2}} T^{\frac{3}{2}} k_{B}^{\frac{3}{2}} m^{\frac{3}{2}}}\]</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">g_solve</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-<span class="n">n</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{\sqrt{2} n_{I} p^{2} e^{- \frac{p^{2}}{2 T k_{B} m}}}{\sqrt{\pi} T^{\frac{3}{2}} k_{B}^{\frac{3}{2}} m^{\frac{3}{2}}}\]</div>
-</div>
-</div>
-<p>Now we see that we have the normal <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution">Maxwell-Boltzmann distribution</a>.</p>
-</section>
-<section id="pressure">
-<h2>Pressure<a class="headerlink" href="#pressure" title="Link to this heading">#</a></h2>
-<p>The pressure integral is simply:</p>
+<section id="creating-eddington-profile">
+<h2>Creating Eddington profile<a class="headerlink" href="#creating-eddington-profile" title="Link to this heading">#</a></h2>
+<p>The Eddington standard model works for a fully radiative star with a constant composition.</p>
+<p>In class, we found that the temperature and density in the Eddington standard model were related by</p>
 <div class="math notranslate nohighlight">
-\[P = \frac{1}{3} \int_0^\infty n(p) v p dp\]</div>
-<p>with <span class="math notranslate nohighlight">\(v = p / m\)</span> (again, we are non-relativistic)</p>
+\[T(r) = 4.62\times 10^6 \beta\mu \left ( \frac{M}{M_\odot} \right)^{2/3} \rho^{1/3}(r)\]</div>
+<p>We will assume that <span class="math notranslate nohighlight">\(\mu\)</span> is constant and take <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> from the center of the star.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">m</span><span class="p">,</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
-<span class="n">P</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># CGS constants</span>
+<span class="n">k_B</span> <span class="o">=</span> <span class="mf">1.38e-16</span>
+<span class="n">m_u</span> <span class="o">=</span> <span class="mf">1.66e-24</span>
+<span class="n">m_e</span> <span class="o">=</span> <span class="mf">9.11e-28</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">3.e10</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">6.63e-27</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">5.67e-15</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_beta</span><span class="p">(</span><span class="n">profile</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;compute the raito of gas to total pressure&quot;&quot;&quot;</span>
+    <span class="n">P_g</span> <span class="o">=</span> <span class="n">profile</span><span class="o">.</span><span class="n">Rho</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">k_B</span> <span class="o">*</span> <span class="n">profile</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">mu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">m_u</span><span class="p">)</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">P_g</span> <span class="o">/</span> <span class="n">profile</span><span class="o">.</span><span class="n">pressure</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">beta</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">eddington_T</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">4.62e6</span> <span class="o">*</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">mu</span> <span class="o">*</span> <span class="n">M</span><span class="o">**</span><span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span> <span class="o">*</span> <span class="n">rho</span><span class="o">**</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s our plotting function.  We will plot the data from the MESA model and the line corresponding to the Eddington standard model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_plot</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">Rho</span><span class="p">,</span> <span class="n">profile</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">Rho</span><span class="p">,</span> <span class="n">eddington_T</span><span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">Rho</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">profile</span><span class="o">.</span><span class="n">mu</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">M</span><span class="p">),</span>
+              <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Eddington standard model&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;rho [g/cc]&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;T [K]&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">rf</span><span class="s2">&quot;M = </span><span class="si">{</span><span class="n">M</span><span class="si">}</span><span class="s2"> $M_\odot$; age = </span><span class="si">{</span><span class="n">profile</span><span class="o">.</span><span class="n">star_age</span><span class="o">/</span><span class="mf">1.e6</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Myr&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">star</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">star</span><span class="o">.</span><span class="n">mass</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">star</span><span class="o">.</span><span class="n">profiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">get_beta</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">make_plot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle T k_{B} n_{I}\]</div>
+<img alt="../_images/e58123e43814b9c3814c463a612b49aeb4fe45374ecfc9470f3e27ba9ae5b0f3.png" src="../_images/e58123e43814b9c3814c463a612b49aeb4fe45374ecfc9470f3e27ba9ae5b0f3.png" />
+<img alt="../_images/9be9ddd876710537686ba854f2d57dfdeb999b22efd2ba4feb4e34f90afd2e23.png" src="../_images/9be9ddd876710537686ba854f2d57dfdeb999b22efd2ba4feb4e34f90afd2e23.png" />
+<img alt="../_images/8a96e25e37434fb70405d0bd07fc7b2c24156be25e4117783dda3f9b0128c1c7.png" src="../_images/8a96e25e37434fb70405d0bd07fc7b2c24156be25e4117783dda3f9b0128c1c7.png" />
+<img alt="../_images/4e09ba4550a60f20b894316186fe40eae7ec9b506b128b3d40fd34bdbc5f435e.png" src="../_images/4e09ba4550a60f20b894316186fe40eae7ec9b506b128b3d40fd34bdbc5f435e.png" />
 </div>
 </div>
-<p>We see that we get the familiar ideal gas law!</p>
-</section>
-<section id="energy">
-<h2>Energy<a class="headerlink" href="#energy" title="Link to this heading">#</a></h2>
-<p>The energy density is:</p>
-<div class="math notranslate nohighlight">
-\[\rho e = \int_0^\infty n(p) E(p) dp\]</div>
-<p>with <span class="math notranslate nohighlight">\(E(p) = p^2 / (2m)\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rhoe</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span><span class="n">m</span><span class="p">),</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
-<span class="n">rhoe</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{3 T k_{B} n_{I}}{2}\]</div>
-</div>
-</div>
-<p>So we see that this is <span class="math notranslate nohighlight">\(3/2 P\)</span>.</p>
+<p>We see that the high mass stars fit the Eddington profile well.</p>
 </section>
 </section>
 
@@ -668,7 +688,7 @@ and then use that as a way to substitute this back.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./eos"
+            path: "./stellar_evolution"
         },
         predefinedOutput: true
     }
@@ -686,20 +706,20 @@ and then use that as a way to substitute this back.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="solid-or-gas.html"
+       href="../polytrope/lane-emden-shooting.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Solid or Gas?</p>
+        <p class="prev-next-title">Solving Lane-Emden via Shooting</p>
       </div>
     </a>
     <a class="right-next"
-       href="degeneracy-parameter.html"
+       href="stellar-models.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Degenerate Electrons</p>
+        <p class="prev-next-title">Exploring MESA models</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -719,10 +739,8 @@ and then use that as a way to substitute this back.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-maxwell-boltzmann-distribution">Explore the Maxwell-Boltzmann distribution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-number-density">Using number density</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure">Pressure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy">Energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">Loading the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-eddington-profile">Creating Eddington profile</a></li>
 </ul>
   </nav></div>
 
