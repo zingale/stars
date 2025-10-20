@@ -43,6 +43,7 @@ parts:
     chapters:
     - file: polytrope/lane-emden
     - file: polytrope/lane-emden-shooting
+    - file: stellar_evolution/eddington_standard_model
     - file: stellar_evolution/stellar-models
 
   - caption: Close Binary Evolution
