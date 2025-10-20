@@ -1,4 +1,4 @@
-# Homework 4
+# Homework 4 solutions
 
 ## 1. Entropy = buoyancy
 
