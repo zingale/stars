@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exploring MESA models &#8212; PHY 521 Fall 2025</title>
+    <title>Stellar Evolution in the ρ-T Plane &#8212; PHY 521 Fall 2025</title>
   
   
   
@@ -220,7 +220,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../polytrope/lane-emden.html">Lane-Emden polytrope equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../polytrope/lane-emden-shooting.html">Solving Lane-Emden via Shooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eddington_standard_model.html">Eddington Standard Model</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploring MESA models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Stellar Evolution in the ρ-T Plane</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Close Binary Evolution</span></p>
 <ul class="nav bd-sidenav">
@@ -475,7 +475,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exploring MESA models</h1>
+    <h1>Stellar Evolution in the ρ-T Plane</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -487,9 +487,13 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hr-diagram">HR diagram</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-evolution">Central evolution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-sequence-lifetime">Main sequence lifetime</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles">Profiles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convection">Convection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles">Profiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-odot">0.3 <span class="math notranslate nohighlight">\(M_\odot\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1 <span class="math notranslate nohighlight">\(M_\odot\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8 <span class="math notranslate nohighlight">\(M_\odot\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">15 <span class="math notranslate nohighlight">\(M_\odot\)</span></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -501,18 +505,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exploring-mesa-models">
-<h1>Exploring MESA models<a class="headerlink" href="#exploring-mesa-models" title="Link to this heading">#</a></h1>
-<p>Let’s look at the output from the <a class="reference external" href="https://docs.mesastar.org/">MESA stellar evolution code</a> for 3 different mass progenitors: 1, 8, and 15 <span class="math notranslate nohighlight">\(M_\odot\)</span>.
-These models were all created using <a class="reference external" href="http://user.astro.wisc.edu/~townsend/static.php?ref=mesa-web-submit">MESA Web</a> a web-based interface to MESA
-for quick calculations.</p>
-<p>To read in these files, we use <a class="reference external" href="https://github.com/wmwolf/py_mesa_reader">py_mesa_reader</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="stellar-evolution-in-the-t-plane">
+<h1>Stellar Evolution in the ρ-T Plane<a class="headerlink" href="#stellar-evolution-in-the-t-plane" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">py_mesa_reader</span></code> is not available on PyPI, so it can be installed using <code class="docutils literal notranslate"><span class="pre">pip</span></code> as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">wmwolf</span><span class="o">/</span><span class="n">py_mesa_reader</span>
-</pre></div>
-</div>
+<p>This example uses the same models as the previous example.  You can download
+them following the instructions there.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -523,14 +521,7 @@ for quick calculations.</p>
 </div>
 </div>
 </div>
-<p>MESA provides 2 types of output: profiles and a history.  The profiles represent a snapshot of the start at one instance of time and give the stellar data as a function of radius or enclosed mass.  The history provides some global quantities as a function of time throughout the entire evolution of the star.  We’ll use both.</p>
-<p>The model files are:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(1 M_\odot\)</span>: <a class="reference download internal" download="" href="../_downloads/230d7aefe5da4115c3ec24558a60314a/M1_default_profile8.data"><span class="xref download myst">M1_default_profile8.data</span></a>; <a class="reference download internal" download="" href="../_downloads/0b3257dd87c375999297be2234873fc4/M1_default_profile218.data"><span class="xref download myst">M1_default_profile218.data</span></a>; <a class="reference download internal" download="" href="../_downloads/9b1eaa38be3bdb503b38183ab4e8994c/M1_default_trimmed_history.data"><span class="xref download myst">M1_default_trimmed_history.data</span></a></p></li>
-<li><p><span class="math notranslate nohighlight">\(8 M_\odot\)</span>: <a class="reference download internal" download="" href="../_downloads/f57834228967aac2dfdf71d833000007/M8_basic_co_profile8.data"><span class="xref download myst">M8_basic_co_profile8.data</span></a>; <a class="reference download internal" download="" href="../_downloads/148450c9048f18cb9069ddfb502b1707/M8_basic_co_profile39.data"><span class="xref download myst">M8_basic_co_profile39.data</span></a>; <a class="reference download internal" download="" href="../_downloads/9939829007b0f9a3efb65e54b3ed9e52/M8_basic_co_trimmed_history.data"><span class="xref download myst">M8_basic_co_trimmed_history.data</span></a></p></li>
-<li><p><span class="math notranslate nohighlight">\(15 M_\odot\)</span>: <a class="reference download internal" download="" href="../_downloads/7362aa9adce9b3879740e001efa6f06e/M15_aprox21_profile8.data"><span class="xref download myst">M15_aprox21_profile8.data</span></a>; <a class="reference download internal" download="" href="../_downloads/6439f5d95e121eb6cdd8b27a62f39196/M15_aprox21_profile19.data"><span class="xref download myst">M15_aprox21_profile19.data</span></a>; <a class="reference download internal" download="" href="../_downloads/1ff4faed6335f159eeebf02b6c5a76a3/M15_aprox21_trimmed_history.data"><span class="xref download myst">M15_aprox21_trimmed_history.data</span></a></p></li>
-</ul>
-<p>To make the management easier, we’ll create a container for each model that holds the history and profiles, processed by <code class="docutils literal notranslate"><span class="pre">py_mesa_reader</span></code></p>
+<p>We’ll use a simple container to hold the models to allow us to explore them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Model</span><span class="p">:</span>
@@ -546,10 +537,13 @@ for quick calculations.</p>
 </div>
 </div>
 </div>
-<p>Now read in all the data.  For each mass we have 2 profiles and 1 history.  The profiles were picked to roughly correspond to the midpoint of core H burning and core He burning.</p>
+<p>Now read in all the data.  For all but the lowest mass we have 2 profiles and 1 history.  The profiles were picked to roughly correspond to the midpoint of core H burning and core He burning.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">models</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Model</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">profiles</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M0.3_default_profile8.data&quot;</span><span class="p">],</span>
+                    <span class="n">history</span><span class="o">=</span><span class="s2">&quot;M0.3_default_trimmed_history.data&quot;</span><span class="p">))</span>
 
 <span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Model</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">profiles</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1_default_profile8.data&quot;</span><span class="p">,</span>
                                  <span class="s2">&quot;M1_default_profile218.data&quot;</span><span class="p">],</span>
@@ -568,7 +562,8 @@ for quick calculations.</p>
 </div>
 <section id="hr-diagram">
 <h2>HR diagram<a class="headerlink" href="#hr-diagram" title="Link to this heading">#</a></h2>
-<p>Now we’ll make an HR diagram and label the points where <span class="math notranslate nohighlight">\(H\)</span> and <span class="math notranslate nohighlight">\(He\)</span> burning commences.</p>
+<p>Let’s start by looking at the models on the HR diagram and mark the location where
+H burning is occuring (with an <span class="math notranslate nohighlight">\(\times\)</span>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -576,26 +571,21 @@ for quick calculations.</p>
 <span class="k">for</span> <span class="n">star</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">star</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">Teff</span><span class="p">,</span> <span class="n">star</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">L</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">star</span><span class="o">.</span><span class="n">mass</span><span class="si">}</span><span class="s2"> $M_\odot$&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">star</span><span class="o">.</span><span class="n">profiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Teff</span><span class="p">],</span> <span class="p">[</span><span class="n">star</span><span class="o">.</span><span class="n">profiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">photosphere_L</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;T (K)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;L ($L_\odot$)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;L ($L_\odot$)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">invert_xaxis</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-/tmp/ipykernel_3167/7824803.py:9: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-  ax.set_ylabel(&quot;L ($L_\odot$)&quot;)
-</pre></div>
-</div>
-<img alt="../_images/0c209d6fdfb0e0567702bb8814f5969865d22437fafda92e060b290298d569b2.png" src="../_images/0c209d6fdfb0e0567702bb8814f5969865d22437fafda92e060b290298d569b2.png" />
+<img alt="../_images/731311ca939980ac51a3f86472c822ca734939ddc1a0a0d92cd1ecd0e97de81c.png" src="../_images/731311ca939980ac51a3f86472c822ca734939ddc1a0a0d92cd1ecd0e97de81c.png" />
 </div>
 </div>
 <p>You can see the main sequence clearly on this plot.</p>
-<p>We also see that only the 1 solar mass star “finished’ stellar evolution, winding up as a cooling white dwarf at the end – the path it is following is essentially a line of constant radius, since the white dwarf does not contract as it cools (it is degenerate).</p>
+<p>We also see that only the 0.3 and 1 solar mass stars “finished’ stellar evolution, winding up as a cooling white dwarf at the end – the path they follow is essentially a line of constant radius, since the white dwarf does not contract as it cools (it is degenerate).</p>
 </section>
 <section id="central-evolution">
 <h2>Central evolution<a class="headerlink" href="#central-evolution" title="Link to this heading">#</a></h2>
@@ -634,13 +624,13 @@ functions are now in a module, <a class="reference download internal" download="
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100000.0, 1000000000.0)
 </pre></div>
 </div>
-<img alt="../_images/7c05ea00ec506d331f2f5ef04f0b634ec54bc31b50341f09449cc3fd0e6bc397.png" src="../_images/7c05ea00ec506d331f2f5ef04f0b634ec54bc31b50341f09449cc3fd0e6bc397.png" />
+<img alt="../_images/d6f63e2c17d0253a231f0d57ef4c41e955cd4c7ca6a50c67f038c0da90c6e126.png" src="../_images/d6f63e2c17d0253a231f0d57ef4c41e955cd4c7ca6a50c67f038c0da90c6e126.png" />
 </div>
 </div>
 <p>Some observations:</p>
 <ul class="simple">
 <li><p>The higher mass stars are closer to the line where radiation dominates.</p></li>
-<li><p>The 1 solar mass star makes a transition from following <span class="math notranslate nohighlight">\(T \approx \rho^{1/3}\)</span> to <span class="math notranslate nohighlight">\(\rho = \mbox{constant}\)</span> when degeneracy kicks in.</p></li>
+<li><p>The 0.3 and 1 solar mass stars make a transition from following <span class="math notranslate nohighlight">\(T \approx \rho^{1/3}\)</span> to <span class="math notranslate nohighlight">\(\rho = \mbox{constant}\)</span> when degeneracy kicks in.</p></li>
 <li><p>The other stars more or less follow the <span class="math notranslate nohighlight">\(T \approx \rho^{1/3}\)</span> trend expected from polytropes + ideal gas.</p></li>
 </ul>
 <p>We can also add approximate ignition curves, by setting</p>
@@ -668,39 +658,16 @@ functions are now in a module, <a class="reference download internal" download="
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a8dcd13ae27761dd1ef8606278fe5ebf0191d270ada6fdc0adc09eede59a8e3d.png" src="../_images/a8dcd13ae27761dd1ef8606278fe5ebf0191d270ada6fdc0adc09eede59a8e3d.png" />
+<img alt="../_images/c1e38ec0cb103db25c2acd9fd67c6ab98c0372435619084668ab3551a22e26e8.png" src="../_images/c1e38ec0cb103db25c2acd9fd67c6ab98c0372435619084668ab3551a22e26e8.png" />
 </div>
 </div>
-</section>
-<section id="main-sequence-lifetime">
-<h2>Main sequence lifetime<a class="headerlink" href="#main-sequence-lifetime" title="Link to this heading">#</a></h2>
-<p>We can estimate the main sequence lifetime just by looking for when the core H is all consumed.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">star</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">star</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">star_age</span><span class="p">,</span> <span class="n">star</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">center_h1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">star</span><span class="o">.</span><span class="n">mass</span><span class="si">}</span><span class="s2"> $M_\odot$&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;t (yr)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;X[H1]&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">1.e4</span><span class="p">,</span> <span class="mf">2.e10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10000.0, 20000000000.0)
-</pre></div>
-</div>
-<img alt="../_images/81b5e9bd67729f780033fa90d7d67c201d4453b717240f629c3a2d34dc58d8ba.png" src="../_images/81b5e9bd67729f780033fa90d7d67c201d4453b717240f629c3a2d34dc58d8ba.png" />
-</div>
-</div>
-<p>From this plot, we see that the main sequence lifetime of the 15 <span class="math notranslate nohighlight">\(M_\odot\)</span> star is <span class="math notranslate nohighlight">\(\sim 6\times 10^6\)</span> yr, for the 8 <span class="math notranslate nohighlight">\(M_\odot\)</span> star <span class="math notranslate nohighlight">\(\sim 2\times 10^7\)</span> yr, and for the 1 <span class="math notranslate nohighlight">\(M_\odot\)</span> star <span class="math notranslate nohighlight">\(\sim 9\times 10^9\)</span> yr.</p>
+<p>We see that the 0.3 <span class="math notranslate nohighlight">\(M_\odot\)</span> star never gets hot enough for He burning, while the 1.0 <span class="math notranslate nohighlight">\(M_\odot\)</span> star ignites He under degenerate conditions (a He flash)</p>
 </section>
 <section id="profiles">
 <h2>Profiles<a class="headerlink" href="#profiles" title="Link to this heading">#</a></h2>
 <p>Let’s next look at the profiles of the stars in the <span class="math notranslate nohighlight">\(\log \rho\)</span>-<span class="math notranslate nohighlight">\(\log T\)</span> plane</p>
-<p>First the 1 solar mass star</p>
+<section id="m-odot">
+<h3>0.3 <span class="math notranslate nohighlight">\(M_\odot\)</span><a class="headerlink" href="#m-odot" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -726,10 +693,12 @@ functions are now in a module, <a class="reference download internal" download="
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000.0, 1000000000.0)
 </pre></div>
 </div>
-<img alt="../_images/371549f716d0a749117f4bafd528814004a2e8e887fce9cfb6490a078f2ed8ad.png" src="../_images/371549f716d0a749117f4bafd528814004a2e8e887fce9cfb6490a078f2ed8ad.png" />
+<img alt="../_images/33927edc9756ff4aeea9b54d6c540022ad0e87245ce2dc9b7f343e94e5c061af.png" src="../_images/33927edc9756ff4aeea9b54d6c540022ad0e87245ce2dc9b7f343e94e5c061af.png" />
 </div>
 </div>
-<p>Now the 8 solar mass star</p>
+</section>
+<section id="id1">
+<h3>1 <span class="math notranslate nohighlight">\(M_\odot\)</span><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -755,10 +724,12 @@ functions are now in a module, <a class="reference download internal" download="
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000.0, 1000000000.0)
 </pre></div>
 </div>
-<img alt="../_images/10c77dfd920cc2e637d2f135a550368c4823dea103070cca96ce711d6a580e94.png" src="../_images/10c77dfd920cc2e637d2f135a550368c4823dea103070cca96ce711d6a580e94.png" />
+<img alt="../_images/371549f716d0a749117f4bafd528814004a2e8e887fce9cfb6490a078f2ed8ad.png" src="../_images/371549f716d0a749117f4bafd528814004a2e8e887fce9cfb6490a078f2ed8ad.png" />
 </div>
 </div>
-<p>Finally the 15 solar mass star</p>
+</section>
+<section id="id2">
+<h3>8 <span class="math notranslate nohighlight">\(M_\odot\)</span><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -784,69 +755,41 @@ functions are now in a module, <a class="reference download internal" download="
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000.0, 1000000000.0)
 </pre></div>
 </div>
+<img alt="../_images/10c77dfd920cc2e637d2f135a550368c4823dea103070cca96ce711d6a580e94.png" src="../_images/10c77dfd920cc2e637d2f135a550368c4823dea103070cca96ce711d6a580e94.png" />
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>15 <span class="math notranslate nohighlight">\(M_\odot\)</span><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">models</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">profiles</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">Rho</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;t = </span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">star_age</span><span class="si">:</span><span class="s2">10.3g</span><span class="si">}</span><span class="s2"> yr&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">regimes</span><span class="o">.</span><span class="n">deg_ideal</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">mu_e</span><span class="o">=</span><span class="mf">1.3</span><span class="p">),</span> <span class="n">rho</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">regimes</span><span class="o">.</span><span class="n">rad_ideal</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mf">0.6</span><span class="p">),</span> <span class="n">rho</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T_H</span><span class="p">,</span> <span class="n">rho_H</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;0.5&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T_He</span><span class="p">,</span> <span class="n">rho_He</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;0.5&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$T(m)$ [K]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\rho(m)$ [g/cc]&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">1.e3</span><span class="p">,</span> <span class="mf">1.e9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000.0, 1000000000.0)
+</pre></div>
+</div>
 <img alt="../_images/3da44b4d7c431b8c7b669450d15fff8fcf7d645ffe7004bd3f11c67b361d04b3.png" src="../_images/3da44b4d7c431b8c7b669450d15fff8fcf7d645ffe7004bd3f11c67b361d04b3.png" />
 </div>
 </div>
 </section>
-<section id="convection">
-<h2>Convection<a class="headerlink" href="#convection" title="Link to this heading">#</a></h2>
-<p>We can look at where the models are convective by comparing <span class="math notranslate nohighlight">\(\nabla\)</span> and <span class="math notranslate nohighlight">\(\nabla_\mathrm{ad}\)</span>.</p>
-<p>First the H burning profiles</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">star</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">star</span><span class="o">.</span><span class="n">profiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mass</span><span class="p">,</span> <span class="n">star</span><span class="o">.</span><span class="n">profiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">gradT</span> <span class="o">-</span> <span class="n">star</span><span class="o">.</span><span class="n">profiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grada</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">star</span><span class="o">.</span><span class="n">mass</span><span class="si">}</span><span class="s2"> $M_\odot$&quot;</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;enclosed mass ($M_\odot$)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nabla - \nabla_\mathrm</span><span class="si">{ad}</span><span class="s2">$&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-/tmp/ipykernel_3167/701825932.py:7: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-  ax.set_xlabel(&quot;enclosed mass ($M_\odot$)&quot;)
-</pre></div>
-</div>
-<img alt="../_images/1d66a564ae660e122b28a29c38083d07e33e96d1dc888bb0ab212c476ad5004b.png" src="../_images/1d66a564ae660e122b28a29c38083d07e33e96d1dc888bb0ab212c476ad5004b.png" />
-</div>
-</div>
-<p>We see that the massive stars have convective cores <span class="math notranslate nohighlight">\(\nabla \sim \nabla_\mathrm{ad}\)</span>, but the 1 solar mass star has a radiative core.</p>
-<p>Let’s look at the same plot, but in terms of radius</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">star</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">star</span><span class="o">.</span><span class="n">profiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="n">star</span><span class="o">.</span><span class="n">profiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">gradT</span> <span class="o">-</span> <span class="n">star</span><span class="o">.</span><span class="n">profiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grada</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">star</span><span class="o">.</span><span class="n">mass</span><span class="si">}</span><span class="s2"> $M_\odot$&quot;</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;radius ($R_\odot$)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nabla - \nabla_\mathrm</span><span class="si">{ad}</span><span class="s2">$&quot;</span><span class="p">)</span>
-<span class="c1">#ax.set_xscale(&quot;log&quot;)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-/tmp/ipykernel_3167/3542329901.py:7: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-  ax.set_xlabel(&quot;radius ($R_\odot$)&quot;)
-</pre></div>
-</div>
-<img alt="../_images/e23d685915d70560baeb2d29caa252dcb973c66629f321cb3732899a8076e61d.png" src="../_images/e23d685915d70560baeb2d29caa252dcb973c66629f321cb3732899a8076e61d.png" />
-</div>
-</div>
-<p>On this scale, we see that the Sun’s outer convective zone is ~ 1/3rd of its radius</p>
 </section>
 </section>
 
@@ -916,9 +859,13 @@ functions are now in a module, <a class="reference download internal" download="
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hr-diagram">HR diagram</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-evolution">Central evolution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-sequence-lifetime">Main sequence lifetime</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles">Profiles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convection">Convection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles">Profiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-odot">0.3 <span class="math notranslate nohighlight">\(M_\odot\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1 <span class="math notranslate nohighlight">\(M_\odot\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8 <span class="math notranslate nohighlight">\(M_\odot\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">15 <span class="math notranslate nohighlight">\(M_\odot\)</span></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
