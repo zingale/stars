@@ -220,7 +220,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../polytrope/lane-emden.html">Lane-Emden polytrope equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../polytrope/lane-emden-shooting.html">Solving Lane-Emden via Shooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stellar_evolution/eddington_standard_model.html">Eddington Standard Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stellar_evolution/stellar-models.html">Exploring MESA models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stellar_evolution/stellar-models.html">Stellar Evolution in the ρ-T Plane</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Close Binary Evolution</span></p>
 <ul class="nav bd-sidenav">
@@ -687,13 +687,13 @@ warning: Zn60 was not able to be linked in TabularLibrary
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.8/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.8/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.8/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.8/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
 </pre></div>
 </div>
@@ -740,8 +740,8 @@ warning: Zn60 was not able to be linked in TabularLibrary
 <p>We’ll specific the time-points where we want to store the solution.</p>
 <div class="cell tag_nbval-ignore-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmax</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">tmin</span> <span class="o">=</span> <span class="mf">1.e-12</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmax</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">tmin</span> <span class="o">=</span> <span class="mf">1.e-11</span>
 <span class="n">factor</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">factor</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">tmax</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">tmin</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="n">t_eval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">tmin</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">tmax</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -809,7 +809,7 @@ warning: Zn60 was not able to be linked in TabularLibrary
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/90a526bb69f541657c29c56afa0f3bd49b51fa4944e2909174e6eda7515a6152.png" src="../_images/90a526bb69f541657c29c56afa0f3bd49b51fa4944e2909174e6eda7515a6152.png" />
+<img alt="../_images/79f42d208312dce9ca2c2c378345dc56d9c84760358a0cdf9ccdb2587e3f95ff.png" src="../_images/79f42d208312dce9ca2c2c378345dc56d9c84760358a0cdf9ccdb2587e3f95ff.png" />
 </div>
 </div>
 </section>
@@ -824,7 +824,7 @@ warning: Zn60 was not able to be linked in TabularLibrary
 </div>
 </div>
 </div>
-<p>Notice that <span class="math notranslate nohighlight">\(Y_e\)</span> has changed a bit due to electron captures.</p>
+<p>Notice that <span class="math notranslate nohighlight">\(Y_e\)</span> has changed a lot due to electron captures.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comp</span><span class="o">.</span><span class="n">ye</span>
@@ -832,7 +832,7 @@ warning: Zn60 was not able to be linked in TabularLibrary
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.48278611901948737
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4750014049084172
 </pre></div>
 </div>
 </div>
@@ -840,7 +840,7 @@ warning: Zn60 was not able to be linked in TabularLibrary
 </section>
 <section id="visualizing-network-flow">
 <h3>Visualizing network flow<a class="headerlink" href="#visualizing-network-flow" title="Link to this heading">#</a></h3>
-<p>Finally, we can visualize the evolution of the flow through the network.  We’ll just work with a few of the times that were saved.</p>
+<p>Finally, we can visualize the evolution of the flow through the network.  We’ll just work with a few of the times that were saved.  We’ll also show the net rate between nuclei (forward - reverse rate) to make it clearer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">factor</span><span class="p">):</span>
@@ -848,9 +848,10 @@ warning: Zn60 was not able to be linked in TabularLibrary
     <span class="n">Y</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span> <span class="n">idx</span><span class="p">]</span>
     <span class="n">comp</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">Y</span> <span class="o">*</span> <span class="n">he_burn</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">,</span>
-                   <span class="n">rotated</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">hide_xalpha</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">curved_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                   <span class="n">rotated</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">hide_xalpha</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                    <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1500</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span>                
                    <span class="n">ydot_cutoff_value</span><span class="o">=</span><span class="mf">1.e-15</span><span class="p">,</span>
+                   <span class="n">use_net_rate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                    <span class="n">color_nodes_by_abundance</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                    <span class="n">Z_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">),</span>
                    <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">node_font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -859,31 +860,31 @@ warning: Zn60 was not able to be linked in TabularLibrary
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.8/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.8/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.8/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.8/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.8/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.8/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.8/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.8/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
 </pre></div>
 </div>
-<img alt="../_images/0f9d56bdd6874ddabbfbb32370800024d74ee3f0216be96536ffd39e6f2a2183.png" src="../_images/0f9d56bdd6874ddabbfbb32370800024d74ee3f0216be96536ffd39e6f2a2183.png" />
-<img alt="../_images/707e1ef88d9989a999a248fcf55d2fbb0b105a1fa260e97e03bbf8b4fe1d48e0.png" src="../_images/707e1ef88d9989a999a248fcf55d2fbb0b105a1fa260e97e03bbf8b4fe1d48e0.png" />
-<img alt="../_images/6d5917110c4d79537b7f6de09858d739ddc5ac258b3f50804fa00f790652c6fa.png" src="../_images/6d5917110c4d79537b7f6de09858d739ddc5ac258b3f50804fa00f790652c6fa.png" />
-<img alt="../_images/ebbc15542f7adffcd2ee4e2be299b21e3d8e60eb12d5a795e82a3fcd0530861e.png" src="../_images/ebbc15542f7adffcd2ee4e2be299b21e3d8e60eb12d5a795e82a3fcd0530861e.png" />
-<img alt="../_images/f6f877fa2a069ba9155db0dd8e2e41e22edbac98de2cd24299ac953f9818703b.png" src="../_images/f6f877fa2a069ba9155db0dd8e2e41e22edbac98de2cd24299ac953f9818703b.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+</pre></div>
+</div>
+<img alt="../_images/5a4e691867a1c904294e3c6323ada74b761e9af1bd1989f647a4faa36dd59810.png" src="../_images/5a4e691867a1c904294e3c6323ada74b761e9af1bd1989f647a4faa36dd59810.png" />
+<img alt="../_images/51d24dd1520fd54a9a9206fa25cc6548d34b16d2f07b65202b84355403085c46.png" src="../_images/51d24dd1520fd54a9a9206fa25cc6548d34b16d2f07b65202b84355403085c46.png" />
+<img alt="../_images/0ecacdc37beb673032d12ec9b34351060ceb44e422e865ef52aa21fe4793d206.png" src="../_images/0ecacdc37beb673032d12ec9b34351060ceb44e422e865ef52aa21fe4793d206.png" />
+<img alt="../_images/ff708393f7b9732c42db31a3d8d8b5e40450d28b9c98708647eb874a1be50daa.png" src="../_images/ff708393f7b9732c42db31a3d8d8b5e40450d28b9c98708647eb874a1be50daa.png" />
+<img alt="../_images/68cfcfbb011b7b329231a50a7a92cb65b812c6fa69e4e794c2df469ba3d8298c.png" src="../_images/68cfcfbb011b7b329231a50a7a92cb65b812c6fa69e4e794c2df469ba3d8298c.png" />
 </div>
 </div>
 </section>
