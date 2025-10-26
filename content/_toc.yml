@@ -46,6 +46,10 @@ parts:
     - file: stellar_evolution/eddington_standard_model
     - file: stellar_evolution/stellar-models
 
+  - caption: The Sun
+    chapters:
+    - file: sun/sun-convection
+
   - caption: Close Binary Evolution
     chapters:
     - file: equipotentials/equipotentials
