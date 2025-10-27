@@ -562,19 +562,19 @@ equations of stellar structure.</p>
 <h2>Stopping point<a class="headerlink" href="#stopping-point" title="Link to this heading">#</a></h2>
 <p>But we have the problem that we do not know the stopping point, <span class="math notranslate nohighlight">\(\xi_1\)</span>.</p>
 <p>We estimate the radius, <span class="math notranslate nohighlight">\(\xi_1\)</span> each step and make sure that the next step does not take us past that estimate.  This prevents us from having negative <span class="math notranslate nohighlight">\(\theta\)</span> values.  Given a point <span class="math notranslate nohighlight">\((\xi_p, \theta(\xi_p))\)</span>, and the derivative at that point, <span class="math notranslate nohighlight">\(\theta^\prime_p = d\theta/d\xi |_{\xi_p}\)</span>, we can write the equation of a line as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2daadc55-7674-4a55-a825-cc93228b91ff">
-<span class="eqno">(1)<a class="headerlink" href="#equation-2daadc55-7674-4a55-a825-cc93228b91ff" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-12360836-df1b-4e72-a7a0-3ba6cc8d6bdf">
+<span class="eqno">(1)<a class="headerlink" href="#equation-12360836-df1b-4e72-a7a0-3ba6cc8d6bdf" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \theta(\xi) - \theta_p = \theta^\prime_p (\xi - \xi_p)
 \end{equation}\]</div>
 <p><img alt="theta intercept" src="../_images/le_extrap.png" /></p>
 <p>Then we can ask when does <span class="math notranslate nohighlight">\(\theta\)</span> become zero, finding:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-66b2154f-f8d1-4e83-95e8-56a921cc7111">
-<span class="eqno">(2)<a class="headerlink" href="#equation-66b2154f-f8d1-4e83-95e8-56a921cc7111" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c7bd2d5b-1c3e-4bd3-aa83-2f386bd0d225">
+<span class="eqno">(2)<a class="headerlink" href="#equation-c7bd2d5b-1c3e-4bd3-aa83-2f386bd0d225" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \xi = -\frac{\theta_p}{\theta^\prime_p} + \xi_p
 \end{equation}\]</div>
 <p>or in terms of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c989ff81-a1b5-4533-aa77-a26185db8adc">
-<span class="eqno">(3)<a class="headerlink" href="#equation-c989ff81-a1b5-4533-aa77-a26185db8adc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-03032950-9609-48ad-b294-87c12efebae6">
+<span class="eqno">(3)<a class="headerlink" href="#equation-03032950-9609-48ad-b294-87c12efebae6" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \xi = -\frac{y_p}{z_p} + \xi_p
 \end{equation}\]</div>
 <p>This is our estimate of <span class="math notranslate nohighlight">\(\xi_1\)</span>.  We then make sure our stepsize <span class="math notranslate nohighlight">\(h\)</span> is small enough that we do not go beyond this estimate.</p>
