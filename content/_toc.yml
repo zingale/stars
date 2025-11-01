@@ -69,4 +69,5 @@ parts:
     - file: homework/homework2-solutions.md
     - file: homework/homework3-solutions.md
     - file: homework/homework4-solutions.md
+    - file: homework/homework5-solutions.ipynb
 
