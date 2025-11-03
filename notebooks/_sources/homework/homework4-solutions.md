@@ -38,7 +38,7 @@ $$\rho^\star_b - \rho^\star_\mathrm{sur} =
       \left . \frac{\partial \rho}{\partial s} \right |_P
       \left . \frac{\partial s} {\partial r} \right |_\mathrm{sur} \Delta r < 0$$
 
-But since the bvubble expanded while remaining in pressure equilibrium with its surroundings,
+But since the bubble expanded while remaining in pressure equilibrium with its surroundings,
 
 $$\left . \frac{\partial P} {\partial r} \right |_b = \left . \frac{\partial P} {\partial r} \right |_\mathrm{sur}$$
 
