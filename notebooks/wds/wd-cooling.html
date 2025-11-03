@@ -605,6 +605,7 @@ model also provides <span class="math notranslate nohighlight">\(Y_e = 1/\mu_e\)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">history</span><span class="o">.</span><span class="n">log_L</span><span class="p">[</span><span class="n">idx</span><span class="p">:]</span>
+<span class="n">L0</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -612,7 +613,7 @@ model also provides <span class="math notranslate nohighlight">\(Y_e = 1/\mu_e\)
 <p>Now we can compute the age based on the luminosity</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="mf">6.e6</span> <span class="o">*</span> <span class="p">(</span><span class="mi">12</span><span class="o">/</span><span class="n">mu_i</span><span class="p">)</span> <span class="o">*</span> <span class="n">M</span><span class="o">**</span><span class="p">(</span><span class="mf">5.</span><span class="o">/</span><span class="mf">7.0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">mu</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="o">/</span><span class="mf">7.</span><span class="p">)</span> <span class="o">*</span> <span class="n">L</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">5.</span><span class="o">/</span><span class="mf">7.</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.e9</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="mf">6.e6</span> <span class="o">*</span> <span class="p">(</span><span class="mi">12</span><span class="o">/</span><span class="n">mu_i</span><span class="p">)</span> <span class="o">*</span> <span class="n">M</span><span class="o">**</span><span class="p">(</span><span class="mf">5.</span><span class="o">/</span><span class="mf">7.0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">mu</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="o">/</span><span class="mf">7.</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">L</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">5.</span><span class="o">/</span><span class="mf">7.</span><span class="p">)</span> <span class="o">-</span> <span class="n">L0</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">5.</span><span class="o">/</span><span class="mf">7.</span><span class="p">))</span> <span class="o">/</span> <span class="mf">1.e9</span>
 </pre></div>
 </div>
 </div>
@@ -626,7 +627,7 @@ model also provides <span class="math notranslate nohighlight">\(Y_e = 1/\mu_e\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a0589ab57fe28090f6dadfac9f948e3103d83f792f0981e6da056ff85847db84.png" src="../_images/a0589ab57fe28090f6dadfac9f948e3103d83f792f0981e6da056ff85847db84.png" />
+<img alt="../_images/41c2a598ddb1f030e94303ff0641aaf7fc30c94f348cc302dcdd780386c18f66.png" src="../_images/41c2a598ddb1f030e94303ff0641aaf7fc30c94f348cc302dcdd780386c18f66.png" />
 </div>
 </div>
 <p>We seae that our analytic model cools to fast.  In addition to not including crystalization, we should also probably use an average over the star for the compositional quantities.</p>
