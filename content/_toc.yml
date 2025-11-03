@@ -50,6 +50,10 @@ parts:
     chapters:
     - file: sun/sun-convection
 
+  - caption: WDs
+    chapters:
+    - file: wds/wd-cooling
+
   - caption: Close Binary Evolution
     chapters:
     - file: equipotentials/equipotentials
