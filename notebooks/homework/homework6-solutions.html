@@ -711,7 +711,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f3f9c241160&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7faef5509160&gt;
 </pre></div>
 </div>
 <img alt="../_images/46cbb09a68d46df6d36f177a8e9e6f3b10695b19c7860e54b9601bac84d1bcb2.png" src="../_images/46cbb09a68d46df6d36f177a8e9e6f3b10695b19c7860e54b9601bac84d1bcb2.png" />
@@ -912,67 +912,6 @@ pressure is:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">profile</span> <span class="o">=</span> <span class="n">mr</span><span class="o">.</span><span class="n">MesaData</span><span class="p">(</span><span class="s2">&quot;M0.3_default_profile8.data&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/mesa_reader/__init__.py:134,</span> in <span class="ni">MesaData.__init__</span><span class="nt">(self, file_name, file_type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="bp">self</span><span class="o">.</span><span class="n">header_data</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="bp">self</span><span class="o">.</span><span class="n">header_names</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">134</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_data</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/mesa_reader/__init__.py:183,</span> in <span class="ni">MesaData.read_data</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="bp">self</span><span class="o">.</span><span class="n">read_model_data</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_type</span> <span class="o">==</span> <span class="s2">&quot;log&quot;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">183</span>     <span class="bp">self</span><span class="o">.</span><span class="n">read_log_data</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="k">raise</span> <span class="n">UnknownFileTypeError</span><span class="p">(</span><span class="s2">&quot;Unknown file type </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_type</span><span class="p">))</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/mesa_reader/__init__.py:199,</span> in <span class="ni">MesaData.read_log_data</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span> <span class="k">def</span><span class="w"> </span><span class="nf">read_log_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Reads in or update data from the original log (.data or .log) file.</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">190</span><span class="sd">     This re-reads the data from the originally-provided file name. Mostly</span>
-<span class="sd">   (...)    197     None</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">199</span>     <span class="bp">self</span><span class="o">.</span><span class="n">bulk_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">200</span>         <span class="bp">self</span><span class="o">.</span><span class="n">file_name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span>         <span class="n">skip_header</span><span class="o">=</span><span class="n">MesaData</span><span class="o">.</span><span class="n">bulk_names_line</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span>         <span class="n">names</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span>         <span class="n">ndmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  <span class="c1"># Make sure a single entry is still a 1D array</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span>         <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span>     <span class="bp">self</span><span class="o">.</span><span class="n">bulk_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bulk_data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">names</span>
-<span class="g g-Whitespace">    </span><span class="mi">207</span>     <span class="n">header_data</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/numpy/lib/_npyio_impl.py:1991,</span> in <span class="ni">genfromtxt</span><span class="nt">(fname, dtype, comments, delimiter, skip_header, skip_footer, converters, missing_values, filling_values, usecols, names, excludelist, deletechars, replace_space, autostrip, case_sensitive, defaultfmt, unpack, usemask, loose, invalid_raise, max_rows, encoding, ndmin, like)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1989</span>     <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">fspath</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1990</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1991</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">_datasource</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1992</span>     <span class="n">fid_ctx</span> <span class="o">=</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">closing</span><span class="p">(</span><span class="n">fid</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1993</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/numpy/lib/_datasource.py:192,</span> in <span class="ni">open</span><span class="nt">(path, mode, destpath, encoding, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="sd"> Open `path` with `mode` and return the file object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="sd"> </span>
-<span class="sd">   (...)    188 </span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">DataSource</span><span class="p">(</span><span class="n">destpath</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">192</span> <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/numpy/lib/_datasource.py:529,</span> in <span class="ni">DataSource.open</span><span class="nt">(self, path, mode, encoding, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="k">return</span> <span class="n">_file_openers</span><span class="p">[</span><span class="n">ext</span><span class="p">](</span><span class="n">found</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">527</span>                               <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">528</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">529</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> not found.&quot;</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: M0.3_default_profile8.data not found.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1045,7 +984,7 @@ pressure is:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7bd003bda236978603732782f60b84a8c875b8687b8415d6a7a16dd94389e496.png" src="../_images/7bd003bda236978603732782f60b84a8c875b8687b8415d6a7a16dd94389e496.png" />
+<img alt="../_images/0006642b0cfce08db3133e924ba08191c11916bfd5b4a0bfb5fc7486bec8a4d0.png" src="../_images/0006642b0cfce08db3133e924ba08191c11916bfd5b4a0bfb5fc7486bec8a4d0.png" />
 </div>
 </div>
 <p>We can get temperature from the ideal gas law:</p>
@@ -1065,7 +1004,7 @@ pressure is:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2c948810d8ec95b74454b4c0ec91944c93944393975cc67925ac1e65af63b346.png" src="../_images/2c948810d8ec95b74454b4c0ec91944c93944393975cc67925ac1e65af63b346.png" />
+<img alt="../_images/430f6acfcdcebb479dbd3cb598ea7aebe8a9d8e363b833d6b94563d48fbf7d0e.png" src="../_images/430f6acfcdcebb479dbd3cb598ea7aebe8a9d8e363b833d6b94563d48fbf7d0e.png" />
 </div>
 </div>
 </section>
