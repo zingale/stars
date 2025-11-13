@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Simulating convection &#8212; PHY 521 Fall 2025</title>
+    <title>A Supernova Lightcurve &#8212; PHY 521 Fall 2025</title>
   
   
   
@@ -59,11 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"svg": {"fontCache": "global", "scale": 1}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'convection/convection-2d';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'supernovae/supernova-lightcurve';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mass Excess Visualized" href="../nuclear/mass-excess.html" />
-    <link rel="prev" title="Convective temperature gradient" href="compare-atmospheres.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -184,9 +184,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../eos/electron-eos.html">Electrons and Positrons</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Convection</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="compare-atmospheres.html">Convective temperature gradient</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Simulating convection</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../convection/compare-atmospheres.html">Convective temperature gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../convection/convection-2d.html">Simulating convection</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nuclear Properties</span></p>
 <ul class="nav bd-sidenav">
@@ -305,7 +305,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/convection/convection-2d.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/zingale/stars/main?urlpath=tree/content/supernovae/supernova-lightcurve.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -323,7 +323,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/convection/convection-2d.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/zingale/stars/blob/main/content/supernovae/supernova-lightcurve.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -371,7 +371,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fconvection/convection-2d.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/stars/issues/new?title=Issue%20on%20page%20%2Fsupernovae/supernova-lightcurve.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -401,7 +401,7 @@
       
       
       
-      <li><a href="../_sources/convection/convection-2d.ipynb" target="_blank"
+      <li><a href="../_sources/supernovae/supernova-lightcurve.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -483,7 +483,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Simulating convection</h1>
+    <h1>A Supernova Lightcurve</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -497,202 +497,184 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="simulating-convection">
-<h1>Simulating convection<a class="headerlink" href="#simulating-convection" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="a-supernova-lightcurve">
+<h1>A Supernova Lightcurve<a class="headerlink" href="#a-supernova-lightcurve" title="Link to this heading">#</a></h1>
+<p>ReacLib provides the beta-decay constants for radioactive nuclei, and these can be treated like any other rate.  So we can build a network with <span class="math notranslate nohighlight">\({}^{56}\mathrm{Ni}\)</span> and compute its decay.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyro</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pyro</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">pyro</span><span class="w"> </span><span class="kn">import</span> <span class="n">compressible</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can model convection in a 2D plane-parallel atmosphere using <a class="reference external" href="https://python-hydro.github.io/pyro2">pyro</a>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">convection</span></code> problem setup initializes an isentropic atmosphere in hydrostatic equilibrium.  The density at the base of the atmosphere is <code class="docutils literal notranslate"><span class="pre">convection.dens_base</span></code> and the density falls to a value <code class="docutils literal notranslate"><span class="pre">convection.dens_cutoff</span></code>.  In regions above the atmosphere, the density is set to this cutoff value.  This <em>buffer</em> region gives the atmosphere room to expand as heat is injected.</p>
-<p>We’ll setup this problem using the <a class="reference external" href="https://python-hydro.github.io/pyro2/compressible_basics.html#compressible-solver">unsplit compressible solver</a>.</p>
-<p>We can override the defaults of any of the runtime parameters by adding them to the <code class="docutils literal notranslate"><span class="pre">params</span></code> dictionary here:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Pyro</span><span class="p">(</span><span class="s2">&quot;compressible&quot;</span><span class="p">)</span>
-<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;mesh.nx&quot;</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span> <span class="s2">&quot;mesh.ny&quot;</span><span class="p">:</span> <span class="mi">288</span><span class="p">}</span>
-<span class="n">p</span><span class="o">.</span><span class="n">initialize_problem</span><span class="p">(</span><span class="s2">&quot;convection&quot;</span><span class="p">,</span> <span class="n">inputs_dict</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">convection</span></code> problem sets up a source term to the energy evolution equation of the form:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial (\rho E)}{\partial t} + \nabla \cdot (\rho {\bf U}E + {\bf U}p) = \rho {\bf U} \cdot {\bf g} + \rho S\]</div>
-<p>where <span class="math notranslate nohighlight">\(S\)</span> is the heating source (energy / mass / time).  We take the form:</p>
-<div class="math notranslate nohighlight">
-\[S = {f}_\mathrm{heat} e^{-((y - y_0)/\sigma)^2}\]</div>
-<p>where <span class="math notranslate nohighlight">\(y_0\)</span> is the vertical location of the heating layer (controlled by <code class="docutils literal notranslate"><span class="pre">convection.y_height</span></code>), <span class="math notranslate nohighlight">\(\sigma\)</span> is the thickness of the heating layer (controlled by <code class="docutils literal notranslate"><span class="pre">convection.thickness</span></code>), and <span class="math notranslate nohighlight">\(f_\mathrm{heat}\)</span> is the amplitude of the heating rate (controlled by <code class="docutils literal notranslate"><span class="pre">convection.e_rate</span></code>).</p>
-<p>We can inspect this source</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>compressible.problems.convection.source_terms<span class="o">??</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Finally, we can see the value of all parameters that control this problem:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solver = compressible
-Problem = convection
-Simulation time = 0.0
-Simulation step number = 0
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pynucastro</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pyna</span>
 
-Runtime Parameters
-------------------
-compressible.cvisc = 0.1
-compressible.delta = 0.33
-compressible.grav = -2.0
-compressible.limiter = 2
-compressible.riemann = HLLC
-compressible.small_dens = 0.0001
-compressible.small_eint = -1e+200
-compressible.use_flattening = 1
-compressible.z0 = 0.75
-compressible.z1 = 0.85
-convection.dens_base = 1000.0
-convection.dens_cutoff = 0.001
-convection.e_rate = 0.5
-convection.scale_height = 2.0
-convection.thickness = 0.25
-convection.y_height = 2.0
-driver.cfl = 0.8
-driver.fix_dt = -1.0
-driver.init_tstep_factor = 0.01
-driver.max_dt_change = 2.0
-driver.max_steps = 100000
-driver.tmax = 25.0
-driver.verbose = 0
-eos.gamma = 1.4
-io.basename = convection_
-io.do_io = 0
-io.dt_out = 0.5
-io.force_final_output = 0
-io.n_out = 100000000
-mesh.grid_type = Cartesian2d
-mesh.nx = 96
-mesh.ny = 288
-mesh.xlboundary = periodic
-mesh.xmax = 4.0
-mesh.xmin = 0.0
-mesh.xrboundary = periodic
-mesh.ylboundary = reflect
-mesh.ymax = 12.0
-mesh.ymin = 0.0
-mesh.yrboundary = ambient
-particles.do_particles = 0
-particles.n_particles = 100
-particles.particle_generator = grid
-sponge.do_sponge = 1
-sponge.sponge_rho_begin = 0.01
-sponge.sponge_rho_full = 0.001
-sponge.sponge_timescale = 0.01
-vis.dovis = 0
-vis.store_images = 0
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s view the initial state:</p>
+<p>We’ll look at <span class="math notranslate nohighlight">\({}^{56}\mathrm{Ni} \rightarrow {}^{56}\mathrm{Co} \rightarrow {}^{56}\mathrm{Fe}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">sim</span><span class="o">.</span><span class="n">dovis</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nuclei</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ni56&quot;</span><span class="p">,</span> <span class="s2">&quot;co56&quot;</span><span class="p">,</span> <span class="s2">&quot;fe56&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rl</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">ReacLibLibrary</span><span class="p">()</span>
+<span class="n">lib</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">linking_nuclei</span><span class="p">(</span><span class="n">nuclei</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that we pull in 2 rates, which are simple decays.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lib</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f146287ac22029f82b3dd1665448762086a8b5466911d6d73d4c70ea511b95e0.png" src="../_images/f146287ac22029f82b3dd1665448762086a8b5466911d6d73d4c70ea511b95e0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<p>We see that the initial velocity is just set as random noise–this will break the symmetry and start the convection.</p>
-<p>Now we’ll run the simulation.  We can do step-by-step if desired, but here we’ll just run to the maximum time we asked (<code class="docutils literal notranslate"><span class="pre">driver.tmax</span></code>).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This can take a while, depending on your computer.  If it is too slow, you can try lowering the resolution (<code class="docutils literal notranslate"><span class="pre">mesh.nx</span></code> and <code class="docutils literal notranslate"><span class="pre">mesh.ny</span></code>) even more that we already did above.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">run_sim</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we see that considerable convection has set in.  We are using a very coarse resolution here, so there is not much fine structure, but we see largescale velocity features.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">sim</span><span class="o">.</span><span class="n">dovis</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/e3c1802b5eebffabf6825c7fd5e5b6cc98f6f1ee9b2d11e21a0bf50ccf5e189b.png" src="../_images/e3c1802b5eebffabf6825c7fd5e5b6cc98f6f1ee9b2d11e21a0bf50ccf5e189b.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<p>Since we are stratified, it is hard to see the detail in the energy field.  Let’s instead look at the departure from the background value,</p>
-<div class="math notranslate nohighlight">
-\[e' = e - \langle e \rangle\]</div>
-<p>where the average <span class="math notranslate nohighlight">\(\langle \cdot \rangle\)</span> is over all cells at a constant height.</p>
-<p>We’ll normalize this by <span class="math notranslate nohighlight">\(e\)</span> so we see the relative fluctuation.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Co56 ⟶ Fe56 + e⁺ + 𝜈           [Q =   4.57 MeV] (Co56 --&gt; Fe56 &lt;wc12_reaclib_weak_&gt;)
+Ni56 ⟶ Co56 + e⁺ + 𝜈           [Q =   2.13 MeV] (Ni56 --&gt; Co56 &lt;wc12_reaclib_weak_&gt;)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_var</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">)</span>
-<span class="n">e_avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">eprime_scaled</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">e</span> <span class="o">-</span> <span class="n">e_avg</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:])</span> <span class="o">/</span> <span class="n">e</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">PythonNetwork</span><span class="p">(</span><span class="n">libraries</span><span class="o">=</span><span class="p">[</span><span class="n">lib</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>pyro wraps NumPy arrays to provide additional methods for working with ghost cells
-and doing stencil operations.  See: <a class="reference external" href="https://python-hydro.github.io/pyro2/mesh-examples.html#ArrayIndexer">ArrayIndexer</a></p>
+<p>We can write out the network to solve.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">write_network</span><span class="p">(</span><span class="s2">&quot;decay.py&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%pycat decay.py</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">decay</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll start out with pure <span class="math notranslate nohighlight">\({}^{56}\mathrm{Ni}\)</span> and convert to molar fractions, since that’s what we integrate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">unique_nuclei</span><span class="p">))</span>
+<span class="n">X</span><span class="p">[</span><span class="n">decay</span><span class="o">.</span><span class="n">jni56</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">Y0</span> <span class="o">=</span> <span class="n">X</span> <span class="o">/</span> <span class="n">decay</span><span class="o">.</span><span class="n">A</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Even though the rates have no density or temperature dependence, we still need to pass in a <span class="math notranslate nohighlight">\((\rho, T)\)</span>, so we’ll just set them to arbitrary values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho0</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">T0</span> <span class="o">=</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll integrate for 400 days</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seconds_per_day</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">3600</span>
+<span class="n">tmax</span> <span class="o">=</span> <span class="mi">400</span> <span class="o">*</span> <span class="n">seconds_per_day</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use the default integrator in <code class="docutils literal notranslate"><span class="pre">solve_ivp()</span></code> since this system is not stiff.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">decay</span><span class="o">.</span><span class="n">rhs</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">],</span> <span class="n">Y0</span><span class="p">,</span>
+                <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">rho0</span><span class="p">,</span> <span class="n">T0</span><span class="p">),</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1.e-8</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can look at the evolution of the composition</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">eprime_scaled</span><span class="o">.</span><span class="n">v</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">unique_nuclei</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span> <span class="o">/</span> <span class="n">seconds_per_day</span><span class="p">,</span> <span class="n">decay</span><span class="o">.</span><span class="n">A</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;X(</span><span class="si">{</span><span class="n">decay</span><span class="o">.</span><span class="n">names</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1.e-6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;time (days)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fcf08df39d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;X&#39;)
 </pre></div>
 </div>
-<img alt="../_images/963f5ba1d73aa688cf0eacc698114572468d981d75391ba88b165f9ae2c2ddca.png" src="../_images/963f5ba1d73aa688cf0eacc698114572468d981d75391ba88b165f9ae2c2ddca.png" />
+<img alt="../_images/9bcc155d8002234ca25a14190e92563ddfb9dc50fbf8441b3880faa8efbbb59b.png" src="../_images/9bcc155d8002234ca25a14190e92563ddfb9dc50fbf8441b3880faa8efbbb59b.png" />
 </div>
 </div>
-<p>This shows that the departure from the background energy is small, but not zero.</p>
+<p>If we want the luminosity, we can compute that as the instantaneous energy release.  Note: this assumes that all of the energy release is given to photons.  For this, we need the rates, which we can get these by iterating over the solution</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span> <span class="n">n</span><span class="p">]</span>
+    <span class="n">dYdt</span> <span class="o">=</span> <span class="n">decay</span><span class="o">.</span><span class="n">rhs</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">Y</span><span class="p">,</span> <span class="n">rho0</span><span class="p">,</span> <span class="n">T0</span><span class="p">)</span>
+    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">decay</span><span class="o">.</span><span class="n">energy_release</span><span class="p">(</span><span class="n">dYdt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>L is now in erg/g/s, so we should multiply by the initial <span class="math notranslate nohighlight">\({}^{56}\mathrm{Ni}\)</span> mass.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M_sun</span> <span class="o">=</span> <span class="mf">2.e33</span>
+<span class="n">L_sun</span> <span class="o">=</span> <span class="mf">4.e33</span>
+
+<span class="c1"># initial mass</span>
+<span class="n">M_Ni56</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">M_sun</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">*</span> <span class="n">M_sun</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can plot the lightcurve.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span> <span class="o">/</span> <span class="n">seconds_per_day</span><span class="p">,</span> <span class="n">L</span> <span class="o">/</span> <span class="n">L_sun</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;time (days)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;luminosity (solar)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;luminosity (solar)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/0c849c0cdf587b38db894dd053c28731b5892ad1c440ab878cb70d87ecf4c11e.png" src="../_images/0c849c0cdf587b38db894dd053c28731b5892ad1c440ab878cb70d87ecf4c11e.png" />
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -708,7 +690,7 @@ and doing stencil operations.  See: <a class="reference external" href="https://
         },
         kernelOptions: {
             name: "python3",
-            path: "./convection"
+            path: "./supernovae"
         },
         predefinedOutput: true
     }
@@ -725,24 +707,6 @@ and doing stencil operations.  See: <a class="reference external" href="https://
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="compare-atmospheres.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Convective temperature gradient</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../nuclear/mass-excess.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mass Excess Visualized</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
