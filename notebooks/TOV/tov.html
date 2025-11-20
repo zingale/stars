@@ -806,17 +806,11 @@ criteria.  Then it cuts dx by factors of 2 until we meet our tolerance at the st
 
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">mass</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$R$ [km]&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;$M$ [$M_\odot$]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$M$ [$M_\odot$]&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-/tmp/ipykernel_2304/1020375860.py:5: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-  ax.set_ylabel(&quot;$M$ [$M_\odot$]&quot;)
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$M$ [$M_\\odot$]&#39;)
 </pre></div>
 </div>
@@ -1049,90 +1043,13 @@ and</p>
 <span class="c1"># my vector is [m, p]</span>
 <span class="n">mass</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">radius</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">rhoc</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">1.e14</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">2.e16</span><span class="p">),</span> <span class="mi">50</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">rhoc</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rhoc</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">1.e14</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">2.e16</span><span class="p">),</span> <span class="mi">60</span><span class="p">):</span>
     <span class="n">Pc</span> <span class="o">=</span> <span class="n">pres_blend</span><span class="p">(</span><span class="n">rhoc</span><span class="p">)</span>
 
     <span class="n">sol</span> <span class="o">=</span> <span class="n">ns4</span><span class="o">.</span><span class="n">integrate</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Pc</span><span class="p">],</span> <span class="n">R_max</span><span class="o">/</span><span class="n">N</span><span class="p">,</span> <span class="n">R_max</span><span class="p">)</span>
 
     <span class="n">mass</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s2">&quot;y0&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">2.e33</span><span class="p">)</span>
     <span class="n">radius</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1.e5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100000000000000.0
-111419138419584.4
-124142244061624.6
-138318218748199.81
-154112967606560.3
-171711340700082.0
-191319296376748.56
-213166311653384.4
-237508067845006.1
-264629442869907.8
-294847845250197.6
-328516928826478.4
-366030731660941.56
-407828287567522.06
-454398764239076.3
-506287188104417.44
-564100822914682.5
-628516276709322.2
-700287420336378.0
-780254210199525.9
-869352518486841.2
-968625085926996.9
-1079233725255819.0
-1202472918213613.5
-1339784965202442.0
-1492776864903689.8
-1663239121402574.5
-1853166698924206.5
-2064782369420004.8
-2300562726247240.5
-2563267168386777.5
-2855970194408625.5
-3182097384130220.5
-3545465489070010.5
-3950327100885510.0
-4401420420561964.5
-4904024710813790.0
-5464022080672240.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6087966325340859.0
-6783159626969191.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7557738013994168.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8420766579201678.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9382345570870820.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0453728598612306e+16
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.1647454337295528e+16
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2977493270429192e+16
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4459411190371634e+16
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.611055136885705e+16
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7950237529825086e+16
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0000000000000004e+16
 </pre></div>
 </div>
 </div>
@@ -1151,24 +1068,7 @@ and</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$M$ [$M_\\odot$]&#39;)
 </pre></div>
 </div>
-<img alt="../_images/af7f3b0ad4f6b8e0201fd3b72782ee7b7dbaf053b467a883fbee7a6caf381e13.png" src="../_images/af7f3b0ad4f6b8e0201fd3b72782ee7b7dbaf053b467a883fbee7a6caf381e13.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">b</span>
-
-<span class="ne">NameError</span>: name &#39;b&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/ec0ff4bbee290fe95f35287f2e259191bf1b957ca79dd99039b3f671c170e887.png" src="../_images/ec0ff4bbee290fe95f35287f2e259191bf1b957ca79dd99039b3f671c170e887.png" />
 </div>
 </div>
 </section>
