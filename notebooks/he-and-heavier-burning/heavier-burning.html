@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -620,6 +620,19 @@ warning: Zn60 was not able to be linked in TabularLibrary
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">if</span> <span class="n">fr</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">all_lib</span><span class="o">.</span><span class="n">remove_rate</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="n">d</span> <span class="o">=</span> <span class="n">pyna</span><span class="o">.</span><span class="n">DerivedRate</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="n">fr</span><span class="p">,</span> <span class="n">compute_Q</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_pf</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">all_lib</span><span class="o">.</span><span class="n">add_rate</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: DerivedRate.__init__() got an unexpected keyword argument &#39;rate&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="removing-duplicates">
@@ -683,7 +696,7 @@ warning: Zn60 was not able to be linked in TabularLibrary
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6914e4894c7dca42839ae1c45487c11b47a02871dd835cccd86fdfc7ca81aa64.png" src="../_images/6914e4894c7dca42839ae1c45487c11b47a02871dd835cccd86fdfc7ca81aa64.png" />
+<img alt="../_images/0f19da688af78ea1158c4995622729e2c2fe9ade4f96600c106fef567b64124a.png" src="../_images/0f19da688af78ea1158c4995622729e2c2fe9ade4f96600c106fef567b64124a.png" />
 </div>
 </div>
 </section>
@@ -698,13 +711,13 @@ warning: Zn60 was not able to be linked in TabularLibrary
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:135: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:135: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:135: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:135: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
 </pre></div>
 </div>
@@ -820,7 +833,7 @@ warning: Zn60 was not able to be linked in TabularLibrary
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/79f42d208312dce9ca2c2c378345dc56d9c84760358a0cdf9ccdb2587e3f95ff.png" src="../_images/79f42d208312dce9ca2c2c378345dc56d9c84760358a0cdf9ccdb2587e3f95ff.png" />
+<img alt="../_images/f60001d110b14c99baf9249aa5b868b325320d7609ad71d1a034036d3925843f.png" src="../_images/f60001d110b14c99baf9249aa5b868b325320d7609ad71d1a034036d3925843f.png" />
 </div>
 </div>
 </section>
@@ -871,31 +884,29 @@ warning: Zn60 was not able to be linked in TabularLibrary
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:135: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:135: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:135: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:135: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:135: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: C12 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:135: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N13 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:135: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: N14 partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:135: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: p_nse partition function is not supported by tables: set pf = 1.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
 </pre></div>
 </div>
-<img alt="../_images/5a4e691867a1c904294e3c6323ada74b761e9af1bd1989f647a4faa36dd59810.png" src="../_images/5a4e691867a1c904294e3c6323ada74b761e9af1bd1989f647a4faa36dd59810.png" />
-<img alt="../_images/51d24dd1520fd54a9a9206fa25cc6548d34b16d2f07b65202b84355403085c46.png" src="../_images/51d24dd1520fd54a9a9206fa25cc6548d34b16d2f07b65202b84355403085c46.png" />
-<img alt="../_images/0ecacdc37beb673032d12ec9b34351060ceb44e422e865ef52aa21fe4793d206.png" src="../_images/0ecacdc37beb673032d12ec9b34351060ceb44e422e865ef52aa21fe4793d206.png" />
-<img alt="../_images/ff708393f7b9732c42db31a3d8d8b5e40450d28b9c98708647eb874a1be50daa.png" src="../_images/ff708393f7b9732c42db31a3d8d8b5e40450d28b9c98708647eb874a1be50daa.png" />
-<img alt="../_images/68cfcfbb011b7b329231a50a7a92cb65b812c6fa69e4e794c2df469ba3d8298c.png" src="../_images/68cfcfbb011b7b329231a50a7a92cb65b812c6fa69e4e794c2df469ba3d8298c.png" />
+<img alt="../_images/198f2b78ca3482d352db6cc0b43ce07c317c2f2e26fca05ff497963d02041573.png" src="../_images/198f2b78ca3482d352db6cc0b43ce07c317c2f2e26fca05ff497963d02041573.png" />
+<img alt="../_images/8369f7d564cfdbd27c3d1d2cdb22cc8d708bf34cf8c8627fe4088777ab8795fc.png" src="../_images/8369f7d564cfdbd27c3d1d2cdb22cc8d708bf34cf8c8627fe4088777ab8795fc.png" />
+<img alt="../_images/3a3b32f17bac782f20e1efcff74fcf274c878001c20ce13f27f1bfb52786c91a.png" src="../_images/3a3b32f17bac782f20e1efcff74fcf274c878001c20ce13f27f1bfb52786c91a.png" />
+<img alt="../_images/36e9565794d3159a6ff816a9077cb0f8a18d0d5a2848b5e37960b24353f56478.png" src="../_images/36e9565794d3159a6ff816a9077cb0f8a18d0d5a2848b5e37960b24353f56478.png" />
+<img alt="../_images/453222e8c3be06976de54046bf50aad026934c0001d7c804702fab011a26fbb0.png" src="../_images/453222e8c3be06976de54046bf50aad026934c0001d7c804702fab011a26fbb0.png" />
 </div>
 </div>
 </section>

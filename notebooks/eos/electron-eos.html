@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -570,6 +570,20 @@ of electrons (assuming full ionization) via <span class="math notranslate nohigh
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">it</span><span class="p">,</span> <span class="n">T</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">Ts</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">state</span> <span class="o">=</span> <span class="n">es</span><span class="o">.</span><span class="n">pe_state</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">comp</span><span class="p">,</span> <span class="n">compute_derivs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">eta</span><span class="p">[</span><span class="n">ir</span><span class="p">,</span> <span class="n">it</span><span class="p">]</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">eta</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">n_e</span><span class="p">[</span><span class="n">ir</span><span class="p">,</span> <span class="n">it</span><span class="p">]</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">n_e</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">n_pos</span><span class="p">[</span><span class="n">ir</span><span class="p">,</span> <span class="n">it</span><span class="p">]</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">n_pos</span>        
+
+<span class="ne">AttributeError</span>: &#39;tuple&#39; object has no attribute &#39;eta&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>At low density and very high temperatures (<span class="math notranslate nohighlight">\(kT \sim m_e c^2\)</span>), we can create electron positron pairs.  Here we plot the fraction of positrons to the total number of electrons and positrons.</p>
 <div class="cell docutils container">
@@ -602,10 +616,10 @@ of electrons (assuming full ionization) via <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f42a8e7f230&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f18e2d89550&gt;
 </pre></div>
 </div>
-<img alt="../_images/74cb2d742082c4adee510510ba6e18d7a5e0c80af19eb98fcc7e77bf5505f628.png" src="../_images/74cb2d742082c4adee510510ba6e18d7a5e0c80af19eb98fcc7e77bf5505f628.png" />
+<img alt="../_images/3db990ac37488da0e3c83b993f75765ae241e66a1102c50814acb8a3c8311056.png" src="../_images/3db990ac37488da0e3c83b993f75765ae241e66a1102c50814acb8a3c8311056.png" />
 </div>
 </div>
 <p>We see that we have nearly equal numbers of electrons and positrons at very low densities and high temperatures.</p>

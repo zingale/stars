@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -569,19 +569,19 @@ equations of stellar structure.</p>
 <h2>Stopping point<a class="headerlink" href="#stopping-point" title="Link to this heading">#</a></h2>
 <p>But we have the problem that we do not know the stopping point, <span class="math notranslate nohighlight">\(\xi_1\)</span>.</p>
 <p>We estimate the radius, <span class="math notranslate nohighlight">\(\xi_1\)</span> each step and make sure that the next step does not take us past that estimate.  This prevents us from having negative <span class="math notranslate nohighlight">\(\theta\)</span> values.  Given a point <span class="math notranslate nohighlight">\((\xi_p, \theta(\xi_p))\)</span>, and the derivative at that point, <span class="math notranslate nohighlight">\(\theta^\prime_p = d\theta/d\xi |_{\xi_p}\)</span>, we can write the equation of a line as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f6e1e037-2187-4383-adaa-661f99d48b7f">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f6e1e037-2187-4383-adaa-661f99d48b7f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f3db1212-5328-4f6d-9b20-7e6896ba062a">
+<span class="eqno">(1)<a class="headerlink" href="#equation-f3db1212-5328-4f6d-9b20-7e6896ba062a" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \theta(\xi) - \theta_p = \theta^\prime_p (\xi - \xi_p)
 \end{equation}\]</div>
 <p><img alt="theta intercept" src="../_images/le_extrap.png" /></p>
 <p>Then we can ask when does <span class="math notranslate nohighlight">\(\theta\)</span> become zero, finding:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7ff7b614-2b21-4412-93ae-e0fa8697b40a">
-<span class="eqno">(2)<a class="headerlink" href="#equation-7ff7b614-2b21-4412-93ae-e0fa8697b40a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b1f85b44-43ab-4c1b-99f1-a05a7abb6643">
+<span class="eqno">(2)<a class="headerlink" href="#equation-b1f85b44-43ab-4c1b-99f1-a05a7abb6643" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \xi = -\frac{\theta_p}{\theta^\prime_p} + \xi_p
 \end{equation}\]</div>
 <p>or in terms of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-770aefdb-5fa0-4d6c-a8fe-833297e579d8">
-<span class="eqno">(3)<a class="headerlink" href="#equation-770aefdb-5fa0-4d6c-a8fe-833297e579d8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6f5197a9-3717-4f23-8271-9a0ebefd124f">
+<span class="eqno">(3)<a class="headerlink" href="#equation-6f5197a9-3717-4f23-8271-9a0ebefd124f" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \xi = -\frac{y_p}{z_p} + \xi_p
 \end{equation}\]</div>
 <p>This is our estimate of <span class="math notranslate nohighlight">\(\xi_1\)</span>.  We then make sure our stepsize <span class="math notranslate nohighlight">\(h\)</span> is small enough that we do not go beyond this estimate.</p>
@@ -699,7 +699,7 @@ the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e47c6d99d8ae8f6c7bfc85f3f19f2f50230626ff3c7218fe1c8be414e6bf070d.png" src="../_images/e47c6d99d8ae8f6c7bfc85f3f19f2f50230626ff3c7218fe1c8be414e6bf070d.png" />
+<img alt="../_images/3d901a4da2172ccf0a0abb101aee9ef1c46f9ee7b12acfdd56c185ced108989a.png" src="../_images/3d901a4da2172ccf0a0abb101aee9ef1c46f9ee7b12acfdd56c185ced108989a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -710,7 +710,7 @@ the parameters <span class="math notranslate nohighlight">\(\xi_1\)</span> and <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3fd6a212659ba7a2d3c8797342832fb0f0f980e05192321105c506ed7f25da18.png" src="../_images/3fd6a212659ba7a2d3c8797342832fb0f0f980e05192321105c506ed7f25da18.png" />
+<img alt="../_images/84a5768b46ae6e1e2ef4d2b35ba2b3a092928f72953d66798744858e7995148e.png" src="../_images/84a5768b46ae6e1e2ef4d2b35ba2b3a092928f72953d66798744858e7995148e.png" />
 </div>
 </div>
 <p>Here’s a table of the important parameters</p>
