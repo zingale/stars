@@ -31,17 +31,20 @@ html:
     &copy; 2025; CC-BY-NC-SA 4.0
     <p>
 
+# note: firefox can have issues with mathjax and vertical lines
+# use these patches to force SVG
+#    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
+#    mathjax3_config:
+#      svg:
+#        fontCache: "global"    # (good for many pages)
+#        scale: 1
+
 sphinx:
   config:
     html_show_copyright: false
     nb_execution_timeout: 500
-    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
-    mathjax3_config:
-      svg:
-        fontCache: "global"    # (good for many pages)
   extra_extensions:
     - jupyterbook_patches
-        scale: 1
 
 launch_buttons:
    binderhub_url: "https://mybinder.org"
