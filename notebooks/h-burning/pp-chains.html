@@ -16,49 +16,67 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_admonition_style.css?v=8627ce31" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_dropdown_style.css?v=f3461767" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_code_header_style.css?v=7d542921" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_sidebar_scroll.css?v=b9929681" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_margin.css?v=4a1e31aa" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_align_text_captions.css?v=29546296" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_align_code.css?v=719ffd7f" />
+    <link rel="stylesheet" type="text/css" href="../_static/margin_patch.css?v=1aa379b9" />
+    <link rel="stylesheet" type="text/css" href="../_static/mathjax_patch.css?v=b2e2e4cc" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=359afcf4" />
+    <link rel="stylesheet" type="text/css" href="../_static/no-search.css?v=5a7f427f" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../_static/download_patch.js?v=75631000"></script>
+    <script src="../_static/fix_hash_jump.js?v=2aad3019"></script>
+    <script src="../_static/mathjax_patch.js?v=c73a562d"></script>
+    <script src="../_static/preserve_dropdown_state.js?v=d724701d"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"svg": {"fontCache": "global", "scale": 1}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["ui/lazy"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="../_static/mathjax_patch.js?v=c73a562d"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'h-burning/pp-chains';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -66,6 +84,7 @@
     <link rel="prev" title="Binding Energy per Nucleon" href="../nuclear/binding-energy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +100,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +109,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +116,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +133,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,15 +164,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -260,9 +264,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -441,7 +450,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -455,25 +464,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -582,15 +583,15 @@ warning: Be7 was not able to be linked in TabularLibrary
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: He3 partition function is not supported by tables: set log_pf = 0.0 by default
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: He3 partition function is not supported by tables: set log_pf = 0.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set log_pf = 0.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: d partition function is not supported by tables: set log_pf = 0.0 by default
+/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: d partition function is not supported by tables: set log_pf = 0.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set log_pf = 0.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: Be7 partition function is not supported by tables: set log_pf = 0.0 by default
+/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: Be7 partition function is not supported by tables: set log_pf = 0.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set log_pf = 0.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: B8 partition function is not supported by tables: set log_pf = 0.0 by default
+/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: B8 partition function is not supported by tables: set log_pf = 0.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set log_pf = 0.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: Li7 partition function is not supported by tables: set log_pf = 0.0 by default
+/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: Li7 partition function is not supported by tables: set log_pf = 0.0 by default
   warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set log_pf = 0.0 by default&#39;))
 </pre></div>
 </div>
@@ -631,6 +632,67 @@ warning: Be7 was not able to be linked in TabularLibrary
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypingError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">rhs</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">],</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BDF&quot;</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span><span class="n">pp</span><span class="o">.</span><span class="n">jacobian</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                 <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">),</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1.e-7</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1.e-12</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/scipy/integrate/_ivp/ivp.py:623,</span> in <span class="ni">solve_ivp</span><span class="nt">(fun, t_span, y0, method, t_eval, dense_output, events, vectorized, args, **options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">620</span> <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">METHODS</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">621</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">METHODS</span><span class="p">[</span><span class="n">method</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">623</span> <span class="n">solver</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">tf</span><span class="p">,</span> <span class="n">vectorized</span><span class="o">=</span><span class="n">vectorized</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">625</span> <span class="k">if</span> <span class="n">t_eval</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">626</span>     <span class="n">ts</span> <span class="o">=</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/scipy/integrate/_ivp/bdf.py:206,</span> in <span class="ni">BDF.__init__</span><span class="nt">(self, fun, t0, y0, t_bound, max_step, rtol, atol, jac, jac_sparsity, vectorized, first_step, **extraneous)</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_step</span> <span class="o">=</span> <span class="n">validate_max_step</span><span class="p">(</span><span class="n">max_step</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span> <span class="bp">self</span><span class="o">.</span><span class="n">rtol</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">atol</span> <span class="o">=</span> <span class="n">validate_tol</span><span class="p">(</span><span class="n">rtol</span><span class="p">,</span> <span class="n">atol</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">206</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fun</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="k">if</span> <span class="n">first_step</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span>     <span class="bp">self</span><span class="o">.</span><span class="n">h_abs</span> <span class="o">=</span> <span class="n">select_initial_step</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>                                      <span class="n">t_bound</span><span class="p">,</span> <span class="n">max_step</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>                                      <span class="bp">self</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span>                                      <span class="bp">self</span><span class="o">.</span><span class="n">rtol</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">atol</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/scipy/integrate/_ivp/base.py:158,</span> in <span class="ni">OdeSolver.__init__.&lt;locals&gt;.fun</span><span class="nt">(t, y)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span> <span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span>     <span class="bp">self</span><span class="o">.</span><span class="n">nfev</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">158</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fun_single</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/scipy/integrate/_ivp/base.py:24,</span> in <span class="ni">check_arguments.&lt;locals&gt;.fun_wrapped</span><span class="nt">(t, y)</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="k">def</span><span class="w"> </span><span class="nf">fun_wrapped</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">24</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/scipy/integrate/_ivp/ivp.py:595,</span> in <span class="ni">solve_ivp.&lt;locals&gt;.fun</span><span class="nt">(t, x, fun)</span>
+<span class="g g-Whitespace">    </span><span class="mi">594</span> <span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">fun</span><span class="o">=</span><span class="n">fun</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">595</span>     <span class="k">return</span> <span class="n">fun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="nn">File ~/work/stars/stars/content/h-burning/pp.py:733,</span> in <span class="ni">rhs</span><span class="nt">(t, Y, rho, T, screen_func)</span>
+<span class="g g-Whitespace">    </span><span class="mi">732</span> <span class="k">def</span><span class="w"> </span><span class="nf">rhs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">screen_func</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">733</span>     <span class="k">return</span> <span class="n">rhs_eq</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">screen_func</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/numba/core/dispatcher.py:424,</span> in <span class="ni">_DispatcherBase._compile_for_args</span><span class="nt">(self, *args, **kws)</span>
+<span class="g g-Whitespace">    </span><span class="mi">420</span>         <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="se">\n\n</span><span class="s2">This error may have been caused &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span>                <span class="sa">f</span><span class="s2">&quot;by the following argument(s):</span><span class="se">\n</span><span class="si">{</span><span class="n">args_str</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span>         <span class="n">e</span><span class="o">.</span><span class="n">patch_message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">424</span>     <span class="n">error_rewrite</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s1">&#39;typing&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span> <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">UnsupportedError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span>     <span class="c1"># Something unsupported is present in the user code, add help info</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span>     <span class="n">error_rewrite</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s1">&#39;unsupported_error&#39;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/numba/core/dispatcher.py:365,</span> in <span class="ni">_DispatcherBase._compile_for_args.&lt;locals&gt;.error_rewrite</span><span class="nt">(e, issue_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span>     <span class="k">raise</span> <span class="n">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">365</span>     <span class="k">raise</span> <span class="n">e</span><span class="o">.</span><span class="n">with_traceback</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="nn">TypingError: Failed</span> in <span class="ni">nopython mode pipeline </span><span class="nt">(step: nopython frontend)</span>
+<span class="ne">NameError</span>: name &#39;log_scor_He2_He4&#39; is not defined
+<span class="ne">During</span>: Pass nopython_type_inference
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now let’s get the composition at the final time</p>
 <div class="cell docutils container">
@@ -657,14 +719,14 @@ warning: Be7 was not able to be linked in TabularLibrary
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  X(p) : 0.2813187144928205
-  X(d) : 2.0441117249462516e-18
-  X(He3) : 8.772792020130246e-06
-  X(He4) : 0.7186725127051578
-  X(Li7) : 2.0368720231886242e-15
-  X(Be7) : 9.998882102841915e-12
-  X(Be8) : 4.5309229130172215e-54
-  X(B8) : 1.956662207786164e-21
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  X(p) : 0.28131871449282164
+  X(d) : 2.0441117249462732e-18
+  X(He3) : 8.772792020130378e-06
+  X(He4) : 0.7186725127051565
+  X(Li7) : 2.0368720231888285e-15
+  X(Be7) : 9.998882102842114e-12
+  X(Be8) : 4.530922913017406e-54
+  X(B8) : 1.956662207786176e-21
 </pre></div>
 </div>
 </div>
@@ -680,16 +742,16 @@ warning: Be7 was not able to be linked in TabularLibrary
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: He3 partition function is not supported by tables: set log_pf = 0.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set log_pf = 0.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: d partition function is not supported by tables: set log_pf = 0.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set log_pf = 0.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: Be7 partition function is not supported by tables: set log_pf = 0.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set log_pf = 0.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: B8 partition function is not supported by tables: set log_pf = 0.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set log_pf = 0.0 by default&#39;))
-/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/pynucastro/rates/derived_rate.py:120: UserWarning: Li7 partition function is not supported by tables: set log_pf = 0.0 by default
-  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set log_pf = 0.0 by default&#39;))
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: He3 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: d partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: Be7 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: B8 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
+/raid/zingale/development/pynucastro/pynucastro/rates/derived_rate.py:126: UserWarning: Li7 partition function is not supported by tables: set pf = 1.0 by default
+  warnings.warn(UserWarning(f&#39;{nuc} partition function is not supported by tables: set pf = 1.0 by default&#39;))
 </pre></div>
 </div>
 </div>
@@ -726,7 +788,7 @@ He3 ⟶ p + H2                  :            0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.7193207261903711)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.7193207261903833)
 </pre></div>
 </div>
 </div>
@@ -742,7 +804,7 @@ He3 ⟶ p + H2                  :            0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/64a48896672107d97ca1968f36badeff22894134777137a0b1d2378b4b3ac46d.png" src="../_images/64a48896672107d97ca1968f36badeff22894134777137a0b1d2378b4b3ac46d.png" />
+<img alt="../_images/7cf8b145c1dd50e4c62d95a3b713c1ab8651ba8541a4ea0f717f175bea8cb65b.png" src="../_images/7cf8b145c1dd50e4c62d95a3b713c1ab8651ba8541a4ea0f717f175bea8cb65b.png" />
 </div>
 </div>
 <p>Now let’s consider a bit hotter.  We’ll keep the same composition</p>
@@ -759,7 +821,7 @@ He3 ⟶ p + H2                  :            0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/91d92edd64b55aaaa79afdfca0d849042b203b7ff79f5a483eeb0f1ee3a9d839.png" src="../_images/91d92edd64b55aaaa79afdfca0d849042b203b7ff79f5a483eeb0f1ee3a9d839.png" />
+<img alt="../_images/b9376146d46b20b6eeb1e4c2e04eaa70f959ea0b8b13c5d019eaedabefe86f31.png" src="../_images/b9376146d46b20b6eeb1e4c2e04eaa70f959ea0b8b13c5d019eaedabefe86f31.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -771,7 +833,7 @@ He3 ⟶ p + H2                  :            0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.4169468940939703)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.41694689409397745)
 </pre></div>
 </div>
 </div>
@@ -840,14 +902,16 @@ He3 ⟶ p + H2                  :            0
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-network">Creating a network</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approximating-composition-in-sun-s-core">Approximating composition in Sun’s core</a></li>
@@ -899,8 +963,8 @@ By <a href="https://zingale.github.io">Michael Zingale</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

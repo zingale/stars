@@ -1,0 +1,93 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+sol = solve_ivp(pp.rhs, [0, tmax], Y0, method="BDF", jac=pp.jacobian,
+                dense_output=True, args=(rho, T), rtol=1.e-7, atol=1.e-12)
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mTypingError[39m                               Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[8][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m sol = [43msolve_ivp[49m[43m([49m[43mpp[49m[43m.[49m[43mrhs[49m[43m,[49m[43m [49m[43m[[49m[32;43m0[39;49m[43m,[49m[43m [49m[43mtmax[49m[43m][49m[43m,[49m[43m [49m[43mY0[49m[43m,[49m[43m [49m[43mmethod[49m[43m=[49m[33;43m"[39;49m[33;43mBDF[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[43mjac[49m[43m=[49m[43mpp[49m[43m.[49m[43mjacobian[49m[43m,[49m
+[32m      2[39m [43m                [49m[43mdense_output[49m[43m=[49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[43margs[49m[43m=[49m[43m([49m[43mrho[49m[43m,[49m[43m [49m[43mT[49m[43m)[49m[43m,[49m[43m [49m[43mrtol[49m[43m=[49m[32;43m1.e-7[39;49m[43m,[49m[43m [49m[43matol[49m[43m=[49m[32;43m1.e-12[39;49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/scipy/integrate/_ivp/ivp.py:623[39m, in [36msolve_ivp[39m[34m(fun, t_span, y0, method, t_eval, dense_output, events, vectorized, args, **options)[39m
+[32m    620[39m [38;5;28;01mif[39;00m method [38;5;129;01min[39;00m METHODS:
+[32m    621[39m     method = METHODS[method]
+[32m--> [39m[32m623[39m solver = [43mmethod[49m[43m([49m[43mfun[49m[43m,[49m[43m [49m[43mt0[49m[43m,[49m[43m [49m[43my0[49m[43m,[49m[43m [49m[43mtf[49m[43m,[49m[43m [49m[43mvectorized[49m[43m=[49m[43mvectorized[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43moptions[49m[43m)[49m
+[32m    625[39m [38;5;28;01mif[39;00m t_eval [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m    626[39m     ts = [t0]
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/scipy/integrate/_ivp/bdf.py:206[39m, in [36mBDF.__init__[39m[34m(self, fun, t0, y0, t_bound, max_step, rtol, atol, jac, jac_sparsity, vectorized, first_step, **extraneous)[39m
+[32m    204[39m [38;5;28mself[39m.max_step = validate_max_step(max_step)
+[32m    205[39m [38;5;28mself[39m.rtol, [38;5;28mself[39m.atol = validate_tol(rtol, atol, [38;5;28mself[39m.n)
+[32m--> [39m[32m206[39m f = [38;5;28;43mself[39;49m[43m.[49m[43mfun[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43mt[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m.[49m[43my[49m[43m)[49m
+[32m    207[39m [38;5;28;01mif[39;00m first_step [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m    208[39m     [38;5;28mself[39m.h_abs = select_initial_step([38;5;28mself[39m.fun, [38;5;28mself[39m.t, [38;5;28mself[39m.y,
+[32m    209[39m                                      t_bound, max_step, f,
+[32m    210[39m                                      [38;5;28mself[39m.direction, [32m1[39m,
+[32m    211[39m                                      [38;5;28mself[39m.rtol, [38;5;28mself[39m.atol)
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/scipy/integrate/_ivp/base.py:158[39m, in [36mOdeSolver.__init__.<locals>.fun[39m[34m(t, y)[39m
+[32m    156[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mfun[39m(t, y):
+[32m    157[39m     [38;5;28mself[39m.nfev += [32m1[39m
+[32m--> [39m[32m158[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mfun_single[49m[43m([49m[43mt[49m[43m,[49m[43m [49m[43my[49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/scipy/integrate/_ivp/base.py:24[39m, in [36mcheck_arguments.<locals>.fun_wrapped[39m[34m(t, y)[39m
+[32m     23[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mfun_wrapped[39m(t, y):
+[32m---> [39m[32m24[39m     [38;5;28;01mreturn[39;00m np.asarray([43mfun[49m[43m([49m[43mt[49m[43m,[49m[43m [49m[43my[49m[43m)[49m, dtype=dtype)
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/scipy/integrate/_ivp/ivp.py:595[39m, in [36msolve_ivp.<locals>.fun[39m[34m(t, x, fun)[39m
+[32m    594[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mfun[39m(t, x, fun=fun):
+[32m--> [39m[32m595[39m     [38;5;28;01mreturn[39;00m [43mfun[49m[43m([49m[43mt[49m[43m,[49m[43m [49m[43mx[49m[43m,[49m[43m [49m[43m*[49m[43margs[49m[43m)[49m
+
+[36mFile [39m[32m~/work/stars/stars/content/h-burning/pp.py:733[39m, in [36mrhs[39m[34m(t, Y, rho, T, screen_func)[39m
+[32m    732[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mrhs[39m(t, Y, rho, T, screen_func=[38;5;28;01mNone[39;00m):
+[32m--> [39m[32m733[39m     [38;5;28;01mreturn[39;00m [43mrhs_eq[49m[43m([49m[43mt[49m[43m,[49m[43m [49m[43mY[49m[43m,[49m[43m [49m[43mrho[49m[43m,[49m[43m [49m[43mT[49m[43m,[49m[43m [49m[43mscreen_func[49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/numba/core/dispatcher.py:424[39m, in [36m_DispatcherBase._compile_for_args[39m[34m(self, *args, **kws)[39m
+[32m    420[39m         msg = ([33mf[39m[33m"[39m[38;5;132;01m{[39;00m[38;5;28mstr[39m(e).rstrip()[38;5;132;01m}[39;00m[33m [39m[38;5;130;01m\n[39;00m[38;5;130;01m\n[39;00m[33mThis error may have been caused [39m[33m"[39m
+[32m    421[39m                [33mf[39m[33m"[39m[33mby the following argument(s):[39m[38;5;130;01m\n[39;00m[38;5;132;01m{[39;00margs_str[38;5;132;01m}[39;00m[38;5;130;01m\n[39;00m[33m"[39m)
+[32m    422[39m         e.patch_message(msg)
+[32m--> [39m[32m424[39m     [43merror_rewrite[49m[43m([49m[43me[49m[43m,[49m[43m [49m[33;43m'[39;49m[33;43mtyping[39;49m[33;43m'[39;49m[43m)[49m
+[32m    425[39m [38;5;28;01mexcept[39;00m errors.UnsupportedError [38;5;28;01mas[39;00m e:
+[32m    426[39m     [38;5;66;03m# Something unsupported is present in the user code, add help info[39;00m
+[32m    427[39m     error_rewrite(e, [33m'[39m[33munsupported_error[39m[33m'[39m)
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.14.3/x64/lib/python3.14/site-packages/numba/core/dispatcher.py:365[39m, in [36m_DispatcherBase._compile_for_args.<locals>.error_rewrite[39m[34m(e, issue_type)[39m
+[32m    363[39m     [38;5;28;01mraise[39;00m e
+[32m    364[39m [38;5;28;01melse[39;00m:
+[32m--> [39m[32m365[39m     [38;5;28;01mraise[39;00m e.with_traceback([38;5;28;01mNone[39;00m)
+
+[31mTypingError[39m: Failed in nopython mode pipeline (step: nopython frontend)
+NameError: name 'log_scor_He2_He4' is not defined
+During: Pass nopython_type_inference
+
