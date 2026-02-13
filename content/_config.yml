@@ -34,12 +34,13 @@ html:
 sphinx:
   config:
     html_show_copyright: false
-    nbsphinx_timeout: 500
     nb_execution_timeout: 500
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
     mathjax3_config:
       svg:
         fontCache: "global"    # (good for many pages)
+  extra_extensions:
+    - jupyterbook_patches
         scale: 1
 
 launch_buttons:
