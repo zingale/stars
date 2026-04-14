@@ -27,14 +27,14 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/fix_admonition_style.css?v=8627ce31" />
     <link rel="stylesheet" type="text/css" href="../_static/fix_dropdown_style.css?v=f3461767" />
@@ -50,10 +50,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/no-search.css?v=5a7f427f" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -64,7 +64,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script src="../_static/download_patch.js?v=75631000"></script>
     <script src="../_static/fix_hash_jump.js?v=2aad3019"></script>
     <script src="../_static/mathjax_patch.js?v=c73a562d"></script>
@@ -76,6 +76,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'reaction_networks/application-CNO-network';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Lane-Emden polytrope equation" href="../polytrope/lane-emden.html" />
@@ -83,14 +84,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
@@ -122,7 +127,7 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -1344,46 +1349,46 @@ def rhs_eq(t, Y, rho, T, screen_func):
     tf = Tfactors(T)
     rate_eval = RateEval()
 
-    log_scor_p_C12 = 0.0
-    log_scor_p_C13 = 0.0
     log_scor_p_N13 = 0.0
-    log_scor_p_N14 = 0.0
+    log_scor_p_F18 = 0.0
+    log_scor_p_C12 = 0.0
+    log_scor_p_O17 = 0.0
+    log_scor_He4_O14 = 0.0
     log_scor_p_N15 = 0.0
     log_scor_p_O16 = 0.0
-    log_scor_p_O17 = 0.0
-    log_scor_p_O18 = 0.0
+    log_scor_p_N14 = 0.0
     log_scor_p_F19 = 0.0
-    log_scor_He4_O14 = 0.0
+    log_scor_p_C13 = 0.0
+    log_scor_p_O18 = 0.0
     log_scor_p_F17 = 0.0
-    log_scor_p_F18 = 0.0
 
     if screen_func is not None:
         plasma_state = PlasmaState(T, rho, Y, Z)
 
-        scn_fac = ScreenFactors(1, 1, 6, 12)
-        log_scor_p_C12 = screen_func(plasma_state, scn_fac)
-        scn_fac = ScreenFactors(1, 1, 6, 13)
-        log_scor_p_C13 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 7, 13)
         log_scor_p_N13 = screen_func(plasma_state, scn_fac)
-        scn_fac = ScreenFactors(1, 1, 7, 14)
-        log_scor_p_N14 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(1, 1, 9, 18)
+        log_scor_p_F18 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(1, 1, 6, 12)
+        log_scor_p_C12 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(1, 1, 8, 17)
+        log_scor_p_O17 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(2, 4, 8, 14)
+        log_scor_He4_O14 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 7, 15)
         log_scor_p_N15 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 8, 16)
         log_scor_p_O16 = screen_func(plasma_state, scn_fac)
-        scn_fac = ScreenFactors(1, 1, 8, 17)
-        log_scor_p_O17 = screen_func(plasma_state, scn_fac)
-        scn_fac = ScreenFactors(1, 1, 8, 18)
-        log_scor_p_O18 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(1, 1, 7, 14)
+        log_scor_p_N14 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 9, 19)
         log_scor_p_F19 = screen_func(plasma_state, scn_fac)
-        scn_fac = ScreenFactors(2, 4, 8, 14)
-        log_scor_He4_O14 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(1, 1, 6, 13)
+        log_scor_p_C13 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(1, 1, 8, 18)
+        log_scor_p_O18 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 9, 17)
         log_scor_p_F17 = screen_func(plasma_state, scn_fac)
-        scn_fac = ScreenFactors(1, 1, 9, 18)
-        log_scor_p_F18 = screen_func(plasma_state, scn_fac)
 
     # reaclib rates
     p_C12_to_N13_reaclib(rate_eval, tf, log_scor=log_scor_p_C12)
@@ -1532,46 +1537,46 @@ def jacobian_eq(t, Y, rho, T, screen_func):
     tf = Tfactors(T)
     rate_eval = RateEval()
 
-    log_scor_p_C12 = 0.0
-    log_scor_p_C13 = 0.0
     log_scor_p_N13 = 0.0
-    log_scor_p_N14 = 0.0
+    log_scor_p_F18 = 0.0
+    log_scor_p_C12 = 0.0
+    log_scor_p_O17 = 0.0
+    log_scor_He4_O14 = 0.0
     log_scor_p_N15 = 0.0
     log_scor_p_O16 = 0.0
-    log_scor_p_O17 = 0.0
-    log_scor_p_O18 = 0.0
+    log_scor_p_N14 = 0.0
     log_scor_p_F19 = 0.0
-    log_scor_He4_O14 = 0.0
+    log_scor_p_C13 = 0.0
+    log_scor_p_O18 = 0.0
     log_scor_p_F17 = 0.0
-    log_scor_p_F18 = 0.0
 
     if screen_func is not None:
         plasma_state = PlasmaState(T, rho, Y, Z)
 
-        scn_fac = ScreenFactors(1, 1, 6, 12)
-        log_scor_p_C12 = screen_func(plasma_state, scn_fac)
-        scn_fac = ScreenFactors(1, 1, 6, 13)
-        log_scor_p_C13 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 7, 13)
         log_scor_p_N13 = screen_func(plasma_state, scn_fac)
-        scn_fac = ScreenFactors(1, 1, 7, 14)
-        log_scor_p_N14 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(1, 1, 9, 18)
+        log_scor_p_F18 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(1, 1, 6, 12)
+        log_scor_p_C12 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(1, 1, 8, 17)
+        log_scor_p_O17 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(2, 4, 8, 14)
+        log_scor_He4_O14 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 7, 15)
         log_scor_p_N15 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 8, 16)
         log_scor_p_O16 = screen_func(plasma_state, scn_fac)
-        scn_fac = ScreenFactors(1, 1, 8, 17)
-        log_scor_p_O17 = screen_func(plasma_state, scn_fac)
-        scn_fac = ScreenFactors(1, 1, 8, 18)
-        log_scor_p_O18 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(1, 1, 7, 14)
+        log_scor_p_N14 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 9, 19)
         log_scor_p_F19 = screen_func(plasma_state, scn_fac)
-        scn_fac = ScreenFactors(2, 4, 8, 14)
-        log_scor_He4_O14 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(1, 1, 6, 13)
+        log_scor_p_C13 = screen_func(plasma_state, scn_fac)
+        scn_fac = ScreenFactors(1, 1, 8, 18)
+        log_scor_p_O18 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 9, 17)
         log_scor_p_F17 = screen_func(plasma_state, scn_fac)
-        scn_fac = ScreenFactors(1, 1, 9, 18)
-        log_scor_p_F18 = screen_func(plasma_state, scn_fac)
 
     # reaclib rates
     p_C12_to_N13_reaclib(rate_eval, tf, log_scor=log_scor_p_C12)
@@ -2010,7 +2015,7 @@ def jacobian_eq(t, Y, rho, T, screen_func):
             ...
             [ 0.000e+00  1.990e-73 ...  9.868e-13  9.868e-13]
             [ 0.000e+00  1.368e-60 ... -8.293e-65 -1.586e-65]]
-      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7fbce27d4980&gt;
+      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7f741f9fcec0&gt;
  t_events: None
  y_events: None
      nfev: 520
@@ -2140,8 +2145,8 @@ By <a href="https://zingale.github.io">Michael Zingale</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
 
   <footer class="bd-footer">
   </footer>
