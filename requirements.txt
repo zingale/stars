@@ -1,4 +1,5 @@
 jupyter-book<2
+git+https://github.com/executablebooks/sphinx-book-theme.git
 matplotlib
 numpy
 scipy
