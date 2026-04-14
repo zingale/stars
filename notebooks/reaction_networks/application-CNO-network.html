@@ -16,41 +16,59 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_admonition_style.css?v=8627ce31" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_dropdown_style.css?v=f3461767" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_code_header_style.css?v=7d542921" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_sidebar_scroll.css?v=b9929681" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_margin.css?v=4a1e31aa" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_align_text_captions.css?v=29546296" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_align_code.css?v=719ffd7f" />
+    <link rel="stylesheet" type="text/css" href="../_static/margin_patch.css?v=1aa379b9" />
+    <link rel="stylesheet" type="text/css" href="../_static/mathjax_patch.css?v=b2e2e4cc" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=359afcf4" />
+    <link rel="stylesheet" type="text/css" href="../_static/no-search.css?v=5a7f427f" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../_static/download_patch.js?v=75631000"></script>
+    <script src="../_static/fix_hash_jump.js?v=2aad3019"></script>
+    <script src="../_static/mathjax_patch.js?v=c73a562d"></script>
+    <script src="../_static/preserve_dropdown_state.js?v=d724701d"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -64,6 +82,7 @@
     <link rel="prev" title="Application: Nuclear Reaction Networks" href="reactions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,19 +98,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -99,7 +107,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,8 +114,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -124,7 +131,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -154,15 +162,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -258,9 +262,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -439,7 +448,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -453,24 +462,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 
 </div></div>
       
@@ -548,7 +549,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/45cef0f343b006b876d7d7677420ea3bfd40943fa0c4143d7fb71fd4997bc29c.png" src="../_images/45cef0f343b006b876d7d7677420ea3bfd40943fa0c4143d7fb71fd4997bc29c.png" />
+<img alt="../_images/261dce514271b2517c3f0fd4e0b18faef3b77d87c9c56d8f6b3b1a53ce101c1a.png" src="../_images/261dce514271b2517c3f0fd4e0b18faef3b77d87c9c56d8f6b3b1a53ce101c1a.png" />
 </div>
 </div>
 <p>pynucastro can write out the python code needed to evaluate the reaction rates</p>
@@ -574,10 +575,12 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>import numba
 import numpy as np
-from scipy import constants
+from pynucastro.constants import constants
 from numba.experimental import jitclass
 
-from pynucastro.rates import TableIndex, TableInterpolator, TabularRate, Tfactors
+from pynucastro.rates import (TableIndex, TableInterpolator, TabularRate,
+                              TempTableInterpolator, TemperatureTabularRate,
+                              Tfactors)
 from pynucastro.screening import PlasmaState, ScreenFactors
 
 jp = 0
@@ -689,389 +692,648 @@ def energy_release(dY):
     enuc = 0.0
     for i, y in enumerate(dY):
         enuc += y * mass[i]
-    enuc *= -1*constants.Avogadro
+    enuc *= -1*constants.N_A
     return enuc
 
 @jitclass([
-    (&quot;p_C12__N13&quot;, numba.float64),
-    (&quot;p_C13__N14&quot;, numba.float64),
-    (&quot;N13__C13__weak__wc12&quot;, numba.float64),
-    (&quot;p_N13__O14&quot;, numba.float64),
-    (&quot;p_N14__O15&quot;, numba.float64),
-    (&quot;p_N15__He4_C12&quot;, numba.float64),
-    (&quot;O14__N14__weak__wc12&quot;, numba.float64),
-    (&quot;O15__N15__weak__wc12&quot;, numba.float64),
-    (&quot;p_N15__O16&quot;, numba.float64),
-    (&quot;p_O16__F17&quot;, numba.float64),
-    (&quot;F17__O17__weak__wc12&quot;, numba.float64),
-    (&quot;p_O17__He4_N14&quot;, numba.float64),
-    (&quot;p_O17__F18&quot;, numba.float64),
-    (&quot;F18__O18__weak__wc12&quot;, numba.float64),
-    (&quot;p_O18__He4_N15&quot;, numba.float64),
-    (&quot;p_O18__F19&quot;, numba.float64),
-    (&quot;p_F19__He4_O16&quot;, numba.float64),
-    (&quot;He4_O14__p_F17&quot;, numba.float64),
-    (&quot;p_F17__Ne18&quot;, numba.float64),
-    (&quot;Ne18__F18__weak__wc12&quot;, numba.float64),
-    (&quot;p_F18__He4_O15&quot;, numba.float64),
+    (&quot;p_C12_to_N13_reaclib&quot;, numba.float64),
+    (&quot;p_C13_to_N14_reaclib&quot;, numba.float64),
+    (&quot;N13_to_C13_reaclib&quot;, numba.float64),
+    (&quot;p_N13_to_O14_reaclib&quot;, numba.float64),
+    (&quot;p_N14_to_O15_reaclib&quot;, numba.float64),
+    (&quot;p_N15_to_He4_C12_reaclib&quot;, numba.float64),
+    (&quot;O14_to_N14_reaclib&quot;, numba.float64),
+    (&quot;O15_to_N15_reaclib&quot;, numba.float64),
+    (&quot;p_N15_to_O16_reaclib&quot;, numba.float64),
+    (&quot;p_O16_to_F17_reaclib&quot;, numba.float64),
+    (&quot;F17_to_O17_reaclib&quot;, numba.float64),
+    (&quot;p_O17_to_He4_N14_reaclib&quot;, numba.float64),
+    (&quot;p_O17_to_F18_reaclib&quot;, numba.float64),
+    (&quot;F18_to_O18_reaclib&quot;, numba.float64),
+    (&quot;p_O18_to_He4_N15_reaclib&quot;, numba.float64),
+    (&quot;p_O18_to_F19_reaclib&quot;, numba.float64),
+    (&quot;p_F19_to_He4_O16_reaclib&quot;, numba.float64),
+    (&quot;He4_O14_to_p_F17_reaclib&quot;, numba.float64),
+    (&quot;p_F17_to_Ne18_reaclib&quot;, numba.float64),
+    (&quot;Ne18_to_F18_reaclib&quot;, numba.float64),
+    (&quot;p_F18_to_He4_O15_reaclib&quot;, numba.float64),
 ])
 class RateEval:
     def __init__(self):
-        self.p_C12__N13 = np.nan
-        self.p_C13__N14 = np.nan
-        self.N13__C13__weak__wc12 = np.nan
-        self.p_N13__O14 = np.nan
-        self.p_N14__O15 = np.nan
-        self.p_N15__He4_C12 = np.nan
-        self.O14__N14__weak__wc12 = np.nan
-        self.O15__N15__weak__wc12 = np.nan
-        self.p_N15__O16 = np.nan
-        self.p_O16__F17 = np.nan
-        self.F17__O17__weak__wc12 = np.nan
-        self.p_O17__He4_N14 = np.nan
-        self.p_O17__F18 = np.nan
-        self.F18__O18__weak__wc12 = np.nan
-        self.p_O18__He4_N15 = np.nan
-        self.p_O18__F19 = np.nan
-        self.p_F19__He4_O16 = np.nan
-        self.He4_O14__p_F17 = np.nan
-        self.p_F17__Ne18 = np.nan
-        self.Ne18__F18__weak__wc12 = np.nan
-        self.p_F18__He4_O15 = np.nan
+        self.p_C12_to_N13_reaclib = np.nan
+        self.p_C13_to_N14_reaclib = np.nan
+        self.N13_to_C13_reaclib = np.nan
+        self.p_N13_to_O14_reaclib = np.nan
+        self.p_N14_to_O15_reaclib = np.nan
+        self.p_N15_to_He4_C12_reaclib = np.nan
+        self.O14_to_N14_reaclib = np.nan
+        self.O15_to_N15_reaclib = np.nan
+        self.p_N15_to_O16_reaclib = np.nan
+        self.p_O16_to_F17_reaclib = np.nan
+        self.F17_to_O17_reaclib = np.nan
+        self.p_O17_to_He4_N14_reaclib = np.nan
+        self.p_O17_to_F18_reaclib = np.nan
+        self.F18_to_O18_reaclib = np.nan
+        self.p_O18_to_He4_N15_reaclib = np.nan
+        self.p_O18_to_F19_reaclib = np.nan
+        self.p_F19_to_He4_O16_reaclib = np.nan
+        self.He4_O14_to_p_F17_reaclib = np.nan
+        self.p_F17_to_Ne18_reaclib = np.nan
+        self.Ne18_to_F18_reaclib = np.nan
+        self.p_F18_to_He4_O15_reaclib = np.nan
 
 @numba.njit()
 def ye(Y):
     return np.sum(Z * Y)/np.sum(A * Y)
 
 @numba.njit()
-def p_C12__N13(rate_eval, tf):
+def p_C12_to_N13_reaclib(rate_eval, tf, log_scor=0.0):
     # C12 + p --&gt; N13
     rate = 0.0
 
     # ls09n
-    rate += np.exp(  17.1482 + -13.692*tf.T913i + -0.230881*tf.T913
-                  + 4.44362*tf.T9 + -3.15898*tf.T953 + -0.666667*tf.lnT9)
-    # ls09r
-    rate += np.exp(  17.5428 + -3.77849*tf.T9i + -5.10735*tf.T913i + -2.24111*tf.T913
-                  + 0.148883*tf.T9 + -1.5*tf.lnT9)
+    ln_set_rate =  17.1482 + -13.692*tf.T913i + -0.230881*tf.T913 \
+                         + 4.44362*tf.T9 + -3.15898*tf.T953 + -0.666667*tf.lnT9
 
-    rate_eval.p_C12__N13 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # ls09r
+    ln_set_rate =  17.5428 + -3.77849*tf.T9i + -5.10735*tf.T913i + -2.24111*tf.T913 \
+                         + 0.148883*tf.T9 + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_C12_to_N13_reaclib = rate
 
 @numba.njit()
-def p_C13__N14(rate_eval, tf):
+def p_C13_to_N14_reaclib(rate_eval, tf, log_scor=0.0):
     # C13 + p --&gt; N14
     rate = 0.0
 
     # nacrn
-    rate += np.exp(  18.5155 + -13.72*tf.T913i + -0.450018*tf.T913
-                  + 3.70823*tf.T9 + -1.70545*tf.T953 + -0.666667*tf.lnT9)
-    # nacrr
-    rate += np.exp(  13.9637 + -5.78147*tf.T9i + -0.196703*tf.T913
-                  + 0.142126*tf.T9 + -0.0238912*tf.T953 + -1.5*tf.lnT9)
-    # nacrr
-    rate += np.exp(  15.1825 + -13.5543*tf.T9i
-                  + -1.5*tf.lnT9)
+    ln_set_rate =  18.5155 + -13.72*tf.T913i + -0.450018*tf.T913 \
+                         + 3.70823*tf.T9 + -1.70545*tf.T953 + -0.666667*tf.lnT9
 
-    rate_eval.p_C13__N14 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # nacrr
+    ln_set_rate =  13.9637 + -5.78147*tf.T9i + -0.196703*tf.T913 \
+                         + 0.142126*tf.T9 + -0.0238912*tf.T953 + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # nacrr
+    ln_set_rate =  15.1825 + -13.5543*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_C13_to_N14_reaclib = rate
 
 @numba.njit()
-def N13__C13__weak__wc12(rate_eval, tf):
+def N13_to_C13_reaclib(rate_eval, tf, log_scor=0.0):
     # N13 --&gt; C13
     rate = 0.0
 
     # wc12w
-    rate += np.exp(  -6.7601)
+    ln_set_rate =  -6.7601
 
-    rate_eval.N13__C13__weak__wc12 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.N13_to_C13_reaclib = rate
 
 @numba.njit()
-def p_N13__O14(rate_eval, tf):
+def p_N13_to_O14_reaclib(rate_eval, tf, log_scor=0.0):
     # N13 + p --&gt; O14
     rate = 0.0
 
     # lg06r
-    rate += np.exp(  10.9971 + -6.12602*tf.T9i + 1.57122*tf.T913i
-                  + -1.5*tf.lnT9)
-    # lg06n
-    rate += np.exp(  18.1356 + -15.1676*tf.T913i + 0.0955166*tf.T913
-                  + 3.0659*tf.T9 + -0.507339*tf.T953 + -0.666667*tf.lnT9)
+    ln_set_rate =  10.9971 + -6.12602*tf.T9i + 1.57122*tf.T913i \
+                         + -1.5*tf.lnT9
 
-    rate_eval.p_N13__O14 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # lg06n
+    ln_set_rate =  18.1356 + -15.1676*tf.T913i + 0.0955166*tf.T913 \
+                         + 3.0659*tf.T9 + -0.507339*tf.T953 + -0.666667*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_N13_to_O14_reaclib = rate
 
 @numba.njit()
-def p_N14__O15(rate_eval, tf):
+def p_N14_to_O15_reaclib(rate_eval, tf, log_scor=0.0):
     # N14 + p --&gt; O15
     rate = 0.0
 
     # im05r
-    rate += np.exp(  6.73578 + -4.891*tf.T9i
-                  + 0.0682*tf.lnT9)
-    # im05r
-    rate += np.exp(  7.65444 + -2.998*tf.T9i
-                  + -1.5*tf.lnT9)
-    # im05n
-    rate += np.exp(  20.1169 + -15.193*tf.T913i + -4.63975*tf.T913
-                  + 9.73458*tf.T9 + -9.55051*tf.T953 + 0.333333*tf.lnT9)
-    # im05n
-    rate += np.exp(  17.01 + -15.193*tf.T913i + -0.161954*tf.T913
-                  + -7.52123*tf.T9 + -0.987565*tf.T953 + -0.666667*tf.lnT9)
+    ln_set_rate =  6.73578 + -4.891*tf.T9i \
+                         + 0.0682*tf.lnT9
 
-    rate_eval.p_N14__O15 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # im05r
+    ln_set_rate =  7.65444 + -2.998*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # im05n
+    ln_set_rate =  20.1169 + -15.193*tf.T913i + -4.63975*tf.T913 \
+                         + 9.73458*tf.T9 + -9.55051*tf.T953 + 0.333333*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # im05n
+    ln_set_rate =  17.01 + -15.193*tf.T913i + -0.161954*tf.T913 \
+                         + -7.52123*tf.T9 + -0.987565*tf.T953 + -0.666667*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_N14_to_O15_reaclib = rate
 
 @numba.njit()
-def p_N15__He4_C12(rate_eval, tf):
+def p_N15_to_He4_C12_reaclib(rate_eval, tf, log_scor=0.0):
     # N15 + p --&gt; He4 + C12
     rate = 0.0
 
     # nacrn
-    rate += np.exp(  27.4764 + -15.253*tf.T913i + 1.59318*tf.T913
-                  + 2.4479*tf.T9 + -2.19708*tf.T953 + -0.666667*tf.lnT9)
-    # nacrr
-    rate += np.exp(  -6.57522 + -1.1638*tf.T9i + 22.7105*tf.T913
-                  + -2.90707*tf.T9 + 0.205754*tf.T953 + -1.5*tf.lnT9)
-    # nacrr
-    rate += np.exp(  20.8972 + -7.406*tf.T9i
-                  + -1.5*tf.lnT9)
-    # nacrr
-    rate += np.exp(  -4.87347 + -2.02117*tf.T9i + 30.8497*tf.T913
-                  + -8.50433*tf.T9 + -1.54426*tf.T953 + -1.5*tf.lnT9)
+    ln_set_rate =  27.4764 + -15.253*tf.T913i + 1.59318*tf.T913 \
+                         + 2.4479*tf.T9 + -2.19708*tf.T953 + -0.666667*tf.lnT9
 
-    rate_eval.p_N15__He4_C12 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # nacrr
+    ln_set_rate =  -6.57522 + -1.1638*tf.T9i + 22.7105*tf.T913 \
+                         + -2.90707*tf.T9 + 0.205754*tf.T953 + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # nacrr
+    ln_set_rate =  20.8972 + -7.406*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # nacrr
+    ln_set_rate =  -4.87347 + -2.02117*tf.T9i + 30.8497*tf.T913 \
+                         + -8.50433*tf.T9 + -1.54426*tf.T953 + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_N15_to_He4_C12_reaclib = rate
 
 @numba.njit()
-def O14__N14__weak__wc12(rate_eval, tf):
+def O14_to_N14_reaclib(rate_eval, tf, log_scor=0.0):
     # O14 --&gt; N14
     rate = 0.0
 
     # wc12w
-    rate += np.exp(  -4.62354)
+    ln_set_rate =  -4.62354
 
-    rate_eval.O14__N14__weak__wc12 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.O14_to_N14_reaclib = rate
 
 @numba.njit()
-def O15__N15__weak__wc12(rate_eval, tf):
+def O15_to_N15_reaclib(rate_eval, tf, log_scor=0.0):
     # O15 --&gt; N15
     rate = 0.0
 
     # wc12w
-    rate += np.exp(  -5.17053)
+    ln_set_rate =  -5.17053
 
-    rate_eval.O15__N15__weak__wc12 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.O15_to_N15_reaclib = rate
 
 @numba.njit()
-def p_N15__O16(rate_eval, tf):
+def p_N15_to_O16_reaclib(rate_eval, tf, log_scor=0.0):
     # N15 + p --&gt; O16
     rate = 0.0
 
     # li10r
-    rate += np.exp(  14.5444 + -10.2295*tf.T9i
-                  + 0.0459037*tf.T9 + -1.5*tf.lnT9)
-    # li10r
-    rate += np.exp(  6.59056 + -2.92315*tf.T9i
-                  + -1.5*tf.lnT9)
-    # li10n
-    rate += np.exp(  20.0176 + -15.24*tf.T913i + 0.334926*tf.T913
-                  + 4.59088*tf.T9 + -4.78468*tf.T953 + -0.666667*tf.lnT9)
+    ln_set_rate =  14.5444 + -10.2295*tf.T9i \
+                         + 0.0459037*tf.T9 + -1.5*tf.lnT9
 
-    rate_eval.p_N15__O16 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # li10r
+    ln_set_rate =  6.59056 + -2.92315*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # li10n
+    ln_set_rate =  20.0176 + -15.24*tf.T913i + 0.334926*tf.T913 \
+                         + 4.59088*tf.T9 + -4.78468*tf.T953 + -0.666667*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_N15_to_O16_reaclib = rate
 
 @numba.njit()
-def p_O16__F17(rate_eval, tf):
+def p_O16_to_F17_reaclib(rate_eval, tf, log_scor=0.0):
     # O16 + p --&gt; F17
     rate = 0.0
 
     # ia08n
-    rate += np.exp(  19.0904 + -16.696*tf.T913i + -1.16252*tf.T913
-                  + 0.267703*tf.T9 + -0.0338411*tf.T953 + -0.666667*tf.lnT9)
+    ln_set_rate =  19.0904 + -16.696*tf.T913i + -1.16252*tf.T913 \
+                         + 0.267703*tf.T9 + -0.0338411*tf.T953 + -0.666667*tf.lnT9
 
-    rate_eval.p_O16__F17 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_O16_to_F17_reaclib = rate
 
 @numba.njit()
-def F17__O17__weak__wc12(rate_eval, tf):
+def F17_to_O17_reaclib(rate_eval, tf, log_scor=0.0):
     # F17 --&gt; O17
     rate = 0.0
 
     # wc12w
-    rate += np.exp(  -4.53318)
+    ln_set_rate =  -4.53318
 
-    rate_eval.F17__O17__weak__wc12 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.F17_to_O17_reaclib = rate
 
 @numba.njit()
-def p_O17__He4_N14(rate_eval, tf):
+def p_O17_to_He4_N14_reaclib(rate_eval, tf, log_scor=0.0):
     # O17 + p --&gt; He4 + N14
     rate = 0.0
 
     # il10r
-    rate += np.exp(  -7.20763 + -0.753395*tf.T9i
-                  + -1.5*tf.lnT9)
-    # il10n
-    rate += np.exp(  19.579 + -16.9078*tf.T913i
-                  + -2.0*tf.T953 + -0.666667*tf.lnT9)
-    # il10r
-    rate += np.exp(  10.174 + -4.95865*tf.T9i + 5.10182*tf.T913
-                  + 0.379373*tf.T9 + -0.0672515*tf.T953 + -1.5*tf.lnT9)
-    # il10r
-    rate += np.exp(  5.5336 + -2.11477*tf.T9i
-                  + -1.5*tf.lnT9)
+    ln_set_rate =  -7.20763 + -0.753395*tf.T9i \
+                         + -1.5*tf.lnT9
 
-    rate_eval.p_O17__He4_N14 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10n
+    ln_set_rate =  19.579 + -16.9078*tf.T913i \
+                         + -2.0*tf.T953 + -0.666667*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10r
+    ln_set_rate =  10.174 + -4.95865*tf.T9i + 5.10182*tf.T913 \
+                         + 0.379373*tf.T9 + -0.0672515*tf.T953 + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10r
+    ln_set_rate =  5.5336 + -2.11477*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_O17_to_He4_N14_reaclib = rate
 
 @numba.njit()
-def p_O17__F18(rate_eval, tf):
+def p_O17_to_F18_reaclib(rate_eval, tf, log_scor=0.0):
     # O17 + p --&gt; F18
     rate = 0.0
 
     # il10r
-    rate += np.exp(  9.39048 + -6.22828*tf.T9i + 2.31435*tf.T913
-                  + -0.302835*tf.T9 + 0.020133*tf.T953 + -1.5*tf.lnT9)
-    # il10r
-    rate += np.exp(  -13.077 + -0.746296*tf.T9i
-                  + -1.5*tf.lnT9)
-    # il10n
-    rate += np.exp(  15.8929 + -16.4035*tf.T913i + 4.31885*tf.T913
-                  + -0.709921*tf.T9 + -2.0*tf.T953 + -0.666667*tf.lnT9)
+    ln_set_rate =  9.39048 + -6.22828*tf.T9i + 2.31435*tf.T913 \
+                         + -0.302835*tf.T9 + 0.020133*tf.T953 + -1.5*tf.lnT9
 
-    rate_eval.p_O17__F18 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10r
+    ln_set_rate =  -13.077 + -0.746296*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10n
+    ln_set_rate =  15.8929 + -16.4035*tf.T913i + 4.31885*tf.T913 \
+                         + -0.709921*tf.T9 + -2.0*tf.T953 + -0.666667*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_O17_to_F18_reaclib = rate
 
 @numba.njit()
-def F18__O18__weak__wc12(rate_eval, tf):
+def F18_to_O18_reaclib(rate_eval, tf, log_scor=0.0):
     # F18 --&gt; O18
     rate = 0.0
 
     # wc12w
-    rate += np.exp(  -9.15982)
+    ln_set_rate =  -9.15982
 
-    rate_eval.F18__O18__weak__wc12 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.F18_to_O18_reaclib = rate
 
 @numba.njit()
-def p_O18__He4_N15(rate_eval, tf):
+def p_O18_to_He4_N15_reaclib(rate_eval, tf, log_scor=0.0):
     # O18 + p --&gt; He4 + N15
     rate = 0.0
 
     # il10r
-    rate += np.exp(  -27.9044 + -0.245884*tf.T9i
-                  + -1.5*tf.lnT9)
-    # il10n
-    rate += np.exp(  26.9671 + -16.6979*tf.T913i
-                  + -3.0*tf.T953 + -0.666667*tf.lnT9)
-    # il10r
-    rate += np.exp(  8.94352 + -5.32335*tf.T9i + 11.6568*tf.T913
-                  + -2.16303*tf.T9 + 0.209965*tf.T953 + -1.5*tf.lnT9)
-    # il10r
-    rate += np.exp(  10.2725 + -1.663*tf.T9i
-                  + -1.5*tf.lnT9)
+    ln_set_rate =  -27.9044 + -0.245884*tf.T9i \
+                         + -1.5*tf.lnT9
 
-    rate_eval.p_O18__He4_N15 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10n
+    ln_set_rate =  26.9671 + -16.6979*tf.T913i \
+                         + -3.0*tf.T953 + -0.666667*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10r
+    ln_set_rate =  8.94352 + -5.32335*tf.T9i + 11.6568*tf.T913 \
+                         + -2.16303*tf.T9 + 0.209965*tf.T953 + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10r
+    ln_set_rate =  10.2725 + -1.663*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_O18_to_He4_N15_reaclib = rate
 
 @numba.njit()
-def p_O18__F19(rate_eval, tf):
+def p_O18_to_F19_reaclib(rate_eval, tf, log_scor=0.0):
     # O18 + p --&gt; F19
     rate = 0.0
 
     # il10n
-    rate += np.exp(  19.917 + -16.7246*tf.T913i
-                  + -3.0*tf.T953 + -0.666667*tf.lnT9)
-    # il10r
-    rate += np.exp(  7.26876 + -6.7253*tf.T9i + 3.99059*tf.T913
-                  + -0.593127*tf.T9 + 0.0877534*tf.T953 + -1.5*tf.lnT9)
-    # il10r
-    rate += np.exp(  5.07648 + -1.65681*tf.T9i
-                  + -1.5*tf.lnT9)
-    # il10r
-    rate += np.exp(  -35.0079 + -0.244743*tf.T9i
-                  + -1.5*tf.lnT9)
+    ln_set_rate =  19.917 + -16.7246*tf.T913i \
+                         + -3.0*tf.T953 + -0.666667*tf.lnT9
 
-    rate_eval.p_O18__F19 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10r
+    ln_set_rate =  7.26876 + -6.7253*tf.T9i + 3.99059*tf.T913 \
+                         + -0.593127*tf.T9 + 0.0877534*tf.T953 + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10r
+    ln_set_rate =  5.07648 + -1.65681*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10r
+    ln_set_rate =  -35.0079 + -0.244743*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_O18_to_F19_reaclib = rate
 
 @numba.njit()
-def p_F19__He4_O16(rate_eval, tf):
+def p_F19_to_He4_O16_reaclib(rate_eval, tf, log_scor=0.0):
     # F19 + p --&gt; He4 + O16
     rate = 0.0
 
     # nacr 
-    rate += np.exp(  -52.7043 + -0.12765*tf.T9i
-                  + -1.5*tf.lnT9)
-    # nacr 
-    rate += np.exp(  26.2916 + -18.116*tf.T913i
-                  + 1.86674*tf.T9 + -7.5666*tf.T953 + -0.666667*tf.lnT9)
-    # nacrr
-    rate += np.exp(  14.3586 + -3.286*tf.T9i
-                  + -0.21103*tf.T9 + 2.87702*tf.lnT9)
-    # nacr 
-    rate += np.exp(  15.1955 + -3.75185*tf.T9i
-                  + -1.5*tf.lnT9)
-    # nacr 
-    rate += np.exp(  8.239 + -2.46828*tf.T9i
-                  + -1.5*tf.lnT9)
+    ln_set_rate =  -52.7043 + -0.12765*tf.T9i \
+                         + -1.5*tf.lnT9
 
-    rate_eval.p_F19__He4_O16 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # nacr 
+    ln_set_rate =  26.2916 + -18.116*tf.T913i \
+                         + 1.86674*tf.T9 + -7.5666*tf.T953 + -0.666667*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # nacrr
+    ln_set_rate =  14.3586 + -3.286*tf.T9i \
+                         + -0.21103*tf.T9 + 2.87702*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # nacr 
+    ln_set_rate =  15.1955 + -3.75185*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # nacr 
+    ln_set_rate =  8.239 + -2.46828*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_F19_to_He4_O16_reaclib = rate
 
 @numba.njit()
-def He4_O14__p_F17(rate_eval, tf):
+def He4_O14_to_p_F17_reaclib(rate_eval, tf, log_scor=0.0):
     # O14 + He4 --&gt; p + F17
     rate = 0.0
 
     # Ha96r
-    rate += np.exp(  12.1289 + -12.0223*tf.T9i
-                  + -1.5*tf.lnT9)
-    # Ha96r
-    rate += np.exp(  18.6518 + -26.0*tf.T9i
-                  + -1.5*tf.lnT9)
-    # Ha96n
-    rate += np.exp(  40.8358 + -39.388*tf.T913i + -17.4673*tf.T913
-                  + 35.3029*tf.T9 + -24.8162*tf.T953 + -0.666667*tf.lnT9)
-    # Ha96r
-    rate += np.exp(  16.3087 + -22.51*tf.T9i
-                  + -1.5*tf.lnT9)
-    # Ha96r
-    rate += np.exp(  11.1184 + -13.6*tf.T9i
-                  + -1.5*tf.lnT9)
-    # Ha96r
-    rate += np.exp(  -106.091 + -0.453036*tf.T9i
-                  + -1.5*tf.lnT9)
+    ln_set_rate =  12.1289 + -12.0223*tf.T9i \
+                         + -1.5*tf.lnT9
 
-    rate_eval.He4_O14__p_F17 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # Ha96r
+    ln_set_rate =  18.6518 + -26.0*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # Ha96n
+    ln_set_rate =  40.8358 + -39.388*tf.T913i + -17.4673*tf.T913 \
+                         + 35.3029*tf.T9 + -24.8162*tf.T953 + -0.666667*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # Ha96r
+    ln_set_rate =  16.3087 + -22.51*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # Ha96r
+    ln_set_rate =  11.1184 + -13.6*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # Ha96r
+    ln_set_rate =  -106.091 + -0.453036*tf.T9i \
+                         + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.He4_O14_to_p_F17_reaclib = rate
 
 @numba.njit()
-def p_F17__Ne18(rate_eval, tf):
+def p_F17_to_Ne18_reaclib(rate_eval, tf, log_scor=0.0):
     # F17 + p --&gt; Ne18
     rate = 0.0
 
     # cb09 
-    rate += np.exp(  -7.84708 + -0.0323504*tf.T9i + -14.2191*tf.T913i + 34.0647*tf.T913
-                  + -16.5698*tf.T9 + 2.48116*tf.T953 + -2.13376*tf.lnT9)
-    # cb09 
-    rate += np.exp(  27.5778 + -4.95969*tf.T9i + -21.3249*tf.T913i + -0.230774*tf.T913
-                  + 0.917931*tf.T9 + -0.0440377*tf.T953 + -7.36014*tf.lnT9)
+    ln_set_rate =  -7.84708 + -0.0323504*tf.T9i + -14.2191*tf.T913i + 34.0647*tf.T913 \
+                         + -16.5698*tf.T9 + 2.48116*tf.T953 + -2.13376*tf.lnT9
 
-    rate_eval.p_F17__Ne18 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # cb09 
+    ln_set_rate =  27.5778 + -4.95969*tf.T9i + -21.3249*tf.T913i + -0.230774*tf.T913 \
+                         + 0.917931*tf.T9 + -0.0440377*tf.T953 + -7.36014*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_F17_to_Ne18_reaclib = rate
 
 @numba.njit()
-def Ne18__F18__weak__wc12(rate_eval, tf):
+def Ne18_to_F18_reaclib(rate_eval, tf, log_scor=0.0):
     # Ne18 --&gt; F18
     rate = 0.0
 
     # wc12w
-    rate += np.exp(  -0.879336)
+    ln_set_rate =  -0.879336
 
-    rate_eval.Ne18__F18__weak__wc12 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.Ne18_to_F18_reaclib = rate
 
 @numba.njit()
-def p_F18__He4_O15(rate_eval, tf):
+def p_F18_to_He4_O15_reaclib(rate_eval, tf, log_scor=0.0):
     # F18 + p --&gt; He4 + O15
     rate = 0.0
 
     # il10r
-    rate += np.exp(  1.75704 + -3.01675*tf.T9i + 13.3223*tf.T913
-                  + -1.36696*tf.T9 + 0.0757363*tf.T953 + -1.5*tf.lnT9)
-    # il10r
-    rate += np.exp(  -31.7388 + -0.376432*tf.T9i + 61.738*tf.T913
-                  + -108.29*tf.T9 + -34.2365*tf.T953 + -1.5*tf.lnT9)
-    # il10n
-    rate += np.exp(  62.0058 + -21.4023*tf.T913i + -80.8891*tf.T913
-                  + 134.6*tf.T9 + -126.504*tf.T953 + -0.666667*tf.lnT9)
+    ln_set_rate =  1.75704 + -3.01675*tf.T9i + 13.3223*tf.T913 \
+                         + -1.36696*tf.T9 + 0.0757363*tf.T953 + -1.5*tf.lnT9
 
-    rate_eval.p_F18__He4_O15 = rate
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10r
+    ln_set_rate =  -31.7388 + -0.376432*tf.T9i + 61.738*tf.T913 \
+                         + -108.29*tf.T9 + -34.2365*tf.T953 + -1.5*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    # il10n
+    ln_set_rate =  62.0058 + -21.4023*tf.T913i + -80.8891*tf.T913 \
+                         + 134.6*tf.T9 + -126.504*tf.T953 + -0.666667*tf.lnT9
+
+    ln_set_rate += log_scor
+    set_rate = np.exp(ln_set_rate)
+    rate += set_rate
+
+    rate_eval.p_F18_to_He4_O15_reaclib = rate
 
 def rhs(t, Y, rho, T, screen_func=None):
     return rhs_eq(t, Y, rho, T, screen_func)
@@ -1082,194 +1344,181 @@ def rhs_eq(t, Y, rho, T, screen_func):
     tf = Tfactors(T)
     rate_eval = RateEval()
 
-    # reaclib rates
-    p_C12__N13(rate_eval, tf)
-    p_C13__N14(rate_eval, tf)
-    N13__C13__weak__wc12(rate_eval, tf)
-    p_N13__O14(rate_eval, tf)
-    p_N14__O15(rate_eval, tf)
-    p_N15__He4_C12(rate_eval, tf)
-    O14__N14__weak__wc12(rate_eval, tf)
-    O15__N15__weak__wc12(rate_eval, tf)
-    p_N15__O16(rate_eval, tf)
-    p_O16__F17(rate_eval, tf)
-    F17__O17__weak__wc12(rate_eval, tf)
-    p_O17__He4_N14(rate_eval, tf)
-    p_O17__F18(rate_eval, tf)
-    F18__O18__weak__wc12(rate_eval, tf)
-    p_O18__He4_N15(rate_eval, tf)
-    p_O18__F19(rate_eval, tf)
-    p_F19__He4_O16(rate_eval, tf)
-    He4_O14__p_F17(rate_eval, tf)
-    p_F17__Ne18(rate_eval, tf)
-    Ne18__F18__weak__wc12(rate_eval, tf)
-    p_F18__He4_O15(rate_eval, tf)
+    log_scor_p_C12 = 0.0
+    log_scor_p_C13 = 0.0
+    log_scor_p_N13 = 0.0
+    log_scor_p_N14 = 0.0
+    log_scor_p_N15 = 0.0
+    log_scor_p_O16 = 0.0
+    log_scor_p_O17 = 0.0
+    log_scor_p_O18 = 0.0
+    log_scor_p_F19 = 0.0
+    log_scor_He4_O14 = 0.0
+    log_scor_p_F17 = 0.0
+    log_scor_p_F18 = 0.0
 
     if screen_func is not None:
         plasma_state = PlasmaState(T, rho, Y, Z)
 
         scn_fac = ScreenFactors(1, 1, 6, 12)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_C12__N13 *= scor
-
+        log_scor_p_C12 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 6, 13)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_C13__N14 *= scor
-
+        log_scor_p_C13 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 7, 13)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_N13__O14 *= scor
-
+        log_scor_p_N13 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 7, 14)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_N14__O15 *= scor
-
+        log_scor_p_N14 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 7, 15)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_N15__He4_C12 *= scor
-        rate_eval.p_N15__O16 *= scor
-
+        log_scor_p_N15 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 8, 16)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_O16__F17 *= scor
-
+        log_scor_p_O16 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 8, 17)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_O17__He4_N14 *= scor
-        rate_eval.p_O17__F18 *= scor
-
+        log_scor_p_O17 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 8, 18)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_O18__He4_N15 *= scor
-        rate_eval.p_O18__F19 *= scor
-
+        log_scor_p_O18 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 9, 19)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_F19__He4_O16 *= scor
-
+        log_scor_p_F19 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(2, 4, 8, 14)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.He4_O14__p_F17 *= scor
-
+        log_scor_He4_O14 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 9, 17)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_F17__Ne18 *= scor
-
+        log_scor_p_F17 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 9, 18)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_F18__He4_O15 *= scor
+        log_scor_p_F18 = screen_func(plasma_state, scn_fac)
+
+    # reaclib rates
+    p_C12_to_N13_reaclib(rate_eval, tf, log_scor=log_scor_p_C12)
+    p_C13_to_N14_reaclib(rate_eval, tf, log_scor=log_scor_p_C13)
+    N13_to_C13_reaclib(rate_eval, tf)
+    p_N13_to_O14_reaclib(rate_eval, tf, log_scor=log_scor_p_N13)
+    p_N14_to_O15_reaclib(rate_eval, tf, log_scor=log_scor_p_N14)
+    p_N15_to_He4_C12_reaclib(rate_eval, tf, log_scor=log_scor_p_N15)
+    O14_to_N14_reaclib(rate_eval, tf)
+    O15_to_N15_reaclib(rate_eval, tf)
+    p_N15_to_O16_reaclib(rate_eval, tf, log_scor=log_scor_p_N15)
+    p_O16_to_F17_reaclib(rate_eval, tf, log_scor=log_scor_p_O16)
+    F17_to_O17_reaclib(rate_eval, tf)
+    p_O17_to_He4_N14_reaclib(rate_eval, tf, log_scor=log_scor_p_O17)
+    p_O17_to_F18_reaclib(rate_eval, tf, log_scor=log_scor_p_O17)
+    F18_to_O18_reaclib(rate_eval, tf)
+    p_O18_to_He4_N15_reaclib(rate_eval, tf, log_scor=log_scor_p_O18)
+    p_O18_to_F19_reaclib(rate_eval, tf, log_scor=log_scor_p_O18)
+    p_F19_to_He4_O16_reaclib(rate_eval, tf, log_scor=log_scor_p_F19)
+    He4_O14_to_p_F17_reaclib(rate_eval, tf, log_scor=log_scor_He4_O14)
+    p_F17_to_Ne18_reaclib(rate_eval, tf, log_scor=log_scor_p_F17)
+    Ne18_to_F18_reaclib(rate_eval, tf)
+    p_F18_to_He4_O15_reaclib(rate_eval, tf, log_scor=log_scor_p_F18)
 
     dYdt = np.zeros((nnuc), dtype=np.float64)
 
     dYdt[jp] = (
-          -rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13  +
-          -rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14  +
-          -rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14  +
-          -rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15  +
-          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12  +
-          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16  +
-          -rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17  +
-          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14  +
-          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18  +
-          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15  +
-          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19  +
-          -rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16  +
-          +rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17  +
-          -rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18  +
-          -rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
+          -rho*Y[jp]*Y[jc12]*rate_eval.p_C12_to_N13_reaclib  +
+          -rho*Y[jp]*Y[jc13]*rate_eval.p_C13_to_N14_reaclib  +
+          -rho*Y[jp]*Y[jn13]*rate_eval.p_N13_to_O14_reaclib  +
+          -rho*Y[jp]*Y[jn14]*rate_eval.p_N14_to_O15_reaclib  +
+          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15_to_He4_C12_reaclib  +
+          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15_to_O16_reaclib  +
+          -rho*Y[jp]*Y[jo16]*rate_eval.p_O16_to_F17_reaclib  +
+          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17_to_He4_N14_reaclib  +
+          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17_to_F18_reaclib  +
+          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18_to_He4_N15_reaclib  +
+          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18_to_F19_reaclib  +
+          -rho*Y[jp]*Y[jf19]*rate_eval.p_F19_to_He4_O16_reaclib  +
+          +rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14_to_p_F17_reaclib  +
+          -rho*Y[jp]*Y[jf17]*rate_eval.p_F17_to_Ne18_reaclib  +
+          -rho*Y[jp]*Y[jf18]*rate_eval.p_F18_to_He4_O15_reaclib
        )
 
     dYdt[jhe4] = (
-          +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12  +
-          +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14  +
-          +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15  +
-          +rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16  +
-          -rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17  +
-          +rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
+          +rho*Y[jp]*Y[jn15]*rate_eval.p_N15_to_He4_C12_reaclib  +
+          +rho*Y[jp]*Y[jo17]*rate_eval.p_O17_to_He4_N14_reaclib  +
+          +rho*Y[jp]*Y[jo18]*rate_eval.p_O18_to_He4_N15_reaclib  +
+          +rho*Y[jp]*Y[jf19]*rate_eval.p_F19_to_He4_O16_reaclib  +
+          -rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14_to_p_F17_reaclib  +
+          +rho*Y[jp]*Y[jf18]*rate_eval.p_F18_to_He4_O15_reaclib
        )
 
     dYdt[jc12] = (
-          -rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13  +
-          +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12
+          -rho*Y[jp]*Y[jc12]*rate_eval.p_C12_to_N13_reaclib  +
+          +rho*Y[jp]*Y[jn15]*rate_eval.p_N15_to_He4_C12_reaclib
        )
 
     dYdt[jc13] = (
-          -rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14  +
-          +Y[jn13]*rate_eval.N13__C13__weak__wc12
+          -rho*Y[jp]*Y[jc13]*rate_eval.p_C13_to_N14_reaclib  +
+          +Y[jn13]*rate_eval.N13_to_C13_reaclib
        )
 
     dYdt[jn13] = (
-          +rho*Y[jp]*Y[jc12]*rate_eval.p_C12__N13  +
-          -Y[jn13]*rate_eval.N13__C13__weak__wc12  +
-          -rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14
+          +rho*Y[jp]*Y[jc12]*rate_eval.p_C12_to_N13_reaclib  +
+          -Y[jn13]*rate_eval.N13_to_C13_reaclib  +
+          -rho*Y[jp]*Y[jn13]*rate_eval.p_N13_to_O14_reaclib
        )
 
     dYdt[jn14] = (
-          +rho*Y[jp]*Y[jc13]*rate_eval.p_C13__N14  +
-          -rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15  +
-          +Y[jo14]*rate_eval.O14__N14__weak__wc12  +
-          +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14
+          +rho*Y[jp]*Y[jc13]*rate_eval.p_C13_to_N14_reaclib  +
+          -rho*Y[jp]*Y[jn14]*rate_eval.p_N14_to_O15_reaclib  +
+          +Y[jo14]*rate_eval.O14_to_N14_reaclib  +
+          +rho*Y[jp]*Y[jo17]*rate_eval.p_O17_to_He4_N14_reaclib
        )
 
     dYdt[jn15] = (
-          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__He4_C12  +
-          +Y[jo15]*rate_eval.O15__N15__weak__wc12  +
-          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16  +
-          +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15
+          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15_to_He4_C12_reaclib  +
+          +Y[jo15]*rate_eval.O15_to_N15_reaclib  +
+          -rho*Y[jp]*Y[jn15]*rate_eval.p_N15_to_O16_reaclib  +
+          +rho*Y[jp]*Y[jo18]*rate_eval.p_O18_to_He4_N15_reaclib
        )
 
     dYdt[jo14] = (
-          +rho*Y[jp]*Y[jn13]*rate_eval.p_N13__O14  +
-          -Y[jo14]*rate_eval.O14__N14__weak__wc12  +
-          -rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17
+          +rho*Y[jp]*Y[jn13]*rate_eval.p_N13_to_O14_reaclib  +
+          -Y[jo14]*rate_eval.O14_to_N14_reaclib  +
+          -rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14_to_p_F17_reaclib
        )
 
     dYdt[jo15] = (
-          +rho*Y[jp]*Y[jn14]*rate_eval.p_N14__O15  +
-          -Y[jo15]*rate_eval.O15__N15__weak__wc12  +
-          +rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
+          +rho*Y[jp]*Y[jn14]*rate_eval.p_N14_to_O15_reaclib  +
+          -Y[jo15]*rate_eval.O15_to_N15_reaclib  +
+          +rho*Y[jp]*Y[jf18]*rate_eval.p_F18_to_He4_O15_reaclib
        )
 
     dYdt[jo16] = (
-          +rho*Y[jp]*Y[jn15]*rate_eval.p_N15__O16  +
-          -rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17  +
-          +rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
+          +rho*Y[jp]*Y[jn15]*rate_eval.p_N15_to_O16_reaclib  +
+          -rho*Y[jp]*Y[jo16]*rate_eval.p_O16_to_F17_reaclib  +
+          +rho*Y[jp]*Y[jf19]*rate_eval.p_F19_to_He4_O16_reaclib
        )
 
     dYdt[jo17] = (
-          +Y[jf17]*rate_eval.F17__O17__weak__wc12  +
-          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__He4_N14  +
-          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18
+          +Y[jf17]*rate_eval.F17_to_O17_reaclib  +
+          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17_to_He4_N14_reaclib  +
+          -rho*Y[jp]*Y[jo17]*rate_eval.p_O17_to_F18_reaclib
        )
 
     dYdt[jo18] = (
-          +Y[jf18]*rate_eval.F18__O18__weak__wc12  +
-          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__He4_N15  +
-          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19
+          +Y[jf18]*rate_eval.F18_to_O18_reaclib  +
+          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18_to_He4_N15_reaclib  +
+          -rho*Y[jp]*Y[jo18]*rate_eval.p_O18_to_F19_reaclib
        )
 
     dYdt[jf17] = (
-          +rho*Y[jp]*Y[jo16]*rate_eval.p_O16__F17  +
-          -Y[jf17]*rate_eval.F17__O17__weak__wc12  +
-          +rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14__p_F17  +
-          -rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18
+          +rho*Y[jp]*Y[jo16]*rate_eval.p_O16_to_F17_reaclib  +
+          -Y[jf17]*rate_eval.F17_to_O17_reaclib  +
+          +rho*Y[jhe4]*Y[jo14]*rate_eval.He4_O14_to_p_F17_reaclib  +
+          -rho*Y[jp]*Y[jf17]*rate_eval.p_F17_to_Ne18_reaclib
        )
 
     dYdt[jf18] = (
-          +rho*Y[jp]*Y[jo17]*rate_eval.p_O17__F18  +
-          -Y[jf18]*rate_eval.F18__O18__weak__wc12  +
-          +Y[jne18]*rate_eval.Ne18__F18__weak__wc12  +
-          -rho*Y[jp]*Y[jf18]*rate_eval.p_F18__He4_O15
+          +rho*Y[jp]*Y[jo17]*rate_eval.p_O17_to_F18_reaclib  +
+          -Y[jf18]*rate_eval.F18_to_O18_reaclib  +
+          +Y[jne18]*rate_eval.Ne18_to_F18_reaclib  +
+          -rho*Y[jp]*Y[jf18]*rate_eval.p_F18_to_He4_O15_reaclib
        )
 
     dYdt[jf19] = (
-          +rho*Y[jp]*Y[jo18]*rate_eval.p_O18__F19  +
-          -rho*Y[jp]*Y[jf19]*rate_eval.p_F19__He4_O16
+          +rho*Y[jp]*Y[jo18]*rate_eval.p_O18_to_F19_reaclib  +
+          -rho*Y[jp]*Y[jf19]*rate_eval.p_F19_to_He4_O16_reaclib
        )
 
     dYdt[jne18] = (
-          +rho*Y[jp]*Y[jf17]*rate_eval.p_F17__Ne18  +
-          -Y[jne18]*rate_eval.Ne18__F18__weak__wc12
+          +rho*Y[jp]*Y[jf17]*rate_eval.p_F17_to_Ne18_reaclib  +
+          -Y[jne18]*rate_eval.Ne18_to_F18_reaclib
        )
 
     return dYdt
@@ -1283,416 +1532,403 @@ def jacobian_eq(t, Y, rho, T, screen_func):
     tf = Tfactors(T)
     rate_eval = RateEval()
 
-    # reaclib rates
-    p_C12__N13(rate_eval, tf)
-    p_C13__N14(rate_eval, tf)
-    N13__C13__weak__wc12(rate_eval, tf)
-    p_N13__O14(rate_eval, tf)
-    p_N14__O15(rate_eval, tf)
-    p_N15__He4_C12(rate_eval, tf)
-    O14__N14__weak__wc12(rate_eval, tf)
-    O15__N15__weak__wc12(rate_eval, tf)
-    p_N15__O16(rate_eval, tf)
-    p_O16__F17(rate_eval, tf)
-    F17__O17__weak__wc12(rate_eval, tf)
-    p_O17__He4_N14(rate_eval, tf)
-    p_O17__F18(rate_eval, tf)
-    F18__O18__weak__wc12(rate_eval, tf)
-    p_O18__He4_N15(rate_eval, tf)
-    p_O18__F19(rate_eval, tf)
-    p_F19__He4_O16(rate_eval, tf)
-    He4_O14__p_F17(rate_eval, tf)
-    p_F17__Ne18(rate_eval, tf)
-    Ne18__F18__weak__wc12(rate_eval, tf)
-    p_F18__He4_O15(rate_eval, tf)
+    log_scor_p_C12 = 0.0
+    log_scor_p_C13 = 0.0
+    log_scor_p_N13 = 0.0
+    log_scor_p_N14 = 0.0
+    log_scor_p_N15 = 0.0
+    log_scor_p_O16 = 0.0
+    log_scor_p_O17 = 0.0
+    log_scor_p_O18 = 0.0
+    log_scor_p_F19 = 0.0
+    log_scor_He4_O14 = 0.0
+    log_scor_p_F17 = 0.0
+    log_scor_p_F18 = 0.0
 
     if screen_func is not None:
         plasma_state = PlasmaState(T, rho, Y, Z)
 
         scn_fac = ScreenFactors(1, 1, 6, 12)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_C12__N13 *= scor
-
+        log_scor_p_C12 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 6, 13)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_C13__N14 *= scor
-
+        log_scor_p_C13 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 7, 13)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_N13__O14 *= scor
-
+        log_scor_p_N13 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 7, 14)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_N14__O15 *= scor
-
+        log_scor_p_N14 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 7, 15)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_N15__He4_C12 *= scor
-        rate_eval.p_N15__O16 *= scor
-
+        log_scor_p_N15 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 8, 16)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_O16__F17 *= scor
-
+        log_scor_p_O16 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 8, 17)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_O17__He4_N14 *= scor
-        rate_eval.p_O17__F18 *= scor
-
+        log_scor_p_O17 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 8, 18)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_O18__He4_N15 *= scor
-        rate_eval.p_O18__F19 *= scor
-
+        log_scor_p_O18 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 9, 19)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_F19__He4_O16 *= scor
-
+        log_scor_p_F19 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(2, 4, 8, 14)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.He4_O14__p_F17 *= scor
-
+        log_scor_He4_O14 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 9, 17)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_F17__Ne18 *= scor
-
+        log_scor_p_F17 = screen_func(plasma_state, scn_fac)
         scn_fac = ScreenFactors(1, 1, 9, 18)
-        scor = screen_func(plasma_state, scn_fac)
-        rate_eval.p_F18__He4_O15 *= scor
+        log_scor_p_F18 = screen_func(plasma_state, scn_fac)
+
+    # reaclib rates
+    p_C12_to_N13_reaclib(rate_eval, tf, log_scor=log_scor_p_C12)
+    p_C13_to_N14_reaclib(rate_eval, tf, log_scor=log_scor_p_C13)
+    N13_to_C13_reaclib(rate_eval, tf)
+    p_N13_to_O14_reaclib(rate_eval, tf, log_scor=log_scor_p_N13)
+    p_N14_to_O15_reaclib(rate_eval, tf, log_scor=log_scor_p_N14)
+    p_N15_to_He4_C12_reaclib(rate_eval, tf, log_scor=log_scor_p_N15)
+    O14_to_N14_reaclib(rate_eval, tf)
+    O15_to_N15_reaclib(rate_eval, tf)
+    p_N15_to_O16_reaclib(rate_eval, tf, log_scor=log_scor_p_N15)
+    p_O16_to_F17_reaclib(rate_eval, tf, log_scor=log_scor_p_O16)
+    F17_to_O17_reaclib(rate_eval, tf)
+    p_O17_to_He4_N14_reaclib(rate_eval, tf, log_scor=log_scor_p_O17)
+    p_O17_to_F18_reaclib(rate_eval, tf, log_scor=log_scor_p_O17)
+    F18_to_O18_reaclib(rate_eval, tf)
+    p_O18_to_He4_N15_reaclib(rate_eval, tf, log_scor=log_scor_p_O18)
+    p_O18_to_F19_reaclib(rate_eval, tf, log_scor=log_scor_p_O18)
+    p_F19_to_He4_O16_reaclib(rate_eval, tf, log_scor=log_scor_p_F19)
+    He4_O14_to_p_F17_reaclib(rate_eval, tf, log_scor=log_scor_He4_O14)
+    p_F17_to_Ne18_reaclib(rate_eval, tf, log_scor=log_scor_p_F17)
+    Ne18_to_F18_reaclib(rate_eval, tf)
+    p_F18_to_He4_O15_reaclib(rate_eval, tf, log_scor=log_scor_p_F18)
 
     jac = np.zeros((nnuc, nnuc), dtype=np.float64)
 
     jac[jp, jp] = (
-       -rho*Y[jc12]*rate_eval.p_C12__N13
-       -rho*Y[jc13]*rate_eval.p_C13__N14
-       -rho*Y[jn13]*rate_eval.p_N13__O14
-       -rho*Y[jn14]*rate_eval.p_N14__O15
-       -rho*Y[jn15]*rate_eval.p_N15__He4_C12
-       -rho*Y[jn15]*rate_eval.p_N15__O16
-       -rho*Y[jo16]*rate_eval.p_O16__F17
-       -rho*Y[jo17]*rate_eval.p_O17__He4_N14
-       -rho*Y[jo17]*rate_eval.p_O17__F18
-       -rho*Y[jo18]*rate_eval.p_O18__He4_N15
-       -rho*Y[jo18]*rate_eval.p_O18__F19
-       -rho*Y[jf19]*rate_eval.p_F19__He4_O16
-       -rho*Y[jf17]*rate_eval.p_F17__Ne18
-       -rho*Y[jf18]*rate_eval.p_F18__He4_O15
+       -rho*Y[jc12]*rate_eval.p_C12_to_N13_reaclib
+       -rho*Y[jc13]*rate_eval.p_C13_to_N14_reaclib
+       -rho*Y[jn13]*rate_eval.p_N13_to_O14_reaclib
+       -rho*Y[jn14]*rate_eval.p_N14_to_O15_reaclib
+       -rho*Y[jn15]*rate_eval.p_N15_to_He4_C12_reaclib
+       -rho*Y[jn15]*rate_eval.p_N15_to_O16_reaclib
+       -rho*Y[jo16]*rate_eval.p_O16_to_F17_reaclib
+       -rho*Y[jo17]*rate_eval.p_O17_to_He4_N14_reaclib
+       -rho*Y[jo17]*rate_eval.p_O17_to_F18_reaclib
+       -rho*Y[jo18]*rate_eval.p_O18_to_He4_N15_reaclib
+       -rho*Y[jo18]*rate_eval.p_O18_to_F19_reaclib
+       -rho*Y[jf19]*rate_eval.p_F19_to_He4_O16_reaclib
+       -rho*Y[jf17]*rate_eval.p_F17_to_Ne18_reaclib
+       -rho*Y[jf18]*rate_eval.p_F18_to_He4_O15_reaclib
        )
 
     jac[jp, jhe4] = (
-       +rho*Y[jo14]*rate_eval.He4_O14__p_F17
+       +rho*Y[jo14]*rate_eval.He4_O14_to_p_F17_reaclib
        )
 
     jac[jp, jc12] = (
-       -rho*Y[jp]*rate_eval.p_C12__N13
+       -rho*Y[jp]*rate_eval.p_C12_to_N13_reaclib
        )
 
     jac[jp, jc13] = (
-       -rho*Y[jp]*rate_eval.p_C13__N14
+       -rho*Y[jp]*rate_eval.p_C13_to_N14_reaclib
        )
 
     jac[jp, jn13] = (
-       -rho*Y[jp]*rate_eval.p_N13__O14
+       -rho*Y[jp]*rate_eval.p_N13_to_O14_reaclib
        )
 
     jac[jp, jn14] = (
-       -rho*Y[jp]*rate_eval.p_N14__O15
+       -rho*Y[jp]*rate_eval.p_N14_to_O15_reaclib
        )
 
     jac[jp, jn15] = (
-       -rho*Y[jp]*rate_eval.p_N15__He4_C12
-       -rho*Y[jp]*rate_eval.p_N15__O16
+       -rho*Y[jp]*rate_eval.p_N15_to_He4_C12_reaclib
+       -rho*Y[jp]*rate_eval.p_N15_to_O16_reaclib
        )
 
     jac[jp, jo14] = (
-       +rho*Y[jhe4]*rate_eval.He4_O14__p_F17
+       +rho*Y[jhe4]*rate_eval.He4_O14_to_p_F17_reaclib
        )
 
     jac[jp, jo16] = (
-       -rho*Y[jp]*rate_eval.p_O16__F17
+       -rho*Y[jp]*rate_eval.p_O16_to_F17_reaclib
        )
 
     jac[jp, jo17] = (
-       -rho*Y[jp]*rate_eval.p_O17__He4_N14
-       -rho*Y[jp]*rate_eval.p_O17__F18
+       -rho*Y[jp]*rate_eval.p_O17_to_He4_N14_reaclib
+       -rho*Y[jp]*rate_eval.p_O17_to_F18_reaclib
        )
 
     jac[jp, jo18] = (
-       -rho*Y[jp]*rate_eval.p_O18__He4_N15
-       -rho*Y[jp]*rate_eval.p_O18__F19
+       -rho*Y[jp]*rate_eval.p_O18_to_He4_N15_reaclib
+       -rho*Y[jp]*rate_eval.p_O18_to_F19_reaclib
        )
 
     jac[jp, jf17] = (
-       -rho*Y[jp]*rate_eval.p_F17__Ne18
+       -rho*Y[jp]*rate_eval.p_F17_to_Ne18_reaclib
        )
 
     jac[jp, jf18] = (
-       -rho*Y[jp]*rate_eval.p_F18__He4_O15
+       -rho*Y[jp]*rate_eval.p_F18_to_He4_O15_reaclib
        )
 
     jac[jp, jf19] = (
-       -rho*Y[jp]*rate_eval.p_F19__He4_O16
+       -rho*Y[jp]*rate_eval.p_F19_to_He4_O16_reaclib
        )
 
     jac[jhe4, jp] = (
-       +rho*Y[jn15]*rate_eval.p_N15__He4_C12
-       +rho*Y[jo17]*rate_eval.p_O17__He4_N14
-       +rho*Y[jo18]*rate_eval.p_O18__He4_N15
-       +rho*Y[jf19]*rate_eval.p_F19__He4_O16
-       +rho*Y[jf18]*rate_eval.p_F18__He4_O15
+       +rho*Y[jn15]*rate_eval.p_N15_to_He4_C12_reaclib
+       +rho*Y[jo17]*rate_eval.p_O17_to_He4_N14_reaclib
+       +rho*Y[jo18]*rate_eval.p_O18_to_He4_N15_reaclib
+       +rho*Y[jf19]*rate_eval.p_F19_to_He4_O16_reaclib
+       +rho*Y[jf18]*rate_eval.p_F18_to_He4_O15_reaclib
        )
 
     jac[jhe4, jhe4] = (
-       -rho*Y[jo14]*rate_eval.He4_O14__p_F17
+       -rho*Y[jo14]*rate_eval.He4_O14_to_p_F17_reaclib
        )
 
     jac[jhe4, jn15] = (
-       +rho*Y[jp]*rate_eval.p_N15__He4_C12
+       +rho*Y[jp]*rate_eval.p_N15_to_He4_C12_reaclib
        )
 
     jac[jhe4, jo14] = (
-       -rho*Y[jhe4]*rate_eval.He4_O14__p_F17
+       -rho*Y[jhe4]*rate_eval.He4_O14_to_p_F17_reaclib
        )
 
     jac[jhe4, jo17] = (
-       +rho*Y[jp]*rate_eval.p_O17__He4_N14
+       +rho*Y[jp]*rate_eval.p_O17_to_He4_N14_reaclib
        )
 
     jac[jhe4, jo18] = (
-       +rho*Y[jp]*rate_eval.p_O18__He4_N15
+       +rho*Y[jp]*rate_eval.p_O18_to_He4_N15_reaclib
        )
 
     jac[jhe4, jf18] = (
-       +rho*Y[jp]*rate_eval.p_F18__He4_O15
+       +rho*Y[jp]*rate_eval.p_F18_to_He4_O15_reaclib
        )
 
     jac[jhe4, jf19] = (
-       +rho*Y[jp]*rate_eval.p_F19__He4_O16
+       +rho*Y[jp]*rate_eval.p_F19_to_He4_O16_reaclib
        )
 
     jac[jc12, jp] = (
-       -rho*Y[jc12]*rate_eval.p_C12__N13
-       +rho*Y[jn15]*rate_eval.p_N15__He4_C12
+       -rho*Y[jc12]*rate_eval.p_C12_to_N13_reaclib
+       +rho*Y[jn15]*rate_eval.p_N15_to_He4_C12_reaclib
        )
 
     jac[jc12, jc12] = (
-       -rho*Y[jp]*rate_eval.p_C12__N13
+       -rho*Y[jp]*rate_eval.p_C12_to_N13_reaclib
        )
 
     jac[jc12, jn15] = (
-       +rho*Y[jp]*rate_eval.p_N15__He4_C12
+       +rho*Y[jp]*rate_eval.p_N15_to_He4_C12_reaclib
        )
 
     jac[jc13, jp] = (
-       -rho*Y[jc13]*rate_eval.p_C13__N14
+       -rho*Y[jc13]*rate_eval.p_C13_to_N14_reaclib
        )
 
     jac[jc13, jc13] = (
-       -rho*Y[jp]*rate_eval.p_C13__N14
+       -rho*Y[jp]*rate_eval.p_C13_to_N14_reaclib
        )
 
     jac[jc13, jn13] = (
-       +rate_eval.N13__C13__weak__wc12
+       +rate_eval.N13_to_C13_reaclib
        )
 
     jac[jn13, jp] = (
-       -rho*Y[jn13]*rate_eval.p_N13__O14
-       +rho*Y[jc12]*rate_eval.p_C12__N13
+       -rho*Y[jn13]*rate_eval.p_N13_to_O14_reaclib
+       +rho*Y[jc12]*rate_eval.p_C12_to_N13_reaclib
        )
 
     jac[jn13, jc12] = (
-       +rho*Y[jp]*rate_eval.p_C12__N13
+       +rho*Y[jp]*rate_eval.p_C12_to_N13_reaclib
        )
 
     jac[jn13, jn13] = (
-       -rate_eval.N13__C13__weak__wc12
-       -rho*Y[jp]*rate_eval.p_N13__O14
+       -rate_eval.N13_to_C13_reaclib
+       -rho*Y[jp]*rate_eval.p_N13_to_O14_reaclib
        )
 
     jac[jn14, jp] = (
-       -rho*Y[jn14]*rate_eval.p_N14__O15
-       +rho*Y[jc13]*rate_eval.p_C13__N14
-       +rho*Y[jo17]*rate_eval.p_O17__He4_N14
+       -rho*Y[jn14]*rate_eval.p_N14_to_O15_reaclib
+       +rho*Y[jc13]*rate_eval.p_C13_to_N14_reaclib
+       +rho*Y[jo17]*rate_eval.p_O17_to_He4_N14_reaclib
        )
 
     jac[jn14, jc13] = (
-       +rho*Y[jp]*rate_eval.p_C13__N14
+       +rho*Y[jp]*rate_eval.p_C13_to_N14_reaclib
        )
 
     jac[jn14, jn14] = (
-       -rho*Y[jp]*rate_eval.p_N14__O15
+       -rho*Y[jp]*rate_eval.p_N14_to_O15_reaclib
        )
 
     jac[jn14, jo14] = (
-       +rate_eval.O14__N14__weak__wc12
+       +rate_eval.O14_to_N14_reaclib
        )
 
     jac[jn14, jo17] = (
-       +rho*Y[jp]*rate_eval.p_O17__He4_N14
+       +rho*Y[jp]*rate_eval.p_O17_to_He4_N14_reaclib
        )
 
     jac[jn15, jp] = (
-       -rho*Y[jn15]*rate_eval.p_N15__He4_C12
-       -rho*Y[jn15]*rate_eval.p_N15__O16
-       +rho*Y[jo18]*rate_eval.p_O18__He4_N15
+       -rho*Y[jn15]*rate_eval.p_N15_to_He4_C12_reaclib
+       -rho*Y[jn15]*rate_eval.p_N15_to_O16_reaclib
+       +rho*Y[jo18]*rate_eval.p_O18_to_He4_N15_reaclib
        )
 
     jac[jn15, jn15] = (
-       -rho*Y[jp]*rate_eval.p_N15__He4_C12
-       -rho*Y[jp]*rate_eval.p_N15__O16
+       -rho*Y[jp]*rate_eval.p_N15_to_He4_C12_reaclib
+       -rho*Y[jp]*rate_eval.p_N15_to_O16_reaclib
        )
 
     jac[jn15, jo15] = (
-       +rate_eval.O15__N15__weak__wc12
+       +rate_eval.O15_to_N15_reaclib
        )
 
     jac[jn15, jo18] = (
-       +rho*Y[jp]*rate_eval.p_O18__He4_N15
+       +rho*Y[jp]*rate_eval.p_O18_to_He4_N15_reaclib
        )
 
     jac[jo14, jp] = (
-       +rho*Y[jn13]*rate_eval.p_N13__O14
+       +rho*Y[jn13]*rate_eval.p_N13_to_O14_reaclib
        )
 
     jac[jo14, jhe4] = (
-       -rho*Y[jo14]*rate_eval.He4_O14__p_F17
+       -rho*Y[jo14]*rate_eval.He4_O14_to_p_F17_reaclib
        )
 
     jac[jo14, jn13] = (
-       +rho*Y[jp]*rate_eval.p_N13__O14
+       +rho*Y[jp]*rate_eval.p_N13_to_O14_reaclib
        )
 
     jac[jo14, jo14] = (
-       -rate_eval.O14__N14__weak__wc12
-       -rho*Y[jhe4]*rate_eval.He4_O14__p_F17
+       -rate_eval.O14_to_N14_reaclib
+       -rho*Y[jhe4]*rate_eval.He4_O14_to_p_F17_reaclib
        )
 
     jac[jo15, jp] = (
-       +rho*Y[jn14]*rate_eval.p_N14__O15
-       +rho*Y[jf18]*rate_eval.p_F18__He4_O15
+       +rho*Y[jn14]*rate_eval.p_N14_to_O15_reaclib
+       +rho*Y[jf18]*rate_eval.p_F18_to_He4_O15_reaclib
        )
 
     jac[jo15, jn14] = (
-       +rho*Y[jp]*rate_eval.p_N14__O15
+       +rho*Y[jp]*rate_eval.p_N14_to_O15_reaclib
        )
 
     jac[jo15, jo15] = (
-       -rate_eval.O15__N15__weak__wc12
+       -rate_eval.O15_to_N15_reaclib
        )
 
     jac[jo15, jf18] = (
-       +rho*Y[jp]*rate_eval.p_F18__He4_O15
+       +rho*Y[jp]*rate_eval.p_F18_to_He4_O15_reaclib
        )
 
     jac[jo16, jp] = (
-       -rho*Y[jo16]*rate_eval.p_O16__F17
-       +rho*Y[jn15]*rate_eval.p_N15__O16
-       +rho*Y[jf19]*rate_eval.p_F19__He4_O16
+       -rho*Y[jo16]*rate_eval.p_O16_to_F17_reaclib
+       +rho*Y[jn15]*rate_eval.p_N15_to_O16_reaclib
+       +rho*Y[jf19]*rate_eval.p_F19_to_He4_O16_reaclib
        )
 
     jac[jo16, jn15] = (
-       +rho*Y[jp]*rate_eval.p_N15__O16
+       +rho*Y[jp]*rate_eval.p_N15_to_O16_reaclib
        )
 
     jac[jo16, jo16] = (
-       -rho*Y[jp]*rate_eval.p_O16__F17
+       -rho*Y[jp]*rate_eval.p_O16_to_F17_reaclib
        )
 
     jac[jo16, jf19] = (
-       +rho*Y[jp]*rate_eval.p_F19__He4_O16
+       +rho*Y[jp]*rate_eval.p_F19_to_He4_O16_reaclib
        )
 
     jac[jo17, jp] = (
-       -rho*Y[jo17]*rate_eval.p_O17__He4_N14
-       -rho*Y[jo17]*rate_eval.p_O17__F18
+       -rho*Y[jo17]*rate_eval.p_O17_to_He4_N14_reaclib
+       -rho*Y[jo17]*rate_eval.p_O17_to_F18_reaclib
        )
 
     jac[jo17, jo17] = (
-       -rho*Y[jp]*rate_eval.p_O17__He4_N14
-       -rho*Y[jp]*rate_eval.p_O17__F18
+       -rho*Y[jp]*rate_eval.p_O17_to_He4_N14_reaclib
+       -rho*Y[jp]*rate_eval.p_O17_to_F18_reaclib
        )
 
     jac[jo17, jf17] = (
-       +rate_eval.F17__O17__weak__wc12
+       +rate_eval.F17_to_O17_reaclib
        )
 
     jac[jo18, jp] = (
-       -rho*Y[jo18]*rate_eval.p_O18__He4_N15
-       -rho*Y[jo18]*rate_eval.p_O18__F19
+       -rho*Y[jo18]*rate_eval.p_O18_to_He4_N15_reaclib
+       -rho*Y[jo18]*rate_eval.p_O18_to_F19_reaclib
        )
 
     jac[jo18, jo18] = (
-       -rho*Y[jp]*rate_eval.p_O18__He4_N15
-       -rho*Y[jp]*rate_eval.p_O18__F19
+       -rho*Y[jp]*rate_eval.p_O18_to_He4_N15_reaclib
+       -rho*Y[jp]*rate_eval.p_O18_to_F19_reaclib
        )
 
     jac[jo18, jf18] = (
-       +rate_eval.F18__O18__weak__wc12
+       +rate_eval.F18_to_O18_reaclib
        )
 
     jac[jf17, jp] = (
-       -rho*Y[jf17]*rate_eval.p_F17__Ne18
-       +rho*Y[jo16]*rate_eval.p_O16__F17
+       -rho*Y[jf17]*rate_eval.p_F17_to_Ne18_reaclib
+       +rho*Y[jo16]*rate_eval.p_O16_to_F17_reaclib
        )
 
     jac[jf17, jhe4] = (
-       +rho*Y[jo14]*rate_eval.He4_O14__p_F17
+       +rho*Y[jo14]*rate_eval.He4_O14_to_p_F17_reaclib
        )
 
     jac[jf17, jo14] = (
-       +rho*Y[jhe4]*rate_eval.He4_O14__p_F17
+       +rho*Y[jhe4]*rate_eval.He4_O14_to_p_F17_reaclib
        )
 
     jac[jf17, jo16] = (
-       +rho*Y[jp]*rate_eval.p_O16__F17
+       +rho*Y[jp]*rate_eval.p_O16_to_F17_reaclib
        )
 
     jac[jf17, jf17] = (
-       -rate_eval.F17__O17__weak__wc12
-       -rho*Y[jp]*rate_eval.p_F17__Ne18
+       -rate_eval.F17_to_O17_reaclib
+       -rho*Y[jp]*rate_eval.p_F17_to_Ne18_reaclib
        )
 
     jac[jf18, jp] = (
-       -rho*Y[jf18]*rate_eval.p_F18__He4_O15
-       +rho*Y[jo17]*rate_eval.p_O17__F18
+       -rho*Y[jf18]*rate_eval.p_F18_to_He4_O15_reaclib
+       +rho*Y[jo17]*rate_eval.p_O17_to_F18_reaclib
        )
 
     jac[jf18, jo17] = (
-       +rho*Y[jp]*rate_eval.p_O17__F18
+       +rho*Y[jp]*rate_eval.p_O17_to_F18_reaclib
        )
 
     jac[jf18, jf18] = (
-       -rate_eval.F18__O18__weak__wc12
-       -rho*Y[jp]*rate_eval.p_F18__He4_O15
+       -rate_eval.F18_to_O18_reaclib
+       -rho*Y[jp]*rate_eval.p_F18_to_He4_O15_reaclib
        )
 
     jac[jf18, jne18] = (
-       +rate_eval.Ne18__F18__weak__wc12
+       +rate_eval.Ne18_to_F18_reaclib
        )
 
     jac[jf19, jp] = (
-       -rho*Y[jf19]*rate_eval.p_F19__He4_O16
-       +rho*Y[jo18]*rate_eval.p_O18__F19
+       -rho*Y[jf19]*rate_eval.p_F19_to_He4_O16_reaclib
+       +rho*Y[jo18]*rate_eval.p_O18_to_F19_reaclib
        )
 
     jac[jf19, jo18] = (
-       +rho*Y[jp]*rate_eval.p_O18__F19
+       +rho*Y[jp]*rate_eval.p_O18_to_F19_reaclib
        )
 
     jac[jf19, jf19] = (
-       -rho*Y[jp]*rate_eval.p_F19__He4_O16
+       -rho*Y[jp]*rate_eval.p_F19_to_He4_O16_reaclib
        )
 
     jac[jne18, jp] = (
-       +rho*Y[jf17]*rate_eval.p_F17__Ne18
+       +rho*Y[jf17]*rate_eval.p_F17_to_Ne18_reaclib
        )
 
     jac[jne18, jf17] = (
-       +rho*Y[jp]*rate_eval.p_F17__Ne18
+       +rho*Y[jp]*rate_eval.p_F17_to_Ne18_reaclib
        )
 
     jac[jne18, jne18] = (
-       -rate_eval.Ne18__F18__weak__wc12
+       -rate_eval.Ne18_to_F18_reaclib
        )
 
     return jac
@@ -1753,7 +1989,7 @@ def jacobian_eq(t, Y, rho, T, screen_func):
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmax</span> <span class="o">=</span> <span class="mf">1.e20</span>
 
 <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">cno</span><span class="o">.</span><span class="n">rhs</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">],</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BDF&quot;</span><span class="p">,</span>
-                <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">),</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1.e-6</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1.e-6</span><span class="p">)</span>
+                <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">),</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1.e-6</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1.e-8</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1768,18 +2004,18 @@ def jacobian_eq(t, Y, rho, T, screen_func):
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  message: The solver successfully reached the end of the integration interval.
   success: True
    status: 0
-        t: [ 0.000e+00  1.183e+01 ...  2.544e+19  1.000e+20]
-        y: [[ 7.000e-01  7.000e-01 ... -3.618e-18 -3.620e-18]
+        t: [ 0.000e+00  1.275e+00 ...  6.451e+19  1.000e+20]
+        y: [[ 7.000e-01  7.000e-01 ...  1.754e-25  4.391e-26]
             [ 7.000e-02  7.000e-02 ...  2.442e-01  2.442e-01]
             ...
-            [ 0.000e+00  6.957e-63 ...  9.840e-13  9.840e-13]
-            [ 0.000e+00  1.798e-53 ...  5.079e-57  7.738e-58]]
-      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7efda780dd30&gt;
+            [ 0.000e+00  1.990e-73 ...  9.868e-13  9.868e-13]
+            [ 0.000e+00  1.368e-60 ... -8.293e-65 -1.586e-65]]
+      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x7fbce27d4980&gt;
  t_events: None
  y_events: None
-     nfev: 355
-     njev: 22
-      nlu: 64
+     nfev: 520
+     njev: 21
+      nlu: 72
 </pre></div>
 </div>
 </div>
@@ -1787,22 +2023,22 @@ def jacobian_eq(t, Y, rho, T, screen_func):
 <p>Now we can plot the mass fractions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cno</span><span class="o">.</span><span class="n">nnuc</span><span class="p">):</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">,:]</span> <span class="o">*</span> <span class="n">cno</span><span class="o">.</span><span class="n">A</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;X(</span><span class="si">{</span><span class="n">cno</span><span class="o">.</span><span class="n">names</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">1.e10</span><span class="p">,</span> <span class="mf">1.e13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">1.e9</span><span class="p">,</span> <span class="mf">1.e13</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1.e-8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;small&quot;</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;time (s)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;mass fraction&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e234e9962bd5893484a7adbf07abcb903a125d58aab5c6f5f874570d42dc2327.png" src="../_images/e234e9962bd5893484a7adbf07abcb903a125d58aab5c6f5f874570d42dc2327.png" />
+<img alt="../_images/f13d1fe0176dc2e6695b495117ce6d080b1993f41e885e9475c9ffa3b904128b.png" src="../_images/f13d1fe0176dc2e6695b495117ce6d080b1993f41e885e9475c9ffa3b904128b.png" />
 </div>
 </div>
 </section>
@@ -1904,8 +2140,8 @@ By <a href="https://zingale.github.io">Michael Zingale</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
